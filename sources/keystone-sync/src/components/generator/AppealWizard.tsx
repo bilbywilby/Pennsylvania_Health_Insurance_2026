@@ -42,6 +42,42 @@ export function AppealWizard() {
       setStep(1);
     }
   }, [searchParams]);
+  const [appealBundle, setAppealBundle] = useState<{
+    schema_version?: number;
+    pathways?: Record<string, { steps?: Array<{ action?: string; authority?: string }> }>;
+    deadline_rules?: Record<string, { days?: number; authority?: string }>;
+    routes?: Record<string, string>;
+  } | null>(null);
+  useEffect(() => {
+    let active = true;
+    fetch('/appeal_bundle.json', { cache: 'no-cache' })
+      .then((res) => (res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`))))
+      .then((data) => {
+        if (active && data && typeof data === 'object') {
+          setAppealBundle(data);
+        }
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, []);
+  const getBundleContext = () => {
+    if (!appealBundle) return null;
+    const issueKey = String(formData.issue || "");
+    const pathway = appealBundle.pathways?.[issueKey];
+    const deadline = appealBundle.deadline_rules?.[issueKey];
+    const route = appealBundle.routes?.[issueKey];
+    const steps = Array.isArray(pathway?.steps)
+      ? pathway.steps.map((s) => s?.action).filter((a): a is string => Boolean(a))
+      : [];
+    return {
+      steps,
+      days: typeof deadline?.days === "number" ? deadline.days : undefined,
+      authority: deadline?.authority || pathway?.steps?.find((s) => s?.authority)?.authority,
+      route,
+    };
+  };
   const autofillFromVault = async () => {
     const lastCalc = await getRecentCalculation();
     if (lastCalc && lastCalc.metadata) {
@@ -68,18 +104,26 @@ export function AppealWizard() {
     if (formData.issue === AppealIssue.INTEREST_RATE) cite = "PA SB 371 (Louisa Carman Act)";
     if (formData.issue === AppealIssue.PHARMACY_TIER_EXCEPTION) cite = "PA Act 77";
     if (formData.issue === AppealIssue.CLINICAL_FRAMEWORK) cite = "PA Act 146 Section 2116";
+    const bundleCtx = getBundleContext();
+    const bundleLines = [
+      bundleCtx?.days !== undefined ? `Statutory/Filing Window: ${bundleCtx.days} days` : "",
+      bundleCtx?.authority ? `Controlling Authority: ${bundleCtx.authority}` : "",
+      bundleCtx?.route ? `Filing Route: ${bundleCtx.route}` : "",
+      bundleCtx?.steps?.length ? `Required Pathway Steps: ${bundleCtx.steps.join(" -> ")}` : "",
+    ].filter(Boolean).join("\n");
+    const bundleSection = bundleLines ? `\n${bundleLines}\n` : "";
     return `
 Date: ${today}
-To: Consumer Grievance Department, [[PROVIDER_NAME]]
-Reference: Account #[[ACCOUNT_NUMBER]]
+To: Consumer Grievance Department, ${formData.providerName || '[[PROVIDER_NAME]]'}
+Reference: Account #${formData.accountNumber || '[[ACCOUNT_NUMBER]]'}
 FORMAL NOTICE OF DISPUTE PURSUANT TO ${cite.toUpperCase()}
 Dear Grievance Coordinator,
-I am writing to formally dispute the determination dated [[DENIAL_DATE]]. Under Pennsylvania law, I am invoking my specific consumer protection rights regarding ${formData.issue}.
+I am writing to formally dispute the determination dated ${formData.billDate || '[[DENIAL_DATE]]'}. Under Pennsylvania law, I am invoking my specific consumer protection rights regarding ${formData.issue}.
 DISPUTE BASIS:
-[[DISPUTE_DETAILS]]
-LEGAL NOTICE: Under the PA Fair Credit Extension Uniformity Act (FCEUA), this debt is now formally disputed. Pursuant to the ${cite}, I demand a written response within 30 days detailing your compliance with state transparency standards.
+${formData.details || '[[DISPUTE_DETAILS]]'}
+${bundleSection}LEGAL NOTICE: Under the PA Fair Credit Extension Uniformity Act (FCEUA), this debt is now formally disputed. Pursuant to the ${cite}, I demand a written response within 30 days detailing your compliance with state transparency standards.
 Sincerely,
-[[PATIENT_NAME]]
+${formData.patientName || '[[PATIENT_NAME]]'}
     `.trim();
   };
   const saveToArchive = async () => {

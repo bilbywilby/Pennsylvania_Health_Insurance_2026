@@ -1,2 +1,5 @@
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[project.scripts]
+pa-scenario-router = "pa_addons.scenario_router:main"

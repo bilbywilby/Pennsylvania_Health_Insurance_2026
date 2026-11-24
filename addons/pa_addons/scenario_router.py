@@ -37,3 +37,38 @@ def route(problem_text: str) -> dict[str, object]:
         if any(kw in text for kw in entry["keywords"]):  # type: ignore[union-attr]
             return {"route": key, **entry}
     raise LookupError("No route matched; extend ROUTES.")
+
+
+def main(argv: list[str] | None = None) -> int:
+    import argparse
+    import sys
+
+    parser = argparse.ArgumentParser(
+        prog="pa-scenario-router",
+        description="Route a PA health insurance or billing situation to a guidance pathway.",
+    )
+    parser.add_argument("situation", nargs="+", help="Description of the situation or billing issue")
+    parser.add_argument("--json", action="store_true", help="Output result as JSON")
+    args = parser.parse_args(argv)
+
+    query = " ".join(args.situation).strip()
+    try:
+        result = route(query)
+    except LookupError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 2
+
+    if args.json:
+        print(json.dumps(result, indent=2))
+    else:
+        print(f"Pathway: {result.get('pathway') or result.get('name') or 'matched'}")
+        for step in result.get("steps", []):
+            if isinstance(step, dict):
+                ref = f" [{step['reference']}]" if step.get("reference") else ""
+                rule = f" (rule: {step['deadline_rule']})" if step.get("deadline_rule") else ""
+                print(f"  {step.get('step', '?')}. {step.get('action', '')}{rule}{ref}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
