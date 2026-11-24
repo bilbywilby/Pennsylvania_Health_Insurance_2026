@@ -16,11 +16,12 @@
     "sources/animated-umbrella-PY2027-audit-v1.1.1",
     "sources/animated-umbrella",
     "sources/keystone-sync",
-    "sources/audit_tools"
+    "sources/audit_tools",
+    "addons"
   ],
   "split_count": 0,
   "splits": [],
-  "file_count": 2748,
+  "file_count": 2768,
   "files": [
     {
       "path": "sources/Keystone_Health/.github/dependabot.yml",
@@ -13761,6 +13762,106 @@
       "path": "sources/ship_nsa_dispute_kit.sh",
       "size": 11469,
       "sha256": "e777cb89aa963bcd8cbbd5da57607e6f9265cfdb181301af441b020663f7fda6"
+    },
+    {
+      "path": "addons/README.md",
+      "sha256": "029629bcf4a80e7d0407c541bd205c8890ca66b3fc4dd0783e00bf32bf99346a",
+      "size": 946
+    },
+    {
+      "path": "addons/pa_addons/__init__.py",
+      "sha256": "5c8afec16ad298c8347b5b77ae68ae85862a3a343d07f6318ce105a9815c9990",
+      "size": 105
+    },
+    {
+      "path": "addons/pa_addons/addon_validator.py",
+      "sha256": "c105f85b20800fae30c9c4fb8b072066ee64345babe9a26563b429e1b5279560",
+      "size": 1992
+    },
+    {
+      "path": "addons/pa_addons/cross_validator.py",
+      "sha256": "f92f05fe2f54c4bfa7edd5d26a903e3203692b2e846471c1a6b61cc7f0d46abe",
+      "size": 1701
+    },
+    {
+      "path": "addons/pa_addons/deadlines.py",
+      "sha256": "9fb4f5e8fd5b4a6de7f7339a494c8da6b183edbcdafb37f51630726c46f4e9a2",
+      "size": 2050
+    },
+    {
+      "path": "addons/pa_addons/evidence_vault.py",
+      "sha256": "6adb686e07075e209ae13d8b913400639606b9c8182d36b5d69e542249980666",
+      "size": 3057
+    },
+    {
+      "path": "addons/pa_addons/export_bundle.py",
+      "sha256": "acf6f33407ca388965ad8201806bfb9c54bb91dc9097e4c12f58c13348c7c0db",
+      "size": 1274
+    },
+    {
+      "path": "addons/pa_addons/glossary.py",
+      "sha256": "66249834064598635fa76171e206f1fd21630b41a1700b2313fd744ab9954120",
+      "size": 4558
+    },
+    {
+      "path": "addons/pa_addons/pathways.py",
+      "sha256": "c097918687966164d9fa53ae3ec8b8e99c3294e4d02298838f57048293ccd803",
+      "size": 2681
+    },
+    {
+      "path": "addons/pa_addons/provider_network.py",
+      "sha256": "febc8eeeb08fe714db408eba5cc14f835f735359031d0ced2d54094e86c56fcf",
+      "size": 2071
+    },
+    {
+      "path": "addons/pa_addons/rtk_requests.py",
+      "sha256": "a4a4eee327a20e1aedb8203ab35753b56feb22b9ac879ac08d5da87b9d87ebbc",
+      "size": 1836
+    },
+    {
+      "path": "addons/pa_addons/scenario_router.py",
+      "sha256": "c9518481ca9bfe02f893bf0d8fa720e0eaed02bf4b6f8e2c2923dd38b0d81ee5",
+      "size": 1595
+    },
+    {
+      "path": "addons/pyproject.toml",
+      "sha256": "0f792d73d83e29f0fb703a46db10647879b1415b0de84941d5c746117996609f",
+      "size": 48
+    },
+    {
+      "path": "addons/tests/test_addons.py",
+      "sha256": "051f9aabcb36059e45568fa14a7696a0bdb084e9085be9e18891ca9e4620e965",
+      "size": 4509
+    },
+    {
+      "path": "addons/tests/conftest.py",
+      "sha256": "96c7ac62c898d8d38efe6b1d4f172a43d23620ab2c2c889136a06ec55ec07a8d",
+      "size": 273
+    },
+    {
+      "path": "addons/.pytest_cache/.gitignore",
+      "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+      "size": 37
+    },
+    {
+      "path": "addons/.pytest_cache/CACHEDIR.TAG",
+      "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+      "size": 191
+    },
+    {
+      "path": "addons/.pytest_cache/README.md",
+      "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+      "size": 302
+    },
+    {
+      "path": "addons/.pytest_cache/v/cache/lastfailed",
+      "sha256": "f760b6ba3b9bdaab97a11766ae67c21cbc898a557003625ad34b235465fae80e",
+      "size": 62
+    },
+    {
+      "path": "addons/.pytest_cache/v/cache/nodeids",
+      "sha256": "598c31868e85d83782c9489df03661dc6622f867e81b729b79d08d31829193ad",
+      "size": 824
     }
   ]
 }
