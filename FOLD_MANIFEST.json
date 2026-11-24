@@ -7,9 +7,11 @@
     "sources/pa_audit",
     "sources/pa_audit_bundle",
     "sources/Keystone_Health",
-    "sources/keystone-health-advocate-pa-medical-rights-wiki-forensic-tool"
+    "sources/keystone-health-advocate-pa-medical-rights-wiki-forensic-tool",
+    "sources/pa_ra_onepagers",
+    "sources/keystone_health"
   ],
-  "file_count": 2374,
+  "file_count": 2498,
   "files": [
     {
       "path": "sources/Keystone_Health/.github/dependabot.yml",
@@ -7927,6 +7929,556 @@
       "sha256": "89eda44ae59dea4e9c9a359b02a197885a6c78be180d5ae0802c29b6a13a4d7a"
     },
     {
+      "path": "sources/keystone_health/501(r) FAP Demand Letter.md",
+      "size": 2457,
+      "sha256": "6f230cc446e06cca77403ed027a60e8d9964b6951f612f34f8660fac41d84867"
+    },
+    {
+      "path": "sources/keystone_health/Act 146 External Review Demand (Post-Insurer Appeal Denial).md",
+      "size": 2246,
+      "sha256": "6ce8eec7f468ec0ced141023080f5afc6ce690173de2d3f6d8eb9932d42b660d"
+    },
+    {
+      "path": "sources/keystone_health/Add automated PDF conversion for the generated com....pdf",
+      "size": 119809,
+      "sha256": "4bb95f473457be6128bc4d3215cf408bc5ee750bc842a47cd8c5c2240f9c98df"
+    },
+    {
+      "path": "sources/keystone_health/Attorney Referral Network .md",
+      "size": 2741,
+      "sha256": "0f481a69f6f1477488dde1c932770c96b96ec80faad371dcc016c9c468c70efd"
+    },
+    {
+      "path": "sources/keystone_health/CITATIONS.md",
+      "size": 13584,
+      "sha256": "0a70bf0fe6bafd8df13c27b6a0dc1cada6d9e6047fade32245370d50a47ed379"
+    },
+    {
+      "path": "sources/keystone_health/CMS Complaint Narrative (Self-Funded ERISA Plans).md",
+      "size": 4977,
+      "sha256": "f50456e4c392c3154209ca098bc441606f58004253b15e6006dc65502dc0f491"
+    },
+    {
+      "path": "sources/keystone_health/CMS NO SURPRISES ACT \u2014 CONSUMER COMPLAINT NARRATIVE.md",
+      "size": 3690,
+      "sha256": "4cc990636a0b39b278468e5f3cdb04bb8dda3eb9fac73b4692b11ddd9e4062db"
+    },
+    {
+      "path": "sources/keystone_health/CONSUMER SERVICES BUREAU EXTERNAL REVIEW REQUEST.md",
+      "size": 5100,
+      "sha256": "7d38b3479cc1f1f9637c04b64d725ff3c6bbc27f8efe5587998c16c08efa14ac"
+    },
+    {
+      "path": "sources/keystone_health/CONTRIBUTING.md",
+      "size": 9462,
+      "sha256": "5b2a7b4b320bb7a206908a9520765e1e12c9928de9c0371994bc942dfd6b1be4"
+    },
+    {
+      "path": "sources/keystone_health/Changelog",
+      "size": 1205,
+      "sha256": "1ef79564cbc717eab8afc5f10faaad56bc645a8b319528163d39606b9ca6319d"
+    },
+    {
+      "path": "sources/keystone_health/Combining IRS Section 501(r) Financial Assistance Policies (FAP) with the No Surprises Act (NSA).txt",
+      "size": 4693,
+      "sha256": "850e02eeb09e68aa869b759c6a6f77a7c0fcf2076d368e190074711d90de723c"
+    },
+    {
+      "path": "sources/keystone_health/Complete Dispute Package Checklist & Exhibits.txt",
+      "size": 2516,
+      "sha256": "a75f327e770442cb03109c6608aa464e81b7c7667e0445f245fd16c1c50c7aec"
+    },
+    {
+      "path": "sources/keystone_health/Compliance Audit & Operational Mapping.md",
+      "size": 8909,
+      "sha256": "7ca0d514f5e1776a4555737f9cba23e117cf1790106fb7a76bcd3c74269e6af7"
+    },
+    {
+      "path": "sources/keystone_health/Compliance Reference Framework.txt",
+      "size": 20835,
+      "sha256": "7bc9b2aa7e5f7055884903da91f2ebd25f5d948172f4211a5381ec3ff9b73ead"
+    },
+    {
+      "path": "sources/keystone_health/Contributing Guidelines",
+      "size": 1326,
+      "sha256": "51e5532e14f480632abe12172d8a3db555b90044f6a9d69f232161e1310c8497"
+    },
+    {
+      "path": "sources/keystone_health/Critical Consumer Rules (\"Do's & Don'ts\").txt",
+      "size": 30476,
+      "sha256": "f526d2707938a0dafaf0f1c456058a0c3c28e35b8b7de3e5ae9b40c6227534d3"
+    },
+    {
+      "path": "sources/keystone_health/Dispatch Work-Orders Script.pdf",
+      "size": 83747,
+      "sha256": "8d19a2b6fc68a8f4c48d49de8169776c19590f9f4d7109d5ddd71ae90fe7ded0"
+    },
+    {
+      "path": "sources/keystone_health/Dispatcher with Sent Ledger.pdf",
+      "size": 80619,
+      "sha256": "be3e60cd3826171490a5988149983aa5c3f2060687bcbd7e8c74a4d3eb78abaa"
+    },
+    {
+      "path": "sources/keystone_health/DisputeTemplate",
+      "size": 3061,
+      "sha256": "d80fc5f4e3cc520bb837c7664553add801a186e342e93fd94034a12eaa240f2e"
+    },
+    {
+      "path": "sources/keystone_health/Dispute_tool_test_suite_description.md",
+      "size": 3233,
+      "sha256": "469bcd84cc663cdf89947e565b5c6d983ed9b3bf47a9f5da4d06d795bd2ec798"
+    },
+    {
+      "path": "sources/keystone_health/EXHIBIT C: FAIR MARKET VALUE (FMV) BENCHMARK CALCULATION SHEET.txt",
+      "size": 4448,
+      "sha256": "d7b49aa435c9188c0814294586eb0789a764f6cceabb8d78148fd289ab918ef2"
+    },
+    {
+      "path": "sources/keystone_health/Escalation Workflow Overview for denied dispute escalation.md",
+      "size": 10263,
+      "sha256": "524b6c397714abc252aadb149f86e437d8234b1573a7700b4cca66e713330053"
+    },
+    {
+      "path": "sources/keystone_health/Executive_Summary.md",
+      "size": 4097,
+      "sha256": "26aa11cb2e7200bfd03615b2556c0ca41ec830959c2b89ddef37cf668cfd55ef"
+    },
+    {
+      "path": "sources/keystone_health/FCEUA/.pdfUTPCPL Collection Agency Escalation Letter",
+      "size": 7530,
+      "sha256": "594e82f99813ed10f9cf370055729e17db34c2f82f9082081d044ad10e7fc33a"
+    },
+    {
+      "path": "sources/keystone_health/FCEUA/.txtUTPCPL Collection Agency Escalation Letter",
+      "size": 7530,
+      "sha256": "594e82f99813ed10f9cf370055729e17db34c2f82f9082081d044ad10e7fc33a"
+    },
+    {
+      "path": "sources/keystone_health/Formal Debt Validation & Statutory Dispute Notice.txt",
+      "size": 11250,
+      "sha256": "f9150fb4b414c7f27aa01bd7cefccd2880bf61ebe95e5a1e4c2dd9c8c7476099"
+    },
+    {
+      "path": "sources/keystone_health/Framework for No Surprises Act Enforcement and Medical Debt Defense in Pennsylvania.txt",
+      "size": 27374,
+      "sha256": "d306e4084462284475f2f786b51a3e8b520f5efad5217be5c707dc379cc070a0"
+    },
+    {
+      "path": "sources/keystone_health/GOVERANCE.md",
+      "size": 4428,
+      "sha256": "4af6becd5a637c44204d1f0b01dc0a72ee7b341c8b722ceef3262cb8292fa487"
+    },
+    {
+      "path": "sources/keystone_health/Generate the template generator script for Pennsyl....pdf",
+      "size": 100188,
+      "sha256": "c0fcaf65f919ab78c8e388002de9e46dd0f6f873f3849dd959d1b1d277b969b3"
+    },
+    {
+      "path": "sources/keystone_health/Gu\u00eda de Acci\u00f3n para Consumidores.md",
+      "size": 5947,
+      "sha256": "eaa572d57ec044c276ea0be55abf3b38a149aaecab189fb40e1f067304463745"
+    },
+    {
+      "path": "sources/keystone_health/HANDOVER.json",
+      "size": 33,
+      "sha256": "c7ab403ca3912462c5af783da671a6faa52fdab339913043f14ce7e1d6b9b496"
+    },
+    {
+      "path": "sources/keystone_health/HANDOVER.md",
+      "size": 22825,
+      "sha256": "128f0b143486f519e2b907c8a7695714a5f385dc5cdca69e2b960c5c68f32ba9"
+    },
+    {
+      "path": "sources/keystone_health/Hardened Python Date Mathematics & SOL Engine.md",
+      "size": 57806,
+      "sha256": "12d7a2fd098742454b2677780f3edc9710ac684bb7c113b52f26063f93b4a40a"
+    },
+    {
+      "path": "sources/keystone_health/IRS Section 501(r) for Nonprofit Hospitals.txt",
+      "size": 3558,
+      "sha256": "637ccd99e4129babb076f36be6a2685eee103ed63469898d80125a66c5107eed"
+    },
+    {
+      "path": "sources/keystone_health/Insurance Carrier Companion Letter.pdf",
+      "size": 6012,
+      "sha256": "52abbfbd6df58b9f18f2d262fc8d476b627f0d728832ac1a1a2db52c7e23766d"
+    },
+    {
+      "path": "sources/keystone_health/Insurance Carrier Companion Letter.txt",
+      "size": 6012,
+      "sha256": "52abbfbd6df58b9f18f2d262fc8d476b627f0d728832ac1a1a2db52c7e23766d"
+    },
+    {
+      "path": "sources/keystone_health/Integrate the template generator into dispatch_wor....pdf",
+      "size": 119760,
+      "sha256": "0214ab8afa6216884b58bd917f7db029c09b5f998ba9dcd1722c8e2279927fa9"
+    },
+    {
+      "path": "sources/keystone_health/Keystone Forensic Navigator.pdf",
+      "size": 429912,
+      "sha256": "5d9929d4b145700b7992899046e69dfb0516ab10b5f08197a220348994240da5"
+    },
+    {
+      "path": "sources/keystone_health/Keystone_Health_Portal.html",
+      "size": 65003,
+      "sha256": "b8f1be51fc27e01268e07f80e2f558edac9bdf23c729c466974503941a412cf3"
+    },
+    {
+      "path": "sources/keystone_health/LICENSE",
+      "size": 1067,
+      "sha256": "82882f4aaa503624c9a83d3f62ed38fedd2fb2034fefe91aee8df08b2d07a247"
+    },
+    {
+      "path": "sources/keystone_health/Legal Disclaimer and Scope of Use.md",
+      "size": 2373,
+      "sha256": "78a3abab4ca47f80932cc9d40faaac3382adb0d26a9c3c1df82db2eedbffcab6"
+    },
+    {
+      "path": "sources/keystone_health/Legal findings for the SOL and FCEUA modules.txt",
+      "size": 6394,
+      "sha256": "7c5f4cbb32c48b82dcb9c312bc56f895cb708d93291e9d5ea125218bab269f24"
+    },
+    {
+      "path": "sources/keystone_health/Legal_Disclaimer.txt",
+      "size": 2352,
+      "sha256": "820026b1cb0fcaa159b97894f91a9da3d2a0919347a03b8abbbacc875bda30e0"
+    },
+    {
+      "path": "sources/keystone_health/NOTICE OF STATUTORY DISPUTE AND DEMAND FOR RESCISSION.txt",
+      "size": 3745,
+      "sha256": "321ab4b3fc8291b90ecbfa6998ad1f22d7fdc1a64cb452c3bb3ef22cccd0c17b"
+    },
+    {
+      "path": "sources/keystone_health/Operational Dispute Tracking System.md",
+      "size": 14450,
+      "sha256": "b30d7d24e110c6ae1766cf84021fd72ce7cf25d5f7a9837dcefb97f06909fb9f"
+    },
+    {
+      "path": "sources/keystone_health/PA Case Law on Statute of Limitations Restarts a Pennsylvania case law governing 42 Pa.C.S. \u00a7 5525(a)",
+      "size": 12934,
+      "sha256": "d50405a6c573251048a41f979fbde6690caf5a34f24470bf0ac96ce8c07cf719"
+    },
+    {
+      "path": "sources/keystone_health/PA MEDICAL BILL DEFENSE CHECKLIST.md",
+      "size": 7068,
+      "sha256": "7a9292995d7b77bc7e6b1a472b87a5590703baf1e657a31641cdd81cc3402a27"
+    },
+    {
+      "path": "sources/keystone_health/PENNSYLVANIA MEDICAL BILL DEFENSE TOOLKIT & LEGAL REFERENCE",
+      "size": 12910,
+      "sha256": "22bf14cd8590f8f92290a18e80aa1000b348fce3f44e2361e3513f3041cd8569"
+    },
+    {
+      "path": "sources/keystone_health/PID Complaint Narrative (Fully Insured Plans with Act 146 External-Review Hook).md",
+      "size": 5594,
+      "sha256": "c5dd24a991dbdda4b6da2b3541cb093304e68ff6a144d8f0da80e51b3fac1718"
+    },
+    {
+      "path": "sources/keystone_health/PID and CMS",
+      "size": 5556,
+      "sha256": "498ca58e727208b2dc1b031a0725cf2743f88e98cb987f5d0f4d51edfe929ce5"
+    },
+    {
+      "path": "sources/keystone_health/Panel Evaluation Report.md",
+      "size": 6027,
+      "sha256": "f1bb6316e72e91563896bd94aed8e0fc2d5fe91c0508a7b43407438fa6ffe565"
+    },
+    {
+      "path": "sources/keystone_health/Patch.md",
+      "size": 19874,
+      "sha256": "1e1a8826aa1a4d29f2345d49a2a13f0dba86ddd4165e9a0c0c02f55be869f524"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Health Market Forensic Audit.pptx",
+      "size": 13906986,
+      "sha256": "8c5158acf7fc1e8a053693b7ac3f1b1d9c919187f3127dab6e2af144e9f7dafb"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Medical Bill Defense Toolkit (1).pdf",
+      "size": 156648,
+      "sha256": "ddb378db1baa35f2b60a1e7d1a82e18b290e2d3d30b72c7c99f29cd38c6508eb"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Medical Bill Defense Toolkit (2).pdf",
+      "size": 141031,
+      "sha256": "f20e80cd3151836cf8d2cb0eb3ee0ba75fedd46c474b3e33ab4f44c009efa276"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Medical Bill Defense Toolkit (3).md",
+      "size": 15597,
+      "sha256": "629f606743508611141776f8248d39e1a4765faf379ec80737958dd53c487d15"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Medical Bill Defense Toolkit.docx",
+      "size": 17045,
+      "sha256": "615ea7c04927376bb1970d15809fc02aca445bda99516ce8c8320c1a167445c4"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Medical Bill Defense Toolkit.pdf",
+      "size": 194836,
+      "sha256": "e6c2a92e2cef7c351b1fc5ce8e9db9f57719c55f350bc97b3e7a41131786bb33"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Medical Debt Defense Framework",
+      "size": 13291,
+      "sha256": "cdb51c2d61ebd6be92ecfbdaacd1e0f87e362fc0034e7e89f3605cb5ad84ab6b"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Medical Debt Defense Framework (Rev. 2 \u2014 05 Nov 2026)",
+      "size": 13999,
+      "sha256": "338a9b216fb95f8fcfda70462034964be5afdfe4ca60c7621cedd54a5881e69d"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Medical Debt Defense Framework (Rev. 4.1 \u2014 05 Nov 2026)",
+      "size": 16836,
+      "sha256": "df42ba7d7afac0368ea16723f30d6a0d3a3b5800f7ecbbd63735e0fd49b33fec"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Medical Debt Defense Framework.md",
+      "size": 13384,
+      "sha256": "8f8490e8aaba43b2a805cee436078eb9ebe0438137011a9691c195c1dc0b01ff"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Medical Debt Defense Master Framework (Rev 05 Nov 2026).md",
+      "size": 37810,
+      "sha256": "bc8af76a29e5226c479841a9d9ab3f71ac5d729b323d5eb8758c5723a37546a3"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Surprise Billing Verification.pdf",
+      "size": 252883,
+      "sha256": "27cd99c6da780a617ab4370659c9ff45c64bc9d29712695f6200cc10eda516dc"
+    },
+    {
+      "path": "sources/keystone_health/Pre-Launch Readiness Checklist for Legal & Ethical Compliance",
+      "size": 1464,
+      "sha256": "97ac6744289a973ee4cc395df8d572a2e8a2b2fdf9162ce50b990c15bed58a96"
+    },
+    {
+      "path": "sources/keystone_health/Provide and Hospital Formal Dispute Letter  for possible surprise billing balance.pdf",
+      "size": 6012,
+      "sha256": "52abbfbd6df58b9f18f2d262fc8d476b627f0d728832ac1a1a2db52c7e23766d"
+    },
+    {
+      "path": "sources/keystone_health/Provide and Hospital Formal Dispute Letter  for possible surprise billing balance.txt",
+      "size": 6012,
+      "sha256": "52abbfbd6df58b9f18f2d262fc8d476b627f0d728832ac1a1a2db52c7e23766d"
+    },
+    {
+      "path": "sources/keystone_health/Provider Escalation & Administrative Hold Demand (Post-Rejection).md",
+      "size": 3656,
+      "sha256": "211792496dc890146adfe2e8395e24a71e6401d4b86f5d3ae7f81963cecd3985"
+    },
+    {
+      "path": "sources/keystone_health/README.md",
+      "size": 246401,
+      "sha256": "9314325605cc50451cc3e30291e3544cc5738522867d40501b8d52e01252c340"
+    },
+    {
+      "path": "sources/keystone_health/REQUEST FOR FINANCIAL ASSISTANCE POLICY & APPLICATION (IRS \u00a7 501(r)).md",
+      "size": 2600,
+      "sha256": "f87f2dc1a67f7484aad475850032688737d15a93f67f43680cc77a7ae4eedb39"
+    },
+    {
+      "path": "sources/keystone_health/Regulatory Governance, Operational Enforcement, and Architectural Compliance in Healthcare Billing and Debt Recovery.txt",
+      "size": 32402,
+      "sha256": "06135a05c3235af41d4e242efddff1f485786cbd287cceb7d8cf5222a6034999"
+    },
+    {
+      "path": "sources/keystone_health/SECURITY.md",
+      "size": 987,
+      "sha256": "f5378949f519f871165fb57590983c661edaed81bb1297567157ded69cf26ba5"
+    },
+    {
+      "path": "sources/keystone_health/STATUTORY COMPLIANCE & DISPUTE AUDIT CHECKLIST",
+      "size": 34690,
+      "sha256": "41d6adf7111f3f3afb2ca18daf0b520e13cce3b9a508b8a124b42feb4e1b3315"
+    },
+    {
+      "path": "sources/keystone_health/Section 7 Dispute Letter Template.pdf",
+      "size": 84220,
+      "sha256": "6b3c61a16078123eb91dab76da371e97b071f957a2e1da52a0e2903b5ae77c16"
+    },
+    {
+      "path": "sources/keystone_health/Standardized Act 252 & No Surprises Act Notice of Statutory Dispute and Demand for Complete Rescission.txt",
+      "size": 6003,
+      "sha256": "d9e416de1925ae9e243dc8b30a2cf268795ae947334e75ae22c4c75b343ac941"
+    },
+    {
+      "path": "sources/keystone_health/Start_Here_Triage_Quiz",
+      "size": 1495,
+      "sha256": "b902441a40c693b4a4bed296dab040b71a003f89a9938137ff20e664d7892d36"
+    },
+    {
+      "path": "sources/keystone_health/Statute of Limitations Dynamics and Post-Judgment Asset Rules in Pennsylvania.txt",
+      "size": 2608,
+      "sha256": "cc93c6e14cea1586a187047a8adbeb1810d6c8a96aa21c9e57e4861a508797cb"
+    },
+    {
+      "path": "sources/keystone_health/THE ASYMMETRIC GUIDE: Pennsylvania Medical Debt Protection.md",
+      "size": 22458,
+      "sha256": "e1733145a6c2ae12bfbb19c425e70596eea39ffc76563d861a43399c57298c31"
+    },
+    {
+      "path": "sources/keystone_health/THREE THINGS THAT CAN HARM YOUR CASE.txt",
+      "size": 1249,
+      "sha256": "d8fd8bbb3b807fa638328485a2a652987742e2d0cdd36030beea2de07cc4fb3d"
+    },
+    {
+      "path": "sources/keystone_health/TROUBLESHOOTING.md",
+      "size": 214352,
+      "sha256": "e6a61d353dd8ab186bd5645c60c522b830216fe405b8bb05758a9f6bc45080e4"
+    },
+    {
+      "path": "sources/keystone_health/Test Suite.md",
+      "size": 16304,
+      "sha256": "443f9d76d485eaea3fd21bd6e0f993dc20dae46dfd8e163dfd54d2d09d4b1435"
+    },
+    {
+      "path": "sources/keystone_health/The panel's tally isn't a sound basis for the deci....pdf",
+      "size": 140379,
+      "sha256": "ff3b5a65b98257034d5aca3e4e3dd7e80c24bd8c2747dd6b88e0286b4ea00965"
+    },
+    {
+      "path": "sources/keystone_health/To move this from a standard software test suite t....pdf",
+      "size": 86106,
+      "sha256": "c37b8f36ed9eefbbf497819422dfad6364b1d2f371b65d546ef9ac501ede5f8d"
+    },
+    {
+      "path": "sources/keystone_health/backups/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "sources/keystone_health/bootstrap_notices.pdf",
+      "size": 47474,
+      "sha256": "b680d2a925d771e61bb7492aca5748d759ad346ff06ffc69af6a71596387dad9"
+    },
+    {
+      "path": "sources/keystone_health/bootstrap_notices.sh",
+      "size": 26921,
+      "sha256": "76745a05d85ab694ff7e06f5a08f95dfadd44212b16327d82eaa26e4b7e7a444"
+    },
+    {
+      "path": "sources/keystone_health/calculation for CPT code 99214 (Office/outpatient visit for an established patient, requiring moderate medical decision-making or 30\u201339 total minutes) in Pennsylvania for 2026.txt",
+      "size": 2661,
+      "sha256": "b18375b2963930e37b50a0c170ce4bfab734ee52dc0b02e48f08e34b93a44bac"
+    },
+    {
+      "path": "sources/keystone_health/data/debts.json",
+      "size": 835,
+      "sha256": "c2f4e204c5f88dad1df14871fe0de0119656dea95c66e319ef3905082394cf72"
+    },
+    {
+      "path": "sources/keystone_health/github/workflows/python-ci.yml",
+      "size": 1124,
+      "sha256": "f70f530d22a29cce2d4aae76c1382faa79bfdb6af5e6c5a3a8240ac84151a2da"
+    },
+    {
+      "path": "sources/keystone_health/harden_v1_1.pdf",
+      "size": 29057,
+      "sha256": "f7535efbb23a47489aafcd0d80d28147a52126e70ce9b1949d9d5bfdd24f327f"
+    },
+    {
+      "path": "sources/keystone_health/harden_v1_1.sh",
+      "size": 10570,
+      "sha256": "5140535a2675c3de7d3635fe9b09961a86a0e0e26e993f1bbaf9c6fcc14532a8"
+    },
+    {
+      "path": "sources/keystone_health/harden_v1_2.pdf",
+      "size": 19894,
+      "sha256": "e3c338a715009d5f32c7dd9374a33e4e0c0aa0e9dc6530c6ec6650c09d4fbb84"
+    },
+    {
+      "path": "sources/keystone_health/harden_v1_2.sh",
+      "size": 3702,
+      "sha256": "6b538021b200a5d1a5e163b6774c84929c4400efe843be2b71f380428b047727"
+    },
+    {
+      "path": "sources/keystone_health/no_surprises_dispute_tracker.csv",
+      "size": 2903,
+      "sha256": "6d46f0f63f0d4e58669830b4b88a07e99a60a5ed926a0d16ed6efcf4e81268b7"
+    },
+    {
+      "path": "sources/keystone_health/schema/dispute_template_escalation.schema.json",
+      "size": 2289,
+      "sha256": "9286510fa583352874e56115b1f418af0a0efc78042624fff91ce230b0ef4051"
+    },
+    {
+      "path": "sources/keystone_health/scripts/dispatch_work_orders.py",
+      "size": 5251,
+      "sha256": "d96d59c8b6bda696c02cd61da04ca4c48e726260b9ff47e7247da3fbe0da5d8d"
+    },
+    {
+      "path": "sources/keystone_health/scripts/dispatch_work_orders.py new",
+      "size": 5585,
+      "sha256": "85b560c2a11d23f2fd3230af8358a2c33dd13544a3cf052e59dbfcd9103f0411"
+    },
+    {
+      "path": "sources/keystone_health/scripts/dispatch_work_orders.py new 2",
+      "size": 3949,
+      "sha256": "1becb1198220fe6e2c4e3c3cb2cf55d8c573c4f493e603264a70be434990ef62"
+    },
+    {
+      "path": "sources/keystone_health/scripts/generate_notices.py",
+      "size": 7330,
+      "sha256": "87eae7186688e2f917de389cf8998c825350bc8efcc44f18a7b89a05dfb31a8e"
+    },
+    {
+      "path": "sources/keystone_health/scripts/harden_permissions.py",
+      "size": 1419,
+      "sha256": "aa2d1e2397c68672c286a4fa651ab2c65851c85079ad1ecac108a5987f078a05"
+    },
+    {
+      "path": "sources/keystone_health/scripts/medical_debt_cms.py",
+      "size": 6802,
+      "sha256": "3690c29cd9256a106a853efbc251b791c7caab0ab71e81f33573ba26841d1f59"
+    },
+    {
+      "path": "sources/keystone_health/scripts/validate_environment.py",
+      "size": 4736,
+      "sha256": "725844081acbfa75eaa7477fca642f4660a94b6b80741c741ef2e0765b63ef59"
+    },
+    {
+      "path": "sources/keystone_health/scripts/validate_schema.py",
+      "size": 1911,
+      "sha256": "2a8044ec3b854fd59d209b276f1489d625d99a639675b7d185ef63ccbb0507a2"
+    },
+    {
+      "path": "sources/keystone_health/scripts/verify_deployment.sh",
+      "size": 4204,
+      "sha256": "b01c8652fc44e2c3a7d0ed233b14d8aaa3ef2abc0c79353e20848800e44e17b5"
+    },
+    {
+      "path": "sources/keystone_health/ship_nsa_dispute_kit.sh",
+      "size": 12220,
+      "sha256": "e3f2f8079e07ee72c5e790ee4e1855a457bbfa2c0586e9cf29a3a550ddf8c348"
+    },
+    {
+      "path": "sources/keystone_health/sources-by-document.md",
+      "size": 24817,
+      "sha256": "2f3710d01fbaa74f0ff43f2b998b04e3e88246c043cd49cb9492c5bb36ab9372"
+    },
+    {
+      "path": "sources/keystone_health/template_dispute_letter",
+      "size": 5250,
+      "sha256": "d99d53bc060775047a826c138bf2514f208437f19c80c222729510202fcbb42d"
+    },
+    {
+      "path": "sources/keystone_health/tests/medical_debt_cms.py",
+      "size": 2805,
+      "sha256": "c6b5c23553fed3bcd2e100403d2bc334652b16d42b82f0ed51d8fee2152adbf7"
+    },
+    {
+      "path": "sources/keystone_health/tests/test_dispatch_work_orders.py",
+      "size": 3002,
+      "sha256": "93d4efd4a839e400ddd11fd703b8a26f574298345834bb967ae0bb1a47934d03"
+    },
+    {
+      "path": "sources/keystone_health/tests/test_medical_debt_cms.py",
+      "size": 3465,
+      "sha256": "68dd723b83b889424a8e6949a02b293626937fc470c959be92f6cbe06618ee94"
+    },
+    {
       "path": "sources/keystone_pdf_text/Healthcare Compliance CSV Finalization.txt",
       "size": 45135,
       "sha256": "48e1b98bccd49b3cc24a39a2452c81353fe70dc690cb753fe67662fb57529088"
@@ -11330,6 +11882,76 @@
       "path": "sources/pa_nov2026_review/20261111_005719/work_dir_backup.bundle",
       "size": 1807586,
       "sha256": "06670a59e04ea8f3a1c5cb91a1352ac1389ce6130572152f27067a5b823bec76"
+    },
+    {
+      "path": "sources/pa_ra_onepagers/MANIFEST.sha256",
+      "size": 1428,
+      "sha256": "6a303bc66152af85a2344c3dbbf436baf488983f11f164fbf1eed7224860b534"
+    },
+    {
+      "path": "sources/pa_ra_onepagers/README.md",
+      "size": 4052,
+      "sha256": "e32338e56c1c07fab5c34955b5571fe6098b25180f853a8c129ae4dba11818bd"
+    },
+    {
+      "path": "sources/pa_ra_onepagers/build_one_pagers.py",
+      "size": 28734,
+      "sha256": "9914eace7117fe3738cc5bd12278eba6af36cc0acdf8c390e47ad60a6d73418f"
+    },
+    {
+      "path": "sources/pa_ra_onepagers/data/derived_area_metrics.json",
+      "size": 113091,
+      "sha256": "66ddd667a2c4abeaa70092e10ebc5455c7ba80cdaf3e3871afead98bc3b55799"
+    },
+    {
+      "path": "sources/pa_ra_onepagers/data/pa_ra_dataset.json",
+      "size": 25839,
+      "sha256": "d262e7d4fe6ad05904b0e90261819803eab57290dc3826377270d88cff386870"
+    },
+    {
+      "path": "sources/pa_ra_onepagers/one_pagers/PA_RA1_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 8563,
+      "sha256": "225eb282e35bee300116429a658475ed4d2256acce6f4a37a889c12dbae546fb"
+    },
+    {
+      "path": "sources/pa_ra_onepagers/one_pagers/PA_RA2_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 8700,
+      "sha256": "2975a651a31a97d022b7f536ea64fa8c9ed785d4997ed83f6c975f82c4447111"
+    },
+    {
+      "path": "sources/pa_ra_onepagers/one_pagers/PA_RA3_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9483,
+      "sha256": "8691c9c7f47b49714677da9aa949b2b60498706ab185a18ce898322d50b5c4e6"
+    },
+    {
+      "path": "sources/pa_ra_onepagers/one_pagers/PA_RA4_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 8447,
+      "sha256": "8a6b5b32f6868e5aa03e1fb9451babeaeb9b90b359afa7edee589d4955ec1c05"
+    },
+    {
+      "path": "sources/pa_ra_onepagers/one_pagers/PA_RA5_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 8927,
+      "sha256": "61a5e6b2282d86c36d741a48d27d66a03e2ee4fc8fae8654a7e9df0a3e8576ad"
+    },
+    {
+      "path": "sources/pa_ra_onepagers/one_pagers/PA_RA6_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9643,
+      "sha256": "f22b533a75c06584b96f6ad501cbd7f5d00c79dbf7a567330a58b80e962082cf"
+    },
+    {
+      "path": "sources/pa_ra_onepagers/one_pagers/PA_RA7_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9111,
+      "sha256": "9d18b350c8855808642a813b61c4e16b2df4b2451e2e5120a621bf66d6b981b7"
+    },
+    {
+      "path": "sources/pa_ra_onepagers/one_pagers/PA_RA8_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9196,
+      "sha256": "21abc5b5007c246ba1a948116414880431f0215909888608fb848af889930c26"
+    },
+    {
+      "path": "sources/pa_ra_onepagers/one_pagers/PA_RA9_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9165,
+      "sha256": "1c26d273c8d482497a104f75ff3c7adce0c9671aeb5979e01ed2b4dc798b69b1"
     },
     {
       "path": "sources/pa_ra_onepagers/pa_ra_onepagers/MANIFEST.sha256",

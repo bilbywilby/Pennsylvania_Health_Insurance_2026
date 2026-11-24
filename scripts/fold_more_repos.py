@@ -16,6 +16,8 @@ CANDIDATES = [
     pathlib.Path.home() / "pa_audit_bundle",
     pathlib.Path.home() / "Keystone_Health",
     pathlib.Path.home() / "keystone-health-advocate-pa-medical-rights-wiki-forensic-tool",
+    pathlib.Path.home() / "pa_ra_onepagers" / "pa_ra_onepagers",
+    pathlib.Path.home() / "projects" / "keystone_health",
 ]
 
 IGNORE_NAMES = {".git", "__pycache__", ".pytest_cache", "node_modules", ".venv", "venv"}
