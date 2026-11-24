@@ -119,3 +119,36 @@ def test_addon_validator_smoke(tmp_path: Path):
     assert result["manifest_digest_ok"] is True
     assert result["mismatched"] == []
     assert result["addon_files_checked"] == 1
+
+
+def test_cross_validator_build_default_checks_empty_root(tmp_path: Path):
+    checks = cross_validator.build_default_checks(tmp_path)
+    assert len(checks) == 2
+    assert all(item["status"] == "skipped" for item in checks)
+
+
+def test_cross_validator_semantic_area_counts(tmp_path: Path):
+    one_dir = tmp_path / "sources" / "pa_ra_onepagers" / "data"
+    umb_dir = tmp_path / "sources" / "animated-umbrella" / "data"
+    one_dir.mkdir(parents=True)
+    umb_dir.mkdir(parents=True)
+
+    (one_dir / "pa_ra_dataset.json").write_text(
+        json.dumps({"areas": {"1": ["A", "B"], "2": ["C"]}}),
+        encoding="utf-8",
+    )
+    (one_dir / "derived_area_metrics.json").write_text(
+        json.dumps({"areas": {"1": {"n_counties": 2}, "2": {"n_counties": 1}}}),
+        encoding="utf-8",
+    )
+    (umb_dir / "pa_ra_dataset.json").write_text(
+        json.dumps({"areas": {"1": ["A"], "2": ["C"]}}),
+        encoding="utf-8",
+    )
+
+    checks = cross_validator.build_default_checks(tmp_path)
+    by_name = {item["name"]: item for item in checks}
+    assert by_name["onepagers_ra_dataset_vs_area_metrics"]["status"] == "ok"
+    assert by_name["onepagers_ra_dataset_vs_area_metrics"]["shared_numeric_keys"] == 2
+    assert by_name["umbrella_ra_dataset_vs_onepagers_metrics"]["status"] == "mismatch"
+    assert len(by_name["umbrella_ra_dataset_vs_onepagers_metrics"]["mismatches"]) == 1

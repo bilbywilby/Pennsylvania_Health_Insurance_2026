@@ -13830,8 +13830,8 @@
     },
     {
       "path": "addons/tests/test_addons.py",
-      "sha256": "051f9aabcb36059e45568fa14a7696a0bdb084e9085be9e18891ca9e4620e965",
-      "size": 4509
+      "sha256": "c09b8f7119ea38b7e15253620f198859e32b0c5026fdb630e411f6b01e975325",
+      "size": 5899
     },
     {
       "path": "addons/tests/conftest.py",
