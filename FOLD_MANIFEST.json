@@ -20,7 +20,7 @@
   ],
   "split_count": 0,
   "splits": [],
-  "file_count": 1996,
+  "file_count": 2011,
   "files": [
     {
       "path": "sources/Keystone_Health/.github/dependabot.yml",
@@ -631,6 +631,11 @@
       "path": "sources/Pennsylvania_Health_Insurance_November_2026/scripts/_folded_staging/pa_audit__scripts_full_audit.py",
       "size": 20467,
       "sha256": "57be68369f5479e5822cc9279d1599b367d9e0116e7dc9a4737bbae401530d53"
+    },
+    {
+      "path": "sources/Pennsylvania_Health_Insurance_November_2026/scripts/_folded_staging/pa_audit__src_pa_audit___init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "path": "sources/Pennsylvania_Health_Insurance_November_2026/scripts/_folded_staging/pa_audit__src_pa_audit___main__.py",
@@ -9458,6 +9463,21 @@
       "sha256": "8c5158acf7fc1e8a053693b7ac3f1b1d9c919187f3127dab6e2af144e9f7dafb"
     },
     {
+      "path": "sources/keystone_health/Pennsylvania Medical Bill Defense Toolkit (1).pdf",
+      "size": 156648,
+      "sha256": "ddb378db1baa35f2b60a1e7d1a82e18b290e2d3d30b72c7c99f29cd38c6508eb"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Medical Bill Defense Toolkit (2).pdf",
+      "size": 141031,
+      "sha256": "f20e80cd3151836cf8d2cb0eb3ee0ba75fedd46c474b3e33ab4f44c009efa276"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Medical Bill Defense Toolkit (3).md",
+      "size": 15597,
+      "sha256": "629f606743508611141776f8248d39e1a4765faf379ec80737958dd53c487d15"
+    },
+    {
       "path": "sources/keystone_health/Pennsylvania Medical Bill Defense Toolkit.docx",
       "size": 17045,
       "sha256": "615ea7c04927376bb1970d15809fc02aca445bda99516ce8c8320c1a167445c4"
@@ -9471,6 +9491,16 @@
       "path": "sources/keystone_health/Pennsylvania Medical Debt Defense Framework",
       "size": 13291,
       "sha256": "cdb51c2d61ebd6be92ecfbdaacd1e0f87e362fc0034e7e89f3605cb5ad84ab6b"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Medical Debt Defense Framework (Rev. 2 \u2014 05 Nov 2026)",
+      "size": 13999,
+      "sha256": "338a9b216fb95f8fcfda70462034964be5afdfe4ca60c7621cedd54a5881e69d"
+    },
+    {
+      "path": "sources/keystone_health/Pennsylvania Medical Debt Defense Framework (Rev. 4.1 \u2014 05 Nov 2026)",
+      "size": 16836,
+      "sha256": "df42ba7d7afac0368ea16723f30d6a0d3a3b5800f7ecbbd63735e0fd49b33fec"
     },
     {
       "path": "sources/keystone_health/Pennsylvania Medical Debt Defense Framework.md",
@@ -9646,6 +9676,16 @@
       "path": "sources/keystone_health/scripts/dispatch_work_orders.py",
       "size": 5251,
       "sha256": "d96d59c8b6bda696c02cd61da04ca4c48e726260b9ff47e7247da3fbe0da5d8d"
+    },
+    {
+      "path": "sources/keystone_health/scripts/dispatch_work_orders.py new",
+      "size": 5585,
+      "sha256": "85b560c2a11d23f2fd3230af8358a2c33dd13544a3cf052e59dbfcd9103f0411"
+    },
+    {
+      "path": "sources/keystone_health/scripts/dispatch_work_orders.py new 2",
+      "size": 3949,
+      "sha256": "1becb1198220fe6e2c4e3c3cb2cf55d8c573c4f493e603264a70be434990ef62"
     },
     {
       "path": "sources/keystone_health/scripts/generate_notices.py",
@@ -9991,6 +10031,41 @@
       "path": "sources/pixel_opsec_audit.sh",
       "size": 4545,
       "sha256": "a2ceddad1a8427cb64760aa65e4b169196d8edd458545ff5d62dc916ca2bae18"
+    },
+    {
+      "path": "sources/projects/keystone_health/Pennsylvania Medical Bill Defense Toolkit (1).pdf",
+      "size": 156648,
+      "sha256": "ddb378db1baa35f2b60a1e7d1a82e18b290e2d3d30b72c7c99f29cd38c6508eb"
+    },
+    {
+      "path": "sources/projects/keystone_health/Pennsylvania Medical Bill Defense Toolkit (2).pdf",
+      "size": 141031,
+      "sha256": "f20e80cd3151836cf8d2cb0eb3ee0ba75fedd46c474b3e33ab4f44c009efa276"
+    },
+    {
+      "path": "sources/projects/keystone_health/Pennsylvania Medical Bill Defense Toolkit (3).md",
+      "size": 15597,
+      "sha256": "629f606743508611141776f8248d39e1a4765faf379ec80737958dd53c487d15"
+    },
+    {
+      "path": "sources/projects/keystone_health/Pennsylvania Medical Debt Defense Framework (Rev. 2 \u2014 05 Nov 2026)",
+      "size": 13999,
+      "sha256": "338a9b216fb95f8fcfda70462034964be5afdfe4ca60c7621cedd54a5881e69d"
+    },
+    {
+      "path": "sources/projects/keystone_health/Pennsylvania Medical Debt Defense Framework (Rev. 4.1 \u2014 05 Nov 2026)",
+      "size": 16836,
+      "sha256": "df42ba7d7afac0368ea16723f30d6a0d3a3b5800f7ecbbd63735e0fd49b33fec"
+    },
+    {
+      "path": "sources/projects/keystone_health/scripts/dispatch_work_orders.py new",
+      "size": 5585,
+      "sha256": "85b560c2a11d23f2fd3230af8358a2c33dd13544a3cf052e59dbfcd9103f0411"
+    },
+    {
+      "path": "sources/projects/keystone_health/scripts/dispatch_work_orders.py new 2",
+      "size": 3949,
+      "sha256": "1becb1198220fe6e2c4e3c3cb2cf55d8c573c4f493e603264a70be434990ef62"
     },
     {
       "path": "sources/run_health_repos.sh",
