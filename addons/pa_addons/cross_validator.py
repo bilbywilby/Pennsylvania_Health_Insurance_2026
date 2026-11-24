@@ -39,24 +39,27 @@ def check_all(items: list[dict[str, object]]) -> dict[str, object]:
             "passed": len(results) - len(failed), "results": results}
 
 
-def _extract_numeric_map(payload: object, prefix: str = "") -> dict[str, float]:
-    """Flatten nested dicts/lists into dotted numeric key -> float pairs."""
-    out: dict[str, float] = {}
-    if isinstance(payload, dict):
-        for key, val in payload.items():
-            path = f"{prefix}.{key}" if prefix else str(key)
-            if isinstance(val, (int, float)) and not isinstance(val, bool):
-                out[path] = float(val)
-            elif isinstance(val, (dict, list)):
-                out.update(_extract_numeric_map(val, path))
-    elif isinstance(payload, list):
-        for idx, val in enumerate(payload):
-            path = f"{prefix}[{idx}]"
-            if isinstance(val, (int, float)) and not isinstance(val, bool):
-                out[path] = float(val)
-            elif isinstance(val, (dict, list)):
-                out.update(_extract_numeric_map(val, path))
-    return out
+def _area_county_count_pairs(
+    ds_payload: object, metrics_payload: object
+) -> list[tuple[str, float, float]]:
+    """Pair rating-area county list lengths in dataset with n_counties in metrics."""
+    if not isinstance(ds_payload, dict) or not isinstance(metrics_payload, dict):
+        return []
+    ds_areas = ds_payload.get("areas")
+    m_areas = metrics_payload.get("areas")
+    if not isinstance(ds_areas, dict) or not isinstance(m_areas, dict):
+        return []
+
+    pairs: list[tuple[str, float, float]] = []
+    for area_id in sorted(set(ds_areas) & set(m_areas)):
+        ds_entry = ds_areas[area_id]
+        m_entry = m_areas[area_id]
+        if not isinstance(ds_entry, list) or not isinstance(m_entry, dict):
+            continue
+        n_counties = m_entry.get("n_counties")
+        if isinstance(n_counties, (int, float)) and not isinstance(n_counties, bool):
+            pairs.append((f"area[{area_id}].n_counties", float(len(ds_entry)), float(n_counties)))
+    return pairs
 
 
 def build_default_checks(repo_root: str | os.PathLike[str]) -> list[dict[str, object]]:
@@ -93,26 +96,29 @@ def build_default_checks(repo_root: str | os.PathLike[str]) -> list[dict[str, ob
 
         left_data = json.loads(left_path.read_text(encoding="utf-8"))
         right_data = json.loads(right_path.read_text(encoding="utf-8"))
-        left_nums = _extract_numeric_map(left_data)
-        right_nums = _extract_numeric_map(right_data)
+        pairs = _area_county_count_pairs(left_data, right_data)
 
-        shared_keys = sorted(set(left_nums) & set(right_nums))
         mismatches: list[dict[str, object]] = []
-        for key in shared_keys:
-            if abs(left_nums[key] - right_nums[key]) > 1e-6:
+        for metric_key, left_val, right_val in pairs:
+            if abs(left_val - right_val) > 1e-6:
                 mismatches.append(
                     {
-                        "key": key,
-                        "left": left_nums[key],
-                        "right": right_nums[key],
+                        "key": metric_key,
+                        "left": left_val,
+                        "right": right_val,
                     }
                 )
 
+        status = (
+            "no_overlap"
+            if not pairs
+            else ("ok" if not mismatches else "mismatch")
+        )
         checks.append(
             {
                 "name": name,
-                "status": "ok" if not mismatches else "mismatch",
-                "shared_numeric_keys": len(shared_keys),
+                "status": status,
+                "shared_numeric_keys": len(pairs),
                 "mismatches": mismatches,
             }
         )
