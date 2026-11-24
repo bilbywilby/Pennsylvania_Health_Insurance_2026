@@ -78,7 +78,6 @@ export function AppealWizard() {
     },
     [AppealIssue.INTEREST_RATE]: {
       pathwayKey: "medical_debt_collection",
-      deadlineKey: "pa_medical_debt_interest_cap",
       routeKey: "collection_threat",
     },
     [AppealIssue.PHARMACY_TIER_EXCEPTION]: {
