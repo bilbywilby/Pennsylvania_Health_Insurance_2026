@@ -8,13 +8,22 @@ import pytest
 from unittest.mock import patch, Mock
 import json
 import datetime as dt
-from medical_debt_cms import (
-    load_debts,
-    classify_risk,
-    build_payload,
-    _idempotency_key,
-    current_date,
-)
+import importlib.util
+from pathlib import Path as _Path
+import os as _os
+
+_os.environ.setdefault("DISPATCH_WEBHOOK_URL", "https://example.invalid/webhook")
+_SCRIPT_PATH = _Path(__file__).resolve().parent.parent / "scripts" / "medical_debt_cms.py"
+_SPEC = importlib.util.spec_from_file_location("_keystone_medical_debt_cms", _SCRIPT_PATH)
+assert _SPEC is not None and _SPEC.loader is not None
+_mod = importlib.util.module_from_spec(_SPEC)
+_SPEC.loader.exec_module(_mod)
+
+load_debts = getattr(_mod, '_idempotency_key') if 'load_debts' == '_idempotency_key' and not hasattr(_mod, '_idempotency_key') else getattr(_mod, 'load_debts')
+classify_risk = getattr(_mod, '_idempotency_key') if 'classify_risk' == '_idempotency_key' and not hasattr(_mod, '_idempotency_key') else getattr(_mod, 'classify_risk')
+build_payload = getattr(_mod, '_idempotency_key') if 'build_payload' == '_idempotency_key' and not hasattr(_mod, '_idempotency_key') else getattr(_mod, 'build_payload')
+_idempotency_key = getattr(_mod, '_idempotency_key') if '_idempotency_key' == '_idempotency_key' and not hasattr(_mod, '_idempotency_key') else getattr(_mod, '_idempotency_key')
+current_date = getattr(_mod, '_idempotency_key') if 'current_date' == '_idempotency_key' and not hasattr(_mod, '_idempotency_key') else getattr(_mod, 'current_date')
 
 @pytest.fixture
 def sample_debts() -> list[dict]:
