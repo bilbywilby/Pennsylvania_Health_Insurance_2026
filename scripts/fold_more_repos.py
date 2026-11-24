@@ -20,7 +20,21 @@ CANDIDATES = [
     pathlib.Path.home() / "projects" / "keystone_health",
 ]
 
-IGNORE_NAMES = {".git", "__pycache__", ".pytest_cache", "node_modules", ".venv", "venv"}
+IGNORE_NAMES = {
+    ".git",
+    "__pycache__",
+    ".pytest_cache",
+    "node_modules",
+    ".venv",
+    "venv",
+    "dispatch_work_orders.py new",
+    "dispatch_work_orders.py new 2",
+    "Pennsylvania Medical Bill Defense Toolkit (1).pdf",
+    "Pennsylvania Medical Bill Defense Toolkit (2).pdf",
+    "Pennsylvania Medical Bill Defense Toolkit (3).md",
+    "Pennsylvania Medical Debt Defense Framework (Rev. 2 — 05 Nov 2026)",
+    "Pennsylvania Medical Debt Defense Framework (Rev. 4.1 — 05 Nov 2026)",
+}
 
 def sha256_file(path: pathlib.Path) -> str:
     h = hashlib.sha256()
