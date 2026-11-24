@@ -9,9 +9,14 @@
     "sources/Keystone_Health",
     "sources/keystone-health-advocate-pa-medical-rights-wiki-forensic-tool",
     "sources/pa_ra_onepagers",
-    "sources/keystone_health"
+    "sources/keystone_health",
+    "sources/ez_multi_repo",
+    "sources/goldenfoss-staging",
+    "sources/handover_session_20261106"
   ],
-  "file_count": 2491,
+  "split_count": 0,
+  "splits": [],
+  "file_count": 2501,
   "files": [
     {
       "path": "sources/Keystone_Health/.github/dependabot.yml",
@@ -7049,9 +7054,59 @@
       "sha256": "b84dc097ccccaf3378f3a3d8094f150e6ae3025c8afa2d4e7763db5dc4fcf619"
     },
     {
+      "path": "sources/ez_multi_repo/README.md",
+      "size": 6446,
+      "sha256": "098563a76da38f7d7632dafd22480e3f7ae3d3de1f1bd83588dd763bfb3138bf"
+    },
+    {
+      "path": "sources/ez_multi_repo/Termux_settup.txt",
+      "size": 617,
+      "sha256": "68127f23d4cbe7bb67a74bcb29a1a67f9773af6d4c8c28c265a51ebc224f80a8"
+    },
+    {
+      "path": "sources/ez_multi_repo/ez_address/cli.py",
+      "size": 731,
+      "sha256": "c30333b454746fa206c3527507b51c3f1eceefe2470d712737c77aea4f43a9cb"
+    },
+    {
       "path": "sources/fix_pixel_audit.sh",
       "size": 1792,
       "sha256": "bbbc091865520365c929cda7184e1a8fbd2b1abb6bcf7766e6a7f5438fadfd0e"
+    },
+    {
+      "path": "sources/goldenfoss-staging/.gitignore",
+      "size": 98,
+      "sha256": "2d039c8db530e538f1d9f099f9bfe9545f0cd231c7a8f837e4ff093178f5554b"
+    },
+    {
+      "path": "sources/goldenfoss-staging/env_audit_20261105_184818.txt",
+      "size": 3309,
+      "sha256": "2874f0cba2b4af8f92cd03d5eca9d1da9922331b764379f3706a93a660148d94"
+    },
+    {
+      "path": "sources/goldenfoss-staging/reconcile_goldenfoss.py",
+      "size": 2783,
+      "sha256": "1e2ccbc7a9b2219d81f3cd2c614a5d30055eb73927c5f2b9b78cbbea9788315e"
+    },
+    {
+      "path": "sources/goldenfoss-staging/reconcile_goldenfoss.sh",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "sources/goldenfoss-staging/verify_portal.sh",
+      "size": 771,
+      "sha256": "56d76db421ab2366456619fe8be84f5a8b5a2e8f7e393daec26bed952388ca8b"
+    },
+    {
+      "path": "sources/handover_session_20261106/HANDOVER.json",
+      "size": 32705,
+      "sha256": "d3fcc4dabebc5635e4df8c13f5d13fb7a7950cc9fdd97521dfbe70465a3d1237"
+    },
+    {
+      "path": "sources/handover_session_20261106/verify_handover.py",
+      "size": 1402,
+      "sha256": "b805d24cf852b223ba97c80a1c6576b680e3420dcb87613af8d6f2fe42d34c16"
     },
     {
       "path": "sources/home_audit.py",
