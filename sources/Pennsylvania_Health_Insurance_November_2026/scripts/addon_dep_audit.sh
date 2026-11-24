@@ -6,7 +6,7 @@ echo "=== DEPENDENCY AUDIT (stdlib-only verification) ==="
 python3 << 'PYEOF'
 import ast, sys
 from pathlib import Path
-LOCAL_MODULES = {'advocacy_forensic_math', "advocacy_forensic_math", "build_area_tables", "calc_audit", "generate_handover", "hash_manifest", "validate_packet"}
+LOCAL_MODULES = {"advocacy_forensic_math", "build_area_tables", "calc_audit", "generate_handover", "hash_manifest", "validate_packet"}
 STDLIB = {
     'abc','argparse','array','ast','asyncio','atexit','base64','binascii',
     'bisect','builtins','bz2','calendar','collections','colorsys','configparser',
@@ -47,7 +47,7 @@ for py in sorted(Path('.').rglob('*.py')):
         elif isinstance(node, ast.ImportFrom):
             if node.module:
                 all_imports.add(node.module.split('.')[0])
-LOCAL_MODULES = {'advocacy_forensic_math', '06_provenance_gate', 'build_area_tables', 'calc_audit', 'generate_handover', 'hash_manifest', 'validate_packet'}
+LOCAL_MODULES = {'06_provenance_gate', 'build_area_tables', 'calc_audit', 'generate_handover', 'hash_manifest', 'validate_packet'}
 third_party = sorted(all_imports - STDLIB - LOCAL_MODULES)
 print(f"  Files scanned:  {files_scanned}")
 print(f"  Unique imports: {len(all_imports)}")
