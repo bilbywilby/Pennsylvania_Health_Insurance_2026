@@ -20,7 +20,7 @@
   ],
   "split_count": 0,
   "splits": [],
-  "file_count": 2377,
+  "file_count": 2338,
   "files": [
     {
       "path": "sources/Keystone_Health/.github/dependabot.yml",
@@ -9493,21 +9493,6 @@
       "sha256": "8c5158acf7fc1e8a053693b7ac3f1b1d9c919187f3127dab6e2af144e9f7dafb"
     },
     {
-      "path": "sources/keystone_health/Pennsylvania Medical Bill Defense Toolkit (1).pdf",
-      "size": 156648,
-      "sha256": "ddb378db1baa35f2b60a1e7d1a82e18b290e2d3d30b72c7c99f29cd38c6508eb"
-    },
-    {
-      "path": "sources/keystone_health/Pennsylvania Medical Bill Defense Toolkit (2).pdf",
-      "size": 141031,
-      "sha256": "f20e80cd3151836cf8d2cb0eb3ee0ba75fedd46c474b3e33ab4f44c009efa276"
-    },
-    {
-      "path": "sources/keystone_health/Pennsylvania Medical Bill Defense Toolkit (3).md",
-      "size": 15597,
-      "sha256": "629f606743508611141776f8248d39e1a4765faf379ec80737958dd53c487d15"
-    },
-    {
       "path": "sources/keystone_health/Pennsylvania Medical Bill Defense Toolkit.docx",
       "size": 17045,
       "sha256": "615ea7c04927376bb1970d15809fc02aca445bda99516ce8c8320c1a167445c4"
@@ -9521,16 +9506,6 @@
       "path": "sources/keystone_health/Pennsylvania Medical Debt Defense Framework",
       "size": 13291,
       "sha256": "cdb51c2d61ebd6be92ecfbdaacd1e0f87e362fc0034e7e89f3605cb5ad84ab6b"
-    },
-    {
-      "path": "sources/keystone_health/Pennsylvania Medical Debt Defense Framework (Rev. 2 \u2014 05 Nov 2026)",
-      "size": 13999,
-      "sha256": "338a9b216fb95f8fcfda70462034964be5afdfe4ca60c7621cedd54a5881e69d"
-    },
-    {
-      "path": "sources/keystone_health/Pennsylvania Medical Debt Defense Framework (Rev. 4.1 \u2014 05 Nov 2026)",
-      "size": 16836,
-      "sha256": "df42ba7d7afac0368ea16723f30d6a0d3a3b5800f7ecbbd63735e0fd49b33fec"
     },
     {
       "path": "sources/keystone_health/Pennsylvania Medical Debt Defense Framework.md",
@@ -9706,16 +9681,6 @@
       "path": "sources/keystone_health/scripts/dispatch_work_orders.py",
       "size": 5251,
       "sha256": "d96d59c8b6bda696c02cd61da04ca4c48e726260b9ff47e7247da3fbe0da5d8d"
-    },
-    {
-      "path": "sources/keystone_health/scripts/dispatch_work_orders.py new",
-      "size": 5585,
-      "sha256": "85b560c2a11d23f2fd3230af8358a2c33dd13544a3cf052e59dbfcd9103f0411"
-    },
-    {
-      "path": "sources/keystone_health/scripts/dispatch_work_orders.py new 2",
-      "size": 3949,
-      "sha256": "1becb1198220fe6e2c4e3c3cb2cf55d8c573c4f493e603264a70be434990ef62"
     },
     {
       "path": "sources/keystone_health/scripts/generate_notices.py",
@@ -10173,11 +10138,6 @@
       "sha256": "9c74920f78a2f79cd9b6a769af7be5aed0b8006fbd17f189b09394af94a5b843"
     },
     {
-      "path": "sources/pa_health_repos/Pennsylvania_Health_Insurance_October_2026/README (2).md",
-      "size": 149430,
-      "sha256": "df3f24bb1fc8e3968706a711ce0e03b95c6ee47e9fb81b577eedab31b82c2987"
-    },
-    {
       "path": "sources/pa_health_repos/Pennsylvania_Health_Insurance_October_2026/README.md",
       "size": 153390,
       "sha256": "28b3d8a287d75c4b0d39b49a6b8ece0bace70e19af2593729b79b3c1a6043c82"
@@ -10211,11 +10171,6 @@
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/# PA Insurance.txt",
       "size": 12461,
       "sha256": "236c73dd26cea4dbe8fed7d54a24921248df2b7cad498930cc77ad532f398ddd"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/### PA (1).txt",
-      "size": 7403,
-      "sha256": "a09ff7d8ad4abefe8d0454929f0d129957977c11ceda4de13519dfcfc8f7fc4f"
     },
     {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/--- PA ACA (6).txt",
@@ -10298,11 +10253,6 @@
       "sha256": "ee60a00e3c5cea664d815e118fb4810a04848777e14b5bffeaa3fc80c2898cda"
     },
     {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/02_crosswalk (1).pdf",
-      "size": 16572,
-      "sha256": "cfd08283770eb401e64c773735513f18a52cad3d00a216feb31d41af8d1729d4"
-    },
-    {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/02_crosswalk.py",
       "size": 4991,
       "sha256": "57573d7048daf842ae4787b01a58619fe095c40a5cb97367c9731f5a5e184cc4"
@@ -10321,11 +10271,6 @@
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/05_ingest_carrier_extensions.py",
       "size": 12581,
       "sha256": "6abc67fd21a5f83bc2405109ad58fbb71eaaad2a81fddad43dca027bb0d148a4"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/06_provenance_gate (1).pdf",
-      "size": 34129,
-      "sha256": "6475c986c5ec561ec83e3c46a0e68fa59a61444807a604910ad584744e31d129"
     },
     {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/06_provenance_gate.pdf",
@@ -10658,11 +10603,6 @@
       "sha256": "09f9c1e3b16cbf447545f94fc19c5e2e007f402c6eb05c167391d19017e6de61"
     },
     {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Canonical PA Rating Area Crosswalk (1).py",
-      "size": 2371,
-      "sha256": "34a7de2cfe79d359ebea308735956c600a33c1f6d1ea334da7a455748f9547d5"
-    },
-    {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Carter's OOR Appeal Template.pdf",
       "size": 62446,
       "sha256": "928d8400d8fbca1995820ec194050a7b8bac2360a42932c095253ed1afdb91f8"
@@ -10703,24 +10643,9 @@
       "sha256": "463d467eba9a9766315e3bbf046d5d5ff6c0bcdf7e2d40cce55e6185f1bd781f"
     },
     {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Drop your (1).txt",
-      "size": 34726,
-      "sha256": "5efeaf30b1cffb7eabe6299997df9afbad1631dabb5141a3c9aaa97f206d5631"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Excellent (1).txt",
-      "size": 4090,
-      "sha256": "19ff07437abeb8262fe0af5583db4242cbf965f6a446e5618f83a03f07a08f2e"
-    },
-    {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Ez_Brand-main (4).zip",
       "size": 456540,
       "sha256": "2dcf0866fbf01a895d6eb43924e85fb294100795638d52690f678f59a12d8842"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Filing Loader Test Suite (2).py",
-      "size": 2275,
-      "sha256": "fb90f59c51252b70bd0c7eddc8e8becc6b45dfc475baa557841ed0e1dcbda544"
     },
     {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Filing Loader Test Suite.py",
@@ -10788,16 +10713,6 @@
       "sha256": "6ef0bf16de628bfbebe08f32974082e11a9201cd83d040ba63e496f130913375"
     },
     {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/PA Health Insurance Audit - Stage 2 Analysis Tools (1).txt",
-      "size": 42338,
-      "sha256": "cb9d1a1398563595b83e198388d3f9b073e9c6f2a721780fd6fe5e6d83268142"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/PA Health Insurance Audit Analysis (1).pdf",
-      "size": 164450,
-      "sha256": "9bc4a6ff4921d72372d2ae19d3dcc0451bebaf99a4cfaaf2ce5d2aabce8c7b4f"
-    },
-    {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/PA Health Insurance Audit Analysis.rtf",
       "size": 908048,
       "sha256": "e6fdf0a5432a1b9e652bac9767b1061d4f1863cee14bb175fdb53c9f8fcb3b60"
@@ -10811,21 +10726,6 @@
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/PA Health Insurance Market Audit.pdf",
       "size": 259283,
       "sha256": "6858485d3e4da4fb5be355bc8d5d4a929b9380c3b4840b877b4728f1afc5322a"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/PA Health Insurance Report (1).md",
-      "size": 18786,
-      "sha256": "5883ecfdf86a40cc918f150e39a58a85ee5f9e7c90c66aa8fcee756b36e993e7"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/PA Health Insurance Report (1).pdf",
-      "size": 237557,
-      "sha256": "56f60ce2e5b30511eacc7ed061bbe4797d06e92cb9a2b0bbd99eaa60ba6e41fa"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/PA Health Insurance Report (2).pdf",
-      "size": 169863,
-      "sha256": "9d0b7e9abca49742c72c241639f3fd1e8ecfa8e745dcebc84a9bb28efa39791e"
     },
     {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/PA Health Insurance Report.md",
@@ -10846,16 +10746,6 @@
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/PA RTK Request Operational Guide.pdf",
       "size": 98661,
       "sha256": "91ff5e7d407f92a3c0cffbed99119f3048f26ca456d892d66e9f240edd49a77e"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/PA_Health_Insurance_2026_Verified_Summary (1).pdf",
-      "size": 165604,
-      "sha256": "d30514857c184c9691a7a7e300c7e66ac213220e9e3158500310858eff2fadc5"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/PA_Health_Insurance_Audit_August_2026 (1).pdf",
-      "size": 193438,
-      "sha256": "88d07ade70a5ca1c75f9c42350f9efc950d37060d8c4c537985d8a7b0e80c71a"
     },
     {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/PA_Rating_Area_1_2027_Report.docx",
@@ -10948,11 +10838,6 @@
       "sha256": "fb93d68d0281028c2da368c20c256c1cd0254eda0189baaa2f6ff72688470977"
     },
     {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Pennsylvania_Healthcare_August_2026-main (2).zip",
-      "size": 393045,
-      "sha256": "2ecf878a455811f4696c13cf30005efd3d6edf521b1bf329f196d7a27c238131"
-    },
-    {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Pennsylvania_Healthcare_July_2026-main.zip",
       "size": 3726292,
       "sha256": "7930cc962886d9d3e288fa91c2837c2cabfaf9e51192785ed5f0c59286fd9ecb"
@@ -10961,16 +10846,6 @@
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Policy Audit Checklist \u2013 Pennsylvania Health Insurance  -.pdf",
       "size": 64904,
       "sha256": "d2ec5a749a3261369a52e01aa65c3b712aa17e3f4c3f010ef51a57fa224ab2b8"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Project Documentation (1).pdf",
-      "size": 86508,
-      "sha256": "5692a88fc3e9b65f293ad54b04bd3776cdef9d86364b69aadc94b262f875e40b"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Public Source of Truth Framework (1).md",
-      "size": 3496,
-      "sha256": "e07c70cd4a8b2eb7fa3b69321a133a9ffd95ffe0f6eaf3d0d8b980841bd0b135"
     },
     {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/README.md",
@@ -10996,11 +10871,6 @@
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Rating.txt",
       "size": 1518,
       "sha256": "c033553ea67377424eb22434bfd3aa555e9a88f1c8eda5c3388a650b8816cefc"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Real-Data Arrival Checklist (1).md",
-      "size": 3122,
-      "sha256": "731e7f6b858f44b7016c36baedccefb4f6ae5afbc72c4061003df85c2b8c0180"
     },
     {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Repository Setup Script.py",
@@ -11038,11 +10908,6 @@
       "sha256": "3737c8580661fd7f2bd6a9842f33e9b8f2f249ccb8a422e9909f2939a892ac35"
     },
     {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Section 9 Draft - 2027 Rate Filing & Continued Attrition (1).md",
-      "size": 7011,
-      "sha256": "00c7a83fd9c835f3da81d74011889d83fb8631b29e1a260b9aee0d16bceeca71"
-    },
-    {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Section 9 Draft.md",
       "size": 4501,
       "sha256": "c55e41031b9e84432c6a0382b6d6caa8cf6323cbb265b4bda10c7f6e7e7c83ed"
@@ -11051,11 +10916,6 @@
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Source Reliability Appendix.md",
       "size": 5544,
       "sha256": "b40133f3713e403b38729010cf11e8a99eb31cabf44c0ebefe3a19b70b4c05c8"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Statewide Information Overview (1).pdf",
-      "size": 72960,
-      "sha256": "117a7eb35a3a2d32cbb99e4d765a74adbefc4c2f60963a7a941f915a8d9b2fd5"
     },
     {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/TEMPLATE.profile.example",
@@ -11071,11 +10931,6 @@
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/Test Import Diagnostics & Fix Plan.md",
       "size": 3902,
       "sha256": "8d5568997e1c84abb8815a46f5df880eb8e4ac879aa5fe3fcfefc50f4e3ba4b6"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/The 2026 Pennsylvania Health Insurance State of th... (1).pdf",
-      "size": 107902,
-      "sha256": "ace9dc4e2867e7d6077205f8dc1b3f972a596dd49e8d104c565b452de96e4c94"
     },
     {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/The Current State of Pennsylvania Health Insurance- August 2026 Update.pdf",
@@ -11198,11 +11053,6 @@
       "sha256": "cac1932b3cbd64dcbd1496499e549e80fa6a097454d15d7c8ac1160bcfd0655c"
     },
     {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/opsec_adversarial_critique.md (1).pdf",
-      "size": 98614,
-      "sha256": "fee6912d0dc08dcb2ef60d8ba693b3aa89c77399cc7ac5d8a0ec31be4b7850b7"
-    },
-    {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/pa-health-audit-advocacy-platform-main.zip",
       "size": 239028,
       "sha256": "31357b2836e63357cd59d1981b69aafc1037f80f04210e0c31f5cb81e61dd3a3"
@@ -11226,11 +11076,6 @@
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/pa_crosswalk_data.pdf",
       "size": 26762,
       "sha256": "8a200652518c622f039e70be35d1344b7310f188b7d15cd77d8a1bae68c8d9f3"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/pennsylvania-health-insurance-audit-2026-main (1).zip",
-      "size": 41824,
-      "sha256": "cedae52f8f04df3ac474c6b745e0a2098a19802ef2edef39ad0222426468b120"
     },
     {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/rating_areas_2026.csv",
@@ -11271,11 +11116,6 @@
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/test_carrier_ingestion_integration.py",
       "size": 10353,
       "sha256": "9c9cced4867b73753f57723ec0f7ac2c4a20cd6a16f2c7fd361477173ab5951a"
-    },
-    {
-      "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/{ -task-- (1).txt",
-      "size": 22123,
-      "sha256": "7f5240474442166d90cdb0a04999ba9597ff85266acb903b259b2dc9cef2f90c"
     },
     {
       "path": "sources/pa_health_repos/Pennsylvania_Healthcare_September_2026/{ -task--.txt",
@@ -11628,21 +11468,6 @@
       "sha256": "8c5158acf7fc1e8a053693b7ac3f1b1d9c919187f3127dab6e2af144e9f7dafb"
     },
     {
-      "path": "sources/projects/keystone_health/Pennsylvania Medical Bill Defense Toolkit (1).pdf",
-      "size": 156648,
-      "sha256": "ddb378db1baa35f2b60a1e7d1a82e18b290e2d3d30b72c7c99f29cd38c6508eb"
-    },
-    {
-      "path": "sources/projects/keystone_health/Pennsylvania Medical Bill Defense Toolkit (2).pdf",
-      "size": 141031,
-      "sha256": "f20e80cd3151836cf8d2cb0eb3ee0ba75fedd46c474b3e33ab4f44c009efa276"
-    },
-    {
-      "path": "sources/projects/keystone_health/Pennsylvania Medical Bill Defense Toolkit (3).md",
-      "size": 15597,
-      "sha256": "629f606743508611141776f8248d39e1a4765faf379ec80737958dd53c487d15"
-    },
-    {
       "path": "sources/projects/keystone_health/Pennsylvania Medical Bill Defense Toolkit.docx",
       "size": 17045,
       "sha256": "615ea7c04927376bb1970d15809fc02aca445bda99516ce8c8320c1a167445c4"
@@ -11656,16 +11481,6 @@
       "path": "sources/projects/keystone_health/Pennsylvania Medical Debt Defense Framework",
       "size": 13291,
       "sha256": "cdb51c2d61ebd6be92ecfbdaacd1e0f87e362fc0034e7e89f3605cb5ad84ab6b"
-    },
-    {
-      "path": "sources/projects/keystone_health/Pennsylvania Medical Debt Defense Framework (Rev. 2 \u2014 05 Nov 2026)",
-      "size": 13999,
-      "sha256": "338a9b216fb95f8fcfda70462034964be5afdfe4ca60c7621cedd54a5881e69d"
-    },
-    {
-      "path": "sources/projects/keystone_health/Pennsylvania Medical Debt Defense Framework (Rev. 4.1 \u2014 05 Nov 2026)",
-      "size": 16836,
-      "sha256": "df42ba7d7afac0368ea16723f30d6a0d3a3b5800f7ecbbd63735e0fd49b33fec"
     },
     {
       "path": "sources/projects/keystone_health/Pennsylvania Medical Debt Defense Framework.md",
@@ -11826,16 +11641,6 @@
       "path": "sources/projects/keystone_health/scripts/dispatch_work_orders.py",
       "size": 5251,
       "sha256": "d96d59c8b6bda696c02cd61da04ca4c48e726260b9ff47e7247da3fbe0da5d8d"
-    },
-    {
-      "path": "sources/projects/keystone_health/scripts/dispatch_work_orders.py new",
-      "size": 5585,
-      "sha256": "85b560c2a11d23f2fd3230af8358a2c33dd13544a3cf052e59dbfcd9103f0411"
-    },
-    {
-      "path": "sources/projects/keystone_health/scripts/dispatch_work_orders.py new 2",
-      "size": 3949,
-      "sha256": "1becb1198220fe6e2c4e3c3cb2cf55d8c573c4f493e603264a70be434990ef62"
     },
     {
       "path": "sources/projects/keystone_health/scripts/generate_notices.py",
