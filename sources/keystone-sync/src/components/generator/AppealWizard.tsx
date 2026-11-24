@@ -62,19 +62,58 @@ export function AppealWizard() {
       active = false;
     };
   }, []);
+  const ISSUE_BUNDLE_MAP: Record<
+    string,
+    { pathwayKey?: string; deadlineKey?: string; routeKey?: string }
+  > = {
+    [AppealIssue.BALANCE_BILLING]: {
+      pathwayKey: "surprise_bill",
+      deadlineKey: "nsa_good_faith_estimate_dispute",
+      routeKey: "er_surprise_bill",
+    },
+    [AppealIssue.CLINICAL_FRAMEWORK]: {
+      pathwayKey: "claim_denial",
+      deadlineKey: "erisa_internal_appeal",
+      routeKey: "denied_claim",
+    },
+    [AppealIssue.INTEREST_RATE]: {
+      pathwayKey: "medical_debt_collection",
+      deadlineKey: "pa_medical_debt_interest_cap",
+      routeKey: "collection_threat",
+    },
+    [AppealIssue.PHARMACY_TIER_EXCEPTION]: {
+      pathwayKey: "claim_denial",
+      deadlineKey: "aca_external_review",
+      routeKey: "denied_claim",
+    },
+    [AppealIssue.PRIOR_AUTH]: {
+      pathwayKey: "claim_denial",
+      deadlineKey: "erisa_internal_appeal",
+      routeKey: "denied_claim",
+    },
+  };
+
   const getBundleContext = () => {
     if (!appealBundle) return null;
     const issueKey = String(formData.issue || "");
-    const pathway = appealBundle.pathways?.[issueKey];
-    const deadline = appealBundle.deadline_rules?.[issueKey];
-    const route = appealBundle.routes?.[issueKey];
+    const mapped = ISSUE_BUNDLE_MAP[issueKey] || {};
+    const pathway =
+      appealBundle.pathways?.[mapped.pathwayKey || issueKey] ||
+      appealBundle.pathways?.[issueKey];
+    const deadline =
+      appealBundle.deadline_rules?.[mapped.deadlineKey || issueKey] ||
+      appealBundle.deadline_rules?.[issueKey];
+    const route =
+      appealBundle.routes?.[mapped.routeKey || issueKey] ||
+      appealBundle.routes?.[issueKey];
     const steps = Array.isArray(pathway?.steps)
       ? pathway.steps.map((s) => s?.action).filter((a): a is string => Boolean(a))
       : [];
     return {
       steps,
       days: typeof deadline?.days === "number" ? deadline.days : undefined,
-      authority: deadline?.authority || pathway?.steps?.find((s) => s?.authority)?.authority,
+      authority:
+        deadline?.authority || pathway?.steps?.find((s) => s?.authority)?.authority,
       route,
     };
   };
