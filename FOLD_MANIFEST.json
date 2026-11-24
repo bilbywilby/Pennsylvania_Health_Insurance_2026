@@ -20,7 +20,7 @@
   ],
   "split_count": 0,
   "splits": [],
-  "file_count": 2011,
+  "file_count": 2010,
   "files": [
     {
       "path": "sources/Keystone_Health/.github/dependabot.yml",
@@ -8646,11 +8646,6 @@
       "path": "sources/keystone-sync/prompts/usage.md",
       "size": 5399,
       "sha256": "e58e2ed2a9b49fdd314763bee7692cad6bfe36fe8ad88bf6aa0a379f51028a33"
-    },
-    {
-      "path": "sources/keystone-sync/public/appeal_bundle.json",
-      "size": 4346,
-      "sha256": "6ab36adca7a156557b706551f942c271cc34902fd0aebe452af5f73b964ec517"
     },
     {
       "path": "sources/keystone-sync/public/vite.svg",
