@@ -1,0 +1,6 @@
+version: 2
+updates:
+  - package-ecosystem: "bun"
+    directory: "/sources/keystone-sync"
+    schedule:
+      interval: "weekly"

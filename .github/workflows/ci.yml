@@ -1,0 +1,16 @@
+name: ci
+on: [push]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install
+        working-directory: sources/keystone-sync
+      - run: node scripts/check_appeal_bundle.js
+        working-directory: .
+      - run: bun run typecheck
+        working-directory: sources/keystone-sync
+      - run: bun run build
+        working-directory: sources/keystone-sync

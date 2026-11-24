@@ -1,0 +1,659 @@
+{
+ "handover_version": "2.0",
+ "schema_lineage": "extends handover_version 1.1 (repo bilbywilby/handover). Adds conversation, artifacts, findings, decisions, guardrails, next_actions.",
+ "generated_at": "2026-11-06",
+ "generated_for": "Claude Code resuming work on the operator's Termux phone (primary) and Debian VM",
+ "operator": "bilbywilby",
+ "assistant": "Claude, claude.ai Project _terminal_Master. The 2026-09-11 handover names a different session, 'Carter'.",
+ "secrets_stored_in_file": false,
+ "confidence_legend": {
+  "verified": "seen in operator-pasted terminal output, or reproduced in the assistant sandbox",
+  "reported": "stated by the operator or by a script the operator ran; not independently checked",
+  "inferred": "deduced from names, sizes, mtimes or code reading; may be wrong",
+  "unverified": "claim in a pasted block with no source"
+ },
+ "how_to_use": [
+  "Read guardrails first, then run the read-only checks in verification before any mutating step.",
+  "Treat inferred and unverified items as hypotheses.",
+  "This file names exposure findings about the operator's repos. Keep it local or in a PRIVATE repo, never in a public one.",
+  "Operator style: radical candor, terse when shipping code, deliver the artifact instead of asking; state assumptions in one line and proceed.",
+  "Large heredoc pastes can be mangled in the operator's terminal. Deliver modules of 150 lines or fewer, each with a verify step that prints ok or error and checks line counts and key strings."
+ ],
+ "project_context": {
+  "project": "Termux Master Ultra (TMU): DAG task orchestration framework for Android/Termux and Debian userland",
+  "reference_files": [
+   "CI_test_suite",
+   "Hud (dashboard.py)",
+   "Installed_files",
+   "Terminal_files_2",
+   "Pixel Terminal Master Extensions and Submodules.pdf",
+   "Pixel Terminal Master System Architecture and Memory.pdf"
+  ],
+  "original_roadmap_in_priority_order": [
+   "1 Hardening: validate paths, create dirs at startup, rotating logs and clear exit codes, no shell=True, treat DAG filenames as untrusted.",
+   "2 Dashboard: env-var token auth, CSRF-safe POST /api/run, minimal responsive assets, 0.0.0.0 support, SSE (or websocket fallback) log tail.",
+   "3 Packaging: idempotent install.sh with dependency checks and --dry-run; Makefile or build script producing a dist tarball.",
+   "4 Tests and CI: unit tests for safe_listdir, read_log, human_uptime; dashboard start/stop smoke test; GitHub Actions for lint, tests, release artifact.",
+   "5 Docs: concise README (quick start, env vars, security notes, adding DAGs).",
+   "6 UX: CLI version, list DAGs, last run status per DAG (sqlite or JSON), sample DAG template, examples/README."
+  ],
+  "constraints": [
+   "Python 3.9+",
+   "allowed deps: flask, psutil, requests",
+   "POSIX-friendly",
+   "limited resources"
+  ],
+  "requested_deliverables": [
+   "prioritised plan with effort estimates and first PR",
+   "one fully implemented low-risk patch (token auth on /api/run suggested) with test steps",
+   "checklist for follow-up PRs"
+  ],
+  "status_in_this_conversation": "none delivered; see WS-D"
+ },
+ "environments": {
+  "termux": {
+   "home": "/data/data/com.termux/files/home (verified)",
+   "user": "u0_a399 (verified)",
+   "python": "python3 present; os.link does not exist -> AttributeError (verified)",
+   "disk": "98% used, 2.9 GB free on 2026-11-05 (verified from env dump). Operator since added cleanup_bighunt.sh, cleanup_gui.py, cleanup_reclaim.sh; current free space not recorded.",
+   "home_is_git_repo": "no .git in ~ on 2026-11-06 23:13 (verified). ~/.git-accidental-backup and ~/.git_archive exist (inferred: an accidental home repo was moved aside).",
+   "key_paths": {
+    "~/bin/home_audit.py": "audit tool v2; os.link fix reported by operator, unconfirmed",
+    "~/home_audit.py": "stray 4508-byte file dated Nov 6 21:33, purpose unknown (verified exists)",
+    "~/.audit_logs": "per-run reports; operator git-initialised it on 2026-11-06 (local only, 1 commit)",
+    "~/_quarantine": "link count shows no subdirectories, so batch 20261106_095751 was moved or removed after 10:59 (inferred)",
+    "~/home-archive-staging": "partial leftovers from the two crashed runs; no push ever reached the network",
+    "~/.termux_master": "likely MASTER_STORAGE for the Termux Master framework; contents not reviewed (inferred)",
+    "~/ez_git": "new dir, Nov 6 19:07; operator's tier list shows it public with 5 secret-like tracked paths; relation to the git_superuser_workflow overhaul unknown",
+    "~/tmu-dashboard-auth-patch": "dashboard.py, apply.sh, tests/test_dashboard.py; not reviewed",
+    "~/.wg_private_key": "key file at home root, 24 bytes (too short for a standard WireGuard key; inferred truncated or placeholder). Never archive."
+   }
+  },
+  "debian_vm": {
+   "login": "droid@debian, Debian 13 trixie arm64, Python 3.13 (verified from earlier pastes)",
+   "python_packaging": "pip install is blocked by PEP 668. Use apt python3-xyz, venv (python3-venv installed via pipx deps), or pipx. pytest 8.3.5 installed via apt.",
+   "git": "global core.hooksPath=/home/droid/.config/git-hooks (reported in the 2026-09-11 handover); ~/.git-hooks also exists (verified in earlier listing)",
+   "handover_repo": "/home/droid/handover, remote github.com/bilbywilby/handover.git, branch main (reported)",
+   "home_state": "earlier paste: ~ was an accidental repo with no commits and many untracked dotfiles including credential files. Current state unknown.",
+   "note": "Keystone_Health, Chrombook_crostini_repair_guide, ez_remote are NOT in the VM; they live in Termux. The two environments appear to share no filesystem (inferred)."
+  }
+ },
+ "conversation": {
+  "phases": [
+   {
+    "n": 1,
+    "topic": "Termux Master Ultra roadmap spec",
+    "outcome": "Prioritised task spec received (hardening, dashboard auth/CSRF/SSE, install.sh, CI, docs, UX). Plan, one patch and PR checklist were NOT delivered here; the archive task took over."
+   },
+   {
+    "n": 2,
+    "topic": "Organise, audit and archive the home directory to GitHub",
+    "outcome": "Warned against git add -A in a home dir that is a repo. Delivered home_audit.py v1; tested on a synthetic home."
+   },
+   {
+    "n": 3,
+    "topic": "Termux find-style dump (98% disk)",
+    "outcome": "Discovered two separate environments. Delivered v2: junk and empty-dir detection, PII patterns, size cap and disk guard, --exclude, per-environment branch, visibility, third-party and tracked-secret checks."
+   },
+   {
+    "n": 4,
+    "topic": "Operator ran v2 in Termux",
+    "outcome": "Audit worked; quarantine moved 34 items; stage and push crashed on os.link. Assistant supplied a fix and priority actions."
+   },
+   {
+    "n": 5,
+    "topic": "Brainstorm: overhaul git_superuser_workflow.sh",
+    "outcome": "Pasted ENHANCED3 script was cut off mid local_snapshot. Eight bugs reproduced in a sandbox. Design defaults proposed; none confirmed by the operator."
+   },
+   {
+    "n": 6,
+    "topic": "Operator's own remediation run (~23:15) and this handover",
+    "outcome": "Operator wrote a markdown handover and git-initialised ~/.audit_logs. See operator_actions."
+   }
+  ],
+  "assistant_errors_acknowledged": [
+   "Said the os.link failure would fall back to copying. It raised AttributeError, which the fallback did not catch.",
+   "Implied three repos were lost. They were in the Termux home; the earlier shell was the Debian VM.",
+   "Advised excluding personal and evidence directories from the archive without noting that this leaves them with no backup. The operator flagged the gap in their own queue (item 7)."
+  ],
+  "operator_actions": [
+   "Ran a Python heredoc at ~23:15 that wrote a markdown handover to ~/.audit_logs/home_audit_20261106_231542/handover (file name has no extension).",
+   "Git-initialised ~/.audit_logs with .gitignore listing AUDIT.md, SKIPPED.txt, *.tmp and committed only that handover file. audit.json is NOT ignored and carries the same sensitive inventory.",
+   "Their handover reports: os.link patched with a copy2 fallback, FileExistsError re-raised, .bak kept, py_compile OK (reported, unconfirmed). ~/bin last changed at 09:57, before the crash, so a .bak written inside ~/bin after it would have moved that mtime (inferred; check)."
+  ],
+  "operator_preferences": [
+   "Prefers atomic scripts delivered as heredocs, pure Python or bash, with a trailing chmod and a verify step printing ok or error.",
+   "Zero external dependencies where possible; Python stdlib; FOSS licences.",
+   "Does not want clarifying questions when a default can be stated and used."
+  ]
+ },
+ "artifacts": {
+  "home_audit_py": {
+   "path": "~/bin/home_audit.py",
+   "version": "v2 as delivered, 523 lines",
+   "sha256_as_delivered": "8a986310563615e7307f40a58858fbb94d552b7fa0461fb62d854c225ca9f55c",
+   "sha256_with_assistant_patch": "ce6ccfd7799ee1b1400c40070597c96e69022c9da40514fcb17e9da9e07c22ee",
+   "hash_note": "Reference hashes of the delivered text. The operator's file already differs if their own patch was applied. Compare line numbers first.",
+   "evidence_operator_copy_matched_v2": "Traceback lines 348 (os.link), 365 (put call), 512 (stage call), 523 (main) matched the delivered file exactly (verified).",
+   "modes": [
+    "audit (default, read-only, calls the unauthenticated GitHub API for repo visibility)",
+    "--quarantine-junk (moves JUNK and EMPTY to ~/_quarantine/<ts>)",
+    "--stage",
+    "--push"
+   ],
+   "flags": [
+    "--exclude GLOB (repeatable)",
+    "--max-mb N (default 200)",
+    "--branch NAME (default termux or debian)",
+    "--owner",
+    "--repo (default home-archive)",
+    "--stage-dir"
+   ],
+   "exit_codes": {
+    "0": "ok",
+    "3": "secret gate tripped",
+    "4": "repo not verifiably private or not reachable",
+    "5": "git failure",
+    "6": "size or disk cap"
+   },
+   "push_gates": [
+    "final re-scan of the staging tree",
+    "GitHub API must return 404 (not public)",
+    "authenticated git ls-remote must succeed",
+    "no force push",
+    "global hooks are not bypassed"
+   ],
+   "classes": [
+    "SECRET",
+    "LEFTOVER",
+    "JUNK",
+    "EMPTY",
+    "CONFIG",
+    "OUTPUT",
+    "PROJECT",
+    "SCRIPT",
+    "OTHER",
+    "SYMLINK"
+   ],
+   "pending_patch": {
+    "where": "put() inside stage()",
+    "old": "        except OSError:\n            shutil.copy2(src, dst)\n",
+    "new": "        except (OSError, AttributeError):   # Termux Python has no os.link -> plain copy\n            shutil.copy2(src, dst)\n",
+    "tested": "yes, with os.link deleted from the os module (assistant sandbox)"
+   },
+   "known_limitations": [
+    "Generic password/token content rule produces false positives on code (dashboard.py, bootstrap_ez_vlc_android.sh were blocked).",
+    "PII check is regex only: SSN-shaped, DOB and account/claim-number shapes. Names and addresses are not detected.",
+    "History check is by file NAME only and uses local history, which can differ from the public state after a local rewrite or unpushed commit.",
+    "Non-git activity labels use mtime, which a restore can reset.",
+    "Zero-byte extensionless files (Bootstrapping, Environment, FETCH_HEAD) are classed OTHER, not JUNK.",
+    ".wg_private_key is not in SECRET_NAMES; it is only kept out of the archive because dotfiles are CONFIG.",
+    "EXPECTED includes 'handover', which belongs to the Debian VM, so Termux always reports it missing.",
+    "Per-project scans are capped at 3000 files; the unauthenticated API allows about 60 calls per hour."
+   ]
+  }
+ },
+ "audit_results": {
+  "run_20261106_095731": {
+   "confidence": "verified (operator paste)",
+   "counts": "CONFIG 26 | EMPTY 14 | JUNK 20 | LEFTOVER 1 | OTHER 7 | OUTPUT 16 | PROJECT 54 | SCRIPT 75 | SECRET 3",
+   "quarantined": "34 = 14 EMPTY + 20 JUNK moved to ~/_quarantine/20261106_095751; names were not captured",
+   "missing_expected": "handover (expected: it lives in the Debian VM)",
+   "blocked_top_level": [
+    "bootstrap_ez_vlc_android.sh",
+    "dashboard.py",
+    "tmu_probe_20261031_031159.txt"
+   ],
+   "stage_push": "both crashed at os.link before any network write; nothing was pushed"
+  },
+  "run_20261106_231438": {
+   "confidence": "reported (operator handover)",
+   "counts": "CONFIG 26 | LEFTOVER 1 | OTHER 7 | OUTPUT 16 | PROJECT 52 | SCRIPT 79 | SECRET 3",
+   "note": "No EMPTY or JUNK remain after quarantine."
+  },
+  "repos": [
+   {
+    "dir": "Chrombook_crostini_repair_guide",
+    "vis": "public",
+    "status": "UNPUSHED(1)",
+    "tracked_secret_like": 4,
+    "history_secret_like": 6,
+    "note": "inspect the unpushed commit before any push; env_audit dumps and FETCH_HEAD suspected"
+   },
+   {
+    "dir": "Goldenfoss",
+    "vis": "public",
+    "status": "CLEAN",
+    "tracked_secret_like": 4,
+    "history_secret_like": 4
+   },
+   {
+    "dir": "goldenfoss-staging",
+    "vis": "public",
+    "status": "NO-UPSTREAM,DIRTY(1)",
+    "tracked_secret_like": 1,
+    "history_secret_like": 1
+   },
+   {
+    "dir": "capyreader",
+    "vis": "public",
+    "status": "DIRTY(3)",
+    "tracked_secret_like": 9,
+    "history_secret_like": 22,
+    "note": "owner is the operator (fork or copy); likely upstream filenames containing token or keystore (inferred)"
+   },
+   {
+    "dir": "ez_git",
+    "vis": "public",
+    "tracked_secret_like": 5,
+    "history_secret_like": 5,
+    "note": "reported by the operator's tier list; repo clean means already pushed"
+   },
+   {
+    "dir": "Keystone_Health",
+    "vis": "public",
+    "status": "UNPUSHED(1),DIRTY(5)",
+    "tracked_secret_like": 0,
+    "note": "2 untracked env dumps in worktree; not committed"
+   },
+   {
+    "dir": "Keystone_Health_downloadable_files",
+    "vis": "public",
+    "status": "CLEAN",
+    "note": "11 files match content patterns (SSN, DOB, account/claim shapes); false positives from templates not ruled out"
+   },
+   {
+    "dir": "tech-ref-portal",
+    "vis": "public",
+    "status": "NO-UPSTREAM,DIRTY(2 then 3)",
+    "note": "7 sensitive files in the first run, 8 in the operator-reported later run; 6 env dumps seen in the earlier listing"
+   },
+   {
+    "dir": "tech-ref-portal.stale",
+    "vis": "local-only",
+    "status": "LOCAL-ONLY,DIRTY(1)",
+    "tracked_secret_like": 1
+   },
+   {
+    "dir": "ez_mac",
+    "vis": "public",
+    "status": "CLEAN"
+   },
+   {
+    "dir": "ez_multi_repo",
+    "vis": "public",
+    "status": "CLEAN"
+   },
+   {
+    "dir": "netprobe",
+    "vis": "none",
+    "status": "EMPTY-REPO (zero commits)",
+    "note": "contains srv.csr, ext.cnf, ca.srl; no key file found by the scan"
+   },
+   {
+    "dir": "termux_master_ultra",
+    "vis": "none",
+    "status": "LOCAL-ONLY"
+   },
+   {
+    "dir": "atomic_session",
+    "vis": "none",
+    "status": "LOCAL-ONLY"
+   },
+   {
+    "dir": "keystone-health-advocate-pa-medical-rights-wiki-forensic-tool",
+    "vis": "none",
+    "status": "LOCAL-ONLY"
+   }
+  ],
+  "counts_meaning": "tracked and history counts are secret-LIKE FILENAME matches (env_audit_*.txt, FETCH_HEAD, names containing token, secret, passw, credential, key and cert extensions). They are not confirmed credentials."
+ },
+ "known_issues": [
+  {
+   "id": "EXPOSE-001",
+   "priority": "critical",
+   "status": "open",
+   "what": "Public repos track or once tracked secret-like files (Tier A: Chrombook, Goldenfoss, goldenfoss-staging, ez_git, capyreader).",
+   "next": "Run the public mirror check, then count credential-shaped strings in history. Revoke anything found BEFORE scrubbing; a scrub does not un-leak."
+  },
+  {
+   "id": "EXPOSE-002",
+   "priority": "high",
+   "status": "open",
+   "what": "Keystone_Health_downloadable_files is public and 11 files match PII-shaped content patterns.",
+   "next": "Read the report section for that dir; decide template vs real data."
+  },
+  {
+   "id": "EXPOSE-003",
+   "priority": "high",
+   "status": "open",
+   "what": "Tier B repos (Keystone_Health, tech-ref-portal) are one git add -A from publishing env dumps.",
+   "next": "Freeze pushes, add .gitignore entries for env_audit_*.txt and FETCH_HEAD, inspect dirty and unpushed content first."
+  },
+  {
+   "id": "ENVDUMP-001",
+   "priority": "high",
+   "status": "open",
+   "what": "env_audit.sh writes dumps into whatever directory it runs from (about 20 dumps across 6 dirs; the two in ~ are about 90 KB each).",
+   "next": "Change its output to ~/.audit_logs and 0600; inspect one dump for credential-shaped strings, count only."
+  },
+  {
+   "id": "STAGE-001",
+   "priority": "high",
+   "status": "open",
+   "what": "os.link patch applied by the operator is unconfirmed; the stage and push path has never completed.",
+   "next": "py_compile, grep for copy2 and AttributeError, run --stage twice and confirm the second run is clean."
+  },
+  {
+   "id": "BACKUP-001",
+   "priority": "high",
+   "status": "open",
+   "what": "Directories excluded from the GitHub archive (ez_termux_backup_flashdrive, projects, roku and ez_court evidence, tmp, backups) have no redundancy on a near-full phone.",
+   "next": "Encrypted off-device backup (OpenSSL PBKDF2 AES-256 as in crypto.sh, or age) to the flash drive; test a restore."
+  },
+  {
+   "id": "LOCALONLY-001",
+   "priority": "medium",
+   "status": "open",
+   "what": "netprobe has zero commits; termux_master_ultra, atomic_session and the keystone advocacy repo have no remote.",
+   "next": "git status first, then first commit and a private remote per repo."
+  },
+  {
+   "id": "AUDIT-001",
+   "priority": "medium",
+   "status": "open",
+   "what": "~/.audit_logs is a git repo whose .gitignore omits audit.json.",
+   "next": "Use an allow-list ignore: ignore everything except each run's handover file."
+  },
+  {
+   "id": "HOOK-001",
+   "priority": "high",
+   "status": "open",
+   "what": "grep: Invalid range end in Debian VM global hooks (carried from the 2026-09-11 handover).",
+   "next": "In the VM run home_audit.py v2 (its lint_hooks flags descending ranges) or the operator's grep heuristic."
+  },
+  {
+   "id": "HOOK-002",
+   "priority": "medium",
+   "status": "open",
+   "what": "A managed .git/hooks pre-commit is silently ignored when core.hooksPath is set (reproduced).",
+   "next": "Resolve the hooks dir with git rev-parse --git-path hooks."
+  },
+  {
+   "id": "BLOCKED-001",
+   "priority": "low",
+   "status": "open",
+   "what": "dashboard.py, bootstrap_ez_vlc_android.sh, tmu_probe_20261031_031159.txt blocked by content patterns, probably false positives.",
+   "next": "grep BLOCK in the newest AUDIT.md; add a reviewed allow-list that is also honoured by the final gate."
+  },
+  {
+   "id": "RESTORE-001",
+   "priority": "high",
+   "status": "open",
+   "what": "Fresh-clone recovery test for the handover repo never recorded (carried over).",
+   "next": "Clone origin/main into a temp dir and run doctor."
+  },
+  {
+   "id": "TOOL-001",
+   "priority": "medium",
+   "status": "open",
+   "what": "Rebuilt repo-ctl may lack discovery and --plan (carried over).",
+   "next": "Confirm intended command set and add tests."
+  }
+ ],
+ "decisions": {
+  "operator_made": [
+   "Tier A: rotate credentials BEFORE scrubbing history (reported).",
+   "Tier B: freeze, no push until content is inspected (reported).",
+   "Intends a fail-closed content scan gate before staging (reported; v2 already has one in stage() and final_gate())."
+  ],
+  "assistant_proposed_not_confirmed": [
+   "GSW-D1 Python stdlib core plus thin bash shim keeping the CLI; hook stays tiny POSIX sh.",
+   "GSW-D2 Deliver in modules of 150 lines or fewer, each with a verify step.",
+   "GSW-D3 State and reports under ~/.local/state/gsw/<repo>/<ts>/ mode 0700; nothing written to the repo cwd; redacted always.",
+   "GSW-D4 --plan (keep --dry-run alias) and an undo journal in the ez-clikit shape: tool, ts, [(path, sha256, action)], inverse.",
+   "GSW-D5 Resolve hooks dir via git rev-parse --git-path hooks; chain a managed marker block; doctor warns on shadowing.",
+   "GSW-D6 deps is report-only by default; --apply per ecosystem on a gsw/deps-<ts> branch; pip only in a venv.",
+   "GSW-D7 Snapshots: git bundle --all plus working-tree tarball minus secret-like files; relative-path checksum; prune tar and sha as a pair; refuse when the workdir contains the snapshot dir; disk guard.",
+   "GSW-D8 Plain git gc --auto; no compression changes; aggressive and prune=now only behind explicit flags.",
+   "GSW-D9 stdout carries the result (JSON with --json), stderr carries logs; exit codes aligned with home_audit."
+  ]
+ },
+ "workstreams": [
+  {
+   "id": "WS-A",
+   "name": "Home archive to private GitHub repo",
+   "status": "in progress, blocked on STAGE-001 and EXPOSE-001",
+   "tool": "~/bin/home_audit.py"
+  },
+  {
+   "id": "WS-B",
+   "name": "Public exposure remediation",
+   "status": "not started; prior scrub artifacts exist: scripts/scrub_chrombook.sh, scripts/scrub_env_commit.sh, tmp/chrombook-scrub, backups/chrombook-20261101_104658.bundle. Whether a force-push happened on 2026-11-01 is unknown."
+  },
+  {
+   "id": "WS-C",
+   "name": "git_superuser_workflow.sh overhaul",
+   "status": "design done; needs the rest of the source (restore_snapshot, setup_hooks, arg parsing, --check). Operator's chaos suite of 5 cases is the acceptance contract."
+  },
+  {
+   "id": "WS-D",
+   "name": "Termux Master Ultra roadmap (original task)",
+   "status": "deferred; ~/tmu-dashboard-auth-patch exists and is unreviewed"
+  },
+  {
+   "id": "WS-E",
+   "name": "Handover repo items HOOK-001, TOOL-001, RESTORE-001",
+   "status": "open, untouched"
+  },
+  {
+   "id": "WS-F",
+   "name": "Encrypted backup of excluded directories",
+   "status": "not started"
+  }
+ ],
+ "gsw_overhaul": {
+  "source": "git_superuser_workflow.sh version 2025.11.14_ENHANCED3; paste ends mid local_snapshot at a shasum line, so restore, hooks, --check and arg parsing were never reviewed.",
+  "bugs_reproduced_in_sandbox": [
+   "G1 run_or_dry is bash -c with the joined args, so branch names execute: a merged branch named a$(touch${IFS}PWNED)b created the file PWNED.",
+   "G2 Branch cleanup regex '^[* ](main|master|develop|trunk)$' matches one prefix char but git branch prints two: master and develop were deleted and '* main' was passed to git branch -d.",
+   "G3 primary_branch returns 'origin' (not main) when origin/HEAD exists, git 2.43.",
+   "G4 Section 3 of the audit aborts on repos with no origin branches: set -e plus pipefail plus grep -v with empty output exits 1.",
+   "G5 mktemp_dir runs inside command substitution so WF_TMPDIR never reaches the parent: temp dirs are created in the repo cwd and never cleaned.",
+   "G6 safe_stat_size prints the size twice.",
+   "G7 _cmd always exits 0 so the shasum fallback is dead; shasum without -a 256 would be SHA-1.",
+   "G8 With core.hooksPath set, .git/hooks/pre-commit is ignored (commit succeeded despite a blocking hook)."
+  ],
+  "inferred_not_reproduced": [
+   "gitleaks runs without --redact, so raw secret values land in a report inside the repo cwd; the grep fallback prints matched lines and searches for the word key.",
+   "core.compression 0 grows repos on a near-full disk; gc --aggressive --prune=now is heavy on a phone.",
+   "dependency_master upgrades live trees; pip is PEP 668 blocked on the VM.",
+   "Snapshots exclude .git so they are not history backups; a snapshot of $HOME would recurse into ~/.local/snapshots.",
+   "Logs go to stdout so --json output is not clean; JSON is built with printf and sed; prune leaves orphan .sha256 files.",
+   "numfmt_or_human has an awk program with no BEGIN block."
+  ],
+  "commands": [
+   "doctor",
+   "audit",
+   "hooks install|status|uninstall",
+   "snapshot",
+   "restore",
+   "prune",
+   "tidy",
+   "deps",
+   "selftest"
+  ],
+  "tests_to_add_to_the_5_chaos_cases": [
+   "branch-name injection stays inert",
+   "master and develop survive tidy",
+   "audit completes with no remote",
+   "primary branch correct with origin/HEAD set",
+   "no files created in the repo cwd",
+   "a planted fake token never appears in any report",
+   "managed hook runs when core.hooksPath is set",
+   "snapshot refuses when it would contain itself"
+  ],
+  "phases": [
+   "P1 core: exec wrapper, state dir, journal, scanner, doctor, selftest",
+   "P2 audit and hooks",
+   "P3 snapshot, restore, prune",
+   "P4 tidy and deps",
+   "P5 shim and docs"
+  ],
+  "interim_advice": "Do not run git_workflow_optimizer or git_security_audit from ENHANCED3 on repos that matter."
+ },
+ "source_document_findings": {
+  "confidence": "from reading the first-turn documents; nothing executed",
+  "items": [
+   "SD1 The CI suite targets lib/ultra/dashboard.py on 127.0.0.1:5000 with /api/system, /api/runs, an SSE stream, history.db tables dag_runs, task_states, task_events, plus bridge.py and control_watcher.sh. The Hud dashboard.py is a single file on port 8080 with /api/sys (cpu_percent, mem_percent, uptime), /api/dags, /api/logs, /api/run and no DB, SSE or auth. The tests and the dashboard describe different codebases.",
+   "SD2 Hud dashboard: POST /api/run has no auth or CSRF; DAG filenames are inserted unescaped into innerHTML (XSS); master is launched with a list argv, not a shell; log paths use basename.",
+   "SD3 Architecture doc master.sh run does eval on the DTO command string, so the trust model must be documented or argv arrays used.",
+   "SD4 crypto.sh passes the key as -pass pass:<key>, visible in the process list.",
+   "SD5 monitor.sh child sh -c calls log_info and log_err, which are not defined in the child shell.",
+   "SD6 config_set builds a sed expression with unescaped values; scheduler.sh hard-codes a 900000 ms period for every cron shape.",
+   "SD7 The integration test uses [ \"$X\" != *\"pattern\"* ], which compares literally, so it always fails; it also sources libs from a temp storage dir that nothing populates.",
+   "SD8 Debian terminal log: fixupxer-resilience-beta.zip (12 entries) was built on 2026-08-08; install and test status unknown."
+  ]
+ },
+ "guardrails": [
+  "Never run git clean -fd, git reset --hard or rm -rf without a verified git bundle and checksum first.",
+  "Never git add -A or commit from a home directory.",
+  "Do not push any public repo until the exposure check is done; do not push Chrombook's unpushed commit before reading it.",
+  "Never print secret values. Report path, rule and count only.",
+  "Verify a repo is private before pushing an archive. Never force-push without explicit operator approval.",
+  "Rotate credentials before scrubbing history.",
+  "Do not use pip --break-system-packages in the VM; use apt, venv or pipx.",
+  "Termux Python has no os.link; catch AttributeError as well as OSError.",
+  "Write reports and dumps outside repo directories, mode 0600.",
+  "Hold back unverified status blocks. The operator pasted an 'OBLIVION v5' block with deletion-progress, broker and latency figures that no tool in this conversation produced.",
+  "Do not place this file or any audit report in a public repo."
+ ],
+ "next_actions": [
+  {
+   "n": 1,
+   "do": "Verify state (read-only)",
+   "commands": [
+    "wc -l ~/bin/home_audit.py; python3 -m py_compile ~/bin/home_audit.py && echo compiled",
+    "grep -n 'AttributeError\\|copy2' ~/bin/home_audit.py",
+    "ls -la ~/bin ~/_quarantine ~/home-archive-staging",
+    "df -h ~ | tail -1",
+    "git -C ~/Chrombook_crostini_repair_guide log --oneline origin/main..HEAD"
+   ]
+  },
+  {
+   "n": 2,
+   "do": "Public-state check for Tier A (prints paths and a count only)",
+   "commands": [
+    "for r in Chrombook_crostini_repair_guide Goldenfoss goldenfoss-staging ez_git; do",
+    "  u=$(git -C ~/$r remote get-url origin | sed 's#//[^@/]*@#//#'); t=$(mktemp -d); echo \"== $u\"",
+    "  git clone -q --mirror \"$u\" \"$t/m\" && { git -C \"$t/m\" log --all --name-only --format= | sort -u | grep -Ei 'env_audit|FETCH_HEAD|secret|token|passw|credential'; echo \"credential-shaped commits: $(git -C \"$t/m\" log --all --oneline -G'ghp_[A-Za-z0-9]{30}|github_pat_|AKIA[0-9A-Z]{16}|BEGIN [A-Z ]*PRIVATE KEY' | wc -l)\"; }",
+    "  rm -rf \"$t\"",
+    "done"
+   ]
+  },
+  {
+   "n": 3,
+   "do": "If any count is above zero: revoke the affected credentials first, then scrub with git-filter-repo, then force-push only with operator approval."
+  },
+  {
+   "n": 4,
+   "do": "Review Keystone_Health_downloadable_files PII hits",
+   "commands": [
+    "grep -A14 'secret hits in Keystone_Health_downloadable_files' $(ls -t ~/.audit_logs/*/AUDIT.md | head -1)"
+   ]
+  },
+  {
+   "n": 5,
+   "do": "Stage twice, review, then push to a PRIVATE repo",
+   "commands": [
+    "EX=(--exclude capyreader --exclude ez_termux_backup_flashdrive --exclude Goldenfoss --exclude goldenfoss-staging --exclude tech-ref-portal.stale --exclude duck-dev --exclude keystone_extract --exclude Keystone_Health_downloadable_files --exclude projects --exclude 'keystone-health-advocate-*' --exclude roku_failure_evidence --exclude roku-diagnostics --exclude ez_court --exclude cl_else_roku --exclude ez_ip_opsec_audit --exclude opsec-debug --exclude downloads --exclude shh --exclude my-futo-notes --exclude tmp --exclude backups)",
+    "python3 ~/bin/home_audit.py --stage \"${EX[@]}\"   # run twice; second run must not crash",
+    "cat $(ls -t ~/.audit_logs/*/SKIPPED.txt | head -1) | cut -c1-100 | less",
+    "gh repo create bilbywilby/home-archive --private",
+    "python3 ~/bin/home_audit.py --push \"${EX[@]}\""
+   ]
+  },
+  {
+   "n": 6,
+   "do": "Back up the excluded directories with encryption to the flash drive and test a restore (WS-F)."
+  },
+  {
+   "n": 7,
+   "do": "home_audit v2.1: zero-byte extensionless files as JUNK; add .wg_private_key to SECRET_NAMES; make EXPECTED environment-specific; reviewed allow-list honoured by the final gate; history CONTENT scan with count-only output; --exclude for the audit itself."
+  },
+  {
+   "n": 8,
+   "do": "AUDIT-001: set ~/.audit_logs/.gitignore to an allow-list (ignore everything except each run's handover file)."
+  },
+  {
+   "n": 9,
+   "do": "Give netprobe a first commit and give termux_master_ultra, atomic_session and the keystone advocacy repo private remotes. Run git status first."
+  },
+  {
+   "n": 10,
+   "do": "WS-C: obtain the rest of git_superuser_workflow.sh and its chaos suite, then build phase P1."
+  },
+  {
+   "n": 11,
+   "do": "WS-D: review ~/tmu-dashboard-auth-patch and reconcile SD1 before adding CI."
+  },
+  {
+   "n": 12,
+   "do": "Debian VM: resolve HOOK-001, then RESTORE-001 and TOOL-001."
+  }
+ ],
+ "verification": {
+  "read_only_checks": [
+   {
+    "check": "audit tool compiles",
+    "command": "python3 -m py_compile ~/bin/home_audit.py",
+    "expect": "no output, exit 0"
+   },
+   {
+    "check": "tool matches v2",
+    "command": "wc -l ~/bin/home_audit.py",
+    "expect": "523 if unpatched; operator's own patch may change this"
+   },
+   {
+    "check": "nothing was pushed by home_audit",
+    "command": "git -C ~/home-archive-staging remote -v",
+    "expect": "not a repo or no origin; push never reached the network"
+   },
+   {
+    "check": "audit logs repo",
+    "command": "git -C ~/.audit_logs log --oneline",
+    "expect": "one commit adding a handover file"
+   },
+   {
+    "check": "no home repo",
+    "command": "ls -d ~/.git",
+    "expect": "No such file"
+   }
+  ],
+  "handover_file_integrity": "Run verify_handover.py shipped with this file. It prints ok or error."
+ },
+ "open_questions": [
+  "Is the os.link patch applied, and where is the .bak the operator mentioned?",
+  "Did the 2026-11-01 Chrombook scrub get force-pushed? Is the 1 unpushed commit the scrub?",
+  "Do the env dumps contain credentials, and which?",
+  "Is Keystone_Health public by design? Are the 11 PII-shaped hits templates?",
+  "Is capyreader the operator's fork? Is ez_git related to the git_superuser_workflow overhaul?",
+  "Does the private repo bilbywilby/home-archive exist yet?",
+  "Which environments should the gsw rewrite target (Termux, VM, both)?",
+  "Does the operator accept GSW-D1 to GSW-D9? None was explicitly approved.",
+  "What is ~/home_audit.py (4508 bytes, Nov 6 21:33)?",
+  "Is the Debian VM home still an accidental repo?"
+ ],
+ "unverified_claims": [
+  "OBLIVION v5 status block: 'patch integrated', 'quarantine at ~/._quarantine' (actual path is ~/_quarantine), 'staging headroom verified', and 'deletion progress 50%, 24 active / 12 purged, vault, 14.2 ms latency'. No source; unrelated to this audit.",
+  "Operator handover line: 'handover' missing item 'exists to clear it'. The audit checks ~/handover, not a file inside a run directory, so writing it in .audit_logs does not clear it."
+ ],
+ "integrity": {
+  "algorithm": "sha256",
+  "note": "A verify script computes the hash of this file; the expected value is in that script, not here."
+ },
+ "retention": {
+  "keep": "until WS-A, WS-B and WS-C are closed",
+  "location": "~/handover_session_20261106/HANDOVER.json (local; or a PRIVATE repo)"
+ }
+}

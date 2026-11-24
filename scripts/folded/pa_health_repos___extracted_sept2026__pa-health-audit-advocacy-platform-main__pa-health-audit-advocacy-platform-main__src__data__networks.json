@@ -1,0 +1,32 @@
+{
+  "hospital_systems": [
+    {
+      "name": "UPMC Health System",
+      "rating_area": "1",
+      "resilience_rating": 95,
+      "key_counties": ["Allegheny", "Washington", "Beaver"],
+      "headquarters": "Pittsburgh"
+    },
+    {
+      "name": "Geisinger Health",
+      "rating_area": "7",
+      "resilience_rating": 88,
+      "key_counties": ["Luzerne", "Lackawanna", "Montour"],
+      "headquarters": "Danville"
+    },
+    {
+      "name": "Lehigh Valley Health Network (LVHN)",
+      "rating_area": "6",
+      "resilience_rating": 82,
+      "key_counties": ["Lehigh", "Northampton"],
+      "headquarters": "Allentown"
+    },
+    {
+      "name": "Penn Medicine / Independence",
+      "rating_area": "8",
+      "resilience_rating": 91,
+      "key_counties": ["Philadelphia", "Montgomery", "Bucks"],
+      "headquarters": "Philadelphia"
+    }
+  ]
+}
