@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.env
+*.log
+
+node_modules/
+.venv/
+# Archives and bundles
+*.tar.gz
+*.zip
+*.bundle
+
+# Temp and session artifacts
+tmp_onepagers/
+.session-audit/
+# Archives and bundles
+*.tar.gz
+*.zip
+*.bundle
+
+# Temp and session artifacts
+tmp_onepagers/
+.session-audit/
+env_audit_*.txt

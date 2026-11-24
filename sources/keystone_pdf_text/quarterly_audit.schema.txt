@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Keystone quarterly audit checklist",
+    "type": "object",
+    "required": ["audit", "retention_classes", "fail_stop", "controls", "artifacts"],
+    "properties": {
+        "audit": {"type": "object", "required": ["id", "version", "cadence", "evidence_root",
+"status_values"]},
+        "retention_classes": {"type": "array", "minItems": 1, "items": {
+          "type": "object", "required": ["id", "trigger", "years", "basis", "owner"],
+          "properties": {"years": {"type": "integer", "minimum": 1},
+                         "basis": {"enum": ["law", "secondary", "internal_design", "best_practice",
+"case_law"]}}}},
+        "fail_stop": {"type": "array", "items": {"type": "object", "required": ["id", "condition",
+"action", "escalate"]}},
+        "controls": {"type": "array", "minItems": 1, "items": {
+          "type": "object", "required": ["id", "title", "tier", "assertions"],
+          "properties": {"tier": {"enum": [1, 2]},
+            "assertions": {"type": "array", "minItems": 1, "items": {
+              "type": "object", "required": ["id", "claim", "field", "expect", "evidence", "basis"],
+              "properties": {"basis": {"enum": ["law", "secondary", "internal_design",
+"best_practice", "case_law"]}}}}}}},
+        "artifacts": {"type": "array", "items": {"type": "object", "required": ["name", "path",
+"retention", "integrity"]}}
+    }
+}
+
