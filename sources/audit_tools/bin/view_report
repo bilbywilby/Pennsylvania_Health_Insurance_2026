@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+umask 077
+[ -f "$1" ] || { echo "Usage: $0 <report.txt>"; exit 1; }
+w3m -T text/html -dump "$1"

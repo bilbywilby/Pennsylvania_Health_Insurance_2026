@@ -1,0 +1,40 @@
+name: verify
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 11 * * 1"      # Mondays: drift check against PID's live pages
+  workflow_dispatch:
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python3 -m unittest discover -s tests -v
+      - name: rebuild text outputs
+        run: |
+          python3 src/build_audits.py
+          python3 src/build_lookup.py
+      - name: committed audits and lookup page are current
+        run: git diff --exit-code -- audits site
+      - name: numbers gate on published docs
+        run: python3 src/numbers_gate.py wiki/*.md audits/*.md README.md docs/*.md
+  drift:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: compare PID pages with the validated dataset (exit 1 = drift, 2 = could not fetch)
+        run: |
+          rc=0
+          python3 src/refresh_check.py || rc=$?
+          if [ "$rc" -eq 2 ]; then echo "::warning::could not fetch or read PID pages; not a drift verdict"; exit 0; fi
+          exit $rc

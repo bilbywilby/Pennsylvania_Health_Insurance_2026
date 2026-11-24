@@ -10,8 +10,8 @@ os.umask(0o077)
 REPO_ROOT = pathlib.Path.home() / "pa_health_repos" / "PA_Health_Folded_2026"
 SOURCES_DIR = REPO_ROOT / "sources"
 CHUNKS_DIR = REPO_ROOT / "split_chunks"
-SPLIT_THRESHOLD = 1_500_000
-CHUNK_SIZE = 1_000_000
+SPLIT_THRESHOLD = 500_000
+CHUNK_SIZE = 400_000
 
 TEXT_EXTS = {".md", ".txt", ".json", ".csv", ".tsv", ".py", ".sh", ".html", ".htm", ".yaml", ".yml", ".log"}
 
@@ -29,6 +29,10 @@ CANDIDATES = [
     pathlib.Path.home() / "ez_multi_repo",
     pathlib.Path.home() / "goldenfoss-staging",
     pathlib.Path.home() / "handover_session_20261106",
+    pathlib.Path.home() / "October_2026" / "animated-umbrella-PY2027-audit-v1.1.1",
+    pathlib.Path.home() / "animated-umbrella",
+    pathlib.Path.home() / "duck-dev" / "keystone-sync",
+    pathlib.Path.home() / "audit_tools",
 ]
 
 IGNORE_NAMES = {

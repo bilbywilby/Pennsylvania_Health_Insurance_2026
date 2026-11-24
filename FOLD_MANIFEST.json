@@ -12,11 +12,15 @@
     "sources/keystone_health",
     "sources/ez_multi_repo",
     "sources/goldenfoss-staging",
-    "sources/handover_session_20261106"
+    "sources/handover_session_20261106",
+    "sources/animated-umbrella-PY2027-audit-v1.1.1",
+    "sources/animated-umbrella",
+    "sources/keystone-sync",
+    "sources/audit_tools"
   ],
   "split_count": 0,
   "splits": [],
-  "file_count": 2501,
+  "file_count": 2748,
   "files": [
     {
       "path": "sources/Keystone_Health/.github/dependabot.yml",
@@ -6724,6 +6728,21 @@
       "sha256": "2329b7a19166f88ed7b203ac3743780a7ae4d52b363cb080e6cecc992de52f3c"
     },
     {
+      "path": "sources/animated-umbrella/LICENSE",
+      "size": 1067,
+      "sha256": "dda54cc422609d36e7f1f2bfb1a1d93d85f3ab8029f2e12e5e9483a5130e1c21"
+    },
+    {
+      "path": "sources/animated-umbrella/Pennsylvania Health Insurance Market & 2027 Rate Analysis Matrix.md",
+      "size": 4217,
+      "sha256": "9c74920f78a2f79cd9b6a769af7be5aed0b8006fbd17f189b09394af94a5b843"
+    },
+    {
+      "path": "sources/animated-umbrella/README.md",
+      "size": 149430,
+      "sha256": "df3f24bb1fc8e3968706a711ce0e03b95c6ee47e9fb81b577eedab31b82c2987"
+    },
+    {
       "path": "sources/animated-umbrella/SECRETS_AUDIT.md",
       "size": 827,
       "sha256": "cc748b6e1c9166d5336351386035ba469001eea6e1cba843dc01dfd432822f6e"
@@ -6737,6 +6756,21 @@
       "path": "sources/animated-umbrella/WIKI_DEPLOY_CHECKLIST.md",
       "size": 139,
       "sha256": "8e4dc32770ed133b822d121c72bbfa37e66d0a361ea7aa22e8c99ffa3f5aca47"
+    },
+    {
+      "path": "sources/animated-umbrella/animated-umbrella.wiki/Audit-Protocol-&-Methodology.md",
+      "size": 726,
+      "sha256": "bf9e1706e65dffe8b97e2092ce47c62c2c0915d89d936e48775fa457d3cb99d4"
+    },
+    {
+      "path": "sources/animated-umbrella/animated-umbrella.wiki/Data-Acquisition-&-Provenance.md",
+      "size": 155,
+      "sha256": "d139807b9f43948c6f6698f1da34c7e2891bbd951a6f39078cf2ecd14848af6d"
+    },
+    {
+      "path": "sources/animated-umbrella/animated-umbrella.wiki/Home.md",
+      "size": 1042,
+      "sha256": "67ab25522d0a5beb6e806af4750c5cfd7977237138f13397a465c1c3a8418425"
     },
     {
       "path": "sources/animated-umbrella/cms_crosswalk.html",
@@ -6802,6 +6836,16 @@
       "path": "sources/animated-umbrella/fetch_cms_crosswalk.sh",
       "size": 868,
       "sha256": "c0ac2ce48862f7b3826a303c722316c327dca7b01e93d483289d7d4213c13e0c"
+    },
+    {
+      "path": "sources/animated-umbrella/final_package/data/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "sources/animated-umbrella/final_package/docs/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "path": "sources/animated-umbrella/finalize_hardening.sh",
@@ -6914,6 +6958,11 @@
       "sha256": "f548c1f3a7fdd2f7ba19d407b358eb1988bd8b462f16bf3135dbbf6b9792a712"
     },
     {
+      "path": "sources/animated-umbrella/src/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "path": "sources/animated-umbrella/src/build_one_pagers.py",
       "size": 28443,
       "sha256": "8f9c2bc395d2b7aea6b9efa0ae8c889cb4a24e9d62b398e0d6328a9d245c28d6"
@@ -6927,6 +6976,11 @@
       "path": "sources/animated-umbrella/src/cms_parser.py",
       "size": 1219,
       "sha256": "1dc84de138540aaa0d85d0e5a3999e155dab69a18fc5f3c5665591636c8874cc"
+    },
+    {
+      "path": "sources/animated-umbrella/src/data/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "path": "sources/animated-umbrella/src/delta_report.py",
@@ -6999,6 +7053,16 @@
       "sha256": "8e47c9298a74d7856907bff400f73440ff8d5b8782c8f142e7c16ac474fe1b2f"
     },
     {
+      "path": "sources/animated-umbrella/tests/conftest.py",
+      "size": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "sources/animated-umbrella/tests/fixtures/baseline_2027.html",
+      "size": 192296,
+      "sha256": "e249326b1ec8ed7534be35a53336d6fc0554d8173787d0a37b6d41bfbfd9da5f"
+    },
+    {
       "path": "sources/animated-umbrella/tests/test_anomaly_premium_integration.py",
       "size": 20282,
       "sha256": "e7f89bdae8638796667ef523093ae75f91006e2b4abc186a011acbf332f79c73"
@@ -7032,6 +7096,346 @@
       "path": "sources/animated-umbrella/wiki_pages/Home.md",
       "size": 1042,
       "sha256": "67ab25522d0a5beb6e806af4750c5cfd7977237138f13397a465c1c3a8418425"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/.github/workflows/verify.yml",
+      "size": 1372,
+      "sha256": "81f7cf4a5f88b2fee7782ac9e59b48f85f4a5ccad9c78d45954fcebc35ff306d"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/.gitignore",
+      "size": 273,
+      "sha256": "d422cef5444532aa19f944759e4a96938819b4f86055963b8eb2f28eeea065b1"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/CHANGELOG.md",
+      "size": 1852,
+      "sha256": "ca99f663769193fe1b4cfe388c8e4c279bacac4dbf001be123e8ac21809b1841"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/HANDOVER.json",
+      "size": 4159,
+      "sha256": "f54972e0f9da7e021d59c114366ae3e577267a9786e37703df29da0977e04f7d"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/MANIFEST.sha256",
+      "size": 5267,
+      "sha256": "8b362ecbe5a122bcfacce8051d2d8a3937130cc9178100edd7aee5637e92b463"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/README.md",
+      "size": 3691,
+      "sha256": "c67fca06bfcbb8b6189d7be6edc233adf4cf1b757ccefacf9b26539a6a6ad677"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/audits/RA1_audit.md",
+      "size": 4559,
+      "sha256": "c88d7298fbba208b73e3ed3e9fc04b0967e6730ca56b92b0d3f7557caf1b4fd7"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/audits/RA2_audit.md",
+      "size": 4281,
+      "sha256": "b8abed33c1b2978469b8087d45bc8dd1b57c2cdb8e82dcda4885443b3b63dc8a"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/audits/RA3_audit.md",
+      "size": 6736,
+      "sha256": "3bce6d13ce58d6c1a63773bac7584a64e551b0f9194aaf5941841fbb6b616176"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/audits/RA4_audit.md",
+      "size": 4681,
+      "sha256": "2443ec99a665e484fb9075aa815b64e1e28dc7918e4c7fe721ab7ddc291667f2"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/audits/RA5_audit.md",
+      "size": 5248,
+      "sha256": "7ce9614f263d5df5fd689c52056cc1a319fc1832c99f2d5ef2970b5491937fbc"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/audits/RA6_audit.md",
+      "size": 7209,
+      "sha256": "cea35220e2380bb151ab67a1829d6c6bf7bb8e3343bf49888f2b03f155a2fcaf"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/audits/RA7_audit.md",
+      "size": 4824,
+      "sha256": "40e275dd8ecc00d1c95b8ccaa312705a6901c12901466314fd488a877b3359f5"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/audits/RA8_audit.md",
+      "size": 5352,
+      "sha256": "e065e5d3ab32887d7b779710a3f48bf7d7dac852cf8b628a4042a31c14ce8305"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/audits/RA9_audit.md",
+      "size": 5357,
+      "sha256": "84d84f4863469137bcecab01a14f4e8524ac404bb4ab1827888ca106c8f3dbb7"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/audits/README.md",
+      "size": 1297,
+      "sha256": "1f55c64e91f81dc73bce1bcad2f2e83e566a329b06a10e4bb071760e6f6b48d0"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/data/derived_area_metrics.json",
+      "size": 113091,
+      "sha256": "66ddd667a2c4abeaa70092e10ebc5455c7ba80cdaf3e3871afead98bc3b55799"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/data/pa_ra_validated_dataset.json",
+      "size": 26184,
+      "sha256": "35e79cb393f0cae2c057262ffa2a825d5f77bb6e95d255cffd5be93eb76d75f3"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/docs/CORRECTIONS.md",
+      "size": 4186,
+      "sha256": "30778e283b2cb6b486147c852dee220dfee935e3d3dc3686ecd56f3f2082b4d0"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/docs/DATA_UPDATE_PLAYBOOK.md",
+      "size": 1584,
+      "sha256": "dc82443846dab1629a6639c0dd5234408b7557047c0e570e2b4f02c6c85e684d"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/docs/PUBLISHING_CHECKLIST.md",
+      "size": 956,
+      "sha256": "f090dccaad486829576abbe9d49e19fdc0ab7c88d809907efa5bb57a1458df1b"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/one_pagers/PA_RA1_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 8732,
+      "sha256": "d94ea337922c7b469f4f43e0170494bc5a00ece734af2ee2dbab970538dff417"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/one_pagers/PA_RA2_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 8857,
+      "sha256": "741974cc4324c1cbc524eb0f4b32bbcad52bfdf305fa95340cff49d8a3aec795"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/one_pagers/PA_RA3_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9702,
+      "sha256": "fe32711f8ef89a82aa60a207fff0ec19680f61036ac412c98e05ceb3f8fbddf5"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/one_pagers/PA_RA4_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 8650,
+      "sha256": "ea4bb3db1ed738ee0dcdb76b19420e21f725485df86aeaa74b5a48dd1a45332c"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/one_pagers/PA_RA5_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9068,
+      "sha256": "0220d1d63f08989f4165f51f0f83c829204a82bfc629123e65bad3e6169ae888"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/one_pagers/PA_RA6_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9837,
+      "sha256": "a58e3a084686242bb62c285cae5c723a9344591ea7981063174bf9f5862522a9"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/one_pagers/PA_RA7_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9246,
+      "sha256": "cd328924d58a64b5670ed6d2535be975a72ef4e343f3f75391842e413536f9b5"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/one_pagers/PA_RA8_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9425,
+      "sha256": "0a2312a4e40851ef3c723fcb92374ed69e3a666c66c1836781fa29340ad5acf9"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/one_pagers/PA_RA9_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9292,
+      "sha256": "f130b02474147ac3bb4829d13434793244c88e5b18c639a57238de0dc2ba0ebb"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/requirements.txt",
+      "size": 31,
+      "sha256": "0fb62c4d31f1a21a816dea00de5904d28057d43209a233ff0f54d224764ece11"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/scripts/doctor.py",
+      "size": 1045,
+      "sha256": "286af5169807733403480be2bf8311d918bdd4bdb8c674328ae5289be411bfc9"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/scripts/fix_json_fence.py",
+      "size": 795,
+      "sha256": "89a60fa0315da7e3e599f96ec64557c6ae542d91811c4c3714f9a61877a3abf1"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/scripts/install_wiki.sh",
+      "size": 1056,
+      "sha256": "6a9baa73503a76e6e553d081b1016b5247926c529b1cac06ce66f5ca789b29ee"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/scripts/quarantine_strays.sh",
+      "size": 503,
+      "sha256": "0f4f4d4aef68f3999e3484595d87a4ea8e585bbfdd86a8819aee52611917e817"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/scripts/release_check.sh",
+      "size": 1881,
+      "sha256": "4bdcd1ff9bfb8a59054c4e9e9309ac411cd1dcd5b5f0b81f57bf013127888086"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/scripts/termux_setup.sh",
+      "size": 772,
+      "sha256": "b0fe691bcd6d9d498a2de8885679892b0948ec05e4710fdaff072e132ca5adb9"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/site/index.html",
+      "size": 80640,
+      "sha256": "e7e0b96d909f7fe162dc740c9fa04508090ae35fbcc912f4146b97e414f45dc4"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/src/build_area_audits.py",
+      "size": 7674,
+      "sha256": "e448f030b96320ff4c9cc2d35ac00a1135de3c06c4527591ddcc02e15c728d8f"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/src/build_audits.py",
+      "size": 8858,
+      "sha256": "9893f6ec05d4eb6a2fd5edebb9c1da549f93f7cbcef97654b7bedc27cb12eafb"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/src/build_lookup.py",
+      "size": 10869,
+      "sha256": "0d948f8fc30edca0e6839fc1b3f352ef2b6bdae3c04cae38c76f55f21475b239"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/src/build_one_pagers.py",
+      "size": 29123,
+      "sha256": "c88cd2cdbfd3186e81f5fc89e4bf6452035990901fd5730f8b93cbfed6c911a5"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/src/numbers_gate.py",
+      "size": 5521,
+      "sha256": "7da4c2a4e1574585956a9627bdd1d0b3d47c5de95b6712195397b8d626276a98"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/src/provenance.py",
+      "size": 4857,
+      "sha256": "f4c16a44d29ce39462d94d24f7eec8c62abbfd4ab1d19d3aef8b64f803186ee1"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/src/refresh_check.py",
+      "size": 9779,
+      "sha256": "09f40dfda17ed8dc7218e67c905a6fad0da0fcebb3629b8b968855773e8d4c15"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/tests/lookup_probe.js",
+      "size": 561,
+      "sha256": "cf9722ebd54d26029eb56bbe0531e474a7ec61d345fb4104b298c5beec47236b"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/tests/test_refresh.py",
+      "size": 5502,
+      "sha256": "c742dc8898762aea0f75c66a2fa6d87794a18bca86bfd0f7d48d356591cdd0ec"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/tests/test_release.py",
+      "size": 7731,
+      "sha256": "d83d6a88164bc5d06187f825e0b4b511e3d07224d48480eaf1ae7a7557400dd3"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/wiki/Citation-Registry.md",
+      "size": 1995,
+      "sha256": "e7526f5b0c8bcb661638a444cef2acee0bd009d2ffe63f0b88c993fed0c2af4f"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/wiki/Consumer-Help-and-Appeals.md",
+      "size": 2207,
+      "sha256": "d7c6b8ac5685d8c3733ea26662b697119617c96f0d4a5d21e8f331131d1319f0"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/wiki/Corrections-and-Open-Items.md",
+      "size": 4186,
+      "sha256": "30778e283b2cb6b486147c852dee220dfee935e3d3dc3686ecd56f3f2082b4d0"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/wiki/Home.md",
+      "size": 1997,
+      "sha256": "1654ef50c56203e5d91abdda1f30dd30f697b90ecfd83c8eca6b4cd3e0d0e2ab"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/wiki/Methodology-and-Verification.md",
+      "size": 2900,
+      "sha256": "024c1045bf00aa333db2304282c0be3fd09a89341022d99fb40e4ec08a98682c"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/wiki/PY2027-Statewide-Rate-Actions.md",
+      "size": 3993,
+      "sha256": "667eec8787c4199426d70a84eb544db981163f843a98829f721df81b6ecfaead"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/wiki/Pennie-Enrollment-and-Open-Enrollment.md",
+      "size": 2933,
+      "sha256": "66faf421eea4f5e032965786cd60f6a4276faaeb40dfc1becd6cc889a6ca9dea"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/wiki/Rating-Area-Profiles.md",
+      "size": 9294,
+      "sha256": "457856aad898d41ec9eb7e207563af5e4582c975de0422f6bfb16d6825769ef7"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/wiki/Sources-and-Reproducibility.md",
+      "size": 3879,
+      "sha256": "7ec8e6b75321b0c5fda4f5e78b6fe6457c58e0fc59a15c761116798dd930d8af"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/wiki/Tools-and-Data-Refresh.md",
+      "size": 2719,
+      "sha256": "16a4f974f9ff5fae06bdbb8d3ef07b2797a06dcad9a91fab41898296a3de61a0"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/wiki/_Footer.md",
+      "size": 140,
+      "sha256": "c56522935e62deb386b9eb1a09185a6dbaaaefc2e4b3056f17f845f04078c527"
+    },
+    {
+      "path": "sources/animated-umbrella-PY2027-audit-v1.1.1/animated-umbrella-audit/wiki/_Sidebar.md",
+      "size": 511,
+      "sha256": "aa58b5ea3cc9d68d49bd091bfca7ed33333aa20f9ea824865e32d49959dbffe4"
+    },
+    {
+      "path": "sources/audit_tools/.github/workflows/opsec.yml",
+      "size": 457,
+      "sha256": "aaeba4bc09b2f38b5fc5f875a5539017372718fae1271fb207a15b6aa6ef1322"
+    },
+    {
+      "path": "sources/audit_tools/artifacts/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "sources/audit_tools/bin/audit_manifest",
+      "size": 84,
+      "sha256": "17384948a7eb00c411e5c7517d02d42a5aec8adc3da7b2efa0a5eee66ac225bb"
+    },
+    {
+      "path": "sources/audit_tools/bin/view_report",
+      "size": 134,
+      "sha256": "2f1f89d545eb7836c04440deea067e227bb80fc13d6fe375547c05d282d7bb81"
+    },
+    {
+      "path": "sources/audit_tools/github/workflows/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "sources/audit_tools/pyproject.toml",
+      "size": 452,
+      "sha256": "8a30e18e764a84889c27c8ad25e120cbf2c746f6cc75e795af029fe78d100f9f"
+    },
+    {
+      "path": "sources/audit_tools/src/audit_manifest.py",
+      "size": 5843,
+      "sha256": "d4a4f2ba569a81b34da9c4f8713347bc89ba35df03ecadf1ef11c14730df2dbf"
+    },
+    {
+      "path": "sources/audit_tools/tests/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "path": "sources/bootstrap_keystone.sh",
@@ -7960,6 +8364,841 @@
     },
     {
       "path": "sources/keystone-health-advocate-pa-medical-rights-wiki-forensic-tool/wrangler.jsonc",
+      "size": 806,
+      "sha256": "f2fd037f3af1946e8134a9d4fc224e0812634dc83b35f8df43551783ca17def5"
+    },
+    {
+      "path": "sources/keystone-sync/.bootstrap.js",
+      "size": 3481,
+      "sha256": "4bd1a339ac75ac7d77f2ddbc70f1d0acc64d40e2538229074729b81140fba111"
+    },
+    {
+      "path": "sources/keystone-sync/.gitignore",
+      "size": 273,
+      "sha256": "d422cef5444532aa19f944759e4a96938819b4f86055963b8eb2f28eeea065b1"
+    },
+    {
+      "path": "sources/keystone-sync/CHANGELOG.md",
+      "size": 1852,
+      "sha256": "ca99f663769193fe1b4cfe388c8e4c279bacac4dbf001be123e8ac21809b1841"
+    },
+    {
+      "path": "sources/keystone-sync/Citation-Registry.md",
+      "size": 1995,
+      "sha256": "e7526f5b0c8bcb661638a444cef2acee0bd009d2ffe63f0b88c993fed0c2af4f"
+    },
+    {
+      "path": "sources/keystone-sync/Consumer-Help-and-Appeals.md",
+      "size": 2207,
+      "sha256": "d7c6b8ac5685d8c3733ea26662b697119617c96f0d4a5d21e8f331131d1319f0"
+    },
+    {
+      "path": "sources/keystone-sync/Corrected PA Advocacy Script.py",
+      "size": 5029,
+      "sha256": "b345dc67086c3f5d9289c65b9b7be74650700d9db9e56cb58ae47b3ebe89b34b"
+    },
+    {
+      "path": "sources/keystone-sync/Corrections-and-Open-Items.md",
+      "size": 4186,
+      "sha256": "30778e283b2cb6b486147c852dee220dfee935e3d3dc3686ecd56f3f2082b4d0"
+    },
+    {
+      "path": "sources/keystone-sync/Evaluation and Coaching.md",
+      "size": 2745,
+      "sha256": "36bf05d809f2df47d0680c0ea887cfe1bc7ccf80443f09b404e9b73819afc6f3"
+    },
+    {
+      "path": "sources/keystone-sync/HANDOVER.json",
+      "size": 4159,
+      "sha256": "f54972e0f9da7e021d59c114366ae3e577267a9786e37703df29da0977e04f7d"
+    },
+    {
+      "path": "sources/keystone-sync/Home.md",
+      "size": 1997,
+      "sha256": "1654ef50c56203e5d91abdda1f30dd30f697b90ecfd83c8eca6b4cd3e0d0e2ab"
+    },
+    {
+      "path": "sources/keystone-sync/MANIFEST.sha256",
+      "size": 5267,
+      "sha256": "8b362ecbe5a122bcfacce8051d2d8a3937130cc9178100edd7aee5637e92b463"
+    },
+    {
+      "path": "sources/keystone-sync/Methodology-and-Verification.md",
+      "size": 2900,
+      "sha256": "024c1045bf00aa333db2304282c0be3fd09a89341022d99fb40e4ec08a98682c"
+    },
+    {
+      "path": "sources/keystone-sync/PA Health Insurance Advocacy Dashboard (1).html",
+      "size": 39177,
+      "sha256": "4cb59ac0dce9f1bc90de509b07f6abb10426e0851fc65a63abd4a89da8483d53"
+    },
+    {
+      "path": "sources/keystone-sync/PA Health Insurance Advocacy Dashboard.html",
+      "size": 39177,
+      "sha256": "4cb59ac0dce9f1bc90de509b07f6abb10426e0851fc65a63abd4a89da8483d53"
+    },
+    {
+      "path": "sources/keystone-sync/PA Patient Rights & Advocacy Navigator.html",
+      "size": 65793,
+      "sha256": "b595691595d862580d80081bb817b5d46980a833cc07f17e4c971f142b696d10"
+    },
+    {
+      "path": "sources/keystone-sync/PA Risk Adjustment Audit Memorandum.md",
+      "size": 6682,
+      "sha256": "b7d4498545b2dae97763d170b5a0b61ed3eb7ed976053e9b6ba743beb804d5dc"
+    },
+    {
+      "path": "sources/keystone-sync/PA_Health_Audit_Oct2026_Rating_Area_OnePagers-6.zip",
+      "size": 87279,
+      "sha256": "62c8c4ee77163577e2671ec66d429135a1ff49ccc6cb1b6e85ae451f2d082539"
+    },
+    {
+      "path": "sources/keystone-sync/PA_RA1_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 8732,
+      "sha256": "d94ea337922c7b469f4f43e0170494bc5a00ece734af2ee2dbab970538dff417"
+    },
+    {
+      "path": "sources/keystone-sync/PA_RA2_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 8857,
+      "sha256": "741974cc4324c1cbc524eb0f4b32bbcad52bfdf305fa95340cff49d8a3aec795"
+    },
+    {
+      "path": "sources/keystone-sync/PA_RA3_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9702,
+      "sha256": "fe32711f8ef89a82aa60a207fff0ec19680f61036ac412c98e05ceb3f8fbddf5"
+    },
+    {
+      "path": "sources/keystone-sync/PA_RA4_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 8650,
+      "sha256": "ea4bb3db1ed738ee0dcdb76b19420e21f725485df86aeaa74b5a48dd1a45332c"
+    },
+    {
+      "path": "sources/keystone-sync/PA_RA5_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9068,
+      "sha256": "0220d1d63f08989f4165f51f0f83c829204a82bfc629123e65bad3e6169ae888"
+    },
+    {
+      "path": "sources/keystone-sync/PA_RA6_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9837,
+      "sha256": "a58e3a084686242bb62c285cae5c723a9344591ea7981063174bf9f5862522a9"
+    },
+    {
+      "path": "sources/keystone-sync/PA_RA7_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9246,
+      "sha256": "cd328924d58a64b5670ed6d2535be975a72ef4e343f3f75391842e413536f9b5"
+    },
+    {
+      "path": "sources/keystone-sync/PA_RA8_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9425,
+      "sha256": "0a2312a4e40851ef3c723fcb92374ed69e3a666c66c1836781fa29340ad5acf9"
+    },
+    {
+      "path": "sources/keystone-sync/PA_RA9_2027_Market_Snapshot_Oct2026.pdf",
+      "size": 9292,
+      "sha256": "f130b02474147ac3bb4829d13434793244c88e5b18c639a57238de0dc2ba0ebb"
+    },
+    {
+      "path": "sources/keystone-sync/PHRReport.pdf",
+      "size": 42683,
+      "sha256": "b171fa1473e18c9c4084114d1b1788e6c9d155b7ee6c45053a591a2551877a82"
+    },
+    {
+      "path": "sources/keystone-sync/PY2027-Statewide-Rate-Actions.md",
+      "size": 3993,
+      "sha256": "667eec8787c4199426d70a84eb544db981163f843a98829f721df81b6ecfaead"
+    },
+    {
+      "path": "sources/keystone-sync/Pennie-Enrollment-and-Open-Enrollment.md",
+      "size": 2933,
+      "sha256": "66faf421eea4f5e032965786cd60f6a4276faaeb40dfc1becd6cc889a6ca9dea"
+    },
+    {
+      "path": "sources/keystone-sync/Pennsylvania Health Insurance Rights and Audit Framework PY2027.md",
+      "size": 7773,
+      "sha256": "a4fd55163af73495da6809cd40ae24cafb6c50b9ae9b60ed44dd27decd5560a8"
+    },
+    {
+      "path": "sources/keystone-sync/Pennsylvania Patient Rights and Advocacy Action Guide.md",
+      "size": 5525,
+      "sha256": "20c0942fff78a3cab0b862d19ec973248df92231f085854b36ff00fa44dca109"
+    },
+    {
+      "path": "sources/keystone-sync/RA1_audit.md",
+      "size": 4559,
+      "sha256": "c88d7298fbba208b73e3ed3e9fc04b0967e6730ca56b92b0d3f7557caf1b4fd7"
+    },
+    {
+      "path": "sources/keystone-sync/RA2_audit.md",
+      "size": 4281,
+      "sha256": "b8abed33c1b2978469b8087d45bc8dd1b57c2cdb8e82dcda4885443b3b63dc8a"
+    },
+    {
+      "path": "sources/keystone-sync/RA3_audit.md",
+      "size": 6736,
+      "sha256": "3bce6d13ce58d6c1a63773bac7584a64e551b0f9194aaf5941841fbb6b616176"
+    },
+    {
+      "path": "sources/keystone-sync/RA4_audit.md",
+      "size": 4681,
+      "sha256": "2443ec99a665e484fb9075aa815b64e1e28dc7918e4c7fe721ab7ddc291667f2"
+    },
+    {
+      "path": "sources/keystone-sync/RA5_audit.md",
+      "size": 5248,
+      "sha256": "7ce9614f263d5df5fd689c52056cc1a319fc1832c99f2d5ef2970b5491937fbc"
+    },
+    {
+      "path": "sources/keystone-sync/RA6_audit.md",
+      "size": 7209,
+      "sha256": "cea35220e2380bb151ab67a1829d6c6bf7bb8e3343bf49888f2b03f155a2fcaf"
+    },
+    {
+      "path": "sources/keystone-sync/RA7_audit.md",
+      "size": 4824,
+      "sha256": "40e275dd8ecc00d1c95b8ccaa312705a6901c12901466314fd488a877b3359f5"
+    },
+    {
+      "path": "sources/keystone-sync/RA8_audit.md",
+      "size": 5352,
+      "sha256": "e065e5d3ab32887d7b779710a3f48bf7d7dac852cf8b628a4042a31c14ce8305"
+    },
+    {
+      "path": "sources/keystone-sync/RA9_audit.md",
+      "size": 5357,
+      "sha256": "84d84f4863469137bcecab01a14f4e8524ac404bb4ab1827888ca106c8f3dbb7"
+    },
+    {
+      "path": "sources/keystone-sync/README.md",
+      "size": 1297,
+      "sha256": "1f55c64e91f81dc73bce1bcad2f2e83e566a329b06a10e4bb071760e6f6b48d0"
+    },
+    {
+      "path": "sources/keystone-sync/Rating-Area-Profiles.md",
+      "size": 9294,
+      "sha256": "457856aad898d41ec9eb7e207563af5e4582c975de0422f6bfb16d6825769ef7"
+    },
+    {
+      "path": "sources/keystone-sync/Sources-and-Reproducibility.md",
+      "size": 3879,
+      "sha256": "7ec8e6b75321b0c5fda4f5e78b6fe6457c58e0fc59a15c761116798dd930d8af"
+    },
+    {
+      "path": "sources/keystone-sync/Tools-and-Data-Refresh.md",
+      "size": 2719,
+      "sha256": "16a4f974f9ff5fae06bdbb8d3ef07b2797a06dcad9a91fab41898296a3de61a0"
+    },
+    {
+      "path": "sources/keystone-sync/ZIP(3)_2026-10-14_09-23-29.zip",
+      "size": 16908,
+      "sha256": "0b35263df6b30e7b6cf291da19a1178c1b3113707ffc0140f4aa73ba258894c0"
+    },
+    {
+      "path": "sources/keystone-sync/_Footer.md",
+      "size": 140,
+      "sha256": "c56522935e62deb386b9eb1a09185a6dbaaaefc2e4b3056f17f845f04078c527"
+    },
+    {
+      "path": "sources/keystone-sync/_Sidebar.md",
+      "size": 511,
+      "sha256": "aa58b5ea3cc9d68d49bd091bfca7ed33333aa20f9ea824865e32d49959dbffe4"
+    },
+    {
+      "path": "sources/keystone-sync/animated-umbrella-PY2027-audit-v1.1.1-1.zip",
+      "size": 175979,
+      "sha256": "f84c6378bc1d8fc0423550e688b17f66d0c2abc6c3050f722a109967d546b266"
+    },
+    {
+      "path": "sources/keystone-sync/apply.sh",
+      "size": 1242,
+      "sha256": "aaa4e383860a86772a52027629394010e62ee27727fbf2852e7617879a06805b"
+    },
+    {
+      "path": "sources/keystone-sync/bun.lock",
+      "size": 212936,
+      "sha256": "86505fc0124b5bc002a5972f4ae6f470f2b130accf93f79da92a5df9f50bbb1a"
+    },
+    {
+      "path": "sources/keystone-sync/components.json",
+      "size": 443,
+      "sha256": "6a2405342b8db36abb09c682e331e2fda4d9ad6482a5b6e4b6eb091957210958"
+    },
+    {
+      "path": "sources/keystone-sync/d3273a84-b855-46cc-9401-dddc8b68697d.txt",
+      "size": 42973,
+      "sha256": "7ec484fb3fe54ff3e4fd5397977b0eec759c84d714272444a3a07a24cc7fabc8"
+    },
+    {
+      "path": "sources/keystone-sync/dashboard.py",
+      "size": 16008,
+      "sha256": "9743f1565cf451116b7d2ea667f21b4b8ae4c38c8d056984cf93cb2bbc23750a"
+    },
+    {
+      "path": "sources/keystone-sync/eslint.config.js",
+      "size": 2989,
+      "sha256": "a454bf6c2ad5bcd82d4a45cd2decf1b7998316218263723c455de8ecdd92bcdb"
+    },
+    {
+      "path": "sources/keystone-sync/gen_wiki.py",
+      "size": 27226,
+      "sha256": "2b0fef7b10cc249b8b15b34bee4b36bf24580defe5c1ad1cd99e625f581ab53d"
+    },
+    {
+      "path": "sources/keystone-sync/index.html",
+      "size": 1042,
+      "sha256": "ce791041fb029b185bd87709f31cf939cd6c158172aec1fdb82507b33a071485"
+    },
+    {
+      "path": "sources/keystone-sync/pa_ra_validated_dataset.json",
+      "size": 26184,
+      "sha256": "35e79cb393f0cae2c057262ffa2a825d5f77bb6e95d255cffd5be93eb76d75f3"
+    },
+    {
+      "path": "sources/keystone-sync/package.json",
+      "size": 3555,
+      "sha256": "02adfb56ff70d49163006f4cfd3a3e101e9410e2298d50e4418d12405e0a3385"
+    },
+    {
+      "path": "sources/keystone-sync/pennsylvania-health-insurance-audit-2026-main (2).zip",
+      "size": 2465186,
+      "sha256": "f1d4f83d7789e00419aa6f726278726c5eff06b30867218a465910b00b0e6105"
+    },
+    {
+      "path": "sources/keystone-sync/postcss.config.js",
+      "size": 80,
+      "sha256": "190c877db466995bf1482f4a16abd06e04a89ede3119341e2a86ff96e1737b27"
+    },
+    {
+      "path": "sources/keystone-sync/prompts/selection.md",
+      "size": 777,
+      "sha256": "ed43665a347933b061f291cabbf46b4b88b996d2991d916c26b3db4b428f7956"
+    },
+    {
+      "path": "sources/keystone-sync/prompts/usage.md",
+      "size": 5399,
+      "sha256": "e58e2ed2a9b49fdd314763bee7692cad6bfe36fe8ad88bf6aa0a379f51028a33"
+    },
+    {
+      "path": "sources/keystone-sync/public/vite.svg",
+      "size": 1497,
+      "sha256": "4a748afd443918bb16591c834c401dae33e87861ab5dbad0811c3a3b4a9214fb"
+    },
+    {
+      "path": "sources/keystone-sync/requirements.txt",
+      "size": 32,
+      "sha256": "3eab2dc8eeb522b50b5c5faffe103d909d47de5069e2896a11328cbb220fa00d"
+    },
+    {
+      "path": "sources/keystone-sync/shared/mock-data.ts",
+      "size": 365,
+      "sha256": "6eb5c7f0966c046ba95cf854e272554b910bd780d3bf884f54a1b1eb2dcbec0f"
+    },
+    {
+      "path": "sources/keystone-sync/shared/types.ts",
+      "size": 3729,
+      "sha256": "f738820ef3f786a5567ee604fe8ad93673810c6b0bca7dd628057edd6d1e678a"
+    },
+    {
+      "path": "sources/keystone-sync/src/App.css",
+      "size": 650,
+      "sha256": "94455ddce2ae025c7820a54ee105a63e9739588dad42b3c68b72de4ceef6b297"
+    },
+    {
+      "path": "sources/keystone-sync/src/assets/Cloudflare_Logo.svg",
+      "size": 3468,
+      "sha256": "462fdb66036746bff2bee83db78a8dde1c6e10eb50759b9f8f89baf5976461eb"
+    },
+    {
+      "path": "sources/keystone-sync/src/assets/react.svg",
+      "size": 4126,
+      "sha256": "35ef61ed53b323ae94a16a8ec659b3d0af3880698791133f23b084085ab1c2e5"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/AccessibilityToggle.tsx",
+      "size": 2855,
+      "sha256": "a945c36dd52c5679c6eba703a19c25f6afa97c09fe4d276ebaa056d5864b2da8"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ErrorBoundary.tsx",
+      "size": 1937,
+      "sha256": "6c60d7e749042a3ecf769e8688d386b28b49eb0435d806474916c1a14b41e208"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ErrorFallback.tsx",
+      "size": 3581,
+      "sha256": "4b2f68d021f5dedea7e0be0beced63d3dbf5bcee49aa043d5100f0f4db636e0c"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/RouteErrorBoundary.tsx",
+      "size": 3025,
+      "sha256": "09c1e3902162759e13b8ad58ab6d829cfe8f5fc9b70c7b7e265e8901e1d69809"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/TemplateDemo.tsx",
+      "size": 8814,
+      "sha256": "3517e8a2688bd2f2dde82133d81356202fbc94d76ea6521d35d0cc5ca9e1da1a"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ThemeToggle.tsx",
+      "size": 715,
+      "sha256": "bcad27580fe1949791f22b508247f9e029ce536e5a74fdaee0fed585d91af17c"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/WikiSearch.tsx",
+      "size": 2237,
+      "sha256": "ff6ce4b5e122d6b628759974c0220d5618f5428749296c122a2c82623a90ecb9"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/app-sidebar.tsx",
+      "size": 2392,
+      "sha256": "6aeb7ce226c3a54b1e414ec47dd2bf540b6ff40ef35d2fe712316d65aa7ca053"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/generator/AppealWizard.tsx",
+      "size": 10593,
+      "sha256": "f7cb82cbde257ecc0cf0677a9cc66ffe9480d390183f13ce30a4f4dc4c7a85a9"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/layout/AppLayout.tsx",
+      "size": 6237,
+      "sha256": "96bdf6952d204e7413f13cf8cd9eba7c7613c345e9f4c23cf041ab9bd97db803"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/tools/AIDecoder.tsx",
+      "size": 5036,
+      "sha256": "f02c9f452093c07a2ae014bb600133010b522b4ee2d220d8f3735267b4bee3a0"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/tools/FMVLookup.tsx",
+      "size": 5254,
+      "sha256": "de76b79ec19d1a784a93ff4c46926623620275e9378d9bf0590cd92ab7206725"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/tools/FinancialDefense.tsx",
+      "size": 7440,
+      "sha256": "36238e145b3de5cd68541ab209ab8ff6416497553536ea0afbc34e31ad101cc4"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/tools/InterestCalculator.tsx",
+      "size": 5992,
+      "sha256": "1e30f3ed81e09f2a1a32d3668a51b87c98ec849d8b55d4e08ea5a90d43ef34cd"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/tools/MedicaidGuard.tsx",
+      "size": 7734,
+      "sha256": "2040e5a736788d459c335da5ef30c8ced1ad62c0936b3e14f2eac02b018a3380"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/tools/PharmacyAuditor.tsx",
+      "size": 6831,
+      "sha256": "e16652f1b66bf2243aebb325c192b264b7802e32a549b4d1845376cfeb44e65d"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/tools/PolicyAudit.tsx",
+      "size": 9728,
+      "sha256": "5744b270121f886b997ab8db1a3b6925024a6420e8c9b53a911657b5336db590"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/tools/PremiumNavigator.tsx",
+      "size": 5637,
+      "sha256": "27ab51396302b76a64336f3dbbb4d09525b233d72c3cb59a7b4912a402868f21"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/tools/PricingContribution.tsx",
+      "size": 5783,
+      "sha256": "5ff6c1b75811132b8e3425e252d0025efad2bb39fa0163af8fcef84501cc6ed0"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/accordion.tsx",
+      "size": 2001,
+      "sha256": "dcbfb3243a26096fc3e5f54039ccb5c4c23d9bb79a4d5846b4be75bf912f07d9"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/alert-dialog.tsx",
+      "size": 4419,
+      "sha256": "311bede35f785d7b1ecd7398986757e26409d1049352a94ccf83586b8603c92d"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/alert.tsx",
+      "size": 1598,
+      "sha256": "5950ac01377e7eedc94b00eb3fee678745e4cc1a72b5343867f0733d07db6660"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/aspect-ratio.tsx",
+      "size": 140,
+      "sha256": "08b0aa0b05efc573c7d63363c03e83d4b101bfeb54140764e96ddea30659cfcc"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/avatar.tsx",
+      "size": 1419,
+      "sha256": "e78b35ed76c67d8ff50603fbe0dfa4fe600097bd860d89e65beea3e16683dad8"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/badge.tsx",
+      "size": 1140,
+      "sha256": "dab689d836ad3292b41e7f4986b4e68e5d45c6903e4aeaae8972a82d4aebec29"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/breadcrumb.tsx",
+      "size": 2712,
+      "sha256": "c3d3dcb0d82fc5e91d8830bac7fead905686fe876f1f42c3ed872bb0a6b6584e"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/button.tsx",
+      "size": 1902,
+      "sha256": "c2b999a96781e6c932632bd089095368e973bf5602e1b1a62156b7d2b43f1e84"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/calendar.tsx",
+      "size": 7555,
+      "sha256": "12bf2e464080393f253d70ab23acdc126c963a68e0c45d4a7f2b8941552aa404"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/card.tsx",
+      "size": 1828,
+      "sha256": "525c4bb2c051987be64df0e92e1d90174912b219bf541e24ffbc4a3406de49e8"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/carousel.tsx",
+      "size": 6210,
+      "sha256": "5a4ff73c804e86c873382da80c453f1399006326ef042fb984c24162ec86666e"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/chart.tsx",
+      "size": 10481,
+      "sha256": "e30219cedb35c55c2f9069f6470d60514c54c43fe0a3b641615275a2acd25f12"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/checkbox.tsx",
+      "size": 1012,
+      "sha256": "5590aab08eeecc7a004aaca5cfb31e408edd3164075203e2c4f7a95f415a25e4"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/collapsible.tsx",
+      "size": 329,
+      "sha256": "f4cdd104de29928bfcd40b865c7d08eed9157a537fbb8b5e6d0921f02b63cc04"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/command.tsx",
+      "size": 4873,
+      "sha256": "13dc2d1e35226de85458034417bfc0e781211044fad520bac53b7858a290d004"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/context-menu.tsx",
+      "size": 7406,
+      "sha256": "5369fc82c51df067aec2934f5e711aaf9e3f745ed7baadd7ba4b77397dee2a1b"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/dialog.tsx",
+      "size": 3849,
+      "sha256": "fe70a91bb924ef3a40b7504e6847ef9a57aed3b503d2a7dbb7610e821ea40b6f"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/drawer.tsx",
+      "size": 3021,
+      "sha256": "774316527ddc577fc54012a0c898ebcf7cf8f11152126e550828b53004a5b70c"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/dropdown-menu.tsx",
+      "size": 7592,
+      "sha256": "add0bdc83e01db7bf88fe6341d3926575b691d56e13cb23bebab3284af47dc84"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/form.tsx",
+      "size": 4132,
+      "sha256": "9027dc0d91f785b6fc0ef579d4d6c9423f8634be9fd05f83fc4d8dfdc006488b"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/hover-card.tsx",
+      "size": 1251,
+      "sha256": "dcb793b8b1202b1634d791a993acadca0cfc3043a93b98c91a627fbff794f384"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/input-otp.tsx",
+      "size": 2143,
+      "sha256": "7c4799e3597f2780c09a39a1391b921fa16eaedd0476457492af734f58e2ec98"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/input.tsx",
+      "size": 768,
+      "sha256": "6299a6a387dc55e528aec4342deaea0b83f1ea3a365c135a31a18ee55334f441"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/label.tsx",
+      "size": 710,
+      "sha256": "e69cfc27d78c9ef31b248ab8ea4fa54327c1038843f70efb5cd85d54c0bf1e0e"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/menubar.tsx",
+      "size": 8622,
+      "sha256": "9e6f0abc04c608d29568be5b3f495815c4d708b5fd5b1e5797a2fb41b6f6b376"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/navigation-menu.tsx",
+      "size": 5124,
+      "sha256": "a06d96a582ac207ffcd38445d773c05e841d646efb185b5e9b65f73e5bd388c7"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/pagination.tsx",
+      "size": 2751,
+      "sha256": "9506dbd19ddd0c2810d1c9668a3f01606e39d9bf33ddc43329523c03bf629012"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/popover.tsx",
+      "size": 1342,
+      "sha256": "04cf38bf94abd3fe1b51e90227e6e235ca74776f6fc6af718bfc149e7424f582"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/progress.tsx",
+      "size": 792,
+      "sha256": "6b3b4b69a1cb361076174892e9a96e1a09020307616965ef89f2f7e2495b57a9"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/radio-group.tsx",
+      "size": 1410,
+      "sha256": "9ba7808b7404cdf2159c81883a39290033bc4308f2978eb80797c92b87421301"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/resizable.tsx",
+      "size": 1723,
+      "sha256": "70d1e35a5fb0897af7063cdd841d8ed636e1c332ef7ea6469f0f175a5a93dddf"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/scroll-area.tsx",
+      "size": 1642,
+      "sha256": "d7d02600effca55d0dcadce8c09c97ebddda3a19c5fa1d52dc9f6f727b26c6b1"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/select.tsx",
+      "size": 5745,
+      "sha256": "3d93ae07a8f3fe121ba60f4439e26bd7859f247eb8bfcafcf4b4a8a069888eec"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/separator.tsx",
+      "size": 756,
+      "sha256": "c956c4cca4b8442fa9314d6079b9f975e1ee39d5804aaf2966990f6258ac342a"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/sheet.tsx",
+      "size": 4280,
+      "sha256": "363f8e06aa5b53c6475f445117f60fa9294be79e9e4f1f5bf70886800188124e"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/sidebar.tsx",
+      "size": 23572,
+      "sha256": "c91b4faaa0b9e5713d4291abefdd5861be45baee3747ba240373e9c6833075f5"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/skeleton.tsx",
+      "size": 266,
+      "sha256": "87608e7cc815ad3d88e0b9de6c402bb37b58ea1b38636cf69709da1baff6e334"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/slider.tsx",
+      "size": 1037,
+      "sha256": "234e38fef59169bd02d8f5b56ca02e5ec13a0bd6846c328927b924e1299f7fb0"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/sonner.tsx",
+      "size": 908,
+      "sha256": "ffe5c64a58bd6b223c3782532ad7f92a8431c72de3a4345bae6db2148dd89aaa"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/switch.tsx",
+      "size": 1148,
+      "sha256": "ba5867cd3145af1290edd80bb56d4b6d61c6331aa8ef96ae0b85487f4499feaf"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/table.tsx",
+      "size": 2859,
+      "sha256": "a4a6972c2d47d465d7f02c1dc4a6cbfeda7a97e46479c1b0cebdaf26bf9b497a"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/tabs.tsx",
+      "size": 1877,
+      "sha256": "6f74706bc6b53f9e4bcebb5e7ab8743b616aef181edc7758b8ee905f9b2fdcd7"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/textarea.tsx",
+      "size": 649,
+      "sha256": "ec7c92aaed80f6923a7caa4bfe4eead395b50a7001504fd7fbb0b9381804dae9"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/toggle-group.tsx",
+      "size": 1753,
+      "sha256": "dba95ead40d163af6959198ded9853a2cc9282b2cb534980f99937a65edf4e2d"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/toggle.tsx",
+      "size": 1486,
+      "sha256": "955fa1bb97505b7a8bba3f7cff1991035a9afa0e1113f5d598147e6369dbf44b"
+    },
+    {
+      "path": "sources/keystone-sync/src/components/ui/tooltip.tsx",
+      "size": 1267,
+      "sha256": "ce6afa34fb9dae51053a863b4c3f7c6e55f3da23b00149f31a8e4402bc963be0"
+    },
+    {
+      "path": "sources/keystone-sync/src/hooks/use-accessibility.ts",
+      "size": 2249,
+      "sha256": "17107d1ac85a74d9d66983f2477dbffcdca1a9cba37b43738ab77a4d13cad78d"
+    },
+    {
+      "path": "sources/keystone-sync/src/hooks/use-mobile.tsx",
+      "size": 565,
+      "sha256": "ad0936f84f1df79d3697bfbff9c18f8ad58431c1cbaf2359c6a853b0fcc9f28b"
+    },
+    {
+      "path": "sources/keystone-sync/src/hooks/use-theme.ts",
+      "size": 662,
+      "sha256": "267fb461a448e4baa22e98e2127e7d6e1a4e30afcc44759a9fa37f6b9aee118b"
+    },
+    {
+      "path": "sources/keystone-sync/src/index.css",
+      "size": 3408,
+      "sha256": "32362caea89c6976493bcf6ab00040e0f3cd5bdd4c6c9240d066591d1a594201"
+    },
+    {
+      "path": "sources/keystone-sync/src/lib/api-client.ts",
+      "size": 400,
+      "sha256": "69e34939045e270188ca62d71a64a41fc71204b1b35d2585156508597e6ee83f"
+    },
+    {
+      "path": "sources/keystone-sync/src/lib/calculations.ts",
+      "size": 4399,
+      "sha256": "cfb9bf265611c77153a94287a1168779a96c5376e17a323af0840e738ebbf0b6"
+    },
+    {
+      "path": "sources/keystone-sync/src/lib/db.ts",
+      "size": 2697,
+      "sha256": "2d895f08e2cbae83e7bd51abba96ffb01828dcff41b5779004044fd2184cf64c"
+    },
+    {
+      "path": "sources/keystone-sync/src/lib/errorReporter.ts",
+      "size": 22863,
+      "sha256": "96207b04375c80789fb27d26f3322e3d4e27395a67b79ae6f04fbdee64e3d150"
+    },
+    {
+      "path": "sources/keystone-sync/src/lib/scrubber.ts",
+      "size": 1878,
+      "sha256": "4fe9945f2f05b8d1b5a167bfd9a129aacd4b8e7448ef08a2dc7a7a27822ad46e"
+    },
+    {
+      "path": "sources/keystone-sync/src/lib/utils.ts",
+      "size": 166,
+      "sha256": "7c8c3dfc0cdd370d44932828eb067ef771c8fe7996693221d5d4b90af6d54f2d"
+    },
+    {
+      "path": "sources/keystone-sync/src/lib/wiki-content.ts",
+      "size": 3753,
+      "sha256": "8fb0fb906b615d8fd4a12cd82ecbb31db01be81f551cf550923f22a52588af44"
+    },
+    {
+      "path": "sources/keystone-sync/src/main.tsx",
+      "size": 2337,
+      "sha256": "a397482a87088efee97d4e8fe559ee7815c27b5d98d0cf09cd05048393fa2b80"
+    },
+    {
+      "path": "sources/keystone-sync/src/pages/AppealGeneratorPage.tsx",
+      "size": 2907,
+      "sha256": "6a5bf5414fa8f52c1754e1c773e79c0b1a6afbb98ee90808a8ee2bac5773e2a2"
+    },
+    {
+      "path": "sources/keystone-sync/src/pages/DirectoryPage.tsx",
+      "size": 5307,
+      "sha256": "f9305e1f986c427c2b9d49351565b981fd32ca077b1dbd2ca3636ce283add9ab"
+    },
+    {
+      "path": "sources/keystone-sync/src/pages/DisputePage.tsx",
+      "size": 4993,
+      "sha256": "e89dcf7f0af296ad7163d71510c9354c5d28538821c29084a77470fbe7b132ee"
+    },
+    {
+      "path": "sources/keystone-sync/src/pages/EmergencyPage.tsx",
+      "size": 4729,
+      "sha256": "457b19f154356fe02687170f9a4625ba9d294cf8f3ba7be14039f7634efd8f68"
+    },
+    {
+      "path": "sources/keystone-sync/src/pages/HomePage.tsx",
+      "size": 10276,
+      "sha256": "e3eb9820af07dfe0e2287e427eb83c0e63f81bf8786458e74ff03bd0e9f88f20"
+    },
+    {
+      "path": "sources/keystone-sync/src/pages/ToolsPage.tsx",
+      "size": 7064,
+      "sha256": "fca0bc5bdd1e9f7063f177d4d4c640af2d090a9ac81851dcdf84659f35f84274"
+    },
+    {
+      "path": "sources/keystone-sync/src/pages/VaultPage.tsx",
+      "size": 10149,
+      "sha256": "80b1bfc3760af7bbb57190aadbcc195006fd6b3ae57a844d3901068f208cf635"
+    },
+    {
+      "path": "sources/keystone-sync/src/pages/WikiPage.tsx",
+      "size": 7689,
+      "sha256": "4abaaa99d11165ac56976411add97b755ad6f57cd2f2e0ef26a5466be7853ffe"
+    },
+    {
+      "path": "sources/keystone-sync/src/vite-env.d.ts",
+      "size": 37,
+      "sha256": "b440b802c2cfeac6a24eda510bd63c1f23c6ab5c52bcfe3a32a918dbad6b46c8"
+    },
+    {
+      "path": "sources/keystone-sync/tailwind.config.js",
+      "size": 5934,
+      "sha256": "c78b24ec5fa852e3f33673b355df9353184c9562bfa49ce6ff2bfd9ddc90ca98"
+    },
+    {
+      "path": "sources/keystone-sync/test_dashboard.py",
+      "size": 10108,
+      "sha256": "ecd7d4c367c6a9e825adb5a5509a72ab3969a530c359cec9f31015a805eabf0a"
+    },
+    {
+      "path": "sources/keystone-sync/tsconfig.app.json",
+      "size": 814,
+      "sha256": "0833792a97eb9d8d42c8ad15e6326449c7d6e1609c2d07ee9bd7200f9f3672fa"
+    },
+    {
+      "path": "sources/keystone-sync/tsconfig.json",
+      "size": 431,
+      "sha256": "072828872bd60bd8440464279be2000a655f783e4001f5a566c407731acdc6c5"
+    },
+    {
+      "path": "sources/keystone-sync/tsconfig.node.json",
+      "size": 778,
+      "sha256": "2b046d4a62aa276cd5804f51d2f08755cccc3841127c5a0de77d7ba125b48328"
+    },
+    {
+      "path": "sources/keystone-sync/tsconfig.worker.json",
+      "size": 266,
+      "sha256": "541d81f7105cf091aaf6e215b4168a2593bf808f75ddd6934d39cbd52df9eb00"
+    },
+    {
+      "path": "sources/keystone-sync/vite.config.ts",
+      "size": 4386,
+      "sha256": "f748e25c740e1cb35d1142d37a7d3facfca22a7fcfdcc2273a5c98ba796997f6"
+    },
+    {
+      "path": "sources/keystone-sync/worker/core-utils.ts",
+      "size": 11124,
+      "sha256": "d838a5d851f08ea617c577298cb83281a6e73bac8c74c2e01ed0dcb40656aa1b"
+    },
+    {
+      "path": "sources/keystone-sync/worker/entities.ts",
+      "size": 5124,
+      "sha256": "1a115f83bbe6e6814726621d33f387995448e9115001265ba03b150166ac0b62"
+    },
+    {
+      "path": "sources/keystone-sync/worker/index.ts",
+      "size": 3057,
+      "sha256": "db2c40ab39a774a2d7f5f30680ed9c2b9de6a785bb3067d48fee14d6db3cd49c"
+    },
+    {
+      "path": "sources/keystone-sync/worker/user-routes.ts",
+      "size": 2337,
+      "sha256": "ef23e9f843d7c526348bb0db38538f413351e60165f517fdeb472de11ff59789"
+    },
+    {
+      "path": "sources/keystone-sync/wrangler.jsonc",
       "size": 806,
       "sha256": "f2fd037f3af1946e8134a9d4fc224e0812634dc83b35f8df43551783ca17def5"
     },
