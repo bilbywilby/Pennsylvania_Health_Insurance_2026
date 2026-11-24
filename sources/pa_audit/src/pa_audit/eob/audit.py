@@ -2,12 +2,33 @@
 import hashlib
 import hmac
 import os
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List
 
 from pa_audit.ncci.parse import NCCIEdit
 from pa_audit.pfs.load import FeeScheduleItem, FeeScheduleLoader
+
+
+def _normalize_yyyymmdd(raw: object) -> str | None:
+    if raw is None:
+        return None
+    digits = re.sub(r"[^0-9]", "", str(raw).strip())
+    return digits if len(digits) == 8 else None
+
+
+def _is_ncci_edit_active(edit: object, service_date: object) -> bool:
+    dos = _normalize_yyyymmdd(service_date)
+    if dos is None:
+        return True
+    eff = _normalize_yyyymmdd(getattr(edit, "effective_date", None))
+    if eff is not None and dos < eff:
+        return False
+    deleted = _normalize_yyyymmdd(getattr(edit, "deletion_date", None))
+    if deleted is not None and dos >= deleted:
+        return False
+    return True
 
 
 class PIIScrubber:
@@ -89,7 +110,15 @@ class ForensicClaimAuditor:
                 f"(+{variance:.1f}%). Balance billing prohibited under 45 CFR 149."
             )
 
+        service_date = (
+            claim.get("service_date")
+            or claim.get("dos")
+            or claim.get("date_of_service")
+            or claim.get("claim_date")
+        )
         for (c1, c2), edit in self.ncci.items():
+            if not _is_ncci_edit_active(edit, service_date):
+                continue
             if cpt in (c1, c2) and edit.modifier_indicator == "0":
                 other = c2 if cpt == c1 else c1
                 violations.append(f"NCCI: {cpt} bundled with {other} (modifier not allowed).")
