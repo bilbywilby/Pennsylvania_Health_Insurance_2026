@@ -7,6 +7,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
       - run: bun install
+        working-directory: sources/keystone-sync
       - run: node scripts/check_appeal_bundle.js
         working-directory: .
       - run: bun run typecheck
