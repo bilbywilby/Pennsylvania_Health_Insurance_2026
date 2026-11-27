@@ -16,11 +16,11 @@
 | `Provider/Collector Name` | Exact legal name of the collector, collection law firm, or debt buyer from their demand letter | Sending to the hospital's main address when a third-party collector sent the bill. |
 | `City, State ZIP Code` | — NEEDS MANUAL REVIEW — | — |
 | `Account Number` | The collector's account/file/reference number printed on their notice (label the hospital ID separately if you also include it) | Leaving it blank, or conflating an internal hospital visit ID with the collector's file number. |
-| `Dates` | The calendar date you sign and physically mail the notice | Back- or post-dating relative to the postmark or certified receipt. |
+| `Dates` | The date(s) you received the medical services being billed (copy from the bills or EOB) | Confusing service dates with the mailing date — the mailing date goes in `Date` only. |
 | `Amount` | — NEEDS MANUAL REVIEW — | — |
-| `Date of First Statement` | The calendar date you sign and physically mail the notice | Back- or post-dating relative to the postmark or certified receipt. |
+| `Date of First Statement` | The date printed on the FIRST billing statement for this debt (copy it from your bills — it anchors the 4-year limitation clock under 42 Pa.C.S. § 5525(a)(8)) | Substituting the mailing date here would destroy the SOL-accrual anchor. |
 | `Insurer Name` | Name of the health insurer that adjudicated the claim, if coverage applied | Assuming the bill is final before checking whether an insurer processed or adjusted it on an EOB. |
-| `Date of Service` | The calendar date you sign and physically mail the notice | Back- or post-dating relative to the postmark or certified receipt. |
+| `Date of Service` | The date of the medical service for the claim your insurer adjudicated (check the EOB) | Mixing up the date of service with the statement or mailing dates. |
 | `VERIFY AT cms.gov/nosurprises` | — NEEDS MANUAL REVIEW — | — |
 | `Underscore blank` | Leave blank if the letter body has no underscore blank — strike through anything that doesn't apply. | Filling a blank the letter's own instructions say to leave empty. |
 | `Printed Name` | — NEEDS MANUAL REVIEW — | — |
@@ -81,7 +81,7 @@ To the extent this is a first-party or third-party debt collection effort, your 
 (b) A per se violation of the Unfair Trade Practices and Consumer Protection Law (UTPCPL), 73 P.S. § 201-9.2, exposing your organization to actual damages, treble damages for willful violations, and attorney fee-shifting.
 
 1.3 Statute of Limitations Acknowledgment
-I make no acknowledgment of this debt. Any partial payment, signed payment plan, or written admission submitted voluntarily would implicate 42 Pa.C.S. § 5533 and common law doctrines regarding tolling and reset of limitation periods. I expressly reserve all defenses and do not waive any rights by engaging in this correspondence.
+I make no acknowledgment of this debt. Any partial payment, signed payment plan, or written admission submitted voluntarily would implicate common law doctrines regarding tolling and reset of limitation periods. I expressly reserve all defenses and do not waive any rights by engaging in this correspondence.
 
 --------------------------------------------------------------------------------
 SECTION 2: DOCUMENTARY VALIDATION REQUIRED
