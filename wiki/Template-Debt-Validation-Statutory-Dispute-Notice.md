@@ -4,29 +4,29 @@
 
 ## Before you send — fill every field
 
-| Field | What to enter |
-|---|---|
-| Your Full Name | — |
-| Street Address | — |
-| City, PA ZIP Code | — |
-| Phone | — |
-| Email | — |
-| Date | — |
-| Insert Tracking Number | — |
-| Provider/Collector Name | — |
-| City, State ZIP Code | — |
-| Account Number | — |
-| Dates | — |
-| Amount | — |
-| Date of First Statement | — |
-| Insurer Name | — |
-| Date of Service | — |
-| VERIFY AT cms.gov/nosurprises | — |
-| Underscore blank | — |
-| Printed Name | — |
-| Insurance Carrier Name, if applicable | — |
-| Third-Party Collector Name, if known | — |
-| VERIFY | — |
+| Field (exact token) | What to enter | Pitfall to avoid |
+|---|---|---|
+| `Your Full Name` | — NEEDS MANUAL REVIEW — | — |
+| `Street Address` | — NEEDS MANUAL REVIEW — | — |
+| `City, PA ZIP Code` | — NEEDS MANUAL REVIEW — | — |
+| `Phone` | — NEEDS MANUAL REVIEW — | — |
+| `Email` | — NEEDS MANUAL REVIEW — | — |
+| `Date` | The calendar date you sign and physically mail the notice | Back- or post-dating relative to the postmark or certified receipt. |
+| `Insert Tracking Number` | USPS Certified Mail tracking/article number from your mailing receipt | Leaving this empty or copying the wrong receipt number — it's your proof of delivery. |
+| `Provider/Collector Name` | Exact legal name of the collector, collection law firm, or debt buyer from their demand letter | Sending to the hospital's main address when a third-party collector sent the bill. |
+| `City, State ZIP Code` | — NEEDS MANUAL REVIEW — | — |
+| `Account Number` | The collector's account/file/reference number printed on their notice (label the hospital ID separately if you also include it) | Leaving it blank, or conflating an internal hospital visit ID with the collector's file number. |
+| `Dates` | The calendar date you sign and physically mail the notice | Back- or post-dating relative to the postmark or certified receipt. |
+| `Amount` | — NEEDS MANUAL REVIEW — | — |
+| `Date of First Statement` | The calendar date you sign and physically mail the notice | Back- or post-dating relative to the postmark or certified receipt. |
+| `Insurer Name` | Name of the health insurer that adjudicated the claim, if coverage applied | Assuming the bill is final before checking whether an insurer processed or adjusted it on an EOB. |
+| `Date of Service` | The calendar date you sign and physically mail the notice | Back- or post-dating relative to the postmark or certified receipt. |
+| `VERIFY AT cms.gov/nosurprises` | — NEEDS MANUAL REVIEW — | — |
+| `Underscore blank` | Leave blank if the letter body has no underscore blank — strike through anything that doesn't apply. | Filling a blank the letter's own instructions say to leave empty. |
+| `Printed Name` | — NEEDS MANUAL REVIEW — | — |
+| `Insurance Carrier Name, if applicable` | — NEEDS MANUAL REVIEW — | — |
+| `Third-Party Collector Name, if known` | Exact legal name of the collector, collection law firm, or debt buyer from their demand letter | Sending to the hospital's main address when a third-party collector sent the bill. |
+| `VERIFY` | — NEEDS MANUAL REVIEW — | — |
 
 ## The letter
 

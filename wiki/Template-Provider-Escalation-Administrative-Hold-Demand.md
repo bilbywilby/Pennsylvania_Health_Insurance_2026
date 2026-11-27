@@ -85,6 +85,34 @@ Enclosures:
 - Explanation of Benefits (EOB) showing in-network cost-sharing calculation
 ```
 
+<!-- ANNOTATED_FIELDS_START -->
+## Field-by-Field Completion Guide
+
+Annotations for `Template-Provider-Escalation-Administrative-Hold-Demand.md` (19 unique tokens detected):
+
+| # | Placeholder | What to enter | Common pitfall |
+|---|---|---|---|
+| 1 | `[Your Full Name]` | Legal name matching the policy, claim, or hospital record | Using a nickname or omitting a middle initial that delays record matching |
+| 2 | `[Street Address]` | Mailing street address on file with the insurer, hospital, or regulator | Omitting apartment or unit numbers needed for notice delivery |
+| 3 | `[City, PA ZIP]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 4 | `[Phone]` | Callback telephone number with area code | Omitting contact details when requesting expedited review or callback |
+| 5 | `[Email]` | Email address for written confirmation or portal follow-up | Using an unmonitored address that misses time-sensitive replies |
+| 6 | `[Date]` | Calendar date you sign and physically mail or submit the notice | Back-dating or post-dating relative to postmark, tracking, or filing timestamp |
+| 7 | `[Number]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 8 | `[Provider / Health System Name]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 9 | `[Address]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 10 | `[City, State ZIP]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 11 | `[Account Number]` | Account, patient ID, or claim reference number from the statement or EOB | Conflating internal hospital account IDs with insurer claim IDs without labeling |
+| 12 | `[Dates]` | Exact relevant dates (service dates, statement dates, or denial dates) | Mixing up date of service with billing or appeal-denial dates |
+| 13 | `[Amount]` | Exact dollar amount disputed, billed, or requested | Rounding or omitting cents when citing a statement or EOB figure |
+| 14 | `[Date of Initial Letter]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 15 | `[Date of Rejection Letter]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 16 | `[In-Network Amount, if known]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 17 | `[VERIFY]` | Confirm statutory citation, agency rule, or current deadline before sending | Treating a placeholder verification tag as settled legal authority |
+| 18 | `[Signature]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 19 | `[Printed Name]` | Printed full legal name matching your signature line | Leaving blank after signing |
+<!-- ANNOTATED_FIELDS_END -->
+
 ## Sending rules
 
 1. Send with delivery confirmation; keep the receipt and a stamped copy.

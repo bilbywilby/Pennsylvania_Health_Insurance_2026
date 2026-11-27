@@ -169,6 +169,40 @@ SUBMISSION NOTES
 - Federal enforcement has secured over $4.18 million in monetary restitution for consumers in prior actions
 ```
 
+<!-- ANNOTATED_FIELDS_START -->
+## Field-by-Field Completion Guide
+
+Annotations for `Template-CMS-Complaint-Narrative-Self-Funded-ERISA.md` (25 unique tokens detected):
+
+| # | Placeholder | What to enter | Common pitfall |
+|---|---|---|---|
+| 1 | `[Your Full Name]` | Legal name matching the policy, claim, or hospital record | Using a nickname or omitting a middle initial that delays record matching |
+| 2 | `[Street Address]` | Mailing street address on file with the insurer, hospital, or regulator | Omitting apartment or unit numbers needed for notice delivery |
+| 3 | `[City, PA ZIP]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 4 | `[Phone]` | Callback telephone number with area code | Omitting contact details when requesting expedited review or callback |
+| 5 | `[Email]` | Email address for written confirmation or portal follow-up | Using an unmonitored address that misses time-sensitive replies |
+| 6 | `[Date]` | Calendar date you sign and physically mail or submit the notice | Back-dating or post-dating relative to postmark, tracking, or filing timestamp |
+| 7 | `[DOB]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 8 | `[If Known]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 9 | `[Employer/Group Plan Name]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 10 | `[Carrier Name]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 11 | `[Name]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 12 | `[Address]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 13 | `[Number]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 14 | `[Dates]` | Exact relevant dates (service dates, statement dates, or denial dates) | Mixing up date of service with billing or appeal-denial dates |
+| 15 | `[Amount]` | Exact dollar amount disputed, billed, or requested | Rounding or omitting cents when citing a statement or EOB figure |
+| 16 | `[Date claim submitted to insurer]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 17 | `[Out-of-network denial / Partial payment applied]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 18 | `[Date received EOB]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 19 | `[Date received bill from provider]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 20 | `[Yes / No]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 21 | `[Date if applicable]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 22 | `[Email / Phone / Mail]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 23 | `[Time window]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 24 | `[English / Other]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 25 | `[Underscore blank]` | Fill only if the template text has an explicit blank line requiring entry | Filling or altering optional lines that do not apply to your facts |
+<!-- ANNOTATED_FIELDS_END -->
+
 ## Sending rules
 
 1. Send with delivery confirmation; keep the receipt and a stamped copy.

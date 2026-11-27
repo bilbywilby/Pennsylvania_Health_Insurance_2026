@@ -73,6 +73,31 @@ CC:
  * CMS No Surprises Help Desk (1-800-985-3059)
 ```
 
+<!-- ANNOTATED_FIELDS_START -->
+## Field-by-Field Completion Guide
+
+Annotations for `Template-Act-252-NSA-Rescission-Demand.md` (16 unique tokens detected):
+
+| # | Placeholder | What to enter | Common pitfall |
+|---|---|---|---|
+| 1 | `[Insert Date]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 2 | `[Name of Hospital / Medical Center Billing Department]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 3 | `[Name of Third-Party / Out-of-Network Provider Practice]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 4 | `[Billing Department Address]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 5 | `[City, State, Zip Code]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 6 | `[Patient Full Name]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 7 | `[Patient Address]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 8 | `[Patient Phone Number / Email Address]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 9 | `[Insert Account Number]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 10 | `[Insert Date of Service]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 11 | `[Insert Provider Name and NPI if known]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 12 | `[Insert Statement Date]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 13 | `[Insert Disputed Amount]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 14 | `[Insert In-Network Facility Name]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 15 | `[Patient Signature]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 16 | `[Patient Printed Name]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+<!-- ANNOTATED_FIELDS_END -->
+
 ## Sending rules
 
 1. Send with delivery confirmation; keep the receipt and a stamped copy.
