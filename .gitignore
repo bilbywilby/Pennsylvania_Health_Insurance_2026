@@ -12,3 +12,6 @@ sources/Pennsylvania_Healthcare_September_2026/Pennsylvania Health Insurance Mar
 sources/keystone_health/Pennsylvania Health Market Forensic Audit.pptx
 *.tsbuildinfo
 MANIFEST.sha256.old*
+
+# generated device snapshots - keep out of the repo
+env_audit_*.txt
