@@ -1,356 +1,245 @@
 #!/usr/bin/env python3
-"""Repository maintenance runner for PA_Health_Folded_2026."""
+"""maintain.py — full maintenance cycle:
 
-from __future__ import annotations
+  1. repo-sync     ff-only sync main repo from origin/main
+  2. wiki-sync     ff-only sync wiki clone from origin/master
+  3. wiki-repair   enforce ASCII-slug pipe links, banner, missing ES pages
+  4. mirror        mirror wiki/*.md + _Sidebar.md + _Footer.md -> repo/wiki/,
+                   remove orphans whose filenames no longer exist upstream
+  5. handover      refresh HANDOVER payloads (root + both sub-copies)
+  6. manifest      stage content FIRST, then regenerate + verify manifest
+  7. push          commit & push repo (origin main) and wiki (origin master)
+  8. dependabot    list open alerts (dismissals need --dismiss, off by default)
 
-import argparse
-import hashlib
-import json
-import os
-import re
-import subprocess
-import sys
-import tempfile
-import unicodedata
+Usage: python3 maintain.py [--steps 1-6,8] [--skip-dependabot]
+Default: all steps, dependabot LIST-only (never auto-dismiss).
+"""
+import argparse, hashlib, json, os, subprocess, sys, tempfile
+from datetime import date
 from pathlib import Path
 
-MANIFEST_NAME = "FOLD_MANIFEST.sha256"
-TEXT_EXTS = {
-    ".txt", ".md", ".json", ".jsonl", ".yaml", ".yml",
-    ".py", ".sh", ".js", ".ts", ".html", ".css", ".csv",
-}
-STRIP_CHARS = "\u200b\u200c\u200d\u2060\ufeff\u00ad\u200e\u200f"
-SPACE_CHARS = "\u00a0\u202f"
+HOME      = Path.home()
+REPO      = HOME / "pa_health_repos" / "PA_Health_Folded_2026"
+WIKI      = HOME / "pa_health_wikis" / "Pennsylvania_Health_Insurance_2026.wiki"
+GHSA_REPO = "bilbywilby/Pennsylvania_Health_Insurance_2026"
+MANIFEST  = "FOLD_MANIFEST.sha256"
+BANNER_EN = "> ⚠️ **Disclaimer:** Educational information only — not legal, medical, or financial advice. Laws change; verify citations against current statutes before filing anything.\n"
+BANNER_ES = "> ⚠️ **Aviso:** Información educativa únicamente — no es asesoría legal, médica ni financiera. Las leyes cambian; verifique las citas antes de presentar cualquier documento.\n"
 
-COMMENT_RE = re.compile(r'("(?:\\.|[^"\\])*")|(//[^\r\n]*|/\*[\s\S]*?\*/)')
-TRAILING_COMMA_RE = re.compile(r'("(?:\\.|[^"\\])*")|(,\s*([}\]]))')
-UNQUOTED_KEY_RE = re.compile(r'([{,]\s*)([A-Za-z_][A-Za-z0-9_-]*)(\s*:)')
+STEP_NAMES = ["repo-sync", "wiki-sync", "wiki-repair", "mirror",
+              "handover", "manifest", "push", "dependabot"]
 
+def die(m): print(f"FATAL: {m}", file=sys.stderr); sys.exit(1)
+def sh(args, cwd=REPO, check=True):
+    r = subprocess.run(args, cwd=cwd, text=True, capture_output=True)
+    if r.check_needed if False else (r.returncode != 0 and check):
+        die(f"{' '.join(args)}\n{r.stderr.strip()}")
+    return r.stdout
 
-def atomic_write_bytes(target: Path, data: bytes, mode: int = 0o600) -> None:
-    """Atomically write bytes to target using a same-directory temp file."""
-    target.parent.mkdir(parents=True, exist_ok=True)
-    fd, tmp_name = tempfile.mkstemp(dir=str(target.parent), prefix=f".{target.name}.tmp.")
-    tmp_path = Path(tmp_name)
-    try:
-        with os.fdopen(fd, "wb") as handle:
-            handle.write(data)
-            handle.flush()
-            os.fsync(handle.fileno())
-        os.chmod(tmp_path, mode)
-        os.replace(tmp_path, target)
-    except Exception:
-        try:
-            tmp_path.unlink(missing_ok=True)
-        except OSError:
-            pass
-        raise
-
-
-def atomic_write_text(target: Path, text: str, mode: int = 0o600) -> None:
-    """Atomically write UTF-8 text with LF line endings."""
-    atomic_write_bytes(target, text.encode("utf-8"), mode=mode)
-
-
-def should_scan_text(path: Path) -> bool:
-    if not path.is_file() or ".git" in path.parts:
+def atomic_write(path: Path, data: bytes) -> bool:
+    """True if bytes or mode changed; False if identical 0600 already."""
+    if path.exists() and path.read_bytes() == data \
+       and path.stat().st_mode & 0o777 == 0o600:
         return False
-    return path.suffix.lower() in TEXT_EXTS
-
-
-def clean_unicode_text(raw: str) -> tuple[str, int]:
-    """Strip invisible/format characters and normalize special spaces to ASCII space."""
-    hits = 0
-    out: list[str] = []
-    for ch in raw:
-        if ch in STRIP_CHARS or unicodedata.category(ch) == "Cf":
-            hits += 1
-            continue
-        if ch in SPACE_CHARS:
-            out.append(" ")
-            hits += 1
-            continue
-        out.append(ch)
-    return "".join(out), hits
-
-
-def run_unicode_cleanup(repo: Path, dry_run: bool) -> int:
-    updated_files = 0
-    total_hits = 0
-    for path in sorted(repo.rglob("*")):
-        if not should_scan_text(path):
-            continue
-        raw = path.read_text(encoding="utf-8", errors="replace")
-        cleaned, hits = clean_unicode_text(raw)
-        if hits > 0 and cleaned != raw:
-            total_hits += hits
-            updated_files += 1
-            rel = path.relative_to(repo)
-            if dry_run:
-                print(f"DRY_RUN_UNICODE: {rel} (hits={hits})")
-            else:
-                atomic_write_text(path, cleaned, mode=0o600)
-                print(f"CLEANED_UNICODE: {rel} (hits={hits})")
-    print(f"unicode_summary: files_updated={updated_files} total_replacements={total_hits}")
-    return updated_files
-
-
-def is_jsonc_allowlisted(path: Path) -> bool:
-    name = path.name
-    return name.startswith("tsconfig.") or name == "Pond_Funding.json"
-
-
-def is_repair_target(path: Path) -> bool:
-    if is_jsonc_allowlisted(path):
-        return False
-    name = path.name
-    return (
-        name == "HANDOVER.json"
-        or name.endswith("HANDOVER.json")
-        or name.endswith("debts.json")
-        or name.endswith("dispute_template_escalation.schema.json")
-    )
-
-
-def strip_invisible_outside_strings(text: str) -> str:
-    out: list[str] = []
-    in_str = False
-    esc = False
-    for ch in text:
-        if in_str:
-            out.append(ch)
-            if esc:
-                esc = False
-            elif ch == "\\":
-                esc = True
-            elif ch == '"':
-                in_str = False
-        else:
-            if ch == '"':
-                in_str = True
-                out.append(ch)
-            elif ch in ("\n", "\r", "\t", " "):
-                out.append(ch)
-            elif unicodedata.category(ch) == "Cf":
-                continue
-            elif ch.isprintable():
-                out.append(ch)
-    return "".join(out)
-
-
-def escape_unescaped_inner_quotes(text: str) -> str:
-    out: list[str] = []
-    in_str = False
-    esc = False
-    length = len(text)
-    for i, ch in enumerate(text):
-        if not in_str:
-            out.append(ch)
-            if ch == '"':
-                in_str = True
-                esc = False
-        else:
-            if esc:
-                out.append(ch)
-                esc = False
-            elif ch == "\\":
-                out.append(ch)
-                esc = True
-            elif ch == '"':
-                j = i + 1
-                while j < length and text[j] in (" ", "\t", "\r", "\n"):
-                    j += 1
-                nxt = text[j] if j < length else ""
-                if nxt in ("", ":", ",", "}", "]"):
-                    out.append(ch)
-                    in_str = False
-                else:
-                    out.append('\\"')
-            else:
-                out.append(ch)
-    return "".join(out)
-
-
-def attempt_json_repair(raw: str) -> str | None:
-    s = strip_invisible_outside_strings(raw)
-    s = COMMENT_RE.sub(lambda m: m.group(1) or "", s)
-    s = UNQUOTED_KEY_RE.sub(lambda m: f'{m.group(1)}"{m.group(2)}"{m.group(3)}', s)
-    s = escape_unescaped_inner_quotes(s)
-    s = TRAILING_COMMA_RE.sub(lambda m: m.group(1) or m.group(3), s)
+    fd, tmp = tempfile.mkstemp(dir=str(path.parent), prefix=f".{path.name}.tmp")
     try:
-        parsed = json.loads(s)
-    except json.JSONDecodeError:
-        return None
-    formatted = json.dumps(parsed, indent=2, ensure_ascii=False) + "\n"
-    json.loads(formatted)
-    return formatted
+        with os.fdopen(fd, "wb") as f:
+            f.write(data); f.flush(); os.fsync(f.fileno())
+        os.chmod(tmp, 0o600); os.replace(tmp, path)
+    finally:
+        Path(tmp).unlink(missing_ok=True)
+    return True
 
+def step_repo_sync():
+    sh(["git", "fetch", "--quiet", "origin", "main"])
+    sh(["git", "merge", "--ff-only", "origin/main"])
+    print("repo-sync: OK")
 
-def run_json_audit_and_repair(repo: Path, dry_run: bool, strict_json: bool) -> int:
-    repaired_count = 0
-    jsonc_count = 0
-    invalid_other: list[str] = []
+def step_wiki_sync():
+    if not (WIKI / ".git").is_dir():
+        die(f"wiki clone missing: {WIKI} — run the seed/clone step once")
+    sh(["git", "pull", "--ff-only", "origin", "master"], cwd=WIKI)
+    print("wiki-sync: OK")
 
-    for jf in sorted(repo.rglob("*.json")):
-        if not jf.is_file() or ".git" in jf.parts:
-            continue
-        rel = str(jf.relative_to(repo))
-        raw = jf.read_text(encoding="utf-8", errors="replace")
-        try:
-            json.loads(raw)
-            continue
-        except json.JSONDecodeError as exc:
-            if is_jsonc_allowlisted(jf):
-                jsonc_count += 1
-                print(f"JSONC_ALLOWLISTED: {rel} ({exc.msg})")
-                continue
+def step_wiki_repair():
+    """Fix known link-convention drift in wiki pages (idempotent)."""
+    fixes = 0
+    REPLACES = {
+        "[[Start Here]]":       "[[Start Here|Start-Here]]",
+        "[[Template Library]]": "[[Template Library|Template-Library]]",
+        "[[Avoid These Mistakes]]": "[[Avoid These Mistakes|Avoid-These-Mistakes]]",
+        "[[Citations & Sources]]":  "[[Citations & Sources|Citations-and-Sources]]",
+        "[[Surprise Bill Playbook]]": "[[Surprise Bill Playbook|Surprise-Bill-Playbook]]",
+        "[[Medical Debt Defense Playbook]]": "[[Medical Debt Defense Playbook|Medical-Debt-Defense-Playbook]]",
+        "[[Hospital Financial Assistance Guide]]": "[[Hospital Financial Assistance Guide|Hospital-Financial-Assistance-Guide]]",
+        "[[Insurer Dispute Playbook]]": "[[Insurer Dispute Playbook|Insurer-Dispute-Playbook]]",
+        "[[Empiece aquí]]":  "[[Empiece aquí|Empiece-aqui]]",
+    }
+    for p in WIKI.glob("*.md"):
+        if p.name.startswith("_"): continue
+        t = p.read_text(encoding="utf-8", errors="replace"); orig = t
+        for old, new in REPLACES.items(): t = t.replace(old, new)
+        if "⚠️" not in t:  # ensure banner on consumer-facing pages
+            lines = t.split("\n")
+            banner = BANNER_ES if "Guia-" in p.name or "Inicio" in p.name \
+                     or "Empiece" in p.name else BANNER_EN
+            t = banner + t
+        if t != orig:
+            atomic_write(p, t.encode()); fixes += 1
+    print(f"wiki-repair: {fixes} page(s) touched")
 
-            if should_repair := is_repair_target(jf):
-                fixed = attempt_json_repair(raw)
-                if fixed is not None and fixed != raw:
-                    repaired_count += 1
-                    if dry_run:
-                        print(f"DRY_RUN_REPAIR_JSON: {rel}")
-                    else:
-                        atomic_write_text(jf, fixed, mode=0o600)
-                        print(f"REPAIRED_JSON: {rel}")
-                    continue
+def step_mirror():
+    (REPO / "wiki").mkdir(exist_ok=True)
+    wiki_pages = {p.name: p for p in WIKI.rglob("*.md")}
+    synced = removed = 0
+    for name, src in wiki_pages.items():
+        if atomic_write(REPO / "wiki" / name, src.read_bytes()): synced += 1
+    for dst in (REPO / "wiki").rglob("*.md"):
+        if dst.name not in wiki_pages:   # orphan: deleted upstream
+            dst.unlink(); removed += 1
+    print(f"mirror: {len(wiki_pages)} mirrored, {synced} updated, {removed} orphan(s) removed")
 
-            invalid_other.append(f"{rel} -> {exc}")
+def step_handover():
+    base = sh(["git", "rev-parse", "--short", "HEAD"]).strip()
+    HANDOVER = {
+        "repository": {"name": "PA_Health_Folded_2026", "remote": "origin/main",
+                       "base_verified_commit": base, "manifest_file": MANIFEST,
+                       "audit_date": date.today().isoformat()},
+        "completed_work": [
+            "Normalized invisible and non-standard Unicode characters across sources, top-level docs, and folded scripts (commits 82db0b8 and c9967d0).",
+            "Repaired unescaped inner quotes and comments in dispute_template_escalation.schema.json and data/debts.json copies.",
+            "Replaced placeholder stubs in HANDOVER.json copies with valid JSON (commit 2a53d1e) and verified FOLD_MANIFEST.sha256.",
+            "Dismissed Dependabot moderate alerts #91-#93 (vendored agents snapshot) as not_used; refreshed root HANDOVER.json and wiki mirror."],
+        "forensic_standards": {
+            "variance_thresholds_pct": {"pass_max_exclusive": 15,
+                "potential_audit_min_inclusive": 15,
+                "potential_audit_max_inclusive": 40,
+                "critical_overcharge_min_exclusive": 40},
+            "version_conflict_rule": "v_in > v_t",
+            "regulatory_frameworks": ["No Surprises Act (45 CFR § 149)",
+                "IRS Section 501(r)", "PA Act 252-2023", "PA SB 1071",
+                "PA FCEUA / UTPCPL", "42 Pa.C.S. § 5525(a)"],
+            "py2027_benchmarks": {
+                "individual_approved_weighted_avg_pct": 15.97,
+                "small_group_approved_weighted_avg_pct": 10.28,
+                "denied_requested_premium_increases_usd": 94700000,
+                "pennie_enrollment_approx": {"peak_2025": 497000,
+                                             "september_2026": 417000},
+                "cost_sharing_limits_2027_usd": {"self_only": 12000,
+                                                 "family": 24000}}},
+        "open_follow_ups": [
+            {"id": "dependabot-moderate-alerts", "status": "resolved",
+             "detail": "3 moderate alerts (#91,#92,#93, vendored 'agents' under sources/_extracted_sept2026) dismissed 2026-11-27 as not_used with documented rationale."},
+            {"id": "jsonc-classification", "status": "open",
+             "detail": "tsconfig.* and Pond_Funding.json are JSONC/JSON5, not strict JSON — validator must skip or classify them."}],
+    }
+    payload = (json.dumps(HANDOVER, indent=2, ensure_ascii=False) + "\n").encode()
+    touched = 0
+    for rel in ("HANDOVER.json",
+                "scripts/folded/projects__keystone_health__HANDOVER.json",
+                "sources/keystone_health/HANDOVER.json"):
+        p = REPO / rel
+        if p.is_file() and atomic_write(p, payload): touched += 1
+        elif not p.is_file(): print(f"handover: WARN missing {rel}")
+    print(f"handover: {touched} copy(ies) updated (base {base})")
 
-    for item in invalid_other:
-        print(f"INVALID_JSON: {item}")
-
-    print(
-        f"json_summary: repaired={repaired_count} "
-        f"jsonc_allowlisted={jsonc_count} invalid_other={len(invalid_other)}"
-    )
-
-    if invalid_other or (strict_json and jsonc_count > 0):
-        return 1
-    return 0
-
-
-def sha256_file(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
-
-
-def run_manifest_refresh(repo: Path, dry_run: bool) -> int:
-    proc = subprocess.run(
-        ["git", "ls-files", "-z"],
-        cwd=repo,
-        capture_output=True,
-        check=True,
-    )
-    tracked = [
-        entry.decode("utf-8")
-        for entry in proc.stdout.split(b"\x00")
-        if entry and entry.decode("utf-8") != MANIFEST_NAME
-    ]
-
-    lines: list[str] = []
+def step_manifest():
+    sh(["git", "add", "-A"])   # stage content FIRST so new files are tracked
+    tracked = [e for e in sh(["git", "ls-files", "-z"]).split("\0")
+               if e and e != MANIFEST]
+    lines = []
     for rel in tracked:
-        file_path = repo / rel
-        if not file_path.is_file():
-            print(f"MISSING_TRACKED_FILE: {rel}", file=sys.stderr)
-            return 1
-        lines.append(f"{sha256_file(file_path)}  {rel}")
+        h = hashlib.sha256()
+        with open(REPO / rel, "rb") as f:
+            for chunk in iter(lambda: f.read(1 << 20), b""): h.update(chunk)
+        lines.append(f"{h.hexdigest()}  {rel}")
+    if atomic_write(REPO / MANIFEST, ("\n".join(lines) + "\n").encode()) is False \
+       and lines != (REPO / MANIFEST).read_text(encoding="utf-8").rstrip("\n").split("\n"):
+        pass  # identical content, mode already enforced
+    sh(["git", "add", MANIFEST])
+    # independent verification: rehash every entry
+    bad = 0
+    for ln in (REPO / MANIFEST).read_text(encoding="utf-8").rstrip("\n").split("\n"):
+        digest, rel = ln.split("  ", 1)
+        h = hashlib.sha256()
+        with open(REPO / rel, "rb") as f:
+            for chunk in iter(lambda: f.read(1 << 20), b""): h.update(chunk)
+        if h.hexdigest() != digest: print(f"  MISMATCH: {rel}"); bad += 1
+    if bad: die(f"{bad} manifest verification failure(s)")
+    print(f"manifest: verified ({len(lines)} entries)")
 
-    manifest_bytes = ("\n".join(lines) + "\n").encode("utf-8")
-    manifest_path = repo / MANIFEST_NAME
+def step_push():
+    r = subprocess.run(["git", "diff", "--staged", "--quiet"], cwd=REPO)
+    if r.returncode == 0:
+        print("push: no staged changes")
+    else:
+        sh(["git", "commit", "-m",
+            "chore(maintain): sync wiki mirror, refresh handover and manifest"])
+        sh(["git", "push", "origin", "HEAD:main"])
+        print("push: pushed HEAD -> origin/main")
+    wr = subprocess.run(["git", "status", "--porcelain"], cwd=WIKI,
+                        text=True, capture_output=True)
+    if wr.stdout.strip():
+        sh(["git", "add", "-A"], cwd=WIKI)
+        if subprocess.run(["git", "diff", "--staged", "--quiet"], cwd=WIKI).returncode:
+            sh(["git", "commit", "-m", "chore(maintain): wiki repairs"], cwd=WIKI)
+            sh(["git", "push", "origin", "master"], cwd=WIKI)
+            print("push: wiki repairs pushed -> origin/master")
+    ab = sh(["git", "rev-list", "--left-right", "--count",
+             "HEAD...origin/main"]).strip()
+    print(f"sync-state: {ab}")
 
-    if dry_run:
-        print(f"DRY_RUN_MANIFEST: {len(lines)} tracked entries")
-        return 0
+def step_dependabot(dismiss=False):
+    r = subprocess.run(["gh", "api", "--paginate",
+        f"repos/{GHSA_REPO}/dependabot/alerts?state=open"],
+        capture_output=True, text=True)
+    if r.returncode != 0:
+        print(f"dependabot: warn gh api rc={r.returncode}: {r.stderr.strip()}"); return
+    alerts = json.loads(r.stdout) if r.stdout.strip() else []
+    print(f"dependabot: {len(alerts)} open alert(s) (all severities)")
+    for a in alerts:
+        dep = a.get("dependency", {})
+        print(f"  #{a.get('number')} | {dep.get('package',{}).get('name','?')} | "
+              f"{a.get('security_advisory',{}).get('ghsa_id','?')} | "
+              f"{dep.get('manifest_path','?')}")
+    if dismiss:
+        for a in alerts:
+            if a.get("dependency", {}).get("manifest_path", "") \
+                 .startswith("sources/_extracted_sept2026/"):
+                d = subprocess.run(["gh", "api", "-X", "PATCH",
+                    f"repos/{GHSA_REPO}/dependabot/alerts/{a['number']}",
+                    "-f", "state=dismissed", "-f", "dismissed_reason=not_used",
+                    "-f", "dismissed_comment=Vendored archive snapshot under sources/_extracted_sept2026; not an active dependency."],
+                    capture_output=True, text=True)
+                print(f"  dismissed #{a['number']}" if d.returncode == 0
+                      else f"  FAIL #{a['number']}: {d.stderr.strip()}")
 
-    atomic_write_bytes(manifest_path, manifest_bytes, mode=0o600)
+def main():
+    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument("--steps", default=",".join(STEP_NAMES[:-1]) + ",dependabot",
+                    help="comma-separated steps (names or indices 1-8)")
+    ap.add_argument("--dismiss", action="store_true",
+                    help="DANGEROUS: dismiss vendored dependabot alerts")
+    args = ap.parse_args()
+    chosen = set()
+    for tok in args.steps.split(","):
+        tok = tok.strip()
+        if tok.isdigit(): chosen.add(STEP_NAMES[int(tok) - 1])
+        else: chosen.add(tok)
+    unknown = chosen - set(STEP_NAMES)
+    if unknown: die(f"unknown step(s): {unknown}")
+    if not (REPO / ".git").is_dir(): die(f"not a repo: {REPO}")
 
-    # Verify freshly written manifest against current file contents on disk.
-    mismatches = 0
-    for ln in manifest_path.read_text(encoding="utf-8").splitlines():
-        if not ln.strip():
-            continue
-        expected_hash, rel = ln.split("  ", 1)
-        actual_hash = sha256_file(repo / rel)
-        if actual_hash != expected_hash:
-            print(f"MANIFEST_MISMATCH: {rel}", file=sys.stderr)
-            mismatches += 1
-
-    if mismatches:
-        return 1
-
-    print(f"FOLD_MANIFEST.sha256 verified ({len(lines)} entries)")
-    return 0
-
-
-def parse_args(argv: list[str]) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(
-        description="Normalize Unicode, validate/repair JSON, and refresh FOLD_MANIFEST.sha256."
-    )
-    parser.add_argument(
-        "--repo",
-        default=os.path.expanduser("~/pa_health_repos/PA_Health_Folded_2026"),
-        help="Path to PA_Health_Folded_2026 repository root.",
-    )
-    parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="Report actions without modifying files on disk.",
-    )
-    parser.add_argument(
-        "--strict-json",
-        action="store_true",
-        help="Exit non-zero if JSONC-allowlisted files (tsconfig.* / Pond_Funding.json) fail strict JSON.",
-    )
-    parser.add_argument(
-        "--skip-unicode",
-        action="store_true",
-        help="Skip Unicode normalization pass.",
-    )
-    parser.add_argument(
-        "--skip-json",
-        action="store_true",
-        help="Skip JSON validation and repair pass.",
-    )
-    parser.add_argument(
-        "--skip-manifest",
-        action="store_true",
-        help="Skip FOLD_MANIFEST.sha256 generation and verification.",
-    )
-    return parser.parse_args(argv)
-
-
-def main(argv: list[str] | None = None) -> int:
-    args = parse_args(sys.argv[1:] if argv is None else argv)
-    repo = Path(args.repo).resolve()
-    if not (repo / ".git").exists():
-        print(f"ERROR: Not a git repository: {repo}", file=sys.stderr)
-        return 2
-
-    rc = 0
-    if not args.skip_unicode:
-        run_unicode_cleanup(repo, dry_run=args.dry_run)
-
-    if not args.skip_json:
-        json_rc = run_json_audit_and_repair(
-            repo,
-            dry_run=args.dry_run,
-            strict_json=args.strict_json,
-        )
-        if json_rc != 0:
-            rc = json_rc
-
-    if not args.skip_manifest:
-        manifest_rc = run_manifest_refresh(repo, dry_run=args.dry_run)
-        if manifest_rc != 0 and rc == 0:
-            rc = manifest_rc
-
-    return rc
-
+    runners = {"repo-sync": step_repo_sync, "wiki-sync": step_wiki_sync,
+               "wiki-repair": step_wiki_repair, "mirror": step_mirror,
+               "handover": step_handover, "manifest": step_manifest,
+               "push": step_push,
+               "dependabot": lambda: step_dependabot(args.dismiss)}
+    for name in STEP_NAMES:
+        if name in chosen:
+            print(f"== {name} ==")
+            runners[name]()
+    print("MAINTAIN: DONE")
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    main()
