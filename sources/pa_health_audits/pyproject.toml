@@ -9,6 +9,9 @@ description = "Forensic pricing, PY2027 rate audit, and PII-safe verification ut
 requires-python = ">=3.11"
 dependencies = []
 
+[project.scripts]
+pa-health-audit = "pa_health_audits.cli:main"
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
