@@ -4,7 +4,7 @@ umask 077
 
 REPO="bilbywilby/Pennsylvania_Health_Insurance_2026"
 REPO_DIR="${HOME}/pa_health_repos/PA_Health_Folded_2026"
-PR_NUMBERS=(6 8 9 10 11)
+PR_NUMBERS=(5 6 7 8 9 10 11)
 MERGED_ANY=0
 
 cd "${REPO_DIR}"
