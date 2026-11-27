@@ -45,8 +45,8 @@ if [[ "${IS_ANDROID}" -eq 1 ]]; then
   INSTALL_FLAGS+=(--ignore-scripts)
 fi
 
-if ! bun install --frozen-lockfile "${INSTALL_FLAGS[@]}"; then
-  bun install "${INSTALL_FLAGS[@]}"
+if ! bun install --frozen-lockfile --frozen-lockfile "${INSTALL_FLAGS[@]}"; then
+  bun install --frozen-lockfile "${INSTALL_FLAGS[@]}"
 fi
 rm -f "${APP_DIR}/.bootstrap-complete"
 bun run typecheck
