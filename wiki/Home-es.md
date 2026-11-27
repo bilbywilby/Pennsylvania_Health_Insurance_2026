@@ -8,9 +8,9 @@ Orientación gratuita y clara para consumidores de Pensilvania que enfrentan **f
 
 | Su situación | Vaya a |
 |---|---|
-| Recibí una factura sorpresa / fuera de red | [[Guía: Factura Sorpresa]] |
-| Mi deuda está en cobranzas o fui demandado | [[Guía: Defensa contra Deudas Médicas]] |
-| Necesito asistencia financiera hospitalaria | [[Guía: Asistencia Financiera Hospitalaria]] |
-| Mi aseguradora negó un reclamo | [[Guía: Disputas con Aseguradoras]] |
+| Recibí una factura sorpresa / fuera de red | [[Guía: Factura Sorpresa|Guia-Factura-Sorpresa]] |
+| Mi deuda está en cobranzas o fui demandado | [[Guía: Defensa contra Deudas Médicas|Guia-Defensa-Deudas-Medicas]] |
+| Necesito asistencia financiera hospitalaria | [[Guía: Asistencia Financiera Hospitalaria|Guia-Asistencia-Financiera-Hospitalaria]] |
+| Mi aseguradora negó un reclamo | [[Guía: Disputas con Aseguradoras|Guia-Disputas-Aseguradoras]] |
 
 👉 English: [[Home]]
