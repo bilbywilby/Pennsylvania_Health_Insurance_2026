@@ -12,3 +12,12 @@ Copy-paste letters and notices. Each template page will include a **fill-these-f
 - Complete Dispute Package Checklist & Exhibits
 
 **Rule of thumb:** never mail a dispute without delivery confirmation, and keep a stamped copy of everything sent.
+
+## Available templates
+
+- [[Debt Validation & Statutory Dispute Notice|Template-Debt-Validation-Statutory-Dispute-Notice]]
+- [[Act 252 / NSA Rescission Demand|Template-Act-252-NSA-Rescission-Demand]]
+- [[Provider Escalation & Administrative Hold Demand|Template-Provider-Escalation-Administrative-Hold-Demand]]
+- [[Financial Assistance (IRS 501(r)) Request|Template-Financial-Assistance-IRS-501-r-Request]]
+- [[PID Complaint Narrative (Fully Insured)|Template-PID-Complaint-Narrative-Fully-Insured]]
+- [[CMS Complaint Narrative (Self-Funded ERISA)|Template-CMS-Complaint-Narrative-Self-Funded-ERISA]]

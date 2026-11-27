@@ -11,3 +11,12 @@ Cartas y avisos listos para copiar. Cada página incluirá una **tabla de campos
 - Lista de verificación del paquete completo de disputa
 
 **Regla práctica:** nunca envíe una disputa sin confirmación de entrega, y conserve copia sellada de todo.
+
+## Available templates
+
+- [[Aviso de Validación de Deuda y Disputa Estatutaria|Template-Debt-Validation-Statutory-Dispute-Notice]] (contenido en inglés)
+- [[Aviso Ley 252 / NSA — Exigencia de Rescisión|Template-Act-252-NSA-Rescission-Demand]] (contenido en inglés)
+- [[Escalada al Proveedor y Retención Administrativa|Template-Provider-Escalation-Administrative-Hold-Demand]] (contenido en inglés)
+- [[Solicitud de Asistencia Financiera (IRS 501(r))|Template-Financial-Assistance-IRS-501-r-Request]] (contenido en inglés)
+- [[Queja ante el PID (Plan Asegurado)|Template-PID-Complaint-Narrative-Fully-Insured]] (contenido en inglés)
+- [[Queja ante CMS (Plan Autofinanciado ERISA)|Template-CMS-Complaint-Narrative-Self-Funded-ERISA]] (contenido en inglés)
