@@ -2,14 +2,15 @@
   "repository": {
     "name": "PA_Health_Folded_2026",
     "remote": "origin/main",
-    "base_verified_commit": "2a53d1e",
+    "base_verified_commit": "fd62da8",
     "manifest_file": "FOLD_MANIFEST.sha256",
     "audit_date": "2026-11-27"
   },
   "completed_work": [
     "Normalized invisible and non-standard Unicode characters across sources, top-level docs, and folded scripts (commits 82db0b8 and c9967d0).",
     "Repaired unescaped inner quotes and comments in dispute_template_escalation.schema.json and data/debts.json copies.",
-    "Replaced placeholder stubs in HANDOVER.json copies with valid JSON (commit 2a53d1e) and verified FOLD_MANIFEST.sha256."
+    "Replaced placeholder stubs in HANDOVER.json copies with valid JSON (commit 2a53d1e) and verified FOLD_MANIFEST.sha256.",
+    "Dismissed Dependabot moderate alerts #91-#93 (vendored agents snapshot) as not_used; refreshed root HANDOVER.json and wiki mirror."
   ],
   "forensic_standards": {
     "variance_thresholds_pct": {
@@ -44,8 +45,13 @@
   "open_follow_ups": [
     {
       "id": "dependabot-moderate-alerts",
-      "status": "open_on_remote",
-      "detail": "Open moderate Dependabot alerts reported on bilbywilby/Pennsylvania_Health_Insurance_2026 (vendored agents package under sources/_extracted_sept2026)."
+      "status": "resolved",
+      "detail": "3 moderate alerts (#91,#92,#93, vendored 'agents' under sources/_extracted_sept2026) dismissed 2026-11-27 as not_used with documented rationale."
+    },
+    {
+      "id": "jsonc-classification",
+      "status": "open",
+      "detail": "tsconfig.* and Pond_Funding.json are JSONC/JSON5, not strict JSON — validator must skip or classify them."
     }
   ]
 }
