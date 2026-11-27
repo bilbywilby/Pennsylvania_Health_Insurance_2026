@@ -1,0 +1,618 @@
+{
+  "template": "Formal Debt Validation & Statutory Dispute Notice (published)",
+  "version": "2.0.0",
+  "canonical_source": "Formal Debt Validation & Statutory Dispute Notice.txt (repo root)",
+  "supersedes_draft": {
+    "artifact": "sources/keystone_health/schema/debt_validation_dv001_014.schema.json",
+    "note": "v1.1.0 DV-001..014 is retained as the parametrized generator-engine design (four variants, conditional clause tokens). The published letter is monolithic and embeds all statutory content unconditionally; variants are realized by editing/omitting sections, not by token substitution. Reconciled 2026-11-27."
+  },
+  "shared_token_collisions": [
+    {
+      "token": "[Street Address]",
+      "fields": [
+        "DV2-002",
+        "DV2-009"
+      ],
+      "resolution": "occurrence_index"
+    },
+    {
+      "token": "[Date]",
+      "fields": [
+        "DV2-006",
+        "DV2-018"
+      ],
+      "resolution": "occurrence_index"
+    }
+  ],
+  "occurrence_semantics": "'occurrence' = 1-based ordinal index of the token instance in the letter body; 'renders' = number of positions the field fills (DV2-001 renders 2; collision tokens have two fields at indexes 1/2)",
+  "fields": [
+    {
+      "field_id": "DV2-001",
+      "raw_placeholder": "[Your Full Name]",
+      "occurrence": 1,
+      "renders": 2,
+      "section": "Header + Re block",
+      "description": "Consumer legal name; rendered in return-address block and Patient Name line",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "consumer_identity",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692g"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "non_empty_trimmed"
+      ]
+    },
+    {
+      "field_id": "DV2-002",
+      "raw_placeholder": "[Street Address]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Sender block",
+      "description": "Sender street address (occurrence 1 of the shared [Street Address] token)",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "consumer_identity",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [],
+      "verification_status": "n/a",
+      "validation_rules": [
+        "non_empty_mailing_address"
+      ]
+    },
+    {
+      "field_id": "DV2-003",
+      "raw_placeholder": "[City, PA ZIP Code]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Sender block",
+      "description": "Sender city/state/ZIP",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "consumer_identity",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [],
+      "verification_status": "n/a",
+      "validation_rules": [
+        "non_empty_mailing_address"
+      ]
+    },
+    {
+      "field_id": "DV2-004",
+      "raw_placeholder": "[Phone]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Sender block",
+      "description": "Sender voice line",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "contact_detail",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [],
+      "verification_status": "n/a",
+      "validation_rules": [
+        "non_empty_trimmed"
+      ]
+    },
+    {
+      "field_id": "DV2-005",
+      "raw_placeholder": "[Email]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Sender block",
+      "description": "Sender email",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "contact_detail",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [],
+      "verification_status": "n/a",
+      "validation_rules": [
+        "non_empty_trimmed"
+      ]
+    },
+    {
+      "field_id": "DV2-006",
+      "raw_placeholder": "[Date]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Header",
+      "description": "Letter date (occurrence 1 of shared [Date] token); context for response clocks",
+      "syntax": "bracket_allcaps",
+      "data_type": "date",
+      "required": true,
+      "pii": true,
+      "pii_class": "date",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692g"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "iso_date_yyyy_mm_dd",
+        "not_future_beyond_dispatch"
+      ]
+    },
+    {
+      "field_id": "DV2-007",
+      "raw_placeholder": "[Insert Tracking Number]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Delivery block",
+      "description": "Certified-mail tracking number; pairs with VIA CERTIFIED MAIL RRR method",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "delivery_proof",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [],
+      "verification_status": "n/a",
+      "validation_rules": [
+        "non_empty_trimmed",
+        "carrier_tracking_format"
+      ]
+    },
+    {
+      "field_id": "DV2-008",
+      "raw_placeholder": "[Provider/Collector Name]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Recipient block",
+      "description": "Recipient entity; letter conflates provider and collector roles — keep verbatim",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "provider_identifier",
+      "render": "plaintext_local",
+      "dispatch_payload": "hash_or_omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692g",
+        "73 P.S. § 2270.4"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "non_empty_trimmed"
+      ]
+    },
+    {
+      "field_id": "DV2-009",
+      "raw_placeholder": "[Street Address]",
+      "occurrence": 2,
+      "renders": 1,
+      "section": "Recipient block",
+      "description": "Recipient street address (occurrence 2 of the shared [Street Address] token)",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "provider_identifier",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [],
+      "verification_status": "n/a",
+      "validation_rules": [
+        "non_empty_mailing_address"
+      ]
+    },
+    {
+      "field_id": "DV2-010",
+      "raw_placeholder": "[City, State ZIP Code]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Recipient block",
+      "description": "Recipient city/state/ZIP",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "provider_identifier",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [],
+      "verification_status": "n/a",
+      "validation_rules": [
+        "non_empty_mailing_address"
+      ]
+    },
+    {
+      "field_id": "DV2-011",
+      "raw_placeholder": "[Account Number]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Re block",
+      "description": "Account/invoice reference",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "account_reference",
+      "render": "plaintext_local",
+      "dispatch_payload": "redact_account_id",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692g"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "non_empty_trimmed"
+      ]
+    },
+    {
+      "field_id": "DV2-012",
+      "raw_placeholder": "[Dates]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Re block",
+      "description": "Date(s) of service — plural/range; may span multiple encounter dates",
+      "syntax": "bracket_allcaps",
+      "data_type": "date_range",
+      "required": true,
+      "pii": true,
+      "pii_class": "date",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "42 Pa.C.S. § 5525(a)"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "iso_dates_comma_or_range",
+        "each_date_iso_yyyy_mm_dd"
+      ]
+    },
+    {
+      "field_id": "DV2-013",
+      "raw_placeholder": "[Amount]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Re block",
+      "description": "Amount disputed in USD (preceded by literal $ in the letter)",
+      "syntax": "bracket_allcaps",
+      "data_type": "currency",
+      "required": true,
+      "pii": true,
+      "pii_class": "financial_amount",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692e",
+        "73 P.S. § 201-9.2"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "decimal_non_negative_usd",
+        "no_silent_rounding"
+      ]
+    },
+    {
+      "field_id": "DV2-014",
+      "raw_placeholder": "[Date of First Statement]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Re block",
+      "description": "Accrual anchor for the 4-year 42 Pa.C.S. § 5525(a) clock; also feeds the 501(r) 120-day ECA-window arithmetic",
+      "syntax": "bracket_allcaps",
+      "data_type": "date",
+      "required": true,
+      "pii": true,
+      "pii_class": "date",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "42 Pa.C.S. § 5525(a)",
+        "26 U.S.C. § 501(r)"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "iso_date_yyyy_mm_dd",
+        "evaluate_48_month_sol_pa"
+      ]
+    },
+    {
+      "field_id": "DV2-015",
+      "raw_placeholder": "[Insurer Name]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Section 2",
+      "description": "Insurer against which network status must be proven",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "provider_identifier",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "45 C.F.R. Part 149"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "non_empty_trimmed"
+      ]
+    },
+    {
+      "field_id": "DV2-016",
+      "raw_placeholder": "[Date of Service]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Section 2",
+      "description": "As-of date for network-status proof; distinct token from DV2-012 [Dates]",
+      "syntax": "bracket_allcaps",
+      "data_type": "date",
+      "required": true,
+      "pii": true,
+      "pii_class": "date",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "45 C.F.R. Part 149"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "iso_date_yyyy_mm_dd",
+        "must_be_within_dv2_012_range"
+      ]
+    },
+    {
+      "field_id": "DV2-017",
+      "raw_placeholder": "[Signature — sign in ink]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Signature block",
+      "description": "Ink-signature line; never machine-rendered; underscore rule is physical",
+      "syntax": "bracket_allcaps",
+      "data_type": "ink_signature",
+      "required": true,
+      "pii": true,
+      "pii_class": "other",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [],
+      "verification_status": "n/a",
+      "validation_rules": [
+        "manual_only"
+      ]
+    },
+    {
+      "field_id": "DV2-018",
+      "raw_placeholder": "[Date]",
+      "occurrence": 2,
+      "renders": 1,
+      "section": "Signature block",
+      "description": "Signature date (occurrence 2 of shared [Date] token)",
+      "syntax": "bracket_allcaps",
+      "data_type": "date",
+      "required": true,
+      "pii": true,
+      "pii_class": "date",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [],
+      "verification_status": "n/a",
+      "validation_rules": [
+        "iso_date_yyyy_mm_dd",
+        "not_earlier_than_letter_date"
+      ]
+    },
+    {
+      "field_id": "DV2-019",
+      "raw_placeholder": "[Printed Name]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Signature block",
+      "description": "Printed name under signature; distinct token from DV2-001",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "consumer_identity",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [],
+      "verification_status": "n/a",
+      "validation_rules": [
+        "non_empty_trimmed"
+      ]
+    },
+    {
+      "field_id": "DV2-020",
+      "raw_placeholder": "[Insurance Carrier Name, if applicable]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "CC block",
+      "description": "CC line — insurance carrier (optional)",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "provider_identifier",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [],
+      "verification_status": "n/a",
+      "validation_rules": [
+        "optional_else_omit_line"
+      ]
+    },
+    {
+      "field_id": "DV2-021",
+      "raw_placeholder": "[Third-Party Collector Name, if known]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "CC block",
+      "description": "CC line — third-party collector (optional)",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "provider_identifier",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692g"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "optional_else_omit_line"
+      ]
+    },
+    {
+      "field_id": "DV2-022",
+      "raw_placeholder": "[VERIFY AT cms.gov/nosurprises]",
+      "occurrence": 1,
+      "renders": 1,
+      "section": "Section 4",
+      "description": "Not a fill field — editor-facing verify flag on the CMS phone line; tied to the CMS-phone ledger row; must be resolved or removed before publication",
+      "syntax": "bracket_allcaps",
+      "data_type": "verify_flag",
+      "required": true,
+      "pii": false,
+      "pii_class": "other",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "pass_through",
+      "statutory_hooks": [],
+      "verification_status": "n/a",
+      "validation_rules": [
+        "resolve_before_publication"
+      ]
+    }
+  ],
+  "citations_ledger": [
+    {
+      "cite": "45 C.F.R. Part 149; PHS Act §§ 2799A-1–2799A-3",
+      "used_in": "Sections 1.1(a), 5",
+      "status": "verified",
+      "tier": "settled_federal"
+    },
+    {
+      "cite": "45 C.F.R. § 149.420 (consent-waiver elements)",
+      "used_in": "Section 2",
+      "status": "pending_primary_source",
+      "tier": "flagged",
+      "note": "Plausible; verify elements against eCFR"
+    },
+    {
+      "cite": "26 U.S.C. § 501(r); 26 C.F.R. § 1.501(r)-6",
+      "used_in": "Sections 1.1(c), 4, 5",
+      "status": "verified",
+      "tier": "settled_federal",
+      "note": "Reg. pin cite 1.501(r)-6 pending primary-source confirm"
+    },
+    {
+      "cite": "73 P.S. § 2270.1 et seq. (FCEUA)",
+      "used_in": "Sections 1.2, 3",
+      "status": "verified",
+      "tier": "pa_in_force"
+    },
+    {
+      "cite": "73 P.S. § 2270.4 (pin cite)",
+      "used_in": "Section 1.2(a)",
+      "status": "pending_pin_cite",
+      "tier": "flagged",
+      "note": "Pull exact subsection from PA statutes"
+    },
+    {
+      "cite": "73 P.S. § 201-9.2 (UTPCPL treble damages)",
+      "used_in": "Sections 1.2(b), 5",
+      "status": "pending_pin_cite",
+      "tier": "flagged",
+      "note": "Confirm treble-damages provision"
+    },
+    {
+      "cite": "42 Pa.C.S. § 5525(a)(8)",
+      "used_in": "Integration notes",
+      "status": "pending_pin_cite",
+      "tier": "flagged",
+      "note": "Confirm subsection numbering"
+    },
+    {
+      "cite": "42 Pa.C.S. § 5533",
+      "used_in": "Section 1.3",
+      "status": "contested",
+      "tier": "flagged",
+      "note": "Letter invokes for clock-reset; conflicting internal research says § 5533(b) concerns minors (tolling for disability). RECOMMENDATION: drop the § 5533 pin cite from Section 1.3 — the no-acknowledgment sentence functions without it."
+    },
+    {
+      "cite": "42 Pa.C.S. §§ 8123, 8127 (post-judgment exemptions)",
+      "used_in": "Section 5",
+      "status": "pending_primary_source",
+      "tier": "flagged"
+    },
+    {
+      "cite": "PID Consumer Services Bureau 1-877-881-6388",
+      "used_in": "Section 4",
+      "status": "conflict_pending",
+      "tier": "flagged",
+      "note": "Letter marks ✅; handover separately records unverified consumer line 1-800-722-3998. Reconcile which desk/number before publishing."
+    },
+    {
+      "cite": "CMS No Surprises Help Desk 1-800-985-3059",
+      "used_in": "Section 4",
+      "status": "contested",
+      "tier": "flagged",
+      "note": "Letter's own flag: conflicting sources; resolve at cms.gov"
+    },
+    {
+      "cite": "PA AG Bureau of Consumer Protection 1-877-888-4877",
+      "used_in": "Section 4",
+      "status": "pending_primary_source",
+      "tier": "flagged"
+    }
+  ],
+  "test_fixture": {
+    "case_id": "fixture_pa_sol_red_002",
+    "letter_date": "2026-11-27",
+    "date_of_first_statement": "2022-06-01",
+    "service_dates": [
+      "2022-05-20",
+      "2022-06-01"
+    ],
+    "amount_disputed_usd": "1480.00",
+    "account_number": "ACCT-PA-994821",
+    "expected_sol_expired_48m_from_first_statement": true,
+    "expected_risk_tier": "RED",
+    "expected_payload_has_plaintext_account": false
+  }
+}
