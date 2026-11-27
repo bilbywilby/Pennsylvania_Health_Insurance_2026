@@ -572,7 +572,8 @@
       "used_in": "Section 1.3",
       "status": "contested",
       "tier": "flagged",
-      "note": "Letter invokes for clock-reset; conflicting internal research says § 5533(b) concerns minors (tolling for disability). RECOMMENDATION: drop the § 5533 pin cite from Section 1.3 — the no-acknowledgment sentence functions without it."
+      "note": "Letter invokes for clock-reset; conflicting internal research says § 5533(b) concerns minors (tolling for disability). RECOMMENDATION: drop the § 5533 pin cite from Section 1.3 — the no-acknowledgment sentence functions without it.",
+      "disposition": "Pin cite removed from letter body and wiki Template-Debt-Validation page (repo commit 9650949 + wiki fix, 2026-11-27). Statute scope confirmed via Keystone Forensic Navigator.pdf:6342-6364: 42 Pa.C.S. § 5533 concerns tolling for infancy, insanity, or imprisonment; subsection (b) was deleted by the 2004 amendment; the micro-payment/SOL-reset doctrine is withdrawn. 'contested' now marks the retired historical claim, not any live ambiguity."
     },
     {
       "cite": "42 Pa.C.S. §§ 8123, 8127 (post-judgment exemptions)",

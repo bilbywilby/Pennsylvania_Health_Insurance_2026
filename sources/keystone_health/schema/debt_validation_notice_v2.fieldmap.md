@@ -43,7 +43,7 @@ Underscore blanks (signature line, date line, attachment `Other:`) are physical 
 - **73 P.S. § 2270.4 (pin cite)** — pending_pin_cite — Pull exact subsection from PA statutes
 - **73 P.S. § 201-9.2 (UTPCPL treble damages)** — pending_pin_cite — Confirm treble-damages provision
 - **42 Pa.C.S. § 5525(a)(8)** — pending_pin_cite — Confirm subsection numbering
-- **42 Pa.C.S. § 5533** — contested — Letter invokes for clock-reset; conflicting internal research says § 5533(b) concerns minors (tolling for disability). RECOMMENDATION: drop the § 5533 pin cite from Section 1.3 — the no-acknowledgment sentence functions without it.
+- **42 Pa.C.S. § 5533** — contested — Letter invokes for clock-reset; conflicting internal research says § 5533(b) concerns minors (tolling for disability). RECOMMENDATION: drop the § 5533 pin cite from Section 1.3 — the no-acknowledgment sentence functions without it. RESOLVED: Pin cite removed from letter body and wiki Template-Debt-Validation page (repo commit 9650949 + wiki fix, 2026-11-27). Statute scope confirmed via Keystone Forensic Navigator.pdf:6342-6364: 42 Pa.C.S. § 5533 concerns tolling for infancy, insanity, or imprisonment; subsection (b) was deleted by the 2004 amendment; the micro-payment/SOL-reset doctrine is withdrawn. 'contested' now marks the retired historical claim, not any live ambiguity.
 - **42 Pa.C.S. §§ 8123, 8127 (post-judgment exemptions)** — pending_primary_source
 - **PID Consumer Services Bureau 1-877-881-6388** — conflict_pending — Letter marks ✅; handover separately records unverified consumer line 1-800-722-3998. Reconcile which desk/number before publishing.
 - **CMS No Surprises Help Desk 1-800-985-3059** — contested — Letter's own flag: conflicting sources; resolve at cms.gov
