@@ -92,7 +92,12 @@ def _cmd_audit_line(args: argparse.Namespace) -> int:
     rendered = json.dumps(result, indent=2, sort_keys=True) + "\n"
 
     if args.out:
-        atomic_write_json(args.out, result)
+        out_path = Path(args.out)
+        try:
+            atomic_write_json(str(out_path), result)
+        except OSError as exc:
+            print(f"Error writing '{out_path}': {exc}", file=sys.stderr)
+            return 1
 
     sys.stdout.write(rendered)
     return 0
