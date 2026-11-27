@@ -108,17 +108,17 @@ Annotations for `Template-Financial-Assistance-IRS-501-r-Request.md` (15 unique 
 |---|---|---|---|
 | 1 | `[Your Full Name]` | Legal name matching the policy, claim, or hospital record | Using a nickname or omitting a middle initial that delays record matching |
 | 2 | `[Street Address]` | Mailing street address on file with the insurer, hospital, or regulator | Omitting apartment or unit numbers needed for notice delivery |
-| 3 | `[City, PA ZIP]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 3 | `[City, PA ZIP]` | Pennsylvania city and ZIP code for the patient or PA service location | Entering an out-of-state address when documenting PA jurisdiction |
 | 4 | `[Phone]` | Callback telephone number with area code | Omitting contact details when requesting expedited review or callback |
 | 5 | `[Email]` | Email address for written confirmation or portal follow-up | Using an unmonitored address that misses time-sensitive replies |
 | 6 | `[Date]` | Calendar date you sign and physically mail or submit the notice | Back-dating or post-dating relative to postmark, tracking, or filing timestamp |
-| 7 | `[Number]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 8 | `[Hospital/Healthcare Facility Name]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 9 | `[Provider Street Address]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 10 | `[City, State ZIP]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 7 | `[Number]` | Relevant account, claim, policy, or reference number for that field | Entering the wrong identifier type (such as policy ID where claim ID applies) |
+| 8 | `[Hospital/Healthcare Facility Name]` | Exact legal name of the hospital or healthcare facility under review | Using an informal branch name without checking the 501(c)(3) / FAP entity name |
+| 9 | `[Provider Street Address]` | Street address of the provider or hospital billing/FAP office | Using a clinic address when the FAP application specifies a separate billing address |
+| 10 | `[City, State ZIP]` | City, state abbreviation, and ZIP code for the address block | Omitting ZIP code or misstating the state abbreviation |
 | 11 | `[Account Number]` | Account, patient ID, or claim reference number from the statement or EOB | Conflating internal hospital account IDs with insurer claim IDs without labeling |
 | 12 | `[Dates]` | Exact relevant dates (service dates, statement dates, or denial dates) | Mixing up date of service with billing or appeal-denial dates |
-| 13 | `[Date(s) of Service]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 13 | `[Date(s) of Service]` | Exact single date or range of dates of service from the bill or EOB | Using an approximate date instead of documented service dates |
 | 14 | `[Amount]` | Exact dollar amount disputed, billed, or requested | Rounding or omitting cents when citing a statement or EOB figure |
 | 15 | `[Printed Name]` | Printed full legal name matching your signature line | Leaving blank after signing |
 <!-- ANNOTATED_FIELDS_END -->

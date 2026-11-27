@@ -178,28 +178,28 @@ Annotations for `Template-CMS-Complaint-Narrative-Self-Funded-ERISA.md` (25 uniq
 |---|---|---|---|
 | 1 | `[Your Full Name]` | Legal name matching the policy, claim, or hospital record | Using a nickname or omitting a middle initial that delays record matching |
 | 2 | `[Street Address]` | Mailing street address on file with the insurer, hospital, or regulator | Omitting apartment or unit numbers needed for notice delivery |
-| 3 | `[City, PA ZIP]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 3 | `[City, PA ZIP]` | Pennsylvania city and ZIP code for the patient or PA service location | Entering an out-of-state address when documenting PA jurisdiction |
 | 4 | `[Phone]` | Callback telephone number with area code | Omitting contact details when requesting expedited review or callback |
 | 5 | `[Email]` | Email address for written confirmation or portal follow-up | Using an unmonitored address that misses time-sensitive replies |
 | 6 | `[Date]` | Calendar date you sign and physically mail or submit the notice | Back-dating or post-dating relative to postmark, tracking, or filing timestamp |
-| 7 | `[DOB]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 8 | `[If Known]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 9 | `[Employer/Group Plan Name]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 10 | `[Carrier Name]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 11 | `[Name]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 12 | `[Address]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 13 | `[Number]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 7 | `[DOB]` | Patient date of birth (MM/DD/YYYY) for identity and claim matching | Transposing month and day or entering an incorrect birth year |
+| 8 | `[If Known]` | Enter the requested detail if available on your records; omit if unknown | Guessing or fabricating data when the record does not show it |
+| 9 | `[Employer/Group Plan Name]` | Exact name of the employer or group health plan sponsor from benefits/SPD | Listing only the TPA/ASO carrier instead of the employer group plan name |
+| 10 | `[Carrier Name]` | Name of the health insurance carrier or plan administrator from ID card/EOB | Omitting carrier name or confusing insurer with third-party administrator |
+| 11 | `[Name]` | Full legal or entity name required by that specific section of the form | Leaving blank or omitting required middle/entity identifiers |
+| 12 | `[Address]` | Full mailing street address for the named party or facility | Omitting suite, floor, or PO Box details from the notice header |
+| 13 | `[Number]` | Relevant account, claim, policy, or reference number for that field | Entering the wrong identifier type (such as policy ID where claim ID applies) |
 | 14 | `[Dates]` | Exact relevant dates (service dates, statement dates, or denial dates) | Mixing up date of service with billing or appeal-denial dates |
 | 15 | `[Amount]` | Exact dollar amount disputed, billed, or requested | Rounding or omitting cents when citing a statement or EOB figure |
-| 16 | `[Date claim submitted to insurer]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 17 | `[Out-of-network denial / Partial payment applied]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 18 | `[Date received EOB]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 19 | `[Date received bill from provider]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 20 | `[Yes / No]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 21 | `[Date if applicable]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 22 | `[Email / Phone / Mail]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 23 | `[Time window]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 24 | `[English / Other]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 16 | `[Date claim submitted to insurer]` | Date the claim was submitted to the insurer or plan per EOB/claim record | Using the date of service instead of the claim submission date |
+| 17 | `[Out-of-network denial / Partial payment applied]` | State whether the claim had an out-of-network denial or partial payment per EOB | Leaving ambiguous when both denial and partial payment appear across lines |
+| 18 | `[Date received EOB]` | Date you received the Explanation of Benefits from the plan | Conflating EOB receipt date with provider statement date |
+| 19 | `[Date received bill from provider]` | Date you received the bill or balance notice from the provider or collector | Using statement issue date instead of actual receipt date when tracking windows |
+| 20 | `[Yes / No]` | Answer Yes or No based strictly on your documented record | Guessing when your records do not confirm the fact |
+| 21 | `[Date if applicable]` | Enter the relevant date only if the preceding condition applies | Entering an unrelated date when the condition does not apply |
+| 22 | `[Email / Phone / Mail]` | Indicate your preferred contact channel(s) and provide matching contact details | Selecting a contact channel without filling in the corresponding address/number/email |
+| 23 | `[Time window]` | Specify preferred callback days/hours or applicable response timeframe | Leaving blank when scheduling a callback or noting a deadline window |
+| 24 | `[English / Other]` | Specify English or name the other language needed for notices/assistance | Selecting Other without naming the specific language required |
 | 25 | `[Underscore blank]` | Fill only if the template text has an explicit blank line requiring entry | Filling or altering optional lines that do not apply to your facts |
 <!-- ANNOTATED_FIELDS_END -->
 

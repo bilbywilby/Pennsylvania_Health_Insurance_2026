@@ -94,22 +94,22 @@ Annotations for `Template-Provider-Escalation-Administrative-Hold-Demand.md` (19
 |---|---|---|---|
 | 1 | `[Your Full Name]` | Legal name matching the policy, claim, or hospital record | Using a nickname or omitting a middle initial that delays record matching |
 | 2 | `[Street Address]` | Mailing street address on file with the insurer, hospital, or regulator | Omitting apartment or unit numbers needed for notice delivery |
-| 3 | `[City, PA ZIP]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 3 | `[City, PA ZIP]` | Pennsylvania city and ZIP code for the patient or PA service location | Entering an out-of-state address when documenting PA jurisdiction |
 | 4 | `[Phone]` | Callback telephone number with area code | Omitting contact details when requesting expedited review or callback |
 | 5 | `[Email]` | Email address for written confirmation or portal follow-up | Using an unmonitored address that misses time-sensitive replies |
 | 6 | `[Date]` | Calendar date you sign and physically mail or submit the notice | Back-dating or post-dating relative to postmark, tracking, or filing timestamp |
-| 7 | `[Number]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 8 | `[Provider / Health System Name]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 9 | `[Address]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 10 | `[City, State ZIP]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 7 | `[Number]` | Relevant account, claim, policy, or reference number for that field | Entering the wrong identifier type (such as policy ID where claim ID applies) |
+| 8 | `[Provider / Health System Name]` | Exact legal name of the provider, hospital, or health system on the notice | Using a shorthand name that does not match the billing or legal entity |
+| 9 | `[Address]` | Full mailing street address for the named party or facility | Omitting suite, floor, or PO Box details from the notice header |
+| 10 | `[City, State ZIP]` | City, state abbreviation, and ZIP code for the address block | Omitting ZIP code or misstating the state abbreviation |
 | 11 | `[Account Number]` | Account, patient ID, or claim reference number from the statement or EOB | Conflating internal hospital account IDs with insurer claim IDs without labeling |
 | 12 | `[Dates]` | Exact relevant dates (service dates, statement dates, or denial dates) | Mixing up date of service with billing or appeal-denial dates |
 | 13 | `[Amount]` | Exact dollar amount disputed, billed, or requested | Rounding or omitting cents when citing a statement or EOB figure |
-| 14 | `[Date of Initial Letter]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 15 | `[Date of Rejection Letter]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
-| 16 | `[In-Network Amount, if known]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 14 | `[Date of Initial Letter]` | Date of the initial bill, prior dispute, or initial correspondence referenced | Confusing initial notice date with follow-up or rejection date |
+| 15 | `[Date of Rejection Letter]` | Date on the written denial or rejection notice being escalated | Estimating the date instead of copying the notice date from the record |
+| 16 | `[In-Network Amount, if known]` | Expected in-network allowed or cost-sharing figure from EOB/plan rules, if known | Treating an estimated figure as an established adjudicated balance without EOB proof |
 | 17 | `[VERIFY]` | Confirm statutory citation, agency rule, or current deadline before sending | Treating a placeholder verification tag as settled legal authority |
-| 18 | `[Signature]` | NEEDS MANUAL REVIEW | NEEDS MANUAL REVIEW |
+| 18 | `[Signature]` | Handwritten or valid electronic signature of the sender or authorized representative | Leaving blank where a signature line requires execution |
 | 19 | `[Printed Name]` | Printed full legal name matching your signature line | Leaving blank after signing |
 <!-- ANNOTATED_FIELDS_END -->
 
