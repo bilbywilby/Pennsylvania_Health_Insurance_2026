@@ -18,17 +18,27 @@ git pull --rebase origin main
 
 for pr in "${PR_NUMBERS[@]}"; do
   pr_json="$(gh pr view "${pr}" --repo "${REPO}" --json number,state,headRefName,statusCheckRollup)"
-  state="$(printf '%s' "${pr_json}" | python3 -c 'import json, sys; d = json.load(sys.stdin); print(d.get("state", ""))')"
-  branch="$(printf '%s' "${pr_json}" | python3 -c 'import json, sys; d = json.load(sys.stdin); print(d.get("headRefName", ""))')"
+  state="$(PR_JSON="${pr_json}" python3 - << 'PY'
+import json, os
+d = json.loads(os.environ["PR_JSON"])
+print(d.get("state", ""))
+PY
+)"
+  branch="$(PR_JSON="${pr_json}" python3 - << 'PY'
+import json, os
+d = json.load(os.environ["PR_JSON"])
+print(d.get("headRefName", ""))
+PY
+)"
 
   if [[ "${state}" != "OPEN" ]]; then
     echo "PR #${pr} (${branch}): state=${state} — skipping."
     continue
   fi
 
-  check_summary="$(printf '%s' "${pr_json}" | python3 -c '
-import json, sys
-d = json.load(sys.stdin)
+  check_summary="$(PR_JSON="${pr_json}" python3 - << 'PY'
+import json, os, sys
+d = json.loads(os.environ["PR_JSON"])
 checks = d.get("statusCheckRollup") or []
 if not checks:
     print("NO_CHECKS")
@@ -37,15 +47,17 @@ statuses = []
 for c in checks:
     st = (c.get("status") or "").upper()
     conc = (c.get("conclusion") or "").upper()
+    cname = c.get("name") or c.get("context") or "check"
     if st != "COMPLETED":
-        statuses.append(f"IN_PROGRESS:{c.get(\"name\", \"check\")}:{st}")
+        statuses.append(f"IN_PROGRESS:{cname}:{st}")
     elif conc not in ("SUCCESS", "NEUTRAL", "SKIPPED"):
-        statuses.append(f"FAILED:{c.get(\"name\", \"check\")}:{conc}")
+        statuses.append(f"FAILED:{cname}:{conc}")
 if statuses:
     print("BLOCKED|" + ";".join(statuses))
 else:
     print("GREEN")
-')"
+PY
+)"
 
   if [[ "${check_summary}" == "GREEN" ]]; then
     echo "PR #${pr} (${branch}): all checks green — merging via squash..."
