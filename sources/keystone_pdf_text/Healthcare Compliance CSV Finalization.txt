@@ -134,11 +134,11 @@ designed to adjust each of the three RVU components to reflect regional price va
 labor, practice overhead, and malpractice premiums. The Geographic Adjustment Factor (GAF)
 for any specific fee schedule area is derived from three statutory indices defined in 42 CFR §
 414.26(a):
-   ●​ Work GPCI (GPCI_{Work}): Reflects one-fourth of the difference between the relative
+   ● Work GPCI (GPCI_{Work}): Reflects one-fourth of the difference between the relative
         value of physician work effort in the local fee schedule area and the national average.
-   ●​ Practice Expense GPCI (GPCI_{PE}): Reflects the relative cost of practice overhead
+   ● Practice Expense GPCI (GPCI_{PE}): Reflects the relative cost of practice overhead
         (goods, services, space) in the local area compared to national averages.
-  ●​ Malpractice GPCI (GPCI_{MP}): Reflects relative local professional liability cost
+  ● Malpractice GPCI (GPCI_{MP}): Reflects relative local professional liability cost
        variations.
 The general mathematical formula to compute the total allowable Medicare reimbursement
 amount for a given procedure code (CPT) in a specific geographic payment locality is expressed
@@ -192,13 +192,13 @@ and Clinical Health (HITECH) Act (Public Law 111-5), which applied direct statut
 obligations to Business Associates.
 The HIPAA Security Rule mandates three administrative control pillars under 45 CFR § 164.308,
 § 164.310, and § 164.312:
-   ●​ Administrative Safeguards (§ 164.308): Mandates formal enterprise risk analysis, risk
+   ● Administrative Safeguards (§ 164.308): Mandates formal enterprise risk analysis, risk
         management protocols, access authorization workflows, workforce training, and regular
         audits of technical system operations.
-   ●​ Physical Safeguards (§ 164.310): Enforces physical access controls, workstation use
+   ● Physical Safeguards (§ 164.310): Enforces physical access controls, workstation use
         policies, and device media controls to prevent unauthorized physical access to data
         centers and terminals.
-   ●​ Technical Safeguards (§ 164.312): Requires unique user identification, emergency
+   ● Technical Safeguards (§ 164.312): Requires unique user identification, emergency
         access procedures, automated logoff mechanisms, audit controls, integrity verification
         controls, and end-to-end transmission encryption (covering data in transit and data at
         rest).
@@ -216,13 +216,13 @@ control auditability, and enforce cryptographic security. The Layered Memory Pro
 Architecture Specification defines an internal control framework for versioning and state
 consistency across system memory layers.
 The LMP architecture mandates two fundamental integrity rules:
-   1.​ State Consistency Versioning Gate: System state transitions are governed by a strict
+   1. State Consistency Versioning Gate: System state transitions are governed by a strict
         monotonic versioning function. An incoming state vector update (v_{in}) is committed to
         memory if and only if its version index exceeds the existing target state version index
         (v_t):
         Condition = \begin{cases} Commit, & \text{if } v_{in} > v_t \\ Reject/Escalate, & \text{if }
         v_{in} \le v_t \end{cases}
-   1.​ Cryptographic State Chaining: To enforce immutable linear auditability across
+   1. Cryptographic State Chaining: To enforce immutable linear auditability across
         parametric memory (rule engines and model parameters) and episodic memory (historical
         transaction logs), LMP implements continuous SHA-256 state hashing. Each system state
         block (S_i) computes its hash signature (H_i) by concatenating the current transaction

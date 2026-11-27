@@ -127,7 +127,7 @@ Several other states run comparable, funded programs. Verified 2026 figures:
 
 | State | Program Structure |
 |---|---|
-| New Jersey | NJ Health Plan Savings; premium subsidy for incomes up to 600% FPL (Health­Insurance.org, 2026b) |
+| New Jersey | NJ Health Plan Savings; premium subsidy for incomes up to 600% FPL (HealthInsurance.org, 2026b) |
 | Colorado | Up to $80/month for the first household member, $29/month per additional member, for APTC-eligible consumers, extending premium assistance to 400% FPL (SHVS, 2026) |
 | Washington | Cascade Care Savings; flat $55 per member per month, up to $250/month for those ineligible for federal subsidies (SHVS, 2026) |
 | California | $190 million allocated for 2026, targeted at incomes up to 150% FPL (HealthInsurance.org, 2026c) |

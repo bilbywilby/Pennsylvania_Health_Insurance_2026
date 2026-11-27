@@ -1,4 +1,4 @@
-﻿This conversation was generated with Duck.ai (https://duck.ai) using OpenAI's gpt-oss 120B Model. AI chats may display inaccurate or offensive information (see https://duckduckgo.com/duckai/privacy-terms for more info).
+This conversation was generated with Duck.ai (https://duck.ai) using OpenAI's gpt-oss 120B Model. AI chats may display inaccurate or offensive information (see https://duckduckgo.com/duckai/privacy-terms for more info).
 
 ====================
 
@@ -426,7 +426,7 @@ gpt-oss 120B:
 
 ---
 
-### Q1 – Q2 | Foundations (≈ 4–6 days total)
+### Q1 – Q2 | Foundations (≈ 4–6 days total)
 
 1. **Golden‑File Regression Harness**  
    *Parse the “Key Statistics” table from the status report into a JSON fixture.*  
@@ -440,12 +440,12 @@ gpt-oss 120B:
 
 ---
 
-### Q3 | Data‑Gate Unblocking (≈ 6–9 days)
+### Q3 | Data‑Gate Unblocking (≈ 6–9 days)
 
 1. **County‑Termination ETL**  
-   - Write a tiny parser that ingests Pennie’s Feb 2026 county CSV, computes termination % = `terminations / total`.  
+   - Write a tiny parser that ingests Pennie’s Feb 2026 county CSV, computes termination % = `terminations / total`.  
    - Store the result in a generated `county_termination.json` consumed by the cross‑walk gate.  
-   - Add a test that verifies the computed percentages match the official published values (± 0.1 %).  
+   - Add a test that verifies the computed percentages match the official published values (± 0.1 %).  
 
 2. **Quarantined‑Carrier Promotion Pipeline**  
    - Define a checklist JSON (e.g., `promotion_status: { pid, sourced, crosswalk_member, audit_pass, badge }`).  
@@ -454,20 +454,20 @@ gpt-oss 120B:
 
 ---
 
-### Q4 | Delivery & Visibility (≈ 8–10 days)
+### Q4 | Delivery & Visibility (≈ 8–10 days)
 
 1. **GitHub Actions CI Flow**  
    - **Jobs:** lint → `00_run_all.sh` → pytest → Vega‑Lite spec lint.  
    - Add a **scheduled** workflow (daily) that re‑scrapes the Pennie rate‑filing pages, updates a “live‑source” JSON, and fails if any previously verified metric changes without a new citation.  
 
 2. **Provenance Badges in the Dashboard**  
-   - Consume the `provenanceLabel` from the middleware and render it as a Chip (e.g., green “VERIFIED”, orange “MODELED”).  
+   - Consume the `provenanceLabel` from the middleware and render it as a Chip (e.g., green “VERIFIED”, orange “MODELED”).  
    - For scaled‑but‑unverified outputs, show a tooltip linking to the provenance note (`LINEAR_SCALING_ASSUMPTION`).  
    - Ensure the chart components (Vega‑Lite) propagate the badge to any exported PNG/SVG for reporting.  
 
 ---
 
-### Sprint‑Zero Quick‑Win (≈ 1 day)
+### Sprint‑Zero Quick‑Win (≈ 1 day)
 
 - **Add a CI‑only test** that scans the repo for the pattern `"_applicable":` and forces the key to be `nsa_applicable`. This guards against the typo resurfacing in any new endpoint.  
 
@@ -636,7 +636,7 @@ cat > tests/fixtures/key_statistics_golden.json <<'EOF'
     "appropriated_as_of_may_2026_usd": 50000000,
     "ep_tc_lost_annual_usd": 75000000
   },
-  "roi_note": "Derived from PHIEA 2026a"
+  "roi_note": "Derived from PHIEA 2026a"
 }
 EOF
 echo "✅  Golden fixture created at tests/fixtures/key_statistics_golden.json"
@@ -1157,7 +1157,7 @@ Hey Lumo, Carter the duck again—let’s tighten that repo‑root plumbing so t
 
 ---
 
-## 1️⃣  Central `src/paths.py` (the single source of truth)
+## 1️⃣  Central `src/paths.py` (the single source of truth)
 
 ```python
 # src/paths.py
@@ -1342,13 +1342,13 @@ scripts/ci/ensure_repo_path.sh python -m src.etl.county_termination_etl
 
 | Phase | Goal | Estimated effort |
 |------|------|-------------------|
-| **A. Centralise path helpers** | `src/paths.py` + refactor ETL | 30 min |
-| **B. Sweep remaining scripts** | Apply the search‑replace patches above | 1 h |
-| **C. Update failing test** | Point to new ETL entry point | 15 min |
-| **D. Add CI wrapper** (optional) | Ensure `PYTHONPATH` is set everywhere | 15 min |
-| **E. Run full suite** | `scripts/ci/run_all.sh` → all green | 10 min |
+| **A. Centralise path helpers** | `src/paths.py` + refactor ETL | 30 min |
+| **B. Sweep remaining scripts** | Apply the search‑replace patches above | 1 h |
+| **C. Update failing test** | Point to new ETL entry point | 15 min |
+| **D. Add CI wrapper** (optional) | Ensure `PYTHONPATH` is set everywhere | 15 min |
+| **E. Run full suite** | `scripts/ci/run_all.sh` → all green | 10 min |
 
-Total **≈ 2 hours** of work for a solo maintainer—well within a day’s effort.
+Total **≈ 2 hours** of work for a solo maintainer—well within a day’s effort.
 
 ---
 

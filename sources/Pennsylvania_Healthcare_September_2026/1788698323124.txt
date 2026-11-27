@@ -489,7 +489,7 @@ This conversation was generated with Duck.ai (https://duck.ai) using multiple ch
 
 Text File
 
-## 🎯 PA Health Insurance SSOT – Mind Map (text outline)
+## 🎯 PA Health Insurance SSOT – Mind Map (text outline)
 
 **Central Pond:** **PA Health Insurance Single Source of Truth**
 

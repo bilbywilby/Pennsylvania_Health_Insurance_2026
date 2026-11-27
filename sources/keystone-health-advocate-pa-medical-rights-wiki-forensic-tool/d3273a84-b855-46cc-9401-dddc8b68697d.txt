@@ -1,4 +1,4 @@
-﻿This conversation was generated with Duck.ai (https://duck.ai) using multiple chat models. AI chats may display inaccurate or offensive information (see https://duckduckgo.com/duckai/privacy-terms for more info).
+This conversation was generated with Duck.ai (https://duck.ai) using multiple chat models. AI chats may display inaccurate or offensive information (see https://duckduckgo.com/duckai/privacy-terms for more info).
 
 ====================
 
@@ -399,7 +399,7 @@ If any step exits with a non‑zero status, the log lines printed by the scripts
 
 Once the basic placeholders are working, you can gradually replace the stub payloads with the real scraper logic and enrich the parser to populate `codes_map.json` according to your domain schema.  
 
-Let me know the result of step 2 (✅/❌) or any error messages you encounter, and we’ll move forward from there.
+Let me know the result of step 2 (✅/❌) or any error messages you encounter, and we’ll move forward from there.
 
 --------------------
 

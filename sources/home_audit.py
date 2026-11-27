@@ -51,7 +51,7 @@ def stage_file(src: Path, dst: Path, max_mb: int) -> bool:
 
     # Guard against exceeding the user‑specified storage ceiling
     if not enough_space(dst, max_mb):
-        log.error("Insufficient free space to stage %s (max %d MB)", src, max_mb)
+        log.error("Insufficient free space to stage %s (max %d MB)", src, max_mb)
         return False
 
     try:
