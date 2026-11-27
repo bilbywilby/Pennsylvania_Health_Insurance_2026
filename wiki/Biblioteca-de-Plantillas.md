@@ -20,3 +20,5 @@ Cartas y avisos listos para copiar. Cada página incluirá una **tabla de campos
 - [[Solicitud de Asistencia Financiera (IRS 501(r))|Template-Financial-Assistance-IRS-501-r-Request]] (contenido en inglés)
 - [[Queja ante el PID (Plan Asegurado)|Template-PID-Complaint-Narrative-Fully-Insured]] (contenido en inglés)
 - [[Queja ante CMS (Plan Autofinanciado ERISA)|Template-CMS-Complaint-Narrative-Self-Funded-ERISA]] (contenido en inglés)
+
+**Nota sobre idiomas:** actualmente todas las plantillas se muestran en inglés y cada enlace lo indica. La traducción de las cartas se hará solo con revisión humana, porque son documentos legales. — *Language note: all templates are currently English-only and each link says so; letter translations will be added only with human review, because they are legal documents.*

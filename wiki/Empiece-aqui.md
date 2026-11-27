@@ -1,10 +1,12 @@
-> ⚠️ **Aviso:** Información educativa únicamente — no es asesoría legal, médica ni financiera. Las leyes cambian; verifique las citas antes de presentar cualquier documento.
-# Empiece aquí: ¿Cuál es su situación?
+> ⚠️ **Disclaimer:** Educational information only — not legal advice. Verify legal details before acting.
 
-1. **«Llegó una factura mayor a lo que me citaron»** → ¿alguien quedó *fuera de red*? → [[Guía: Factura Sorpresa|Guia-Factura-Sorpresa]]
-2. **«La deuda tiene meses y la cobranza llama»** → [[Guía: Defensa contra Deudas Médicas|Guia-Defensa-Deudas-Medicas]]
-3. **«No puedo pagar nada»** → el hospital puede deberle asistencia (IRS § 501(r)). → [[Guía: Asistencia Financiera Hospitalaria|Guia-Asistencia-Financiera-Hospitalaria]]
-4. **«Mi aseguradora negó el reclamo»** → los plazos de apelación interna son breves. → [[Guía: Disputas con Aseguradoras|Guia-Disputas-Aseguradoras]]
-5. **«Me notificaron una demanda»** → no ignore el plazo de respuesta (~20 días en PA). → [[Guía: Defensa contra Deudas Médicas|Guia-Defensa-Deudas-Medicas]]
+# Empiece Aquí — Seleccione Su Situación
 
-**Haga esto primero:** guarde toda factura, EOB y carta; anote cada llamada (fecha, nombre, dicho); nunca admita responsabilidad verbalmente; y **nunca pague una deuda antigua sin antes leer la guía de defensa** — un pago pequeño puede reiniciar el plazo de prescripción (42 Pa.C.S. § 5525(a)).
+*(Esta página resume las cuatro situaciones principales. Las páginas enlazadas están actualmente solo en inglés — se indica así para que no haya sorpresas.)*
+
+1. **Factura sorpresa tras urgencias o una cirugía** → [Surprise Bill Playbook (inglés)](Surprise-Bill-Playbook)
+2. **Denegación del seguro o apelación rechazada** → [Insurer Dispute Playbook (inglés)](Insurer-Dispute-Playbook)
+3. **Facturas de hospital, cobradores o amenaza de demanda** → [Medical Debt Defense (inglés)](Medical-Debt-Defense-Playbook)
+4. **Comprando cobertura en Pennie para 2027** → inscripciones abrieron el 1 de noviembre de 2026; cierre el 15 de diciembre de 2026 para cobertura desde el 1 de enero de 2027; la ventana cierra el 15 de enero de 2027. Solo use **pennie.com**.
+
+**Descargo:** información educativa, no asesoramiento legal. Ayuda al consumidor en Pennsylvania: 1-800-722-3998.
