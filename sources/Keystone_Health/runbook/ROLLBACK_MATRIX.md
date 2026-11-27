@@ -2,7 +2,7 @@
 
 - **Status:** Draft — validate against deployed systems and approved incident procedures before production use
 - **Owner:** Deployment Lead, with Security and Compliance consultation
-- **Related decision:** [ADR-0003: Preserve Evidence During Deployment and Rollback](../docs/adr/0003-evidence-immutability.md)
+- **Related decision:** [ADR-0003: Preserve Evidence During Deployment and Rollback](../docs/ADR/0003-evidence-immutability.md)
 
 > This runbook is an operational template, not legal advice. Confirm system-specific commands, approvals, notification routes, retention rules, and recovery capabilities before relying on it. Do not put evidence payloads, PHI, secrets, or credentials in this repository or in CI artifacts.
 

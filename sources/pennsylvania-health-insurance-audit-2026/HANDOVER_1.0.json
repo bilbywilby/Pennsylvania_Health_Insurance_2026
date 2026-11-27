@@ -1,0 +1,633 @@
+```json
+{
+  "handover_document": {
+    "metadata": {
+      "title": "Pennsylvania Health Insurance Audit System",
+      "version": "1.0.0",
+      "creation_date": "2026-10-09",
+      "author": "Lumo Assistant",
+      "classification": "Internal Production System",
+      "last_updated": "2026-10-09T19:41:53Z"
+    },
+    "executive_summary": {
+      "purpose": "Automated compliance monitoring system for Pennsylvania's individual health insurance market (Pennie ACA exchange)",
+      "objective": "Transform raw government data into decision-grade intelligence with cryptographic verification, zero hallucinations, and proactive stakeholder alerts",
+      "key_features": [
+        "Cryptographic provenance tracking (SHA-256 hashes for all sources)",
+        "Three-tier citation verification (VERIFIED/UNVERIFIED/NOT_FOUND)",
+        "Automated monthly audit pipeline with configurable thresholds",
+        "Multi-channel alerting (Slack, Email, Webhooks)",
+        "Natural language narrative generation for executives",
+        "REST API with JWT authentication and rate limiting",
+        "Real-time dashboard with WebSocket updates",
+        "Prometheus metrics for Grafana monitoring"
+      ],
+      "verification_status": "All citations verified October 9, 2026 against primary sources",
+      "critical_knowledge": "Failed citations documented in citation_failure_appendix.md - never cite SB 1071, Act 252-2023, § 28-725, § 29-8719, or Bulletin #23-04"
+    },
+    "architecture_overview": {
+      "design_pattern": "Layered Microservices with Event-Driven Notifications",
+      "components": {
+        "api_layer": {
+          "technology": "Flask + Flask-SocketIO + Flask-Limiter",
+          "port": 5000,
+          "endpoints": {
+            "/api/health": "Health check for load balancers",
+            "/api/v1/audit": "Latest audit report (JSON)",
+            "/api/v1/audit/history": "Last 12 months of audits",
+            "/api/v1/audit/<month>": "Specific month audit",
+            "/api/v1/audit/run": "Trigger manual audit (admin only)"
+          },
+          "authentication": "JWT tokens with 90-day rotation",
+          "rate_limiting": "100/hour default, 10/minute per endpoint"
+        },
+        "business_logic_layer": {
+          "modules": [
+            {
+              "name": "AuditPipeline",
+              "file": "src/pipeline.py",
+              "responsibility": "Orchestrates data collection, parsing, analysis, reporting",
+              "phases": [
+                "Phase 1: Parallel data collection (PID, Pennie, CMS)",
+                "Phase 2: HTML/PDF parsing with DataParser",
+                "Phase 3: Change detection with ChangeDetector",
+                "Phase 4: Report generation with schema validation",
+                "Phase 5: Alert dispatch via NotificationService"
+              ]
+            },
+            {
+              "name": "DataParser",
+              "file": "src/parser.py",
+              "responsibility": "Extract structured data from HTML/PDF sources",
+              "capabilities": [
+                "Carrier name normalization to PID codes",
+                "Date parsing to ISO format",
+                "Currency/percentage extraction",
+                "Table extraction from HTML"
+              ]
+            },
+            {
+              "name": "ChangeDetector",
+              "file": "src/change_detector.py",
+              "responsibility": "Compare current vs. previous month metrics",
+              "thresholds": {
+                "pennie_enrollment": "±5% normal, >10% flag",
+                "cms_idr_initiations": "±15% normal, >30% flag",
+                "pid_consumer_complaints": "±10% normal, >25% flag",
+                "pid_new_filings": ">10/month flag"
+              }
+            },
+            {
+              "name": "NarrativeEngine",
+              "file": "src/narrative.py",
+              "responsibility": "Generate human-readable summaries from JSON",
+              "outputs": [
+                "Executive summary (5 sentences max)",
+                "Root cause hypotheses",
+                "Plain-language threshold explanations"
+              ]
+            },
+            {
+              "name": "Forecaster",
+              "file": "src/forecast.py",
+              "responsibility": "Time-series prediction for next month",
+              "method": "Linear regression with seasonal adjustment"
+            }
+          ]
+        },
+        "storage_layer": {
+          "sqlite": {
+            "path": "./data/audit.db",
+            "tables": [
+              "audits (id, audit_date, overall_status, metrics, report_filepath)",
+              "provenance_entries (id, source_name, url, filepath, sha256_hash, tier, accessible, http_status)"
+            ],
+            "indexes": ["idx_audits_date DESC", "idx_audits_status", "idx_provenance_url"]
+          },
+          "redis": {
+            "port": 6379,
+            "usage": "24-hour caching of HTTP responses",
+            "ttl": "86400 seconds for most endpoints"
+          },
+          "local_storage": {
+            "raw_data": "./data/raw/",
+            "processed": "./data/processed/",
+            "reports": "./reports/",
+            "logs": "./logs/"
+          },
+          "s3_archive": {
+            "bucket": "${AWS_BUCKET}/audits/",
+            "retention": "90 days minimum"
+          }
+        }
+      },
+      "external_services": {
+        "pid_api": {
+          "base_url": "https://www.pa.gov/agencies/insurance",
+          "rate_limit": "10 requests/minute",
+          "critical_pages": [
+            "/ConsumerServices/Pages/RateFilings.aspx",
+            "/ConsumerServices/Pages/ConsumerComplaintStatistics.aspx",
+            "/laws-regulations-notices/department-notices.html"
+          ]
+        },
+        "cms_idr": {
+          "base_url": "https://www.cms.gov/initiatives/no-surprise-billing",
+          "public_use_files": "Available Q1-Q2 annually",
+          "note": "PA data not separable from national aggregate"
+        },
+        "pennie_exchange": {
+          "base_url": "https://pennie.com",
+          "enrollment_endpoint": "/enrollment/current",
+          "open_enrollment": "November 1 - January 15"
+        }
+      }
+    },
+    "deployment_infrastructure": {
+      "container_orchestration": {
+        "tool": "Docker Compose",
+        "prod_manifest": "docker-compose.prod.yml",
+        "services": [
+          "api (Flask application)",
+          "worker (scheduled audit runner)",
+          "redis (caching & queues)",
+          "prometheus (metrics collection)",
+          "grafana (visualization)"
+        ]
+      },
+      "ci_cd_pipeline": {
+        "platform": "GitHub Actions",
+        "workflow_file": ".github/workflows/monthly-audit.yml",
+        "schedule": "Every Monday at 9 AM UTC",
+        "stages": [
+          "Checkout → Python setup → Install dependencies",
+          "Unit tests (pytest with 80% coverage minimum)",
+          "Run audit pipeline",
+          "Schema validation",
+          "Artifact upload (reports)",
+          "Slack notification (if WARNING/CRITICAL)"
+        ]
+      },
+      "environment_configuration": {
+        "file": ".env",
+        "template": ".env.example",
+        "required_variables": {
+          "PA_HEALTH_AUDIT_PID_BASE_URL": "https://www.pa.gov/agencies/insurance",
+          "PA_HEALTH_AUDIT_CMS_BASE_URL": "https://www.cms.gov",
+          "PA_HEALTH_AUDIT_PENNIE_BASE_URL": "https://pennie.com",
+          "PA_HEALTH_AUDIT_JWT_SECRET": "<generate with openssl rand -hex 32>",
+          "PA_HEALTH_AUDIT_SQLITE_DB_PATH": "./data/audit.db",
+          "PA_HEALTH_AUDIT_REDIS_HOST": "localhost",
+          "PA_HEALTH_AUDIT_REDIS_PORT": "6379",
+          "PA_HEALTH_AUDIT_SLACK_WEBHOOK_URL": "https://hooks.slack.com/services/XXX",
+          "PA_HEALTH_AUDIT_EMAIL_SMTP_HOST": "smtp.gmail.com",
+          "PA_HEALTH_AUDIT_EMAIL_SMTP_PORT": "587",
+          "PA_HEALTH_AUDIT_LOG_LEVEL": "INFO",
+          "PA_HEALTH_AUDIT_DATA_ROOT": "./data"
+        },
+        "security_note": "Never commit .env to version control"
+      }
+    },
+    "security_requirements": {
+      "authentication": {
+        "method": "JWT tokens",
+        "rotation": "Every 90 days",
+        "storage": "Environment variable, never hardcoded",
+        "validation": "Expire time checked on every request"
+      },
+      "authorization": {
+        "api_endpoints": "Require Bearer token header",
+        "manual_audit_trigger": "Admin role required",
+        "role_based_access": "Implemented via JWT claims"
+      },
+      "data_protection": {
+        "pii_redaction": "Enabled via PiiRedactFilter in logs",
+        "ssl_enforcement": "HTTPS only (require_https=True)",
+        "database_encryption": "At rest via OS-level disk encryption",
+        "backup_encryption": "S3 server-side encryption enabled"
+      },
+      "network_security": {
+        "firewall_rules": {
+          "port_5000": "Allow inbound (API clients)",
+          "port_8000": "Allow Prometheus scrape only",
+          "port_3000": "Allow Grafana dashboard access only",
+          "port_9090": "Allow Prometheus internal only",
+          "port_6379": "Redis localhost only"
+        },
+        "cors_policy": "Whitelist only authorized domains"
+      },
+      "secrets_management": {
+        "github_actions": "Use secrets.SECRET_NAME syntax",
+        "runtime": "os.getenv() with default=None fallback",
+        "rotation_schedule": "Quarterly for production credentials"
+      }
+    },
+    "testing_strategy": {
+      "unit_tests": {
+        "framework": "pytest",
+        "coverage_requirement": "≥80%",
+        "test_files": [
+          "tests/test_provenance.py",
+          "tests/test_tria_ge.py",
+          "tests/test_parser.py",
+          "tests/test_pipeline.py",
+          "tests/test_schemas.py"
+        ],
+        "fixtures": "conftest.py with temp databases, mock HTTP responses"
+      },
+      "integration_tests": {
+        "scenario": "Full audit run end-to-end",
+        "assertions": [
+          "All sources accessible (HTTP 200)",
+          "Report passes schema validation",
+          "Provenance entries logged correctly",
+          "Alerts dispatched if thresholds exceeded"
+        ]
+      },
+      "performance_tests": {
+        "load_test": "Simulate 100 concurrent API requests",
+        "target_latency": "<2 seconds for /api/v1/audit",
+        "memory_usage": "<2GB peak for worker process"
+      },
+      "security_tests": {
+        "dependency_scan": "pip-audit or safety check",
+        "container_scan": "docker scan <image>",
+        "jwt_testing": "Validate expiration and signature"
+      }
+    },
+    "monitoring_and_observability": {
+      "prometheus_metrics": {
+        "port": 8000,
+        "metrics": [
+          "pa_audit_duration_seconds (histogram)",
+          "pa_audit_status (gauge: 0=stable, 1=warning, 2=critical)",
+          "pa_consumer_complaints (gauge)",
+          "pa_pennie_enrollment (gauge)",
+          "pa_system_health (gauge)",
+          "pa_api_requests_total (counter, labels: endpoint, status)"
+        ]
+      },
+      "grafana_dashboards": {
+        "location": "./monitoring/grafana/dashboards/",
+        "dashboards": [
+          "System Health Overview",
+          "Audit Pipeline Performance",
+          "Consumer Complaint Trends",
+          "API Endpoint Latency"
+        ]
+      },
+      "alerting": {
+        "channels": ["Slack webhook", "Email digest"],
+        "rules": [
+          "Overall status WARNING → Slack immediate",
+          "Overall status CRITICAL → Slack + Email immediately",
+          "Pipeline downtime > 30 days → Slack + Email",
+          "Storage usage > 85% → Slack daily reminder",
+          "Schema validation failures → Slack immediately"
+        ]
+      },
+      "logging": {
+        "level": "INFO (production), DEBUG (development)",
+        "format": "ISO 8601 timestamps with PII redaction",
+        "rotation": "10MB max per file, 5 backups retained",
+        "location": "./logs/audit.log, ./logs/system_health.json"
+      }
+    },
+    "maintenance_procedures": {
+      "daily_checks": {
+        "script": "/path/to/check_health.sh",
+        "cron_schedule": "0 8 * * *",
+        "actions": [
+          "Health endpoint verification",
+          "Disk space check (>10GB free required)",
+          "Redis cache hit rate monitoring"
+        ]
+      },
+      "weekly_tasks": {
+        "script": "python src/pipeline.py --run",
+        "schedule": "Monday 9 AM UTC",
+        "actions": [
+          "Run full audit cycle",
+          "Send weekly email digest",
+          "Archive previous week's logs"
+        ]
+      },
+      "monthly_tasks": {
+        "schedule": "First business day",
+        "actions": [
+          "Review and update citation registry",
+          "Adjust thresholds if needed",
+          "Generate compliance report for stakeholders",
+          "Backup database to S3"
+        ]
+      },
+      "quarterly_tasks": {
+        "schedule": "Beginning of quarter",
+        "actions": [
+          "Rotate JWT secrets",
+          "Rotate database credentials",
+          "Security vulnerability scan",
+          "Performance capacity planning review"
+        ]
+      },
+      "annual_tasks": {
+        "schedule": "January",
+        "actions": [
+          "Full penetration test",
+          "Disaster recovery drill",
+          "Citation accuracy audit",
+          "Technology stack review"
+        ]
+      }
+    },
+    "disaster_recovery": {
+      "backup_strategy": {
+        "database": {
+          "frequency": "Daily incremental, weekly full",
+          "retention": "90 days",
+          "destination": "S3 bucket with server-side encryption"
+        },
+        "reports": {
+          "frequency": "Each audit run",
+          "retention": "1 year",
+          "destination": "S3 + local archive"
+        },
+        "code": {
+          "repository": "GitHub",
+          "branches": "main + protected releases"
+        }
+      },
+      "restore_procedure": {
+        "step_1": "Stop affected services (docker-compose stop api worker)",
+        "step_2": "Restore database from latest backup",
+        "step_3": "Rebuild Docker containers",
+        "step_4": "Verify health endpoint",
+        "step_5": "Run validation script (python src/validate_restore.py)",
+        "step_6": "Notify stakeholders of restoration"
+      },
+      "recovery_time_objective": "<4 hours for critical failures",
+      "recovery_point_objective": "<24 hours data loss maximum"
+    },
+    "known_citations": {
+      "verified_statutes": {
+        "act_146": {
+          "title": "Act 146 of 2022 (Senate Bill 225)",
+          "subject": "Prior authorization standards; external review",
+          "effective_date": "January 1, 2024",
+          "citation_urls": [
+            "https://law.justia.com/codes/pennsylvania/2022/act-146/",
+            "https://www.pa.gov/agencies/insurance/newsroom/pennsylvania-insurance-department-and-code-pa-launch-state-external-review-process-and-new-website-for-pennsylvanians-to-appeal-denied-health-plan-services"
+          ],
+          "verification_tier": "VERIFIED",
+          "last_verified": "2026-10-09"
+        },
+        "article_xxi": {
+          "title": "Article XXI, Insurance Company Law of 1921",
+          "citation": "40 P.S. §§ 991.2101–991.2193",
+          "subject": "Managed care accountability and disclosure",
+          "citation_urls": [
+            "https://insurance.pa.gov/Companies/health-care-admin/Documents/default/Preamble%20to%20MCO%20Regulations.pdf"
+          ],
+          "verification_tier": "VERIFIED",
+          "last_verified": "2026-10-09"
+        },
+        "no_surprises_act": {
+          "title": "No Surprises Act (Consolidated Appropriations Act 2021)",
+          "citation": "CAA 2021, Division BB, Title I",
+          "subject": "Surprise billing protections",
+          "citation_urls": [
+            "https://www.cms.gov/initiatives/no-surprise-billing",
+            "https://www.pa.gov/agencies/insurance/laws-regulations-notices/no-surprises-act"
+          ],
+          "verification_tier": "VERIFIED",
+          "last_verified": "2026-10-09"
+        }
+      },
+      "failed_citations": {
+        "critical_failures": [
+          {
+            "citation": "SB 1071 (2023–24)",
+            "reason": "University of Pennsylvania appropriation bill, not health insurance",
+            "source": "https://www.legiscan.com/PA/bill/SB1071/2023"
+          },
+          {
+            "citation": "Act 252-2023",
+            "reason": "Does not exist; only 19 bills enacted in 2023 session",
+            "source": "https://www.cnhinews.com/cnhi/article_69c46df6-7427-11ee-b73c-c7566049defe.html"
+          },
+          {
+            "citation": "§ 28-725, § 29-8719",
+            "reason": "Incorrect citation format; Title 28 is Health and Safety, not Insurance",
+            "correction": "Use Article XXI, 40 P.S. §§ 991.2101–2193"
+          },
+          {
+            "citation": "Bulletin #23-04",
+            "reason": "Medicare Supplement guaranteed issue, not balance billing",
+            "source": "https://www.pa.gov/agencies/insurance/laws-regulations-notices/department-notices.html"
+          }
+        ],
+        "not_found_as_of_oct_9_2026": [
+          "Outpatient coinsurance cap (none enacted)",
+          "Pharmacy deductible cap (none enacted)",
+          "Network disclosure penalties (amounts not found)",
+          "Pennsylvania-specific IDR statistics (not separable from national)",
+          "Act 77 (pharmacy benefit reform text not read)"
+        ],
+        "pending_legislation": [
+          {
+            "bill": "HB 535",
+            "subject": "Annual/lifetime limits on core benefits",
+            "status": "Referred to committee",
+            "tracking_url": "https://www.billtrack50.com/billdetail/1824476"
+          },
+          {
+            "bill": "HB 534",
+            "subject": "Insulin cost-sharing $35 cap",
+            "status": "Referred to committee",
+            "tracking_url": "https://www.billtrack50.com/billdetail/1607975"
+          },
+          {
+            "bill": "HB 2646",
+            "year": "2026",
+            "subject": "Clinical review criteria",
+            "status": "Introduced",
+            "tracking_url": "https://fastdemocracy.com/bill-search/pa/2025-2026/bills/PAB00040767/"
+          }
+        ]
+      }
+    },
+    "dependencies": {
+      "python_packages": {
+        "file": "requirements.txt",
+        "core": ["aiohttp==3.9.1", "tenacity==8.2.3", "pdfplumber==0.10.3", "beautifulsoup4==4.12.2"],
+        "validation": ["pydantic==2.5.2", "pydantic-settings==2.1.0"],
+        "web": ["flask==3.0.0", "flask-limiter==3.5.0", "flask-socketio==5.3.6"],
+        "database": ["sqlite-utils==3.36", "redis==5.0.1"],
+        "testing": ["pytest==7.4.3", "pytest-asyncio==0.21.1", "pytest-cov==4.1.0"],
+        "monitoring": ["prometheus-client==0.19.0", "psutil==5.9.6"],
+        "infrastructure": ["docker==7.0.0", "gunicorn==21.2.0"]
+      },
+      "system_packages": {
+        "debian_ubuntu": ["curl", "git", "nginx"],
+        "centos_rhel": ["curl", "git", "nginx"]
+      },
+      "services": {
+        "redis_min_version": "7.0",
+        "python_min_version": "3.11",
+        "docker_min_version": "20.10"
+      }
+    },
+    "troubleshooting_guide": {
+      "common_issues": [
+        {
+          "symptom": "HTTP 404 errors on PID rate filings",
+          "diagnosis": "Website restructuring or seasonal filing pause",
+          "resolution": [
+            "Check Wayback Machine archive",
+            "Contact PID records office: pid.info@pa.gov",
+            "Mark source as PARTIAL in audit report"
+          ]
+        },
+        {
+          "symptom": "SQLite database locked error",
+          "diagnosis": "Multiple processes writing simultaneously",
+          "resolution": [
+            "Increase timeout: sqlite3.connect(timeout=30)",
+            "Enable WAL mode: PRAGMA journal_mode=WAL",
+            "Serialize writes in worker queue"
+          ]
+        },
+        {
+          "symptom": "Citation triage fails with false positives",
+          "diagnosis": "Regex pattern too broad",
+          "resolution": [
+            "Update FAILED_CITATIONS regex patterns",
+            "Add case-sensitive exceptions",
+            "Test with sample documents"
+          ]
+        },
+        {
+          "symptom": "Slack webhook timeout",
+          "diagnosis": "Webhook URL changed or revoked",
+          "resolution": [
+            "Regenerate webhook from Slack app settings",
+            "Update PA_HEALTH_AUDIT_SLACK_WEBHOOK_URL",
+            "Retry failed notifications with exponential backoff"
+          ]
+        },
+        {
+          "symptom": "Redis cache evicting data prematurely",
+          "diagnosis": "Memory pressure on Redis instance",
+          "resolution": [
+            "Increase Redis memory limit",
+            "Adjust eviction policy to volatile-lru",
+            "Reduce TTL for non-critical endpoints"
+          ]
+        }
+      ],
+      "escalation_contacts": {
+        "primary_developer": "dev-team@example.com",
+        "security_contact": "security@example.com",
+        "compliance_officer": "compliance@example.com",
+        "pagerduty_url": "https://your-team.pagerduty.com/incidents"
+      }
+    },
+    "acceptance_criteria": {
+      "go_live_requirements": {
+        "functional": [
+          "All API endpoints respond within 2 seconds under normal load",
+          "Monthly audit completes in <15 minutes",
+          "All failed citations removed from deliverables",
+          "All verified citations traceable to primary sources",
+          "Prometheus metrics accessible at port 8000",
+          "Slack/Email notifications delivered within 5 minutes of alert"
+        ],
+        "non_functional": [
+          "Zero PII exposed in logs",
+          "SSL/TLS enforced for all HTTPS endpoints",
+          "Database backups verified with restore test",
+          "JWT token rotation documented and tested",
+          "Documentation complete for all public APIs"
+        ],
+        "security": [
+          "Dependency scan shows no critical vulnerabilities",
+          "Container scan passes with no high-severity issues",
+          "Penetration test completed with no critical findings"
+        ]
+      },
+      "sign_off_needed_from": [
+        "Engineering Lead",
+        "Security Officer",
+        "Compliance Officer",
+        "Product Owner"
+      ]
+    },
+    "roadmap_future_work": {
+      "q4_2026": [
+        "Implement NLP-enhanced root cause analysis for anomaly detection",
+        "Add carrier performance scorecards with denial rate comparisons",
+        "Build patient-facing template library with multi-language support",
+        "Integrate with external legal database for real-time statute changes"
+      ],
+      "q1_2027": [
+        "Machine learning model for complaint volume prediction",
+        "Automated regulatory change impact assessment",
+        "Mobile-responsive dashboard redesign",
+        "API versioning strategy (v1 → v2 migration plan)"
+      ],
+      "long_term": [
+        "Expand to other states' health insurance markets",
+        "Real-time streaming data ingestion (vs. batch monthly)",
+        "Blockchain-based immutable audit trail for regulatory compliance",
+        "Partner API marketplace for third-party integrations"
+      ]
+    },
+    "support_resources": {
+      "documentation": {
+        "readme": "./README.md",
+        "api_docs": "http://localhost:5000/api/docs (Swagger/Redoc)",
+        "architecture_diagram": "./docs/architecture.png",
+        "deployment_guide": "./docs/deployment_guide.md",
+        "incident_playbook": "./docs/incident_response.md"
+      },
+      "training_materials": {
+        "developer_onboarding": "./docs/dev_onboarding.md",
+        "operations_runbook": "./docs/ops_runbook.md",
+        "user_guide_non_technical": "./docs/user_guide.md"
+      },
+      "community": {
+        "slack_channel": "#pa-health-audit-support",
+        "github_repository": "https://github.com/your-org/pa-health-audit",
+        "issue_tracker": "https://github.com/your-org/pa-health-audit/issues"
+      }
+    },
+    "final_notes": {
+      "critical_warnings": [
+        "NEVER cite failed citations (SB 1071, Act 252-2023, § 28-725, § 29-8719) in any deliverable",
+        "Always verify citations against primary sources before publication",
+        "Do not attribute national IDR data to Pennsylvania specifically",
+        "PII redaction must remain enabled in all log configurations",
+        "Production JWT secrets must never appear in GitHub repositories"
+      ],
+      "success_metrics_targets": {
+        "api_uptime": "≥99.5%",
+        "audit_completion_time": "<15 minutes per run",
+        "false_positive_alert_rate": "<5%",
+        "mean_time_to_detect_issues": "<1 hour",
+        "stakeholder_satisfaction": "≥4/5 quarterly survey"
+      },
+      "handover_completed_by": "Lumo Assistant (AI-generated documentation)",
+      "recommended_first_steps_for_dev_team": [
+        "1. Clone repository and set up .env from template",
+        "2. Run docker-compose -f docker-compose.dev.yml up --build",
+        "3. Execute pytest tests to verify environment",
+        "4. Run first manual audit: python src/pipeline.py --run",
+        "5. Review citation-failure appendix before generating any reports",
+        "6. Set up Grafana dashboards from ./monitoring/grafana/dashboards/",
+        "7. Configure Slack webhook and test notification delivery",
+        "8. Schedule stakeholder walkthrough meeting"
+      ]
+    }
+  }
+}
+```
