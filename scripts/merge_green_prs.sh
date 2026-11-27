@@ -26,7 +26,7 @@ PY
 )"
   branch="$(PR_JSON="${pr_json}" python3 - << 'PY'
 import json, os
-d = json.load(os.environ["PR_JSON"])
+d = json.loads(os.environ["PR_JSON"])
 print(d.get("headRefName", ""))
 PY
 )"
