@@ -1,0 +1,309 @@
+{
+  "template": "Debt Validation / Statutory Dispute Notice",
+  "version": "1.1.0",
+  "version_note": "Expanded from 1.0.0 four-field sample to the full DV-001..014 fill-field matrix; draft artifact pending diff against the published wiki Template-Debt-Validation page.",
+  "variants_supported": [
+    "fdcpa_30day_validation",
+    "cease_desist_hybrid",
+    "time_barred_5525a",
+    "fap_501r_hold"
+  ],
+  "fields": [
+    {
+      "field_id": "DV-001",
+      "raw_placeholder": "[LETTER_DATE]",
+      "syntax": "bracket_allcaps",
+      "data_type": "date",
+      "required": true,
+      "pii": true,
+      "pii_class": "date",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692g"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "iso_date_yyyy_mm_dd",
+        "not_future_beyond_dispatch"
+      ]
+    },
+    {
+      "field_id": "DV-002",
+      "raw_placeholder": "VIA CERTIFIED MAIL — RETURN RECEIPT REQUESTED",
+      "syntax": "bracket_allcaps",
+      "data_type": "enum",
+      "required": true,
+      "pii": false,
+      "pii_class": "other",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692g"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "enum_one_of:certified_mail_rrr|first_class|portal"
+      ]
+    },
+    {
+      "field_id": "DV-003",
+      "raw_placeholder": "[COLLECTOR_OR_CREDITOR_NAME]",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "provider_identifier",
+      "render": "plaintext_local",
+      "dispatch_payload": "hash_or_omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692g",
+        "73 P.S. § 2270.4"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "non_empty_trimmed"
+      ]
+    },
+    {
+      "field_id": "DV-004",
+      "raw_placeholder": "[COLLECTOR_MAILING_ADDRESS]",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "other",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692g"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "non_empty_mailing_address"
+      ]
+    },
+    {
+      "field_id": "DV-005",
+      "raw_placeholder": "[DEBTOR_FULL_LEGAL_NAME]",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "consumer_identity",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692g"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "non_empty_legal_name"
+      ]
+    },
+    {
+      "field_id": "DV-006",
+      "raw_placeholder": "[DEBTOR_MAILING_ADDRESS]",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "consumer_identity",
+      "render": "plaintext_local",
+      "dispatch_payload": "omit",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692g"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "non_empty_mailing_address"
+      ]
+    },
+    {
+      "field_id": "DV-007",
+      "raw_placeholder": "[ACCOUNT_REFERENCE_ID]",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "account_reference",
+      "render": "plaintext_local",
+      "dispatch_payload": "redact_account_id",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692g"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "non_empty_trimmed"
+      ]
+    },
+    {
+      "field_id": "DV-008",
+      "raw_placeholder": "[ORIGINAL_PROVIDER_NAME]",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": true,
+      "pii": true,
+      "pii_class": "provider_identifier",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692g",
+        "45 C.F.R. Part 149"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "non_empty_provider_or_creditor_name"
+      ]
+    },
+    {
+      "field_id": "DV-009",
+      "raw_placeholder": "[SERVICE_OR_DUE_DATE]",
+      "syntax": "bracket_allcaps",
+      "data_type": "date",
+      "required": true,
+      "pii": true,
+      "pii_class": "date",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "42 Pa.C.S. § 5525(a)"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "iso_date_yyyy_mm_dd",
+        "evaluate_48_month_sol_pa"
+      ]
+    },
+    {
+      "field_id": "DV-010",
+      "raw_placeholder": "[ALLEGED_BALANCE_USD]",
+      "syntax": "bracket_allcaps",
+      "data_type": "currency",
+      "required": true,
+      "pii": true,
+      "pii_class": "financial_amount",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692e",
+        "73 P.S. § 201-9.2"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "decimal_non_negative_usd",
+        "no_silent_rounding"
+      ]
+    },
+    {
+      "field_id": "DV-011",
+      "raw_placeholder": "[NOTICE_DATE]",
+      "syntax": "bracket_allcaps",
+      "data_type": "date",
+      "required": true,
+      "pii": true,
+      "pii_class": "date",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "fail_closed_no_render",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692g"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "iso_date_yyyy_mm_dd",
+        "must_not_precede_service_date_without_flag"
+      ]
+    },
+    {
+      "field_id": "DV-012",
+      "raw_placeholder": "[CONDITIONAL_SOL_CLAUSE_5525A]",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": false,
+      "pii": false,
+      "pii_class": "other",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "empty_string_when_variant_inactive",
+      "statutory_hooks": [
+        "42 Pa.C.S. § 5525(a)",
+        "15 U.S.C. § 1692e"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "empty_string_when_variant_inactive"
+      ],
+      "required_when": {
+        "variant": "time_barred_5525a"
+      }
+    },
+    {
+      "field_id": "DV-013",
+      "raw_placeholder": "[CONDITIONAL_501R_FAP_CLAUSE]",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": false,
+      "pii": false,
+      "pii_class": "other",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "empty_string_when_variant_inactive",
+      "statutory_hooks": [
+        "26 U.S.C. § 501(r)"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "empty_string_when_variant_inactive"
+      ],
+      "required_when": {
+        "variant": "fap_501r_hold"
+      }
+    },
+    {
+      "field_id": "DV-014",
+      "raw_placeholder": "[CONDITIONAL_CEASE_DESIST_CLAUSE]",
+      "syntax": "bracket_allcaps",
+      "data_type": "string",
+      "required": false,
+      "pii": false,
+      "pii_class": "other",
+      "render": "plaintext_local",
+      "dispatch_payload": "include",
+      "fallback": "empty_string_when_variant_inactive",
+      "statutory_hooks": [
+        "15 U.S.C. § 1692c(c)",
+        "73 P.S. § 2270.4"
+      ],
+      "verification_status": "verified",
+      "validation_rules": [
+        "empty_string_when_variant_inactive"
+      ],
+      "required_when": {
+        "variant": "cease_desist_hybrid"
+      }
+    }
+  ],
+  "test_fixture": {
+    "case_id": "fixture_pa_sol_red_001",
+    "variant": "time_barred_5525a",
+    "letter_date": "2026-11-27",
+    "service_or_due_date": "2021-01-15",
+    "notice_date": "2026-11-10",
+    "alleged_balance_usd": "1480.00",
+    "account_reference_id": "ACCT-PA-994821",
+    "expected_sol_expired_48m": true,
+    "expected_risk_tier": "RED",
+    "expected_payload_has_plaintext_account": false
+  }
+}
