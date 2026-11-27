@@ -406,7 +406,7 @@ Users should contact an attorney immediately if they encounter:
 
 ---
 
-## 🧑‍💻 Contributor Guidelines
+## 🧑💻 Contributor Guidelines
 
 ### How to Propose Changes
 
