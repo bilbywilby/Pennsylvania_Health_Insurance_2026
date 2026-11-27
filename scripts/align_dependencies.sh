@@ -8,20 +8,18 @@ APP_DIR="${REPO_ROOT}/sources/keystone-sync"
 MANIFEST_PATH="${REPO_ROOT}/MANIFEST.sha256"
 
 TARGET_VER="19.3.1"
+TYPES_REACT_DOM_SPEC="^19.0.0"
 APPLY=0
 SYNC_LOCK=0
 
 usage() {
   cat << 'USAGE'
-Usage: align_react_and_manifest.sh [--target-version <ver>] [--apply] [--sync-lock]
+Usage: align_dependencies.sh [--target-version <ver>] [--types-react-dom-version <spec>] [--apply] [--sync-lock]
 
-  --target-version <ver>  Semver version (default: 19.3.1) for react, react-dom,
-                          @types/react, and @types/react-dom (written with '^').
-  --apply                 Write changes to package.json and refresh MANIFEST.sha256.
-                          Default is dry-run / inspection only.
-  --sync-lock             Run 'bun install --lockfile-only --ignore-scripts' in
-                          sources/keystone-sync when --apply is set (for supported
-                          host/x86_64/CI environments; skipped on Android/Termux).
+  --target-version <ver>            Semver version (default: 19.3.1) for react, react-dom, and @types/react (written with '^').
+  --types-react-dom-version <spec>  Version spec for @types/react-dom (default: ^19.0.0).
+  --apply                           Write changes to package.json and refresh MANIFEST.sha256. Default is dry-run only.
+  --sync-lock                       Run 'bun install --lockfile-only --ignore-scripts' in sources/keystone-sync when --apply is set (skipped on Android/Termux).
 USAGE
 }
 
@@ -30,6 +28,11 @@ while [[ "$#" -gt 0 ]]; do
     --target-version)
       [[ "$#" -ge 2 ]] || { echo "ERROR: --target-version requires an argument" >&2; exit 2; }
       TARGET_VER="$2"
+      shift 2
+      ;;
+    --types-react-dom-version)
+      [[ "$#" -ge 2 ]] || { echo "ERROR: --types-react-dom-version requires an argument" >&2; exit 2; }
+      TYPES_REACT_DOM_SPEC="$2"
       shift 2
       ;;
     --apply)
@@ -55,19 +58,23 @@ done
 [[ -f "${PKG_PATH}" ]] || { echo "ERROR: Missing ${PKG_PATH}" >&2; exit 1; }
 [[ -d "${REPO_ROOT}/.git" ]] || { echo "ERROR: ${REPO_ROOT} is not a git repository" >&2; exit 1; }
 
-python3 - "${PKG_PATH}" "${TARGET_VER}" "${APPLY}" << 'PYEOF'
+python3 - "${PKG_PATH}" "${TARGET_VER}" "${TYPES_REACT_DOM_SPEC}" "${APPLY}" << 'PYEOF'
 import json
 import sys
 from pathlib import Path
 
 pkg_path = Path(sys.argv[1])
 target_ver = sys.argv[2].lstrip("^")
-apply_changes = sys.argv[3] == "1"
-desired_spec = f"^{target_ver}"
+types_react_dom_spec = sys.argv[3]
+apply_changes = sys.argv[4] == "1"
+default_spec = f"^{target_ver}"
 
 data = json.loads(pkg_path.read_text(encoding="utf-8"))
 sections = ("dependencies", "devDependencies", "peerDependencies", "optionalDependencies")
 targets = ("react", "react-dom", "@types/react", "@types/react-dom")
+
+def desired_for(pkg_name: str) -> str:
+    return types_react_dom_spec if pkg_name == "@types/react-dom" else default_spec
 
 found = {}
 for sec in sections:
@@ -82,23 +89,24 @@ if not found:
     print("  (none found)")
 else:
     for (sec, pkg), ver in sorted(found.items()):
-        marker = "OK" if ver == desired_spec else f"MISMATCH -> {desired_spec}"
+        want = desired_for(pkg)
+        marker = "OK" if ver == want else f"MISMATCH -> {want}"
         print(f"  [{sec}] {pkg}: {ver}  ({marker})")
 
-mismatches = [(sec, pkg, ver) for (sec, pkg), ver in found.items() if ver != desired_spec]
+mismatches = [(sec, pkg, ver, desired_for(pkg)) for (sec, pkg), ver in found.items() if ver != desired_for(pkg)]
 if not mismatches:
-    print(f"All present React/type entries already match {desired_spec}.")
+    print("All present React/type entries already match target specs.")
     sys.exit(0)
 
 if not apply_changes:
-    print(f"Dry-run only: {len(mismatches)} entry/entries would be updated to {desired_spec}. Pass --apply to write.")
+    print(f"Dry-run only: {len(mismatches)} entry/entries would be updated. Pass --apply to write.")
     sys.exit(0)
 
-for sec, pkg, _ in mismatches:
-    data[sec][pkg] = desired_spec
+for sec, pkg, _, want in mismatches:
+    data[sec][pkg] = want
 
 pkg_path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
-print(f"Updated {len(mismatches)} entry/entries in {pkg_path} to {desired_spec}.")
+print(f"Updated {len(mismatches)} entry/entries in {pkg_path}.")
 PYEOF
 
 if [[ "${APPLY}" -eq 1 ]]; then
