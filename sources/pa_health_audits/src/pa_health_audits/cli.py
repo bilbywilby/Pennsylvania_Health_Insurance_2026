@@ -48,6 +48,30 @@ def _cmd_rate_summary(args: argparse.Namespace) -> int:
     return 0
 
 
+def _obtain_salt(env_var: str = "PA_HEALTH_SALT", file_arg: str | None = None) -> str:
+    """Return a non-empty HMAC salt from env var or salt file, or exit non-zero."""
+    env_salt = os.getenv(env_var, "").strip()
+    if env_salt:
+        return env_salt
+
+    if file_arg:
+        try:
+            file_salt = Path(file_arg).read_text(encoding="utf-8").strip()
+        except OSError as exc:
+            print(f"Unable to read salt file '{file_arg}': {exc}", file=sys.stderr)
+            sys.exit(1)
+        if file_salt:
+            return file_salt
+        print(f"Salt file '{file_arg}' is empty.", file=sys.stderr)
+        sys.exit(1)
+
+    print(
+        f"Salt not provided. Set ${env_var} or pass --salt-file <path>.",
+        file=sys.stderr,
+    )
+    sys.exit(1)
+
+
 def _cmd_audit_line(args: argparse.Namespace) -> int:
     finding = audit_claim_line(
         record_id=args.record_id,
