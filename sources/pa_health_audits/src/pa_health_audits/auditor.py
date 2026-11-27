@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 import hashlib
+import hmac
 import re
 from dataclasses import dataclass
 
 SSN_RE = re.compile(r"\b\d{3}-\d{2}-\d{4}\b")
 EMAIL_RE = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
-NPI_RE = re.compile(r"\b\d{10}\b")
+NPI_RE = re.compile(r"\b[12]\d{9}\b")
 
 
 @dataclass(frozen=True)
@@ -60,16 +61,40 @@ def audit_claim_line(
     )
 
 
+def is_valid_npi(value: str) -> bool:
+    """Validate a 10-digit NPI using prefix (1 or 2) and Luhn checksum with '80840' prefix."""
+    if not re.fullmatch(r"[12]\d{9}", value):
+        return False
+    digits = [int(ch) for ch in f"80840{value[:9]}"]
+    total = 0
+    for idx, digit in enumerate(reversed(digits)):
+        if idx % 2 == 0:
+            doubled = digit * 2
+            total += doubled - 9 if doubled > 9 else doubled
+        else:
+            total += digit
+    check_digit = (10 - (total % 10)) % 10
+    return check_digit == int(value[9])
+
+
 def _token(prefix: str, value: str, salt: str) -> str:
-    digest = hashlib.sha256(f"{salt}:{prefix}:{value}".encode("utf-8")).hexdigest()[:12]
+    message = f"{prefix}:{value}".encode("utf-8")
+    digest = hmac.new(
+        salt.encode("utf-8"),
+        message,
+        hashlib.sha256,
+    ).hexdigest()[:16]
     return f"[{prefix}:{digest}]"
 
 
 def scrub_pii_line(text: str, salt: str) -> str:
-    """Replace SSNs, emails, and 10-digit NPIs with deterministic salted tokens."""
+    """Replace SSNs, emails, and valid NPIs with deterministic salted tokens."""
     if not salt:
         raise ValueError("salt is required for deterministic PII scrubbing")
     out = SSN_RE.sub(lambda m: _token("SSN", m.group(0), salt), text)
     out = EMAIL_RE.sub(lambda m: _token("EMAIL", m.group(0), salt), out)
-    out = NPI_RE.sub(lambda m: _token("NPI", m.group(0), salt), out)
+    out = NPI_RE.sub(
+        lambda m: _token("NPI", m.group(0), salt) if is_valid_npi(m.group(0)) else m.group(0),
+        out,
+    )
     return out
