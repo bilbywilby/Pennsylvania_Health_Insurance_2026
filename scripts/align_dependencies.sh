@@ -137,3 +137,5 @@ if [[ "${APPLY}" -eq 1 ]]; then
     sha256sum -c "${MANIFEST_PATH}" --quiet && echo "MANIFEST_OK"
   )
 fi
+# Refresh repository manifest after dependency alignment
+bash ./scripts/refresh_manifest.sh
