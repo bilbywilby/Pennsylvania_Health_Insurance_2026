@@ -41,7 +41,7 @@ def test_shared_tokens_declared_positionally():
         flds = {f["field_id"]: f for f in schema["fields"]}
         occs = sorted(flds[fid]["occurrence"] for fid in coll["fields"])
         assert occs == [1, 2], (coll["token"], occs)
-        total = sum(flds[fid]["occurrence"] for fid in coll["fields"])
+        total = len(coll["fields"])
         n = sum(1 for _ in re.finditer(re.escape(coll["token"]),
                                        LETTER.read_text(encoding="utf-8")))
         assert total == n, (coll["token"], total, n)
