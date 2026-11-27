@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# harden_v1_2.sh — apply after bootstrap_notices.sh + harden_v1_1.sh. Run from repo root.
+# scripts/harden_v1_2.sh — apply after scripts/bootstrap_notices.sh + harden_v1_1.sh. Run from repo root.
 # Why: PA accrual runs from breach (or end of the provider relationship), not from the last
 # payment. Falling back to last_payment_date can declare a debt "time-barred" too early.
 # Now: accrual_date is REQUIRED for the SOL letter. Validates all anchors first; writes nothing on mismatch.

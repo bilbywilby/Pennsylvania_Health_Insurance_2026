@@ -11,4 +11,4 @@
 
 1. **Align dependencies:**
    ```bash
-   bash ./scripts/align_dependencies.sh --types-react-dom-version '^19.0.0'
+   bash ./scripts/align\_dependencies.sh --types-react-dom-version '^19.0.0'

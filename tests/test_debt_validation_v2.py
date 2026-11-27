@@ -12,7 +12,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 SCHEMA = REPO / "sources/keystone_health/schema/debt_validation_notice_v2.schema.json"
-LETTER = REPO / "Formal Debt Validation & Statutory Dispute Notice.txt"
+LETTER = REPO / "templates/Formal Debt Validation & Statutory Dispute Notice.txt"
 
 def _load():
     return json.loads(SCHEMA.read_text(encoding="utf-8")), LETTER.read_text(encoding="utf-8")

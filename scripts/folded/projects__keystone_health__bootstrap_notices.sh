@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# bootstrap_notices.sh — writes generator, tests, sample data, CI. Run from repo root.
+# scripts/bootstrap_notices.sh — writes generator, tests, sample data, CI. Run from repo root.
 # Existing files are copied to <file>.bak.<epoch> before being replaced.
 set -euo pipefail
 

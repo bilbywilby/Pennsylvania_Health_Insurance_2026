@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# harden_v1_1.sh — apply to a repo bootstrapped with bootstrap_notices.sh. Run from repo root.
+# scripts/harden_v1_1.sh — apply to a repo bootstrapped with bootstrap_notices.sh. Run from repo root.
 # Validates every anchor in every file first; writes nothing unless all match (edited since v1 => abort).
 set -euo pipefail
 
 for f in scripts/generate_notices.py tests/test_generate_notices.py data/sample_debts.json; do
-  [ -f "$f" ] || { echo "missing $f (run bootstrap_notices.sh first)" >&2; exit 2; }
+  [ -f "$f" ] || { echo "missing $f (run scripts/bootstrap_notices.sh first)" >&2; exit 2; }
 done
 ts=$(date +%s)
 for f in scripts/generate_notices.py tests/test_generate_notices.py data/sample_debts.json; do
