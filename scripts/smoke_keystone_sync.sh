@@ -18,7 +18,7 @@ cleanup() {
     kill "${SERVER_PID}" 2>/dev/null || true
     wait "${SERVER_PID}" 2>/dev/null || true
   fi
-  rm -f "${LOG_FILE}"
+  rm -f "${LOG_FILE}" "${APP_DIR}/.bootstrap-complete"
 }
 trap cleanup EXIT
 
@@ -48,6 +48,7 @@ fi
 if ! bun install --frozen-lockfile "${INSTALL_FLAGS[@]}"; then
   bun install "${INSTALL_FLAGS[@]}"
 fi
+rm -f "${APP_DIR}/.bootstrap-complete"
 bun run typecheck
 
 if [[ -f "${REPO_ROOT}/scripts/check_appeal_bundle.js" ]]; then
