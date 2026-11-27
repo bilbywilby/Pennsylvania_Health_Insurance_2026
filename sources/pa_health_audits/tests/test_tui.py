@@ -146,3 +146,24 @@ def test_app_dispatches_menu_and_quits_cleanly(monkeypatch: pytest.MonkeyPatch) 
 
     assert invoked == ["rate", "audit"]
     assert any("Choose an option" in txt for _, _, txt in screen.drawn)
+
+
+def test_audit_line_allows_empty_note_and_calls_run_cli(monkeypatch: pytest.MonkeyPatch) -> None:
+    _patch_curses_constants(monkeypatch)
+    called: list[list[str]] = []
+    monkeypatch.setattr(tui, "_run_cli", lambda _s, _title, argv: called.append(argv))
+
+    keys: list[int | str] = [
+        "C", "1", 10,       # record ID
+        "1", "0", "0", 10,  # base rate
+        "1", "5", "0", 10,  # billed amount
+        "1", ".", "0", 10,  # modifier
+        10,                 # empty note
+        "s", "a", "l", "t", 10,  # salt
+        10,                 # skip output path
+    ]
+    tui._audit_line(FakeScreen(keys))
+
+    assert len(called) == 1
+    argv = called[0]
+    assert argv[argv.index("--note") + 1] == ""
