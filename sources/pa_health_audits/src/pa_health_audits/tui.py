@@ -195,8 +195,6 @@ def _audit_line(screen: curses.window) -> None:
         return
 
     note = _prompt(screen, "Note to scrub (avoid entering unnecessary identifiers):")
-    if note == "":
-        return
 
     salt = _prompt(screen, "PII HMAC salt (input is hidden):", secret=True)
     if not salt:
