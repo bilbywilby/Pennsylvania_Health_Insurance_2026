@@ -13,6 +13,34 @@ import { ChevronRight, ChevronLeft, Save, FileText, AlertCircle, ShieldAlert, Pr
 import { addToVault, getRecentCalculation } from '@/lib/db';
 import { toast } from 'sonner';
 import { cn } from "@/lib/utils";
+
+const ISSUE_BUNDLE_MAP = {
+  [AppealIssue.CLINICAL_FRAMEWORK]: {
+    pathwayKey: 'claim_denial',
+    deadlineKey: 'aca_external_review',
+    routeKey: 'denied_claim',
+  },
+  [AppealIssue.BALANCE_BILLING]: {
+    pathwayKey: 'surprise_bill',
+    deadlineKey: 'nsa_good_faith_estimate_dispute',
+    routeKey: 'er_surprise_bill',
+  },
+  [AppealIssue.PHARMACY_TIER_EXCEPTION]: {
+    pathwayKey: 'claim_denial',
+    deadlineKey: 'erisa_internal_appeal',
+    routeKey: 'denied_claim',
+  },
+  [AppealIssue.PRIOR_AUTH]: {
+    pathwayKey: 'claim_denial',
+    deadlineKey: 'aca_external_review',
+    routeKey: 'denied_claim',
+  },
+  [AppealIssue.INTEREST_RATE]: {
+    pathwayKey: 'medical_debt_collection',
+    routeKey: 'collection_threat',
+  },
+};
+
 const STEPS = ['Assess Rights', 'Bill Details', 'Statutory Review', 'Legal Preview', 'Escalate to State'];
 const PRESETS = [
   { id: 'ACT146', label: 'Act 146 Specialty Mismatch', issue: AppealIssue.CLINICAL_FRAMEWORK },
