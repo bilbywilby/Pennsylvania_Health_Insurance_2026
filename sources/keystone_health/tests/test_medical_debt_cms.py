@@ -1,8 +1,15 @@
 import datetime
 import pytest
-from dateutil.relativedelta import relativedelta
-
 # System date fixed to November 5, 2026
+import calendar
+
+def _shift_months(d: datetime.date, months: int) -> datetime.date:
+    total_months = (d.year * 12 + (d.month - 1)) + months
+    year, month_idx = divmod(total_months, 12)
+    month = month_idx + 1
+    max_day = calendar.monthrange(year, month)[1]
+    return datetime.date(year, month, min(d.day, max_day))
+
 CURRENT_DATE = datetime.date(2026, 11, 5)
 
 # Test dataset matching the 15 managed accounts
@@ -26,7 +33,7 @@ ACCOUNTS = [
 
 def calculate_sol(first_statement):
     # 4 years from first statement date (EDATE equivalent)
-    return first_statement + relativedelta(years=4)
+    return _shift_months(first_statement, int(4) * 12)
 
 @pytest.mark.parametrize("acc_id,expected_barred", [
     ("ACC-1001", False),
@@ -43,11 +50,12 @@ def test_statute_of_limitations(acc_id, expected_barred):
 
 @pytest.mark.parametrize("acc_id,expected_violation", [
     ("ACC-1011", True),   # FAP 240-day window expired April 2026
-    ("ACC-1001", False),  # Within active window
+    ("ACC-1001", True),   # 2026-02-01 + 240d = 2026-09-29 < 2026-11-05
+    ("ACC-1010", False),  # 2026-10-20 + 240d = 2027-06-17 > 2026-11-05
 ])
 def test_fap_501r_compliance(acc_id, expected_violation):
     account = next(a for a in ACCOUNTS if a["id"] == acc_id)
     if account["type"] == "Non-Profit":
-        fap_deadline = account["first_statement"] + relativedelta(days=240)
+        fap_deadline = (account["first_statement"] + datetime.timedelta(days=240))
         violation = CURRENT_DATE > fap_deadline
         assert violation == expected_violation, f"Account {acc_id} 501(r) violation status mismatch."
