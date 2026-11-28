@@ -244,11 +244,11 @@ def main() -> int:
 def _write_manifest_stable(path, new):
     """Skip the write when only timestamp-like fields differ."""
     import json
-    volatile = ("time", "date", "generated", "updated", "created", "_at")
+    volatile = {"reconciled_at"}
     def norm(o):
         if isinstance(o, dict):
             return {k: norm(v) for k, v in o.items()
-                    if not any(s in str(k).lower() for s in volatile)}
+                    if k not in volatile}
         if isinstance(o, list):
             return [norm(v) for v in o]
         return o
