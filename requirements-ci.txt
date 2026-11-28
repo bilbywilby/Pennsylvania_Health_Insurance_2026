@@ -1,0 +1,5 @@
+pytest  # 9.1.1 where tests pass
+pytest-asyncio  # 1.4.0 (pytest plugin installed here)
+pytest-cov  # 7.1.0 (pytest plugin installed here)
+requests  # 2.34.2 where tests pass
+ruff
