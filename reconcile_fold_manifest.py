@@ -230,7 +230,7 @@ def main() -> int:
     if manifest_path.exists():
         atomic_write_json(repo_root / "FOLD_MANIFEST.json.bak", raw_manifest)
 
-    atomic_write_json(manifest_path, new_manifest)
+    _write_manifest_stable(manifest_path, new_manifest)
 
     if args.refresh_sidecar:
         sidecar = repo_root / "FOLD_MANIFEST.sha256"
@@ -239,6 +239,28 @@ def main() -> int:
         print(f"[OK] Refreshed {sidecar.name}")
     print(f"\n[OK] Wrote {len(reconciled_entries)} verified entries to {manifest_path}")
     return 0
+
+
+def _write_manifest_stable(path, new):
+    """Skip the write when only timestamp-like fields differ."""
+    import json
+    volatile = ("time", "date", "generated", "updated", "created", "_at")
+    def norm(o):
+        if isinstance(o, dict):
+            return {k: norm(v) for k, v in o.items()
+                    if not any(s in str(k).lower() for s in volatile)}
+        if isinstance(o, list):
+            return [norm(v) for v in o]
+        return o
+    try:
+        with open(path, encoding="utf-8") as fh:
+            old = json.load(fh)
+    except Exception:
+        old = None
+    if old is not None and norm(old) == norm(new):
+        print("[OK] Manifest content unchanged; write skipped")
+        return
+    atomic_write_json(path, new)
 
 
 if __name__ == "__main__":
