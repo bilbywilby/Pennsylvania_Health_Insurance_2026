@@ -11,7 +11,7 @@
     "sources/pa_ra_onepagers",
     "sources/keystone_health"
   ],
-  "file_count": 1348,
+  "file_count": 1350,
   "files": [
     {
       "path": ".gitattributes",
@@ -555,8 +555,13 @@
     },
     {
       "path": "scripts/check_fold_manifest.sh",
-      "sha256": "ea1dc4c1b7a44cdc481adfedda09202ecdcea3e1b4abeeb3ff0f3a7250bf0e34",
-      "size": 787
+      "sha256": "f7427834ace77a5e7e9f2675dc69e000f4b92a4614eb23f9cc350ed451508980",
+      "size": 1682
+    },
+    {
+      "path": "scripts/check_wiki_links.sh",
+      "sha256": "c31d62e7ad7af5eb9ccad552fe4c0cdbaefdaecb56b387e9e9f0317bc07d6933",
+      "size": 1571
     },
     {
       "path": "scripts/dispatch_work_orders.py",
@@ -6534,6 +6539,11 @@
       "size": 5250
     },
     {
+      "path": "tests/conftest.py",
+      "sha256": "e33c847a1e321da22cce4d1ae510b7863161df065a36f39fb4221a0ac7d27f69",
+      "size": 717
+    },
+    {
       "path": "tests/medical_debt_cms.py",
       "sha256": "ef8242682061bd1721f22f7605a3c06e1b9f67160ab18c4b84cad59db99651c4",
       "size": 4061
@@ -6754,5 +6764,5 @@
       "size": 1511
     }
   ],
-  "reconciled_at": "2026-11-28T17:54:53Z"
+  "reconciled_at": "2026-11-28T18:28:28Z"
 }
