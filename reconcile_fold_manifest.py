@@ -40,6 +40,8 @@ def sha256_file(path: Path) -> str:
 
 
 def is_excluded(rel_posix: str) -> bool:
+    if rel_posix in SELF_EXCLUDED:
+        return True
     if rel_posix in EXCLUDED_FILES:
         return True
     if any(rel_posix.startswith(prefix) for prefix in EXCLUDED_PREFIXES):

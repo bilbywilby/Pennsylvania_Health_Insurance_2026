@@ -11,7 +11,7 @@
     "sources/pa_ra_onepagers",
     "sources/keystone_health"
   ],
-  "file_count": 1346,
+  "file_count": 1345,
   "files": [
     {
       "path": ".coverage",
@@ -122,11 +122,6 @@
       "path": "FCEUA/.pdfUTPCPL Collection Agency Escalation Letter",
       "sha256": "594e82f99813ed10f9cf370055729e17db34c2f82f9082081d044ad10e7fc33a",
       "size": 7530
-    },
-    {
-      "path": "FOLD_MANIFEST.sha256",
-      "sha256": "f26fcf3569fe8c4ef94e4eec54acbe7156af741272beef1bda4401d512e04ca6",
-      "size": 85
     },
     {
       "path": "Framework for No Surprises Act Enforcement and Medical Debt Defense in Pennsylvania.txt",
@@ -6744,5 +6739,5 @@
       "size": 1511
     }
   ],
-  "reconciled_at": "2026-11-28T16:18:15Z"
+  "reconciled_at": "2026-11-28T16:20:33Z"
 }
