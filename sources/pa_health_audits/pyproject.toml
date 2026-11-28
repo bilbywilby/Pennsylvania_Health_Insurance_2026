@@ -1,21 +1,2 @@
-[build-system]
-requires = ["setuptools>=68.0"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "pa-health-audits"
-version = "0.1.0"
-description = "Forensic pricing, PY2027 rate audit, and PII-safe verification utilities for Pennsylvania health audits."
-requires-python = ">=3.11"
-dependencies = []
-
-[project.scripts]
-pa-health-audit = "pa_health_audits.cli:main"
-pa-health-audits-tui = "pa_health_audits.tui:run"
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-addopts = "-q"
-
-[tool.setuptools.packages.find]
-where = ["src"]
+name="pa_health_audits"
