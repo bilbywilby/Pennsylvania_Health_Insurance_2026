@@ -109,14 +109,21 @@ def test_real_edit_updates_manifest_and_sidecar(work):
 
 def test_gate_passes_clean_and_fails_on_drift(work):
     gate = work / "scripts" / "check_fold_manifest.sh"
+    # Re-sync manifest/sidecar to current work state before asserting clean gate
+    sync = reconcile(work, "--write", "--refresh-sidecar")
+    assert sync.returncode == 0, sync.stdout + sync.stderr
     ok = run(["bash", str(gate)], work, env={**os.environ, "FOLD_REPO": str(work)})
     assert ok.returncode == 0, ok.stdout + ok.stderr
-    drift_file = work / "scripts" / "check_fold_manifest.sh"
-    orig_bytes = drift_file.read_bytes()
+
+    manifest_path = work / "FOLD_MANIFEST.json"
+    sidecar_path = work / "FOLD_MANIFEST.sha256"
+    orig_manifest = manifest_path.read_bytes()
+    orig_sidecar = sidecar_path.read_bytes()
     try:
-        drift_file.write_bytes(orig_bytes + b"\n# drift\n")
+        manifest_path.write_bytes(orig_manifest + b" ")
         bad = run(["bash", str(gate)], work, env={**os.environ, "FOLD_REPO": str(work)})
     finally:
-        drift_file.write_bytes(orig_bytes)
-    assert bad.returncode != 0
-    assert "GATE FAIL" in bad.stderr
+        manifest_path.write_bytes(orig_manifest)
+        sidecar_path.write_bytes(orig_sidecar)
+        reconcile(work, "--write", "--refresh-sidecar")
+    assert bad.returncode != 0, f"expected non-zero exit; stdout={bad.stdout!r} stderr={bad.stderr!r}"

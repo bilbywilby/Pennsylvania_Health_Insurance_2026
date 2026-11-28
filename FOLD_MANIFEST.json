@@ -6560,8 +6560,8 @@
     },
     {
       "path": "tests/test_reconcile_fold_manifest.py",
-      "sha256": "3a3871114f3b4ae50454d665bd687bdac6f17b1137c7f015b295d3568c0b6dbe",
-      "size": 4547
+      "sha256": "8dd17b41fa81b64fce054a24822a581997dc2850fd3a4c47fbcd2c5cdb2fb845",
+      "size": 4973
     },
     {
       "path": "tests/test_root.py",
@@ -6754,5 +6754,5 @@
       "size": 1511
     }
   ],
-  "reconciled_at": "2026-11-28T17:52:05Z"
+  "reconciled_at": "2026-11-28T17:54:53Z"
 }
