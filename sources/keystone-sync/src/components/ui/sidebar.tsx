@@ -152,7 +152,6 @@ const SidebarProvider = ({
       </SidebarContext.Provider>
     )
   }
-)
 SidebarProvider.displayName = "SidebarProvider"
 
 const Sidebar = 
