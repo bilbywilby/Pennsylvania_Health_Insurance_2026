@@ -11,7 +11,7 @@
     "sources/pa_ra_onepagers",
     "sources/keystone_health"
   ],
-  "file_count": 1351,
+  "file_count": 1352,
   "files": [
     {
       "path": ".gitattributes",
@@ -567,6 +567,11 @@
       "path": "scripts/check_wiki_links.sh",
       "sha256": "c31d62e7ad7af5eb9ccad552fe4c0cdbaefdaecb56b387e9e9f0317bc07d6933",
       "size": 1571
+    },
+    {
+      "path": "scripts/check_wiki_resilience.sh",
+      "sha256": "0626a418a1c0d89cf187decc351660b60c954d7eab7eccfa5bf7f2e8971bb8a2",
+      "size": 2057
     },
     {
       "path": "scripts/dispatch_work_orders.py",
@@ -6769,5 +6774,5 @@
       "size": 1511
     }
   ],
-  "reconciled_at": "2026-11-28T18:53:50Z"
+  "reconciled_at": "2026-11-28T19:05:49Z"
 }
