@@ -112,7 +112,8 @@ const ChartTooltipContent =
       formatter,
       color,
       nameKey,
-      labelKey,, ref }: React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
+      labelKey,
+      ref }: React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
     React.ComponentProps<"div"> & {
       hideLabel?: boolean
       hideIndicator?: boolean
