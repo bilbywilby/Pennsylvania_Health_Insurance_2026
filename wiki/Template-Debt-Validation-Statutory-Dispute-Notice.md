@@ -1,36 +1,36 @@
-> ⚠️ **Disclaimer:** Educational template — not legal advice. Verify citations against current law and adapt to your facts before sending.
+> [!] **Disclaimer:** Educational template -- not legal advice. Verify citations against current law and adapt to your facts before sending.
 
 # Template: Debt Validation & Statutory Dispute Notice
 
-## Before you send — fill every field
+## Before you send -- fill every field
 
 | Field (exact token) | What to enter | Pitfall to avoid |
 |---|---|---|
-| `Your Full Name` | — NEEDS MANUAL REVIEW — | — |
-| `Street Address` | — NEEDS MANUAL REVIEW — | — |
-| `City, PA ZIP Code` | — NEEDS MANUAL REVIEW — | — |
-| `Phone` | — NEEDS MANUAL REVIEW — | — |
-| `Email` | — NEEDS MANUAL REVIEW — | — |
+| `Your Full Name` | -- NEEDS MANUAL REVIEW -- | -- |
+| `Street Address` | -- NEEDS MANUAL REVIEW -- | -- |
+| `City, PA ZIP Code` | -- NEEDS MANUAL REVIEW -- | -- |
+| `Phone` | -- NEEDS MANUAL REVIEW -- | -- |
+| `Email` | -- NEEDS MANUAL REVIEW -- | -- |
 | `Date` | The calendar date you sign and physically mail the notice | Back- or post-dating relative to the postmark or certified receipt. |
-| `Insert Tracking Number` | USPS Certified Mail tracking/article number from your mailing receipt | Leaving this empty or copying the wrong receipt number — it's your proof of delivery. |
+| `Insert Tracking Number` | USPS Certified Mail tracking/article number from your mailing receipt | Leaving this empty or copying the wrong receipt number -- it's your proof of delivery. |
 | `Provider/Collector Name` | Exact legal name of the collector, collection law firm, or debt buyer from their demand letter | Sending to the hospital's main address when a third-party collector sent the bill. |
-| `City, State ZIP Code` | — NEEDS MANUAL REVIEW — | — |
+| `City, State ZIP Code` | -- NEEDS MANUAL REVIEW -- | -- |
 | `Account Number` | The collector's account/file/reference number printed on their notice (label the hospital ID separately if you also include it) | Leaving it blank, or conflating an internal hospital visit ID with the collector's file number. |
-| `Dates` | The date(s) you received the medical services being billed (copy from the bills or EOB) | Confusing service dates with the mailing date — the mailing date goes in `Date` only. |
-| `Amount` | — NEEDS MANUAL REVIEW — | — |
-| `Date of First Statement` | The date printed on the FIRST billing statement for this debt (copy it from your bills — it anchors the 4-year limitation clock under 42 Pa.C.S. § 5525(a)(8)) | Substituting the mailing date here would destroy the SOL-accrual anchor. |
+| `Dates` | The date(s) you received the medical services being billed (copy from the bills or EOB) | Confusing service dates with the mailing date -- the mailing date goes in `Date` only. |
+| `Amount` | -- NEEDS MANUAL REVIEW -- | -- |
+| `Date of First Statement` | The date printed on the FIRST billing statement for this debt (copy it from your bills -- it anchors the 4-year limitation clock under 42 Pa.C.S. § 5525(a)(8)) | Substituting the mailing date here would destroy the SOL-accrual anchor. |
 | `Insurer Name` | Name of the health insurer that adjudicated the claim, if coverage applied | Assuming the bill is final before checking whether an insurer processed or adjusted it on an EOB. |
 | `Date of Service` | The date of the medical service for the claim your insurer adjudicated (check the EOB) | Mixing up the date of service with the statement or mailing dates. |
-| `VERIFY AT cms.gov/nosurprises` | — NEEDS MANUAL REVIEW — | — |
-| `Underscore blank` | Leave blank if the letter body has no underscore blank — strike through anything that doesn't apply. | Filling a blank the letter's own instructions say to leave empty. |
-| `Printed Name` | — NEEDS MANUAL REVIEW — | — |
-| `Insurance Carrier Name, if applicable` | — NEEDS MANUAL REVIEW — | — |
+| `VERIFY AT cms.gov/nosurprises` | -- NEEDS MANUAL REVIEW -- | -- |
+| `Underscore blank` | Leave blank if the letter body has no underscore blank -- strike through anything that doesn't apply. | Filling a blank the letter's own instructions say to leave empty. |
+| `Printed Name` | -- NEEDS MANUAL REVIEW -- | -- |
+| `Insurance Carrier Name, if applicable` | -- NEEDS MANUAL REVIEW -- | -- |
 | `Third-Party Collector Name, if known` | Exact legal name of the collector, collection law firm, or debt buyer from their demand letter | Sending to the hospital's main address when a third-party collector sent the bill. |
-| `VERIFY` | — NEEDS MANUAL REVIEW — | — |
+| `VERIFY` | -- NEEDS MANUAL REVIEW -- | -- |
 
 ## The letter
 
-_(verbatim from the toolkit — copy everything in the block below)_
+_(verbatim from the toolkit -- copy everything in the block below)_
 
 ```
 [Your Full Name]
@@ -57,7 +57,7 @@ Re: FORMAL NOTICE OF STATUTORY DISPUTE & DEBT VALIDATION DEMAND
 
 Dear Billing Compliance Officer:
 
-I am writing to formally dispute the above-referenced medical bill and demand validation of this debt pursuant to applicable federal and Pennsylvania law. This is not a negotiation — it is a formal dispute that triggers specific legal obligations.
+I am writing to formally dispute the above-referenced medical bill and demand validation of this debt pursuant to applicable federal and Pennsylvania law. This is not a negotiation -- it is a formal dispute that triggers specific legal obligations.
 
 --------------------------------------------------------------------------------
 SECTION 1: DISPUTE DECLARATION & LEGAL STATUS
@@ -89,19 +89,19 @@ SECTION 2: DOCUMENTARY VALIDATION REQUIRED
 
 Within thirty (30) days of receipt of this notice, provide sworn documentation establishing:
 
-✓ Copies of all executed "Financial Responsibility" or "Assignment of Benefits" agreements bearing my signature;
+[OK] Copies of all executed "Financial Responsibility" or "Assignment of Benefits" agreements bearing my signature;
 
-✓ The complete itemized billing record (not a lump-sum statement) showing procedure codes, charges, payer adjustments, and patient responsibility calculations;
+[OK] The complete itemized billing record (not a lump-sum statement) showing procedure codes, charges, payer adjustments, and patient responsibility calculations;
 
-✓ Your insurer's Explanation of Benefits (EOB) showing allowed amounts, payments made, and the in-network cost-sharing calculation for this service;
+[OK] Your insurer's Explanation of Benefits (EOB) showing allowed amounts, payments made, and the in-network cost-sharing calculation for this service;
 
-✓ Proof of your network status with [Insurer Name] as of [Date of Service];
+[OK] Proof of your network status with [Insurer Name] as of [Date of Service];
 
-✓ If asserting NSA non-applicability: A copy of the written notice and consent waiver I allegedly signed, dated at least 72 hours prior to service, containing the statutory elements required by 45 C.F.R. § 149.420;
+[OK] If asserting NSA non-applicability: A copy of the written notice and consent waiver I allegedly signed, dated at least 72 hours prior to service, containing the statutory elements required by 45 C.F.R. § 149.420;
 
-✓ If you claim to be a third-party collector: Proof of your licensing authority to collect medical debts in Pennsylvania and documentation of the assignment or sale of this debt from the original creditor;
+[OK] If you claim to be a third-party collector: Proof of your licensing authority to collect medical debts in Pennsylvania and documentation of the assignment or sale of this debt from the original creditor;
 
-✓ If you are a 501(c)(3) hospital: A copy of your Financial Assistance Policy (FAP) and confirmation that no Extraordinary Collection Action (ECA) was initiated before the 120-day window expired.
+[OK] If you are a 501(c)(3) hospital: A copy of your Financial Assistance Policy (FAP) and confirmation that no Extraordinary Collection Action (ECA) was initiated before the 120-day window expired.
 
 Failure to provide this validation within 30 days shall constitute acknowledgment that the debt is unverified, and you shall cease all collection activity immediately.
 
@@ -149,12 +149,12 @@ SECTION 5: PRESERVATION OF CLAIMS
 
 This letter reserves all rights and remedies available under federal and Pennsylvania law, including but not limited to:
 
-• No Surprises Act protections against balance billing (45 C.F.R. Part 149);
-• IRS § 501(r) Financial Assistance Policy requirements (if applicable);
-• FCEUA prohibitions on unfair/deceptive collection practices;
-• UTPCPL private right of action for actual and treble damages plus fees;
-• Common law defenses to debt enforcement based on lack of consideration, failure of condition precedent, and statute of limitations;
-• All post-judgment asset protection exemptions under 42 Pa.C.S. §§ 8123, 8127, and related provisions.
+* No Surprises Act protections against balance billing (45 C.F.R. Part 149);
+* IRS § 501(r) Financial Assistance Policy requirements (if applicable);
+* FCEUA prohibitions on unfair/deceptive collection practices;
+* UTPCPL private right of action for actual and treble damages plus fees;
+* Common law defenses to debt enforcement based on lack of consideration, failure of condition precedent, and statute of limitations;
+* All post-judgment asset protection exemptions under 42 Pa.C.S. §§ 8123, 8127, and related provisions.
 
 None of my rights are waived by this correspondence or by any subsequent engagement in settlement discussions.
 
@@ -162,18 +162,18 @@ None of my rights are waived by this correspondence or by any subsequent engagem
 SECTION 6: RESPONSE REQUIREMENTS
 --------------------------------------------------------------------------------
 
-Please respond in writing to the address above. Do not respond via telephone only — telephone calls do not satisfy validation obligations under the FDCPA or FCEUA. Include contact information for the compliance officer assigned to this matter.
+Please respond in writing to the address above. Do not respond via telephone only -- telephone calls do not satisfy validation obligations under the FDCPA or FCEUA. Include contact information for the compliance officer assigned to this matter.
 
 I have attached the following supporting documents:
-☐ Copy of balance bill (highlighted)
-☐ Copy of Explanation of Benefits (EOB)
-☐ Copy of certified mail return receipt (when received)
-☐ Other: _______________________________
+[ ] Copy of balance bill (highlighted)
+[ ] Copy of Explanation of Benefits (EOB)
+[ ] Copy of certified mail return receipt (when received)
+[ ] Other: _______________________________
 
 Sincerely,
 
 ______________________________     _______________
-[Signature — sign in ink]           [Date]
+[Signature -- sign in ink]           [Date]
 
 [Printed Name]
 
@@ -195,8 +195,8 @@ END OF FORMAL NOTICE
 | Section | Integration Point |
 |---|---|
 | **Template Library** | Add as **Template #8A** (Debt Validation + Statutory Dispute) alongside Template #8 (Basic Dispute Letter) |
-| **Consumer Guide** | Reference in **Part II: Days 7–30** as the "full validation letter" for consumers seeking maximum leverage |
-| **Tracker** | Link from **Current Phase = "Day 7–30 Dispute"** row to this template file |
+| **Consumer Guide** | Reference in **Part II: Days 7-30** as the "full validation letter" for consumers seeking maximum leverage |
+| **Tracker** | Link from **Current Phase = "Day 7-30 Dispute"** row to this template file |
 
 ### Key Differences from Basic Dispute Letter (Template #8)
 
@@ -212,12 +212,12 @@ END OF FORMAL NOTICE
 
 | Citation | Status | Action Required |
 |---|---|---|
-| 42 Pa.C.S. § 5525(a)(8) | 🟡 Verified (pin cite OK) | Confirm subsection numbering |
-| 42 Pa.C.S. § 5533 | 🔴 **Contested** | User's research says it resets clock; earlier research said § 5533(b) is about minors. [VERIFY] exact scope before relying |
-| 73 P.S. § 2270.4 | 🟡 Needs pin cite | Pull exact subsection from PA statutes |
-| 73 P.S. § 201-9.2 | 🟡 Needs pin cite | Confirm treble damages provision |
-| CMS phone: 1-800-985-3059 | 🔴 Conflicting sources | Keep [VERIFY] flag until resolved at cms.gov |
-| PID phone: 1-877-881-6388 | ✅ Confirmed | Safe to publish |
+| 42 Pa.C.S. § 5525(a)(8) | [YELLOW] Verified (pin cite OK) | Confirm subsection numbering |
+| 42 Pa.C.S. § 5533 | [RED] **Contested** | User's research says it resets clock; earlier research said § 5533(b) is about minors. [VERIFY] exact scope before relying |
+| 73 P.S. § 2270.4 | [YELLOW] Needs pin cite | Pull exact subsection from PA statutes |
+| 73 P.S. § 201-9.2 | [YELLOW] Needs pin cite | Confirm treble damages provision |
+| CMS phone: 1-800-985-3059 | [RED] Conflicting sources | Keep [VERIFY] flag until resolved at cms.gov |
+| PID phone: 1-877-881-6388 | [OK] Confirmed | Safe to publish |
 
 ---
 
@@ -225,20 +225,20 @@ END OF FORMAL NOTICE
 
 This formal notice elevates the dispute from a "request for information" to a **legally cognizable demand** that:
 
-1. **Creates paper trail** — Establishes a 30-day validation clock under FCEUA/FDCPA analogues
-2. **Preserves defenses** — Explicitly avoids acknowledgment of the debt
-3. **Signals seriousness** — Mentions regulator filings and treble-damage exposure
-4. **Shifts burden** — Forces provider/collector to prove legitimacy rather than patient disproving it
+1. **Creates paper trail** -- Establishes a 30-day validation clock under FCEUA/FDCPA analogues
+2. **Preserves defenses** -- Explicitly avoids acknowledgment of the debt
+3. **Signals seriousness** -- Mentions regulator filings and treble-damage exposure
+4. **Shifts burden** -- Forces provider/collector to prove legitimacy rather than patient disproving it
 
 Use this when:
-- ☑ The initial dispute was rejected
-- ☑ A collector has begun contacting you
-- ☑ You suspect the debt lacks proper documentation
-- ☑ The amount is significant (>$1,000) and you're prepared to escalate
+- [x] The initial dispute was rejected
+- [x] A collector has begun contacting you
+- [x] You suspect the debt lacks proper documentation
+- [x] The amount is significant (>$1,000) and you're prepared to escalate
 ```
 
 ## Sending rules
 
 1. Send with delivery confirmation; keep the receipt and a stamped copy.
 2. Deadline-tracking: mark the date sent + any response window stated in the letter.
-3. Related: [[Template Library|Template-Library]] · [[Avoid These Mistakes|Avoid-These-Mistakes]]
+3. Related: [[Template Library|Template-Library]] * [[Avoid These Mistakes|Avoid-These-Mistakes]]

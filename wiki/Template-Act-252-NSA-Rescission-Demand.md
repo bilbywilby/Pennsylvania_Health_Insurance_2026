@@ -1,31 +1,31 @@
-> ⚠️ **Disclaimer:** Educational template — not legal advice. Verify citations against current law and adapt to your facts before sending.
+> [!] **Disclaimer:** Educational template -- not legal advice. Verify citations against current law and adapt to your facts before sending.
 
 # Template: Act 252 / NSA Rescission Demand
 
-## Before you send — fill every field
+## Before you send -- fill every field
 
 | Field | What to enter |
 |---|---|
-| Insert Date | — |
-| Name of Hospital / Medical Center Billing Department | — |
-| Name of Third-Party / Out-of-Network Provider Practice | — |
-| Billing Department Address | — |
-| City, State, Zip Code | — |
-| Patient Full Name | — |
-| Patient Address | — |
-| Patient Phone Number / Email Address | — |
-| Insert Account Number | — |
-| Insert Date of Service | — |
-| Insert Provider Name and NPI if known | — |
-| Insert Statement Date | — |
-| Insert Disputed Amount | — |
-| Insert In-Network Facility Name | — |
-| Patient Signature | — |
-| Patient Printed Name | — |
+| Insert Date | -- |
+| Name of Hospital / Medical Center Billing Department | -- |
+| Name of Third-Party / Out-of-Network Provider Practice | -- |
+| Billing Department Address | -- |
+| City, State, Zip Code | -- |
+| Patient Full Name | -- |
+| Patient Address | -- |
+| Patient Phone Number / Email Address | -- |
+| Insert Account Number | -- |
+| Insert Date of Service | -- |
+| Insert Provider Name and NPI if known | -- |
+| Insert Statement Date | -- |
+| Insert Disputed Amount | -- |
+| Insert In-Network Facility Name | -- |
+| Patient Signature | -- |
+| Patient Printed Name | -- |
 
 ## The letter
 
-_(verbatim from the toolkit — copy everything in the block below)_
+_(verbatim from the toolkit -- copy everything in the block below)_
 
 ```
 Standardized Act 252 & No Surprises Act Notice of Statutory Dispute and Demand for Complete Rescission
@@ -69,7 +69,7 @@ Sincerely,
 [Patient Signature]
 [Patient Printed Name]
 CC:
- * Pennsylvania Insurance Department (PID) – Consumer Services Bureau (via online portal / 1-877-881-6388)
+ * Pennsylvania Insurance Department (PID) - Consumer Services Bureau (via online portal / 1-877-881-6388)
  * CMS No Surprises Help Desk (1-800-985-3059)
 ```
 
@@ -102,4 +102,4 @@ Annotations for `Template-Act-252-NSA-Rescission-Demand.md` (16 unique tokens de
 
 1. Send with delivery confirmation; keep the receipt and a stamped copy.
 2. Deadline-tracking: mark the date sent + any response window stated in the letter.
-3. Related: [[Template Library|Template-Library]] · [[Avoid These Mistakes|Avoid-These-Mistakes]]
+3. Related: [[Template Library|Template-Library]] * [[Avoid These Mistakes|Avoid-These-Mistakes]]

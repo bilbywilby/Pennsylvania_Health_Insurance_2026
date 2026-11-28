@@ -591,3 +591,10 @@ echo "Repository restored from $(date)" | mail -s "KESTONE BACKUP RESTORED" main
 *Questions? Open an issue on GitHub or contact the maintainer directly.*  
 *Last updated: November 4, 2026*
 ```
+
+## Latest Wiki Mirror & Verification Milestone
+
+- **Updated (UTC):** `2026-11-28T19:13:08Z`
+- **Wiki Commit (`master`):** `3f265a9` (`98` content pages / `100` total `.md` files mirrored into `wiki/`)
+- **Wiki Resilience Gate:** `scripts/check_wiki_resilience.sh` passed (`0` broken links, `0` missing sidebar entries, `0` unreferenced pages, `0` CRLF files)
+- **Verification Suite:** `reconcile_fold_manifest.py`, `scripts/check_fold_manifest.sh`, `pytest`, and `scripts/smoke_keystone_sync.sh`

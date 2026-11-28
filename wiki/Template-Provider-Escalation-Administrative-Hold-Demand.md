@@ -1,34 +1,34 @@
-> ⚠️ **Disclaimer:** Educational template — not legal advice. Verify citations against current law and adapt to your facts before sending.
+> [!] **Disclaimer:** Educational template -- not legal advice. Verify citations against current law and adapt to your facts before sending.
 
 # Template: Provider Escalation & Administrative Hold Demand
 
-## Before you send — fill every field
+## Before you send -- fill every field
 
 | Field | What to enter |
 |---|---|
-| Your Full Name | — |
-| Street Address | — |
-| City, PA ZIP | — |
-| Phone | — |
-| Email | — |
-| Date | — |
-| Number | — |
-| Provider / Health System Name | — |
-| Address | — |
-| City, State ZIP | — |
-| Account Number | — |
-| Dates | — |
-| Amount | — |
-| Date of Initial Letter | — |
-| Date of Rejection Letter | — |
-| In-Network Amount, if known | — |
-| VERIFY | — |
-| Signature | — |
-| Printed Name | — |
+| Your Full Name | -- |
+| Street Address | -- |
+| City, PA ZIP | -- |
+| Phone | -- |
+| Email | -- |
+| Date | -- |
+| Number | -- |
+| Provider / Health System Name | -- |
+| Address | -- |
+| City, State ZIP | -- |
+| Account Number | -- |
+| Dates | -- |
+| Amount | -- |
+| Date of Initial Letter | -- |
+| Date of Rejection Letter | -- |
+| In-Network Amount, if known | -- |
+| VERIFY | -- |
+| Signature | -- |
+| Printed Name | -- |
 
 ## The letter
 
-_(verbatim from the toolkit — copy everything in the block below)_
+_(verbatim from the toolkit -- copy everything in the block below)_
 
 ```
 [Your Full Name]
@@ -117,4 +117,4 @@ Annotations for `Template-Provider-Escalation-Administrative-Hold-Demand.md` (19
 
 1. Send with delivery confirmation; keep the receipt and a stamped copy.
 2. Deadline-tracking: mark the date sent + any response window stated in the letter.
-3. Related: [[Template Library|Template-Library]] · [[Avoid These Mistakes|Avoid-These-Mistakes]]
+3. Related: [[Template Library|Template-Library]] * [[Avoid These Mistakes|Avoid-These-Mistakes]]

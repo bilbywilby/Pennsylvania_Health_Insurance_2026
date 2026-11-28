@@ -1,38 +1,38 @@
-> ⚠️ **Disclaimer:** Educational template — not legal advice. Verify citations against current law and adapt to your facts before sending.
+> [!] **Disclaimer:** Educational template -- not legal advice. Verify citations against current law and adapt to your facts before sending.
 
 # Template: PID Complaint Narrative (Fully Insured)
 
-## Before you send — fill every field
+## Before you send -- fill every field
 
 | Field | What to enter |
 |---|---|
-| Your Full Name | — |
-| Street Address | — |
-| City, PA ZIP | — |
-| Phone | — |
-| Email | — |
-| Date | — |
-| Same as above | — |
-| If Known | — |
-| Carrier Name | — |
-| Provider Name | — |
-| Account Number | — |
-| Dates | — |
-| Amount | — |
-| Date Received Denial | — |
-| Date(s) of Service | — |
-| Emergency / Non-emergency ancillary / Non-emergency other | — |
-| In-network / Out-of-network | — |
-| Underscore blank | — |
-| Your Name | — |
+| Your Full Name | -- |
+| Street Address | -- |
+| City, PA ZIP | -- |
+| Phone | -- |
+| Email | -- |
+| Date | -- |
+| Same as above | -- |
+| If Known | -- |
+| Carrier Name | -- |
+| Provider Name | -- |
+| Account Number | -- |
+| Dates | -- |
+| Amount | -- |
+| Date Received Denial | -- |
+| Date(s) of Service | -- |
+| Emergency / Non-emergency ancillary / Non-emergency other | -- |
+| In-network / Out-of-network | -- |
+| Underscore blank | -- |
+| Your Name | -- |
 
 ## The letter
 
-_(verbatim from the toolkit — copy everything in the block below)_
+_(verbatim from the toolkit -- copy everything in the block below)_
 
 ```
 PENNSYLVANIA INSURANCE DEPARTMENT
-CONSUMER SERVICES BUREAU — EXTERNAL REVIEW REQUEST
+CONSUMER SERVICES BUREAU -- EXTERNAL REVIEW REQUEST
 
 COMPLAINT / EXTERNAL REVIEW NARRATIVE
 
@@ -73,11 +73,11 @@ FACTUAL BACKGROUND
 
 1. Service Type: [Emergency / Non-emergency ancillary / Non-emergency other]
 2. Facility Network Status: [In-network / Out-of-network]
-3. Provider Network Status: [In-network / Out-of-network — specify specialty if ancillary]
-4. Consent Waiver Provided?: [Yes / No — if yes, was it given 72 hours before service?]
-5. In-Network Cost-Sharing Applied?: [Yes / No — amount billed vs. what would have been owed at in-network rate]
+3. Provider Network Status: [In-network / Out-of-network -- specify specialty if ancillary]
+4. Consent Waiver Provided?: [Yes / No -- if yes, was it given 72 hours before service?]
+5. In-Network Cost-Sharing Applied?: [Yes / No -- amount billed vs. what would have been owed at in-network rate]
 6. Amount Currently Owed: $[Amount] (out-of-network balance billing)
-7. Correct In-Network Obligation: $[Amount — if known from EOB]
+7. Correct In-Network Obligation: $[Amount -- if known from EOB]
 
 ---
 
@@ -86,9 +86,9 @@ STATUTORY GROUNDS FOR EXTERNAL REVIEW
 A. Federal No Surprises Act Violations (45 C.F.R. Part 149)
 The balance bill violates 45 C.F.R. Part 149 because:
 [Select applicable:]
-□ Emergency services were provided at out-of-network facility or by out-of-network provider — balance billing is prohibited beyond in-network cost-sharing
-□ Non-emergency ancillary services (anesthesiology, radiology, pathology, etc.) were provided at an in-network facility — balance billing is prohibited regardless of consent waiver
-□ Non-emergency service was provided without a valid 72-hour advance notice and consent waiver — balance billing is void
+[ ] Emergency services were provided at out-of-network facility or by out-of-network provider -- balance billing is prohibited beyond in-network cost-sharing
+[ ] Non-emergency ancillary services (anesthesiology, radiology, pathology, etc.) were provided at an in-network facility -- balance billing is prohibited regardless of consent waiver
+[ ] Non-emergency service was provided without a valid 72-hour advance notice and consent waiver -- balance billing is void
 
 Under 45 C.F.R. § 149.510, payment disputes between the provider and health plan must be resolved through the Federal Independent Dispute Resolution (IDR) process. My statutory obligation is capped at in-network cost-sharing.
 
@@ -163,4 +163,4 @@ Annotations for `Template-PID-Complaint-Narrative-Fully-Insured.md` (19 unique t
 
 1. Send with delivery confirmation; keep the receipt and a stamped copy.
 2. Deadline-tracking: mark the date sent + any response window stated in the letter.
-3. Related: [[Template Library|Template-Library]] · [[Avoid These Mistakes|Avoid-These-Mistakes]]
+3. Related: [[Template Library|Template-Library]] * [[Avoid These Mistakes|Avoid-These-Mistakes]]

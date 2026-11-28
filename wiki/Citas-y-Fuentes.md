@@ -1,4 +1,4 @@
-> ⚠️ **Aviso:** Información educativa únicamente — no es asesoría legal, médica ni financiera.
+> [!] **Aviso:** Información educativa únicamente -- no es asesoría legal, médica ni financiera.
 # Citas y Fuentes
 
 Autoridades primarias citadas en esta wiki (verifique siempre el texto vigente):

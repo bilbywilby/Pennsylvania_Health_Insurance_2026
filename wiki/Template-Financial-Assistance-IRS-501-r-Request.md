@@ -1,30 +1,30 @@
-> ⚠️ **Disclaimer:** Educational template — not legal advice. Verify citations against current law and adapt to your facts before sending.
+> [!] **Disclaimer:** Educational template -- not legal advice. Verify citations against current law and adapt to your facts before sending.
 
 # Template: Financial Assistance (IRS 501(r)) Request
 
-## Before you send — fill every field
+## Before you send -- fill every field
 
 | Field | What to enter |
 |---|---|
-| Your Full Name | — |
-| Street Address | — |
-| City, PA ZIP | — |
-| Phone | — |
-| Email | — |
-| Date | — |
-| Number | — |
-| Hospital/Healthcare Facility Name | — |
-| Provider Street Address | — |
-| City, State ZIP | — |
-| Account Number | — |
-| Dates | — |
-| Date(s) of Service | — |
-| Amount | — |
-| Printed Name | — |
+| Your Full Name | -- |
+| Street Address | -- |
+| City, PA ZIP | -- |
+| Phone | -- |
+| Email | -- |
+| Date | -- |
+| Number | -- |
+| Hospital/Healthcare Facility Name | -- |
+| Provider Street Address | -- |
+| City, State ZIP | -- |
+| Account Number | -- |
+| Dates | -- |
+| Date(s) of Service | -- |
+| Amount | -- |
+| Printed Name | -- |
 
 ## The letter
 
-_(verbatim from the toolkit — copy everything in the block below)_
+_(verbatim from the toolkit -- copy everything in the block below)_
 
 ```
 [Your Full Name]
@@ -60,8 +60,8 @@ is $[Amount].
 Legal requirements under 26 U.S.C. § 501(r):
 
 1. Your facility is prohibited from initiating any Extraordinary
-   Collection Actions (ECAs) — including credit reporting, liens,
-   lawsuits, wage garnishment, or bank levies — for at least 120 days
+   Collection Actions (ECAs) -- including credit reporting, liens,
+   lawsuits, wage garnishment, or bank levies -- for at least 120 days
    following the date of the first post-discharge billing statement.
 2. Your facility must accept and process FAP applications for at least
    240 days from the date of the initial post-discharge billing statement.
@@ -69,7 +69,7 @@ Legal requirements under 26 U.S.C. § 501(r):
    determined eligible, you must reverse any ECAs, refund excess payments,
    and instruct credit reporting agencies to delete adverse tradelines.
 
-Requests — please provide within 10 business days:
+Requests -- please provide within 10 business days:
 
 a. Your complete Financial Assistance Policy (FAP) document.
 b. A plain-language summary of FAP eligibility criteria.
@@ -90,7 +90,7 @@ Act (73 P.S. § 2270.1 et seq.).
 
 Sincerely,
 
-[Signature — sign in ink]
+[Signature -- sign in ink]
 [Printed Name]
 
 Enclosures:
@@ -127,4 +127,4 @@ Annotations for `Template-Financial-Assistance-IRS-501-r-Request.md` (15 unique 
 
 1. Send with delivery confirmation; keep the receipt and a stamped copy.
 2. Deadline-tracking: mark the date sent + any response window stated in the letter.
-3. Related: [[Template Library|Template-Library]] · [[Avoid These Mistakes|Avoid-These-Mistakes]]
+3. Related: [[Template Library|Template-Library]] * [[Avoid These Mistakes|Avoid-These-Mistakes]]

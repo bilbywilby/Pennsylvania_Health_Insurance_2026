@@ -1,43 +1,43 @@
-> ⚠️ **Disclaimer:** Educational template — not legal advice. Verify citations against current law and adapt to your facts before sending.
+> [!] **Disclaimer:** Educational template -- not legal advice. Verify citations against current law and adapt to your facts before sending.
 
 # Template: CMS Complaint Narrative (Self-Funded ERISA)
 
-## Before you send — fill every field
+## Before you send -- fill every field
 
 | Field | What to enter |
 |---|---|
-| Your Full Name | — |
-| Street Address | — |
-| City, PA ZIP | — |
-| Phone | — |
-| Email | — |
-| Date | — |
-| DOB | — |
-| If Known | — |
-| Employer/Group Plan Name | — |
-| Carrier Name | — |
-| Name | — |
-| Address | — |
-| Number | — |
-| Dates | — |
-| Amount | — |
-| Date claim submitted to insurer | — |
-| Out-of-network denial / Partial payment applied | — |
-| Date received EOB | — |
-| Date received bill from provider | — |
-| Yes / No | — |
-| Date if applicable | — |
-| Email / Phone / Mail | — |
-| Time window | — |
-| English / Other | — |
-| Underscore blank | — |
+| Your Full Name | -- |
+| Street Address | -- |
+| City, PA ZIP | -- |
+| Phone | -- |
+| Email | -- |
+| Date | -- |
+| DOB | -- |
+| If Known | -- |
+| Employer/Group Plan Name | -- |
+| Carrier Name | -- |
+| Name | -- |
+| Address | -- |
+| Number | -- |
+| Dates | -- |
+| Amount | -- |
+| Date claim submitted to insurer | -- |
+| Out-of-network denial / Partial payment applied | -- |
+| Date received EOB | -- |
+| Date received bill from provider | -- |
+| Yes / No | -- |
+| Date if applicable | -- |
+| Email / Phone / Mail | -- |
+| Time window | -- |
+| English / Other | -- |
+| Underscore blank | -- |
 
 ## The letter
 
-_(verbatim from the toolkit — copy everything in the block below)_
+_(verbatim from the toolkit -- copy everything in the block below)_
 
 ```
-CMS NO SURPRISES ACT HELP DESK — CONSUMER COMPLAINT NARRATIVE
+CMS NO SURPRISES ACT HELP DESK -- CONSUMER COMPLAINT NARRATIVE
 
 [Your Full Name]
 [Street Address]
@@ -49,7 +49,7 @@ VIA ONLINE PORTAL / MAIL
 
 No Surprises Act Consumer Complaint
 
-SUBJECT: Out-of-Network Balance Billing Violation — Federal Jurisdiction (Self-Funded ERISA Plan)
+SUBJECT: Out-of-Network Balance Billing Violation -- Federal Jurisdiction (Self-Funded ERISA Plan)
 
 ---
 
@@ -72,7 +72,7 @@ Address: [Address]
 Account/Invoice Number: [Number]
 Date(s) of Service: [Dates]
 Total Amount Disputed: $[Amount]
-Nature of Service: [Emergency / Ancillary / Other — specify]
+Nature of Service: [Emergency / Ancillary / Other -- specify]
 
 ---
 
@@ -93,13 +93,13 @@ Under 45 C.F.R. Part 149 (implementation of the No Surprises Act), the following
 
 [SELECT AND DESCRIBE APPLICABLE VIOLATIONS:]
 
-□ EMERGENCY SERVICES: Services were emergency care provided at an out-of-network facility or by an out-of-network provider. Balance billing is prohibited under 45 C.F.R. §§ 149.210-149.220. Patient liability is limited to in-network cost-sharing calculated using the Qualifying Payment Amount (QPA).
+[ ] EMERGENCY SERVICES: Services were emergency care provided at an out-of-network facility or by an out-of-network provider. Balance billing is prohibited under 45 C.F.R. §§ 149.210-149.220. Patient liability is limited to in-network cost-sharing calculated using the Qualifying Payment Amount (QPA).
 
-□ ANCILLARY SERVICES AT IN-NETWORK FACILITY: Services were provided by an out-of-network ancillary specialist (anesthesiology, radiology, pathology, neonatology, or assistant surgeon) at an in-network facility. Balance billing is prohibited under 45 C.F.R. § 149.240. Consent waivers do not apply to these services.
+[ ] ANCILLARY SERVICES AT IN-NETWORK FACILITY: Services were provided by an out-of-network ancillary specialist (anesthesiology, radiology, pathology, neonatology, or assistant surgeon) at an in-network facility. Balance billing is prohibited under 45 C.F.R. § 149.240. Consent waivers do not apply to these services.
 
-□ NON-EMERGENCY SERVICE WITHOUT VALID CONSENT: Services were non-emergency services by an out-of-network provider at an in-network facility, and I did not receive a valid notice and consent form at least 72 hours before service (or at least 3 hours for same-day scheduling within a 3-day window). Any consent form I signed may be void due to insufficient advance notice, inadequate itemization of expected charges, or failure to state that signing is optional.
+[ ] NON-EMERGENCY SERVICE WITHOUT VALID CONSENT: Services were non-emergency services by an out-of-network provider at an in-network facility, and I did not receive a valid notice and consent form at least 72 hours before service (or at least 3 hours for same-day scheduling within a 3-day window). Any consent form I signed may be void due to insufficient advance notice, inadequate itemization of expected charges, or failure to state that signing is optional.
 
-□ AIR AMBULANCE: Air ambulance services were provided, which are protected under 45 C.F.R. § 149.230.
+[ ] AIR AMBULANCE: Air ambulance services were provided, which are protected under 45 C.F.R. § 149.230.
 
 ---
 
@@ -136,10 +136,10 @@ DOCUMENTARY EVIDENCE ATTACHED
 
 PREVIOUS COMPLAINTS FILED
 
-- Pennsylvania Insurance Department: [Yes / No — if yes, PID case number]
-- Provider Internal Grievance: [Yes / No — date and response]
-- Insurer Internal Appeal: [Yes / No — date and decision]
-- Federal IDR Initiated by Provider/Plan: [Yes / No — status]
+- Pennsylvania Insurance Department: [Yes / No -- if yes, PID case number]
+- Provider Internal Grievance: [Yes / No -- date and response]
+- Insurer Internal Appeal: [Yes / No -- date and decision]
+- Federal IDR Initiated by Provider/Plan: [Yes / No -- status]
 
 ---
 
@@ -207,4 +207,4 @@ Annotations for `Template-CMS-Complaint-Narrative-Self-Funded-ERISA.md` (25 uniq
 
 1. Send with delivery confirmation; keep the receipt and a stamped copy.
 2. Deadline-tracking: mark the date sent + any response window stated in the letter.
-3. Related: [[Template Library|Template-Library]] · [[Avoid These Mistakes|Avoid-These-Mistakes]]
+3. Related: [[Template Library|Template-Library]] * [[Avoid These Mistakes|Avoid-These-Mistakes]]

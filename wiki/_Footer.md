@@ -1,1 +1,1 @@
-_Educational information only — not legal advice. Pennsylvania-focused; verify citations against current law._
+_Educational information only -- not legal advice. Pennsylvania-focused; verify citations against current law._

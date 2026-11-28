@@ -1,44 +1,23 @@
-> ⚠️ **Disclaimer:** Educational information only — not legal, medical, or financial advice. Laws change; verify citations against current statutes before filing anything.
+# Citations, Statutes, Regulations, and Official Sources
 
-# Citations & Sources
+This reference page summarizes the federal and Pennsylvania authorities, rules, and official consumer resources cited across the wiki.
 
-Primary authorities referenced across this wiki (always verify current text):
+## 1. Federal Laws & Regulations
 
-- **Federal:** No Surprises Act rules, 45 CFR § 149; IRS § 501(r) (26 CFR §§ 1.501(r)-1 et seq.); FDCPA (15 U.S.C. § 1692 et seq.); ERISA external review procedures.
-- **Pennsylvania:** Act 252-2023 (network disclosure); SB 1071 (outpatient coinsurance limits); Act 146 (external review); FCEUA; UTPCPL (73 P.S. § 201-1 et seq.); 42 Pa.C.S. § 5525(a) (limitations).
-- **Benchmarks:** Medicare Physician Fee Schedule (MPFS); PID PY2027 rate review outcomes (15.97% individual / 10.28% small-group weighted averages); 2027 ACA max out-of-pocket ($12,000 self / $24,000 family).
+- **No Surprises Act (`45 CFR Part 149`):** Establishes federal protections against balance billing for certain emergency services, air ambulance services, and out-of-network ancillary services at in-network facilities, as well as **Good Faith Estimate (`GFE`)** and patient-provider dispute rules for uninsured or self-pay patients.
+- **Internal Revenue Code Section `501(r)` (`26 U.S.C. § 501(r)` and `26 CFR § 1.501(r)-6`):** Sets financial assistance policy (`FAP`), **Amounts Generally Billed (`AGB`)**, and **120-day / 240-day** extraordinary collection action (`ECA`) rules for tax-exempt nonprofit hospitals.
+- **Fair Debt Collection Practices Act (`FDCPA`, `15 U.S.C. § 1692` et seq.):** Regulates third-party debt collectors, prohibiting abusive, deceptive, or unfair collection practices and providing debt validation rights.
+- **Affordable Care Act (`ACA`) & Marketplace Rules:** Governs qualified health plan coverage, essential health benefits, cost-sharing rules, and Open Enrollment / Special Enrollment Period (`SEP`) standards.
 
-Full source traceability lives in the main repository (`CITATIONS.md`, `sources-by-document.md`).
+## 2. Pennsylvania Statutes & State Agencies
 
-## Statute explainers on this wiki
+- **Pennsylvania Act 146 of 2022:** Provides state-level independent external review procedures for eligible adverse benefit determinations on state-regulated health plans.
+- **Pennsylvania Act 55 of 1997 (Institutions of Purely Public Charity Act):** Sets state charity-care and community-benefit standards for institutions of purely public charity in Pennsylvania.
+- **Pennsylvania Department of Human Services (`PA DHS`):** Administers Medical Assistance (`Medicaid` / `MA`) and `COMPASS` / `myCOMPASS PA` renewals, reporting, and notices.
+- **Pennie (`pennie.com`):** Pennsylvania's official state-based health insurance marketplace.
+- **Pennsylvania Insurance Department (`PID`):** Oversees state-regulated health insurers, rate reviews, and consumer complaints.
 
-- [[Statute: No Surprises Act|Statute-No-Surprises-Act]]
-- [[Statute: IRS 501(r) Assistance|Statute-IRS-501r-Financial-Assistance]]
-- [[Statute: PA Act 252|Statute-PA-Act-252-Network-Disclosure]]
-- [[Statute: PA SB 1071|Statute-PA-SB-1071-Outpatient-Coinsurance]]
-- [[Statute: PA Act 146 Review|Statute-PA-Act-146-External-Review]]
-- [[Statute: FCEUA & UTPCPL|Statute-PA-FCEUA-UTPCPL]]
-- [[Statute: 42 § 5525(a) SOL|Statute-PA-5525a-Limitations]]
+## 3. Related Wiki Pages
 
-## Federal vs. Pennsylvania Law — What's Settled, What Needs Verification
-
-Because this wiki is read outside specialist circles, we flag confidence levels explicitly:
-
-**Settled (federal, in force):**
-- No Surprises Act — Pub. L. 116-260, Division BB; core regs at 45 CFR § 149 (effective Jan 1, 2022). Emergency care and out-of-network ancillary services at in-network facilities are protected; **ground ambulances are not**.
-- IRS § 501(r) — 26 U.S.C. § 501(r); regs at 26 CFR § 1.501(r) et seq. Nonprofit hospitals must publish an FAP, cap charges near AGB for eligible patients, and screen before extraordinary collection actions.
-- ERISA — 29 U.S.C. § 1001 et seq. Governs self-funded employer plans; routes external review federally, not through the state.
-
-**Pennsylvania (in force):**
-- FCEUA — 73 P.S. § 2270.1 et seq. (covers original creditors too).
-- UTPCPL — 73 P.S. § 201-1 et seq.; private action at § 201-9.2 (damages trebling requires knowing conduct).
-- 42 Pa.C.S. § 5525(a) — 4-year limitation for contract actions, including most medical-debt suits.
-- Act 146 of 2012 external-review framework for fully insured plans (see the Pennsylvania Insurance Department for the operative review process).
-
-**⚠️ Flagged for verification — do not cite these as settled law yet:**
-- "Act 252 of 2023" network-disclosure numbering — the toolkit cites Act 252; confirm the final act number against the Pennsylvania Bulletin (the 2023 session's numbering may differ).
-- SB 1071 outpatient-coinsurance cap — enactment status and final section numbers unconfirmed.
-- Pennie enrollment dates in this wiki reflect Pennie's 2027 open-enrollment announcement (Nov 1 / Dec 15, 2026, close Jan 15, 2027) — recheck annually; dates shift each plan year.
-- Auto, workers' compensation, and Medical Assistance billing rules operate under their own regimes and are **out of scope** for these pages.
-
-Verification standard: cite the Pennsylvania Bulletin or the U.S. Code before repeating any provision marked ⚠️.
+- See [[Home]] for the main wiki overview and [[Table-of-Contents]] for the full page index.
+- See [[No-Surprises-Act-and-Good-Faith-Estimates-in-PA]], [[Section-501r-and-PA-Act-55-Hospital-Charity-Care]], [[PA-Act-146-External-Review-and-Claim-Appeals]], and [[FDCPA-and-PA-Medical-Debt-Collection-Rights]].

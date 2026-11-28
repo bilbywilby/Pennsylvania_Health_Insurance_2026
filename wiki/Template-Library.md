@@ -1,4 +1,4 @@
-> ⚠️ **Disclaimer:** Educational information only — not legal, medical, or financial advice. Laws change; verify citations against current statutes before filing anything.
+> [!] **Disclaimer:** Educational information only -- not legal, medical, or financial advice. Laws change; verify citations against current statutes before filing anything.
 
 # Template Library
 
