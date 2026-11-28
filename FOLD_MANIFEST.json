@@ -11,13 +11,8 @@
     "sources/pa_ra_onepagers",
     "sources/keystone_health"
   ],
-  "file_count": 1344,
+  "file_count": 1343,
   "files": [
-    {
-      "path": ".coverage",
-      "sha256": "5fb5a9a8176947bfffd95cf56e4acf810a93bfc24354a3f8919e744ad47a83fa",
-      "size": 53248
-    },
     {
       "path": ".gitattributes",
       "sha256": "8977a454252e5b9a4b036925a0e32ddb610cdb5365903882969992e288a6262b",
@@ -6734,5 +6729,5 @@
       "size": 1511
     }
   ],
-  "reconciled_at": "2026-11-28T16:24:57Z"
+  "reconciled_at": "2026-11-28T16:26:08Z"
 }
