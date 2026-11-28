@@ -1,4 +1,4 @@
-import { useActionState } from "react";
+import { startTransition, useActionState, useOptimistic } from "react";
 import { useFormStatus } from "react-dom";
 
 export interface ManifestRefreshResult {
@@ -11,6 +11,11 @@ export interface ManifestRefreshResult {
 export interface ManifestRefreshPayload {
   scope: "manifest" | "manifest-and-bundle";
   pruneBuildArtifacts: boolean;
+}
+
+interface OptimisticManifestPatch {
+  statusMessage: string;
+  checkedAt: string;
 }
 
 const INITIAL_STATE: ManifestRefreshResult = {
@@ -88,9 +93,39 @@ export function ManifestRefreshPanel() {
     INITIAL_STATE,
   );
 
+  const [optimisticState, applyOptimistic] = useOptimistic<
+    ManifestRefreshResult,
+    OptimisticManifestPatch
+  >(state, (currentState, patch) => ({
+    ...currentState,
+    statusMessage: patch.statusMessage,
+    checkedAt: patch.checkedAt,
+  }));
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const scopeLabel =
+      formData.get("scope") === "manifest-and-bundle"
+        ? "MANIFEST.sha256 + bundle guard"
+        : "MANIFEST.sha256";
+
+    startTransition(() => {
+      applyOptimistic({
+        statusMessage: `Refreshing ${scopeLabel} (Just now...)`,
+        checkedAt: "Just now...",
+      });
+      formAction(formData);
+    });
+  }
+
+  const displayCheckedAt = optimisticState.checkedAt;
+  const isIsoTimestamp =
+    typeof displayCheckedAt === "string" && !Number.isNaN(Date.parse(displayCheckedAt)) && displayCheckedAt !== "Just now...";
+
   return (
     <section aria-label="Manifest Refresh">
-      <form action={formAction}>
+      <form action={formAction} onSubmit={handleSubmit}>
         <label htmlFor="manifest-scope">Refresh Scope</label>
         <select id="manifest-scope" name="scope" defaultValue="manifest">
           <option value="manifest">MANIFEST.sha256 only</option>
@@ -106,15 +141,20 @@ export function ManifestRefreshPanel() {
       </form>
 
       <div role="status" aria-live="polite">
-        <p>{isPending ? "Running manifest check and digest refresh..." : state.statusMessage}</p>
+        <p>{isPending ? optimisticState.statusMessage : state.statusMessage}</p>
         {state.manifestHash ? (
           <p>
             Digest: <code>{state.manifestHash}</code>
           </p>
         ) : null}
-        {state.checkedAt ? (
+        {displayCheckedAt ? (
           <p>
-            Last updated: <time dateTime={state.checkedAt}>{state.checkedAt}</time>
+            Last updated:{" "}
+            {isIsoTimestamp ? (
+              <time dateTime={displayCheckedAt}>{displayCheckedAt}</time>
+            ) : (
+              <span>{displayCheckedAt}</span>
+            )}
           </p>
         ) : null}
       </div>
