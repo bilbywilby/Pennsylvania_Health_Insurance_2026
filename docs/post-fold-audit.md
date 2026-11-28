@@ -22,3 +22,6 @@
 1. Every canonical tracked file (excluding excluded manifest/ephemeral files) is indexed once in `FOLD_MANIFEST.json` with `0` duplicates, `0` missing files, `0` SHA-256 mismatches, and `0` untracked strays (`python3 reconcile_fold_manifest.py`).
 2. `sha256sum -c FOLD_MANIFEST.sha256 --quiet` exits `0`.
 3. Local test suite (`pytest -q tests`), `node scripts/check_appeal_bundle.js`, and GitHub Actions (`ci` and `python-ci` on `main`) pass without drift.
+
+## 5. Sidecar Refresh Ordering Rule
+- **Manifest last, sidecar after, verify before commit:** Generate/refresh `FOLD_MANIFEST.sha256` only after the final `FOLD_MANIFEST.json` write completes (ideally via `reconcile_fold_manifest.py --write --refresh-sidecar`), then run `python3 reconcile_fold_manifest.py` (all zeros) and `sha256sum -c FOLD_MANIFEST.sha256 --quiet` before `git add -A && git commit && git push`.
