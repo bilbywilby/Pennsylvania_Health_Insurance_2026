@@ -138,7 +138,7 @@ def main() -> int:
     existing_by_path: dict[str, dict[str, Any]] = {}
 
     for entry in existing_entries:
-        rel_path = Path(entry.get("path", "")).as_posix().lstrip("./")
+        rel_path = Path(entry.get("path", "")).as_posix().removeprefix("./")
         if not rel_path:
             continue
         if rel_path in seen_manifest_paths:
