@@ -11,7 +11,7 @@
     "sources/pa_ra_onepagers",
     "sources/keystone_health"
   ],
-  "file_count": 1343,
+  "file_count": 1348,
   "files": [
     {
       "path": ".gitattributes",
@@ -25,12 +25,17 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "sha256": "c970545c0e1660c8ed8d98fe358ff68c5030f07a703082a2269fccd1165ad6b8",
+      "sha256": "f048a96316b7c8913615563117a6ad94146f68167f7087ff9824cb5eac75fffa",
       "size": 451
     },
     {
+      "path": ".github/workflows/manifest-gate.yml",
+      "sha256": "a81d63e6577d43e4b4c3dd8aa9f62ca00756a576c383314073564cce25697610",
+      "size": 234
+    },
+    {
       "path": ".github/workflows/python-ci.yml",
-      "sha256": "f3fea9d4c95af15cd74ec905c0096c0d3e0495071dd16ed74657865d884caa99",
+      "sha256": "eae74c65d4edc542474f07a1997261d7330beb387306f7d7065fd79c42026ef3",
       "size": 1420
     },
     {
@@ -547,6 +552,11 @@
       "path": "scripts/check_appeal_bundle.js",
       "sha256": "ba7f87c54bf3477a6693b5b2a1d24d205f51ebddfaf08be02c8e743e8e541a74",
       "size": 4038
+    },
+    {
+      "path": "scripts/check_fold_manifest.sh",
+      "sha256": "ea1dc4c1b7a44cdc481adfedda09202ecdcea3e1b4abeeb3ff0f3a7250bf0e34",
+      "size": 787
     },
     {
       "path": "scripts/dispatch_work_orders.py",
@@ -1197,6 +1207,16 @@
       "path": "scripts/harden_v1_2.sh",
       "sha256": "cee67475093e25f178dd7cd712f77d65a0266157d9b154d205d92d07f5f615a3",
       "size": 3718
+    },
+    {
+      "path": "scripts/hooks/pre-commit",
+      "sha256": "913ac82ed8d01db5e4ba9867862e4d9e64689871554a2b1c80ca762cc9b6a069",
+      "size": 821
+    },
+    {
+      "path": "scripts/install_hooks.sh",
+      "sha256": "707c200e386e4c81447c92d998e80fb5f71ca61ac23850aa033318424f73e722",
+      "size": 448
     },
     {
       "path": "scripts/maintain.py",
@@ -6539,6 +6559,11 @@
       "size": 3850
     },
     {
+      "path": "tests/test_reconcile_fold_manifest.py",
+      "sha256": "4d50769dbf6793ca8921e884ed3c4cfd4bb598d8f9567ec7af1bd59e9a214c24",
+      "size": 4418
+    },
+    {
       "path": "tests/test_root.py",
       "sha256": "675a8302c62190746cd8fc229c6186f11fb5314218b20d1b742920301a495b75",
       "size": 14
@@ -6729,5 +6754,5 @@
       "size": 1511
     }
   ],
-  "reconciled_at": "2026-11-28T17:27:58Z"
+  "reconciled_at": "2026-11-28T17:47:02Z"
 }

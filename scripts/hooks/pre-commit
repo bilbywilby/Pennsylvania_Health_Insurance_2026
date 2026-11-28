@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# fold-manifest-hook v1: keep FOLD_MANIFEST.json/.sha256 in step with the commit.
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+[ -f reconcile_fold_manifest.py ] || exit 0
+git diff --cached --quiet && exit 0
+extra="$( { git diff --name-only; git ls-files --others --exclude-standard; } \
+          | grep -v -x -e FOLD_MANIFEST.json -e FOLD_MANIFEST.sha256 || true )"
+if [ -n "$extra" ]; then
+  echo "pre-commit: working tree has changes outside this commit, so the manifest" >&2
+  echo "would not match what gets committed:" >&2
+  printf '%s\n' "$extra" | head -n 10 >&2
+  echo "Run 'git add -A' (or stash the rest). Bypass once: git commit --no-verify" >&2
+  exit 1
+fi
+python3 reconcile_fold_manifest.py --write --refresh-sidecar >/dev/null
+git add FOLD_MANIFEST.json FOLD_MANIFEST.sha256
