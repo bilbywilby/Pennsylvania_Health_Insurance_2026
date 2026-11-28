@@ -540,8 +540,8 @@
     },
     {
       "path": "scripts/check_appeal_bundle.js",
-      "sha256": "6af663dc696ea19ef763435a0ffce9ef5106eddd2eb55566700f8d25a2d2fc19",
-      "size": 3774
+      "sha256": "ba7f87c54bf3477a6693b5b2a1d24d205f51ebddfaf08be02c8e743e8e541a74",
+      "size": 4038
     },
     {
       "path": "scripts/dispatch_work_orders.py",
@@ -6724,5 +6724,5 @@
       "size": 1511
     }
   ],
-  "reconciled_at": "2026-11-28T16:33:56Z"
+  "reconciled_at": "2026-11-28T16:35:02Z"
 }
