@@ -11,8 +11,13 @@
     "sources/pa_ra_onepagers",
     "sources/keystone_health"
   ],
-  "file_count": 1345,
+  "file_count": 1346,
   "files": [
+    {
+      "path": ".coverage",
+      "sha256": "5fb5a9a8176947bfffd95cf56e4acf810a93bfc24354a3f8919e744ad47a83fa",
+      "size": 53248
+    },
     {
       "path": ".gitattributes",
       "sha256": "8977a454252e5b9a4b036925a0e32ddb610cdb5365903882969992e288a6262b",
@@ -120,7 +125,7 @@
     },
     {
       "path": "FOLD_MANIFEST.sha256",
-      "sha256": "f187b5552bdaeccc1e7b3d527ce4a98c9af1476291e38b19c7f64113009d8699",
+      "sha256": "4ebab88adba356de4ee79a440b130a2fa90aa621a1ad63c8458e1db6e660570a",
       "size": 85
     },
     {
@@ -517,11 +522,6 @@
       "path": "docs/release-v2026.11.28-postmortem.md",
       "sha256": "2bd634917d5b7b9e88786b3a5eff404692ef95c51f30d2011462eea68702bc75",
       "size": 9537
-    },
-    {
-      "path": "github/workflows/python-ci.yml",
-      "sha256": "f70f530d22a29cce2d4aae76c1382faa79bfdb6af5e6c5a3a8240ac84151a2da",
-      "size": 1124
     },
     {
       "path": "no_surprises_dispute_tracker.csv",
@@ -6454,6 +6454,11 @@
       "sha256": "e777cb89aa963bcd8cbbd5da57607e6f9265cfdb181301af441b020663f7fda6"
     },
     {
+      "path": "t.py",
+      "sha256": "58e245fe68fbb2e6c34c061a796c031a29d538158549c13438b63c52e82bb952",
+      "size": 17499
+    },
+    {
       "path": "templates/501(r) FAP Demand Letter.md",
       "sha256": "6f230cc446e06cca77403ed027a60e8d9964b6951f612f34f8660fac41d84867",
       "size": 2457
@@ -6739,5 +6744,5 @@
       "size": 1511
     }
   ],
-  "reconciled_at": "2026-11-28T16:07:54Z"
+  "reconciled_at": "2026-11-28T16:17:53Z"
 }
