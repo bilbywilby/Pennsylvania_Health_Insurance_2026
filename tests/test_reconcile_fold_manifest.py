@@ -111,8 +111,12 @@ def test_gate_passes_clean_and_fails_on_drift(work):
     gate = work / "scripts" / "check_fold_manifest.sh"
     ok = run(["bash", str(gate)], work, env={**os.environ, "FOLD_REPO": str(work)})
     assert ok.returncode == 0, ok.stdout + ok.stderr
-    with open(work / "CONTRIBUTING.md", "a", encoding="utf-8") as fh:
-        fh.write("\n# drift\n")
-    bad = run(["bash", str(gate)], work, env={**os.environ, "FOLD_REPO": str(work)})
+    drift_file = work / "scripts" / "check_fold_manifest.sh"
+    orig_bytes = drift_file.read_bytes()
+    try:
+        drift_file.write_bytes(orig_bytes + b"\n# drift\n")
+        bad = run(["bash", str(gate)], work, env={**os.environ, "FOLD_REPO": str(work)})
+    finally:
+        drift_file.write_bytes(orig_bytes)
     assert bad.returncode != 0
     assert "GATE FAIL" in bad.stderr
