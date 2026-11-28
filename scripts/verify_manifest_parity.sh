@@ -5,6 +5,9 @@ umask 077
 [ -f FOLD_MANIFEST.sha256 ] || { echo "ERROR: missing FOLD_MANIFEST.sha256" >&2; exit 1; }
 [ -f MANIFEST.sha256 ] || { echo "ERROR: missing MANIFEST.sha256" >&2; exit 1; }
 
+[ "$(stat -c '%a' FOLD_MANIFEST.sha256)" = "600" ] || { echo "ERROR: FOLD_MANIFEST.sha256 mode not 600" >&2; exit 1; }
+[ "$(stat -c '%a' MANIFEST.sha256)" = "600" ] || { echo "ERROR: MANIFEST.sha256 mode not 600" >&2; exit 1; }
+
 stat -c '%a %n' FOLD_MANIFEST.sha256 MANIFEST.sha256
 
 sha256sum -c --quiet FOLD_MANIFEST.sha256
