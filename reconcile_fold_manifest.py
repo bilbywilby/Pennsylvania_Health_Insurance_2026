@@ -118,6 +118,7 @@ def main() -> int:
     parser.add_argument("--repo", type=Path, default=DEFAULT_REPO)
     parser.add_argument("--write", action="store_true", help="Write reconciled FOLD_MANIFEST.json atomically.")
     parser.add_argument("--prune-duplicates", action="store_true", help="Delete redundant duplicate files on disk.")
+    parser.add_argument("--refresh-sidecar", action="store_true", help="After --write, regenerate FOLD_MANIFEST.sha256 from the new manifest.")
     args = parser.parse_args()
 
     repo_root = args.repo.expanduser().resolve()
@@ -230,6 +231,12 @@ def main() -> int:
         atomic_write_json(repo_root / "FOLD_MANIFEST.json.bak", raw_manifest)
 
     atomic_write_json(manifest_path, new_manifest)
+
+    if args.refresh_sidecar:
+        sidecar = repo_root / "FOLD_MANIFEST.sha256"
+        sidecar.write_text(sha256_file(manifest_path) + "  FOLD_MANIFEST.json\n", encoding="utf-8")
+        os.chmod(sidecar, 0o600)
+        print(f"[OK] Refreshed {sidecar.name}")
     print(f"\n[OK] Wrote {len(reconciled_entries)} verified entries to {manifest_path}")
     return 0
 
