@@ -11,7 +11,7 @@
     "sources/pa_ra_onepagers",
     "sources/keystone_health"
   ],
-  "file_count": 1342,
+  "file_count": 1343,
   "files": [
     {
       "path": ".gitattributes",
@@ -502,6 +502,11 @@
       "path": "docs/pdfs/harden_v1_2.pdf",
       "sha256": "e3c338a715009d5f32c7dd9374a33e4e0c0aa0e9dc6530c6ec6650c09d4fbb84",
       "size": 19894
+    },
+    {
+      "path": "docs/post-fold-audit.md",
+      "sha256": "b5af65807c12c3a0a7977f54d0cc7ce2c991348968b999c86437b673a62ce1c1",
+      "size": 2923
     },
     {
       "path": "docs/release-v2026.11.28-postmortem.md",
@@ -6724,5 +6729,5 @@
       "size": 1511
     }
   ],
-  "reconciled_at": "2026-11-28T16:35:02Z"
+  "reconciled_at": "2026-11-28T16:39:49Z"
 }
