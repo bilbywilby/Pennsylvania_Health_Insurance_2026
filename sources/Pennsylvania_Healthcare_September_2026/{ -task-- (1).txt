@@ -451,23 +451,23 @@ Add custom logic (anomaly detection, alerts, additional sources)
 All files are production-grade, fully documented, and ready to run from your laptop or cloud instance.
 
 Readme
-Document · MD 
+Document · MD 
 Requirements
-TXT 
+TXT 
 Config
-PY 
+PY 
 Schema
-PY 
+PY 
 Crawler
-PY 
+PY 
 Processor
-PY 
+PY 
 Main
-PY 
+PY 
 Utils
-PY 
+PY 
 Project overview
-TXT 
+TXT 
 
 
 You are out of free messages until 1:00 PM

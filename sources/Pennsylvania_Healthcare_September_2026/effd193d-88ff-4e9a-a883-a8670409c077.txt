@@ -1,4 +1,4 @@
-This conversation was generated with Duck.ai (https://duck.ai) using OpenAI's gpt-oss 120B Model. AI chats may display inaccurate or offensive information (see https://duckduckgo.com/duckai/privacy-terms for more info).
+﻿This conversation was generated with Duck.ai (https://duck.ai) using OpenAI's gpt-oss 120B Model. AI chats may display inaccurate or offensive information (see https://duckduckgo.com/duckai/privacy-terms for more info).
 
 ====================
 
@@ -329,7 +329,7 @@ Hey bilbywilby! Before we dive into a full‑throttle brainstorm on tightening u
 2. **Constraints** – Anything to watch for (e.g., budget, time box, keep it pure‑Python, stay CI‑friendly, avoid new dependencies, etc.)?  
 3. **Output format** – Do you prefer a plain list, a markdown table, a mini‑roadmap, or something else?
 
-Once I have those, I’ll quack‑up a burst of fresh ideas, rank the top picks, and give you a rapid‑prototype step you can run in the next 24 hours. 🚀🦆
+Once I have those, I’ll quack‑up a burst of fresh ideas, rank the top picks, and give you a rapid‑prototype step you can run in the next 24 hours. 🚀🦆
 
 --------------------
 
@@ -440,7 +440,7 @@ Got it, bilbywilby! To make sure the brainstorm hits the sweet spot, could you l
 
 1. **Problem / theme** – Are we focusing on *patching the actuarial pipeline code*, *strengthening the test/validation suite*, *streamlining the CI/Makefile workflow*, or a blend of all three?  
 
-2. **Constraints** – Any limits on time, budget, dependencies, or tooling (e.g., must stay pure Python, avoid new CI plugins, keep the repo CI‑fast, etc.)?  
+2. **Constraints** – Any limits on time, budget, dependencies, or tooling (e.g., must stay pure Python, avoid new CI plugins, keep the repo CI‑fast, etc.)?  
 
 3. **Preferred output format** – Would you like a plain bullet list, a markdown table, a mini‑road‑map, or something else?  
 
@@ -458,13 +458,13 @@ gpt-oss 120B:
 
 - **1️⃣ Data Foundations**  
   - 📂 **Official Sources** – PA Department of Health, CMS Marketplace, PA Insurance Commission APIs  
-  - 🗃️ **Crosswalks** – County ↔ FIPS, Rating‑Area ↔ County, Plan‑ID ↔ Benefit Design  
+  - 🗃️ **Crosswalks** – County ↔ FIPS, Rating‑Area ↔ County, Plan‑ID ↔ Benefit Design  
   - 🧭 **Geography** – GIS shapefiles for counties, rating areas, hospital service areas  
   - 📊 **Metrics** – Premiums, Covered Lives, Market Share, Rate Change, Benefit Limits  
 
 - **2️⃣ Validation Engine**  
   - ✅ **Schema Layer** – JSON‑Schema + Pydantic models for filings, crosswalks, plan metadata  
-  - 🔍 **Business Rules** – rating‑area bounds [1‑9], premium caps, decimal‑place enforcement, ISO‑date checks  
+  - 🔍 **Business Rules** – rating‑area bounds [1‑9], premium caps, decimal‑place enforcement, ISO‑date checks  
   - 🛡️ **Safety Nets** – Null‑safety guards, `Decimal.is_finite()`, graceful defaults (`0.0`)  
 
 - **3️⃣ Processing Pipeline** *(the actuarial aggregation you described)*  
@@ -480,7 +480,7 @@ gpt-oss 120B:
 - **5️⃣ CI / Automation**  
   - 🏗️ **Makefile** – safe quoted paths, `make audit`, `make test`, `make lint`  
   - 🧪 **GitHub Actions** – JSON lint, schema validation, mutation‑test matrix, audit‑run on PRs  
-  - 📏 **Code Coverage** – enforce ≥ 90 % on validation & pipeline modules  
+  - 📏 **Code Coverage** – enforce ≥ 90 % on validation & pipeline modules  
 
 - **6️⃣ Documentation & Transparency**  
   - 📚 **MkDocs** site with “How‑It‑Works” diagrams, data‑source provenance, version history  
@@ -490,7 +490,7 @@ gpt-oss 120B:
 - **7️⃣ Community Governance**  
   - 👥 **Steering Committee** – PA insurers, consumer advocates, health‑policy scholars  
   - 🗳️ **RFC Process** – propose new rating‑area rules or metric definitions via pull‑request template  
-  - 🤝 **License** – MIT + Open Data Commons Attribution (ODC‑By) for public‑sector data  
+  - 🤝 **License** – MIT + Open Data Commons Attribution (ODC‑By) for public‑sector data  
 
 - **8️⃣ Extensibility**  
   - 🔌 **Plug‑in Hooks** – custom calculators (e.g., actuarial risk scores) via entry points  

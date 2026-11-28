@@ -1,4 +1,4 @@
-This conversation was generated with Duck.ai (https://duck.ai) using multiple chat models. AI chats may display inaccurate or offensive information (see https://duckduckgo.com/duckai/privacy-terms for more info).
+﻿This conversation was generated with Duck.ai (https://duck.ai) using multiple chat models. AI chats may display inaccurate or offensive information (see https://duckduckgo.com/duckai/privacy-terms for more info).
 
 ====================
 
@@ -329,7 +329,7 @@ Hey bilbywilby! Before we dive into a full‑throttle brainstorm on tightening u
 2. **Constraints** – Anything to watch for (e.g., budget, time box, keep it pure‑Python, stay CI‑friendly, avoid new dependencies, etc.)?  
 3. **Output format** – Do you prefer a plain list, a markdown table, a mini‑roadmap, or something else?
 
-Once I have those, I’ll quack‑up a burst of fresh ideas, rank the top picks, and give you a rapid‑prototype step you can run in the next 24 hours. 🚀🦆
+Once I have those, I’ll quack‑up a burst of fresh ideas, rank the top picks, and give you a rapid‑prototype step you can run in the next 24 hours. 🚀🦆
 
 --------------------
 
@@ -440,7 +440,7 @@ Got it, bilbywilby! To make sure the brainstorm hits the sweet spot, could you l
 
 1. **Problem / theme** – Are we focusing on *patching the actuarial pipeline code*, *strengthening the test/validation suite*, *streamlining the CI/Makefile workflow*, or a blend of all three?  
 
-2. **Constraints** – Any limits on time, budget, dependencies, or tooling (e.g., must stay pure Python, avoid new CI plugins, keep the repo CI‑fast, etc.)?  
+2. **Constraints** – Any limits on time, budget, dependencies, or tooling (e.g., must stay pure Python, avoid new CI plugins, keep the repo CI‑fast, etc.)?  
 
 3. **Preferred output format** – Would you like a plain bullet list, a markdown table, a mini‑road‑map, or something else?  
 

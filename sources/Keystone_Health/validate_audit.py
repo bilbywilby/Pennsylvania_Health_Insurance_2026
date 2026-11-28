@@ -1,4 +1,85 @@
 #!/usr/bin/env python3
+"""
+validate_audit.py - Strict Pydantic Schema Validation Utility 
+For Keystone Health Forensic Navigator
+"""
+
+import argparse
+import json
+import sys
+from pathlib import Path
+from pydantic import BaseModel, Field, ValidationError
+
+class ChecklistItem(BaseModel):
+    id: str
+    label: str
+    checked: bool = False
+    sublines: list[str] = Field(default_factory=list)
+    category: str | None = None
+
+class ChecklistSchema(BaseModel):
+    categories: list[str] = Field(default_factory=list)
+    items: list[ChecklistItem]
+
+class AuditResultItem(BaseModel):
+    item_id: str
+    status: str = Field(..., description="Status must be 'pass', 'fail', or 'pending'")
+    notes: str | None = None
+
+class AuditResultsSchema(BaseModel):
+    audit_id: str
+    timestamp: str
+    results: list[AuditResultItem]
+
+def load_json(filepath: Path) -> dict:
+    """Load and parse JSON file with robust error handling."""
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except json.JSONDecodeError as e:
+        print(f"[ERROR] Invalid JSON formatting in {filepath}: {e}", file=sys.stderr)
+        sys.exit(1)
+    except Exception as e:
+        print(f"[ERROR] Unable to read {filepath}: {e}", file=sys.stderr)
+        sys.exit(1)
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Validate Keystone Health audit checklists and execution results against strict Pydantic schemas."
+    )
+    parser.add_argument("checklist", type=Path, help="Path to checklist JSON file")
+    parser.add_argument("results", type=Path, nargs="?", help="Optional path to audit results JSON file")
+    
+    args = parser.parse_args()
+
+    print(f"==> Validating checklist schema: {args.checklist}")
+    checklist_data = load_json(args.checklist)
+
+    try:
+        validated_checklist = ChecklistSchema(**checklist_data)
+        print(f"[OK] Checklist validation passed ({len(validated_checklist.items)} items verified).")
+    except ValidationError as e:
+        print(f"[ERROR] Checklist schema validation failed:\n{e}", file=sys.stderr)
+        sys.exit(1)
+
+    if args.results:
+        print(f"==> Validating audit results schema: {args.results}")
+        results_data = load_json(args.results)
+        try:
+            validated_results = AuditResultsSchema(**results_data)
+            print(f"[OK] Audit results validation passed ({len(validated_results.results)} result records verified).")
+        except ValidationError as e:
+            print(f"[ERROR] Audit results schema validation failed:\n{e}", file=sys.stderr)
+            sys.exit(1)
+
+    print("==> All verification checks completed successfully.")
+    sys.exit(0)
+
+if __name__ == "__main__":
+    main()
+
+
+#!/usr/bin/env python3
 """Validate quarterly_audit.yaml, and optionally a results file against it.
 Usage: validate_audit.py CHECKLIST.yaml [RESULTS.yaml] [--today YYYY-MM-DD]
 Results file: {results: [{id, status, reviewer, date, note?}]}. Exit 1 on any error."""

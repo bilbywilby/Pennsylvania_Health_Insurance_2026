@@ -1,4 +1,4 @@
-This conversation was generated with Duck.ai (https://duck.ai) using multiple chat models. AI chats may display inaccurate or offensive information (see https://duckduckgo.com/duckai/privacy-terms for more info).
+﻿This conversation was generated with Duck.ai (https://duck.ai) using multiple chat models. AI chats may display inaccurate or offensive information (see https://duckduckgo.com/duckai/privacy-terms for more info).
 
 ====================
 
@@ -247,7 +247,7 @@ shasum (-a 256):  6d541edbb6bccf2b23f1288e818a76d4ef93aa971cf9e2123e6ecefd6cba71
 ❯
 
 gpt-oss 120B:
-Quack ! bilbywilby, here’s the **complete, hardened pre‑commit hook script** with the two critical bugs fixed and a handful of tidy‑up tweaks that close the other loose ends you spotted. I’ve kept the original structure (so you can drop it straight into your repo) but rewrote the large‑file guard, unified the SHA‑256 checksum logic, and cleaned up the dry‑run flow, the large‑object audit stub, and the unused `run_or_dry` helper.
+Quack ! bilbywilby, here’s the **complete, hardened pre‑commit hook script** with the two critical bugs fixed and a handful of tidy‑up tweaks that close the other loose ends you spotted. I’ve kept the original structure (so you can drop it straight into your repo) but rewrote the large‑file guard, unified the SHA‑256 checksum logic, and cleaned up the dry‑run flow, the large‑object audit stub, and the unused `run_or_dry` helper.
 
 ```bash
 #!/usr/bin/env bash
@@ -265,7 +265,7 @@ IFS=$'\n\t'
 # -----------------------------------------------------------------
 # Maximum size (bytes) for a file to be allowed in a commit.
 # Adjust as needed; the value is baked into the generated hook.
-LARGE_FILE_LIMIT_BYTES=${LARGE_FILE_LIMIT_BYTES:-10485760}   # 10 MiB default
+LARGE_FILE_LIMIT_BYTES=${LARGE_FILE_LIMIT_BYTES:-10485760}   # 10 MiB default
 
 # Directory where snapshots are stored (relative to repo root)
 SNAPSHOT_DIR=".git/snapshots"
@@ -380,14 +380,14 @@ dry_run_restore_snapshot() {
 # -----------------------------------------------------------------
 git_security_audit() {
     echo "Running Git security audit…"
-    # Find objects larger than 5 MiB (adjust as needed)
+    # Find objects larger than 5 MiB (adjust as needed)
     local threshold=$((5 * 1024 * 1024))
 
     git rev-list --objects --all |
         git cat-file --batch-check='%(objecttype) %(objectsize) %(objectname) %(rest)' |
         awk -v lim="${threshold}" '
             $1 == "blob" && $2 > lim {
-                printf "Large object: %s (%d bytes) → %s\n", $4, $2, $3
+                printf "Large object: %s (%d bytes) → %s\n", $4, $2, $3
             }
         '
 }
@@ -442,14 +442,14 @@ USAGE
 esac
 ```
 
-### What changed & why 🦆
+### What changed & why 🦆
 
 | Issue | Fix |
 |------|------|
 | **Large‑file guard never triggered** | Inlined `${LARGE_FILE_LIMIT_BYTES}` inside the heredoc so each child `bash -c` sees the literal limit. No need for an exported variable, and the `wc -c` call now silences errors on non‑regular files. |
 | **SHA‑256 vs SHA‑1 mismatch** | Introduced `sha256_of()` that prefers `sha256sum` and falls back to `shasum -a 256`. Both snapshot creation and restoration now call the same function, guaranteeing identical digests. |
 | **Dry‑run exits early on fresh installs** | Added a dedicated `dry_run_restore_snapshot` that runs *before* any existence checks, so `--dry-run restore` works on an empty repo. |
-| **`git_security_audit` was a no‑op** | Replaced the empty loop with a real inspection using `git cat-file --batch-check`, reporting any blob > 5 MiB. Adjust `threshold` as you wish. |
+| **`git_security_audit` was a no‑op** | Replaced the empty loop with a real inspection using `git cat-file --batch-check`, reporting any blob > 5 MiB. Adjust `threshold` as you wish. |
 | **`run_or_dry` used `$*`** | Switched to `"$@"` preserving argument boundaries, and kept the function for any legacy callers. |
 | **General robustness** | Added `set -euo pipefail`, sanitized `IFS`, and guarded against non‑regular files in the guard loop. All generated scripts are marked executable. |
 
@@ -460,7 +460,7 @@ esac
 ./hook.sh install
 
 # Try committing an oversized file (adjust limit if needed)
-dd if=/dev/zero bs=1M count=12 of=bigfile.bin   # 12 MiB
+dd if=/dev/zero bs=1M count=12 of=bigfile.bin   # 12 MiB
 git add bigfile.bin
 git commit -m "Test oversized file"   # Should abort with an error
 rm bigfile.bin

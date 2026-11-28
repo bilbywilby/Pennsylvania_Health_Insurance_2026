@@ -1,22 +1,22 @@
 
-## 🎯 PA Health Insurance SSOT – Mind Map (text outline)
+## 🎯 PA Health Insurance SSOT – Mind Map (text outline)
 
 **Central Pond:** **PA Health Insurance Single Source of Truth**
 
-### 1️⃣ Validation Fortress (Data Integrity)  
-- **Strict Schemas** – Pydantic/Frozen dataclasses replace loose dicts → dead‑ends for missing keys.  
-- **Versioned Crosswalks** – JSON (or Python constants) mapping `FIPS → rating area → county`, signed with a SHA‑256 checksum per release.  
-- **Plausibility Guardrails** – Hard caps (`0 < rate ≤ 10 000.00`), ISO‑date regex + `date.fromisoformat`, finite Decimal checks.  
+### 1️⃣ Validation Fortress (Data Integrity)  
+- **Strict Schemas** – Pydantic/Frozen dataclasses replace loose dicts → dead‑ends for missing keys.  
+- **Versioned Crosswalks** – JSON (or Python constants) mapping `FIPS → rating area → county`, signed with a SHA‑256 checksum per release.  
+- **Plausibility Guardrails** – Hard caps (`0 < rate ≤ 10 000.00`), ISO‑date regex + `date.fromisoformat`, finite Decimal checks.  
 - **Idempotent Ingestion** – Same CSV processed twice yields identical checksum; enables deterministic audits.
 
 ### 2️⃣ Actuarial Engine (Computation)  
-- **Null‑Safe Aggregators** – `compute_rating_area_exposure()` always returns a numeric `weighted_rate_change` (defaults 0.0).  
-- **Zero‑Weight Strategy** – “Dark Rating Areas” flagged, stored with `total_weight = 0` and a warning flag.  
+- **Null‑Safe Aggregators** – `compute_rating_area_exposure()` always returns a numeric `weighted_rate_change` (defaults 0.0).  
+- **Zero‑Weight Strategy** – “Dark Rating Areas” flagged, stored with `total_weight = 0` and a warning flag.  
 - **Reference‑Pricing Hooks** – Pull Medicare baseline rates via a lightweight scraper or API, merged into the weighted calculation.  
 - **Traceability Log** – Each computed metric writes an entry to a JSONL “paper‑trail” linking back to source row, weight, and operation.
 
 ### 3️⃣ Regulatory Alignment (Compliance)  
-- **Statutory Tags** – Inline comments like `# SB 1071‑RA‑BOUND` map code checks to the exact law.  
+- **Statutory Tags** – Inline comments like `# SB 1071‑RA‑BOUND` map code checks to the exact law.  
 - **HIPAA Scrubber** – Atomic PII‑removal step before any file lands in `data/public/`.  
 - **Cost‑Sharing Cap Verifier** – Automated rule that flags any out‑of‑pocket max exceeding state limits.  
 - **Legal Metadata** – Each validation rule carries a citation object (`{section:…, url:…}`) for downstream auditors.
@@ -34,17 +34,17 @@
 
 ---
 
-## ⚡ Idea Burst (raw feed)
+## ⚡ Idea Burst (raw feed)
 
 1. **“Sentinel” CI** – A GitHub Action that runs a *differential audit* on every PR, printing a table of before/after weighted‑rate changes per rating area.  
 2. **FIPS‑as‑Code** – Store the crosswalk as a frozen Python dict in `constants.py`; IDE autocompletion eliminates typo‑induced KeyErrors.  
-3. **Actuarial “Diff” Tool** – CLI that compares two yearly filings and highlights statutory drift (e.g., any rate ≥ 5 % change).  
+3. **Actuarial “Diff” Tool** – CLI that compares two yearly filings and highlights statutory drift (e.g., any rate ≥ 5 % change).  
 4. **“Dark Area” Registry** – Explicit JSON list of legally valid but zero‑enrollment rating areas; the engine emits a warning instead of silently dropping them.  
 5. **Pydantic‑Driven Pipelines** – Replace all `filing.get("…")` calls with `FilingModel` instances; validation happens up‑front.  
-6. **w3m Knowledge Base** – A `/docs/wiki` folder of `.txt` files, each < 2 KB, optimized for fast terminal browsing.  
+6. **w3m Knowledge Base** – A `/docs/wiki` folder of `.txt` files, each < 2 KB, optimized for fast terminal browsing.  
 7. **Reference Price Feed** – Scheduled job that pulls Medicare baseline rates from CMS and stores them in a versioned CSV.  
 8. **“Paper Trail” Log** – JSONL file where each line records raw‑row → weighted‑average transformation with timestamps and checksum.  
-9. **Statutory Unit Tests** – Test suite (`test_act_252_compliance`) that asserts every rate stays within the caps defined by PA SB 1071.  
+9. **Statutory Unit Tests** – Test suite (`test_act_252_compliance`) that asserts every rate stays within the caps defined by PA SB 1071.  
 10. **Public API Mirror** – Read‑only GitHub Pages site that serves the latest `approved_rates.json` and crosswalk via HTTPS.
 
 ---
@@ -55,11 +55,11 @@
 |------|------|-----------|
 | **1** | **Pydantic‑Driven Pipelines** | Eliminates the `KeyError`/`TypeError` root cause by enforcing types at the data‑ingress point. Guarantees every downstream function receives a fully‑validated object. |
 | **2** | **“Sentinel” CI** | A continuous‑audit guard that makes the SSOT *self‑policing*: any PR that unintentionally shifts a rating‑area average triggers a fail, preserving data integrity. |
-| **3** | **Statutory Unit Tests** | Turns legal requirements into executable tests, ensuring the code never drifts from PA SB 1071 / Act 252‑2023 constraints. |
+| **3** | **Statutory Unit Tests** | Turns legal requirements into executable tests, ensuring the code never drifts from PA SB 1071 / Act 252‑2023 constraints. |
 
 ---
 
-## 🚀 24‑Hour Prototype – Get a Validation Fortress Up and Running
+## 🚀 24‑Hour Prototype – Get a Validation Fortress Up and Running
 
 ### Goal  
 Replace the ad‑hoc dict handling in `sr.py` with a **Pydantic model** that validates every filing before it reaches the actuarial engine.
@@ -165,7 +165,7 @@ You should see both the *non‑finite* and *invalid date* errors, proving the fo
 
 ---
 
-## 🎨 Creativity Exercise – SCAMPER on the Crosswalk  
+## 🎨 Creativity Exercise – SCAMPER on the Crosswalk  
 
 **Substitute** – Turn the crosswalk JSON into a **frozen Python module** (`constants.py`) that exports an immutable `FIPS_TO_AREA` dict.  
 
