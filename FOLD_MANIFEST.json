@@ -44,16 +44,6 @@
       "size": 789
     },
     {
-      "path": "Attorney Referral Network.md",
-      "sha256": "0f481a69f6f1477488dde1c932770c96b96ec80faad371dcc016c9c468c70efd",
-      "size": 2741
-    },
-    {
-      "path": "CITATIONS.md",
-      "sha256": "0a70bf0fe6bafd8df13c27b6a0dc1cada6d9e6047fade32245370d50a47ed379",
-      "size": 13584
-    },
-    {
       "path": "CONTRIBUTING.md",
       "sha256": "5b2a7b4b320bb7a206908a9520765e1e12c9928de9c0371994bc942dfd6b1be4",
       "size": 9462
@@ -64,54 +54,9 @@
       "size": 1205
     },
     {
-      "path": "Combining IRS Section 501(r) Financial Assistance Policies (FAP) with the No Surprises Act (NSA).txt",
-      "sha256": "850e02eeb09e68aa869b759c6a6f77a7c0fcf2076d368e190074711d90de723c",
-      "size": 4693
-    },
-    {
-      "path": "Complete Dispute Package Checklist & Exhibits.txt",
-      "sha256": "a75f327e770442cb03109c6608aa464e81b7c7667e0445f245fd16c1c50c7aec",
-      "size": 2516
-    },
-    {
-      "path": "Compliance Audit & Operational Mapping.md",
-      "sha256": "7ca0d514f5e1776a4555737f9cba23e117cf1790106fb7a76bcd3c74269e6af7",
-      "size": 8909
-    },
-    {
-      "path": "Compliance Reference Framework.txt",
-      "sha256": "7bc9b2aa7e5f7055884903da91f2ebd25f5d948172f4211a5381ec3ff9b73ead",
-      "size": 20835
-    },
-    {
-      "path": "Contributing Guidelines",
-      "sha256": "51e5532e14f480632abe12172d8a3db555b90044f6a9d69f232161e1310c8497",
-      "size": 1326
-    },
-    {
-      "path": "Critical Consumer Rules (\"Do's & Don'ts\").txt",
-      "sha256": "f526d2707938a0dafaf0f1c456058a0c3c28e35b8b7de3e5ae9b40c6227534d3",
-      "size": 30476
-    },
-    {
       "path": "DEPENDENCIES.md",
       "sha256": "2ef47099f48e3da5719ac7da29fc871466dc9a6e4c9c0e334f39e1d188fd8b81",
       "size": 883
-    },
-    {
-      "path": "Dispute_tool_test_suite_description.md",
-      "sha256": "469bcd84cc663cdf89947e565b5c6d983ed9b3bf47a9f5da4d06d795bd2ec798",
-      "size": 3233
-    },
-    {
-      "path": "EXHIBIT C: FAIR MARKET VALUE (FMV) BENCHMARK CALCULATION SHEET.txt",
-      "sha256": "d7b49aa435c9188c0814294586eb0789a764f6cceabb8d78148fd289ab918ef2",
-      "size": 4448
-    },
-    {
-      "path": "Escalation Workflow Overview for denied dispute escalation.md",
-      "sha256": "524b6c397714abc252aadb149f86e437d8234b1573a7700b4cca66e713330053",
-      "size": 10263
     },
     {
       "path": "Executive_Summary.md",
@@ -119,24 +64,9 @@
       "size": 4097
     },
     {
-      "path": "FCEUA/.pdfUTPCPL Collection Agency Escalation Letter",
-      "sha256": "594e82f99813ed10f9cf370055729e17db34c2f82f9082081d044ad10e7fc33a",
-      "size": 7530
-    },
-    {
-      "path": "Framework for No Surprises Act Enforcement and Medical Debt Defense in Pennsylvania.txt",
-      "sha256": "d306e4084462284475f2f786b51a3e8b520f5efad5217be5c707dc379cc070a0",
-      "size": 27374
-    },
-    {
       "path": "GOVERNANCE.md",
       "sha256": "4af6becd5a637c44204d1f0b01dc0a72ee7b341c8b722ceef3262cb8292fa487",
       "size": 4428
-    },
-    {
-      "path": "Gu\u00eda de Acci\u00f3n para Consumidores.md",
-      "sha256": "eaa572d57ec044c276ea0be55abf3b38a149aaecab189fb40e1f067304463745",
-      "size": 5947
     },
     {
       "path": "HANDOVER.json",
@@ -149,16 +79,6 @@
       "size": 23319
     },
     {
-      "path": "Hardened Python Date Mathematics & SOL Engine.md",
-      "sha256": "12d7a2fd098742454b2677780f3edc9710ac684bb7c113b52f26063f93b4a40a",
-      "size": 57806
-    },
-    {
-      "path": "IRS Section 501(r) for Nonprofit Hospitals.txt",
-      "sha256": "637ccd99e4129babb076f36be6a2685eee103ed63469898d80125a66c5107eed",
-      "size": 3558
-    },
-    {
       "path": "Keystone_Health_Portal.html",
       "sha256": "b8f1be51fc27e01268e07f80e2f558edac9bdf23c729c466974503941a412cf3",
       "size": 65003
@@ -167,86 +87,6 @@
       "path": "LICENSE",
       "sha256": "82882f4aaa503624c9a83d3f62ed38fedd2fb2034fefe91aee8df08b2d07a247",
       "size": 1067
-    },
-    {
-      "path": "Legal Disclaimer and Scope of Use.md",
-      "sha256": "78a3abab4ca47f80932cc9d40faaac3382adb0d26a9c3c1df82db2eedbffcab6",
-      "size": 2373
-    },
-    {
-      "path": "Legal findings for the SOL and FCEUA modules.txt",
-      "sha256": "7c5f4cbb32c48b82dcb9c312bc56f895cb708d93291e9d5ea125218bab269f24",
-      "size": 6394
-    },
-    {
-      "path": "Legal_Disclaimer.txt",
-      "sha256": "820026b1cb0fcaa159b97894f91a9da3d2a0919347a03b8abbbacc875bda30e0",
-      "size": 2352
-    },
-    {
-      "path": "Operational Dispute Tracking System.md",
-      "sha256": "b30d7d24e110c6ae1766cf84021fd72ce7cf25d5f7a9837dcefb97f06909fb9f",
-      "size": 14450
-    },
-    {
-      "path": "PA Case Law on Statute of Limitations Restarts a Pennsylvania case law governing 42 Pa.C.S. \u00a7 5525(a)",
-      "sha256": "d50405a6c573251048a41f979fbde6690caf5a34f24470bf0ac96ce8c07cf719",
-      "size": 12934
-    },
-    {
-      "path": "PA MEDICAL BILL DEFENSE CHECKLIST.md",
-      "sha256": "7a9292995d7b77bc7e6b1a472b87a5590703baf1e657a31641cdd81cc3402a27",
-      "size": 7068
-    },
-    {
-      "path": "PENNSYLVANIA MEDICAL BILL DEFENSE TOOLKIT & LEGAL REFERENCE",
-      "sha256": "22bf14cd8590f8f92290a18e80aa1000b348fce3f44e2361e3513f3041cd8569",
-      "size": 12910
-    },
-    {
-      "path": "PID and CMS",
-      "sha256": "498ca58e727208b2dc1b031a0725cf2743f88e98cb987f5d0f4d51edfe929ce5",
-      "size": 5556
-    },
-    {
-      "path": "Panel Evaluation Report.md",
-      "sha256": "f1bb6316e72e91563896bd94aed8e0fc2d5fe91c0508a7b43407438fa6ffe565",
-      "size": 6027
-    },
-    {
-      "path": "Patch.md",
-      "sha256": "1e1a8826aa1a4d29f2345d49a2a13f0dba86ddd4165e9a0c0c02f55be869f524",
-      "size": 19874
-    },
-    {
-      "path": "Pennsylvania Medical Bill Defense Toolkit (3).md",
-      "sha256": "629f606743508611141776f8248d39e1a4765faf379ec80737958dd53c487d15",
-      "size": 15597
-    },
-    {
-      "path": "Pennsylvania Medical Debt Defense Framework",
-      "sha256": "cdb51c2d61ebd6be92ecfbdaacd1e0f87e362fc0034e7e89f3605cb5ad84ab6b",
-      "size": 13291
-    },
-    {
-      "path": "Pennsylvania Medical Debt Defense Framework (Rev. 2 \u2014 05 Nov 2026)",
-      "sha256": "338a9b216fb95f8fcfda70462034964be5afdfe4ca60c7621cedd54a5881e69d",
-      "size": 13999
-    },
-    {
-      "path": "Pennsylvania Medical Debt Defense Framework (Rev. 4.1 \u2014 05 Nov 2026)",
-      "sha256": "df42ba7d7afac0368ea16723f30d6a0d3a3b5800f7ecbbd63735e0fd49b33fec",
-      "size": 16836
-    },
-    {
-      "path": "Pennsylvania Medical Debt Defense Framework.md",
-      "sha256": "8f8490e8aaba43b2a805cee436078eb9ebe0438137011a9691c195c1dc0b01ff",
-      "size": 13384
-    },
-    {
-      "path": "Pennsylvania Medical Debt Defense Master Framework (Rev 05 Nov 2026).md",
-      "sha256": "bc8af76a29e5226c479841a9d9ab3f71ac5d729b323d5eb8758c5723a37546a3",
-      "size": 37810
     },
     {
       "path": "Pre-Launch Readiness Checklist for Legal & Ethical Compliance",
@@ -512,6 +352,166 @@
       "path": "docs/post-fold-audit.md",
       "sha256": "5eda3373be7710841d3e31c46b0934488247371858b3d67cce2175c674ead393",
       "size": 3738
+    },
+    {
+      "path": "docs/reference/attorney-referral-network.md",
+      "sha256": "0f481a69f6f1477488dde1c932770c96b96ec80faad371dcc016c9c468c70efd",
+      "size": 2741
+    },
+    {
+      "path": "docs/reference/citations.md",
+      "sha256": "0a70bf0fe6bafd8df13c27b6a0dc1cada6d9e6047fade32245370d50a47ed379",
+      "size": 13584
+    },
+    {
+      "path": "docs/reference/complete-dispute-package-checklist-and-exhibits.txt",
+      "sha256": "a75f327e770442cb03109c6608aa464e81b7c7667e0445f245fd16c1c50c7aec",
+      "size": 2516
+    },
+    {
+      "path": "docs/reference/compliance-audit-and-operational-mapping.md",
+      "sha256": "7ca0d514f5e1776a4555737f9cba23e117cf1790106fb7a76bcd3c74269e6af7",
+      "size": 8909
+    },
+    {
+      "path": "docs/reference/compliance-reference-framework.txt",
+      "sha256": "7bc9b2aa7e5f7055884903da91f2ebd25f5d948172f4211a5381ec3ff9b73ead",
+      "size": 20835
+    },
+    {
+      "path": "docs/reference/contributing-guidelines.md",
+      "sha256": "51e5532e14f480632abe12172d8a3db555b90044f6a9d69f232161e1310c8497",
+      "size": 1326
+    },
+    {
+      "path": "docs/reference/critical-consumer-rules-dos-and-donts.txt",
+      "sha256": "f526d2707938a0dafaf0f1c456058a0c3c28e35b8b7de3e5ae9b40c6227534d3",
+      "size": 30476
+    },
+    {
+      "path": "docs/reference/dispute-tool-test-suite-description.md",
+      "sha256": "469bcd84cc663cdf89947e565b5c6d983ed9b3bf47a9f5da4d06d795bd2ec798",
+      "size": 3233
+    },
+    {
+      "path": "docs/reference/escalation-workflow-overview-denied-dispute.md",
+      "sha256": "524b6c397714abc252aadb149f86e437d8234b1573a7700b4cca66e713330053",
+      "size": 10263
+    },
+    {
+      "path": "docs/reference/exhibit-c-fmv-benchmark-calculation-sheet.txt",
+      "sha256": "d7b49aa435c9188c0814294586eb0789a764f6cceabb8d78148fd289ab918ef2",
+      "size": 4448
+    },
+    {
+      "path": "docs/reference/guia-de-accion-para-consumidores.md",
+      "sha256": "eaa572d57ec044c276ea0be55abf3b38a149aaecab189fb40e1f067304463745",
+      "size": 5947
+    },
+    {
+      "path": "docs/reference/hardened-python-date-mathematics-and-sol-engine.md",
+      "sha256": "12d7a2fd098742454b2677780f3edc9710ac684bb7c113b52f26063f93b4a40a",
+      "size": 57806
+    },
+    {
+      "path": "docs/reference/irs-501r-fap-and-no-surprises-act.txt",
+      "sha256": "850e02eeb09e68aa869b759c6a6f77a7c0fcf2076d368e190074711d90de723c",
+      "size": 4693
+    },
+    {
+      "path": "docs/reference/irs-section-501r-nonprofit-hospitals.txt",
+      "sha256": "637ccd99e4129babb076f36be6a2685eee103ed63469898d80125a66c5107eed",
+      "size": 3558
+    },
+    {
+      "path": "docs/reference/legal-disclaimer-and-scope-of-use.md",
+      "sha256": "78a3abab4ca47f80932cc9d40faaac3382adb0d26a9c3c1df82db2eedbffcab6",
+      "size": 2373
+    },
+    {
+      "path": "docs/reference/legal-disclaimer.txt",
+      "sha256": "820026b1cb0fcaa159b97894f91a9da3d2a0919347a03b8abbbacc875bda30e0",
+      "size": 2352
+    },
+    {
+      "path": "docs/reference/legal-findings-sol-and-fceua-modules.txt",
+      "sha256": "7c5f4cbb32c48b82dcb9c312bc56f895cb708d93291e9d5ea125218bab269f24",
+      "size": 6394
+    },
+    {
+      "path": "docs/reference/no-surprises-act-enforcement-and-medical-debt-defense-pa.txt",
+      "sha256": "d306e4084462284475f2f786b51a3e8b520f5efad5217be5c707dc379cc070a0",
+      "size": 27374
+    },
+    {
+      "path": "docs/reference/operational-dispute-tracking-system.md",
+      "sha256": "b30d7d24e110c6ae1766cf84021fd72ce7cf25d5f7a9837dcefb97f06909fb9f",
+      "size": 14450
+    },
+    {
+      "path": "docs/reference/pa-case-law-statute-of-limitations-restarts-42-pacs-5525a.md",
+      "sha256": "d50405a6c573251048a41f979fbde6690caf5a34f24470bf0ac96ce8c07cf719",
+      "size": 12934
+    },
+    {
+      "path": "docs/reference/pa-medical-bill-defense-checklist.md",
+      "sha256": "7a9292995d7b77bc7e6b1a472b87a5590703baf1e657a31641cdd81cc3402a27",
+      "size": 7068
+    },
+    {
+      "path": "docs/reference/pa-medical-bill-defense-toolkit-and-legal-reference.md",
+      "sha256": "22bf14cd8590f8f92290a18e80aa1000b348fce3f44e2361e3513f3041cd8569",
+      "size": 12910
+    },
+    {
+      "path": "docs/reference/pa-medical-bill-defense-toolkit-v3.md",
+      "sha256": "629f606743508611141776f8248d39e1a4765faf379ec80737958dd53c487d15",
+      "size": 15597
+    },
+    {
+      "path": "docs/reference/pa-medical-debt-defense-framework-md.md",
+      "sha256": "8f8490e8aaba43b2a805cee436078eb9ebe0438137011a9691c195c1dc0b01ff",
+      "size": 13384
+    },
+    {
+      "path": "docs/reference/pa-medical-debt-defense-framework-rev-2.md",
+      "sha256": "338a9b216fb95f8fcfda70462034964be5afdfe4ca60c7621cedd54a5881e69d",
+      "size": 13999
+    },
+    {
+      "path": "docs/reference/pa-medical-debt-defense-framework-rev-4-1.md",
+      "sha256": "df42ba7d7afac0368ea16723f30d6a0d3a3b5800f7ecbbd63735e0fd49b33fec",
+      "size": 16836
+    },
+    {
+      "path": "docs/reference/pa-medical-debt-defense-framework.md",
+      "sha256": "cdb51c2d61ebd6be92ecfbdaacd1e0f87e362fc0034e7e89f3605cb5ad84ab6b",
+      "size": 13291
+    },
+    {
+      "path": "docs/reference/pa-medical-debt-defense-master-framework-rev-2026-11-05.md",
+      "sha256": "bc8af76a29e5226c479841a9d9ab3f71ac5d729b323d5eb8758c5723a37546a3",
+      "size": 37810
+    },
+    {
+      "path": "docs/reference/panel-evaluation-report.md",
+      "sha256": "f1bb6316e72e91563896bd94aed8e0fc2d5fe91c0508a7b43407438fa6ffe565",
+      "size": 6027
+    },
+    {
+      "path": "docs/reference/patch-notes.md",
+      "sha256": "1e1a8826aa1a4d29f2345d49a2a13f0dba86ddd4165e9a0c0c02f55be869f524",
+      "size": 19874
+    },
+    {
+      "path": "docs/reference/pid-and-cms-escalation.md",
+      "sha256": "498ca58e727208b2dc1b031a0725cf2743f88e98cb987f5d0f4d51edfe929ce5",
+      "size": 5556
+    },
+    {
+      "path": "docs/reference/utpcpl-collection-agency-escalation-letter.pdf",
+      "sha256": "594e82f99813ed10f9cf370055729e17db34c2f82f9082081d044ad10e7fc33a",
+      "size": 7530
     },
     {
       "path": "docs/release-v2026.11.28-postmortem.md",
@@ -7089,5 +7089,5 @@
       "size": 7871
     }
   ],
-  "reconciled_at": "2026-11-28T19:13:09Z"
+  "reconciled_at": "2026-11-28T19:28:02Z"
 }
