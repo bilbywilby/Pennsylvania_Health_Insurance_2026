@@ -6,6 +6,7 @@ Note: This is a mock test; actual integration requires a live webhook URL.
 
 import pytest
 from unittest.mock import patch, Mock
+import requests
 import json
 import datetime as dt
 import importlib.util
@@ -24,6 +25,7 @@ classify_risk = getattr(_mod, '_idempotency_key') if 'classify_risk' == '_idempo
 build_payload = getattr(_mod, '_idempotency_key') if 'build_payload' == '_idempotency_key' and not hasattr(_mod, '_idempotency_key') else getattr(_mod, 'build_payload')
 _idempotency_key = getattr(_mod, '_idempotency_key') if '_idempotency_key' == '_idempotency_key' and not hasattr(_mod, '_idempotency_key') else getattr(_mod, '_idempotency_key')
 current_date = getattr(_mod, '_idempotency_key') if 'current_date' == '_idempotency_key' and not hasattr(_mod, '_idempotency_key') else getattr(_mod, 'current_date')
+redact_account_id = getattr(_mod, 'redact_account_id')
 
 @pytest.fixture
 def sample_debts() -> list[dict]:

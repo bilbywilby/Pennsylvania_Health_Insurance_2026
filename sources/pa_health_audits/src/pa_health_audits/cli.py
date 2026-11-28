@@ -12,6 +12,7 @@ from typing import Sequence
 from .atomic_io import atomic_write_json, atomic_write_text
 from .auditor import audit_claim_line, scrub_pii_line
 from .rate_review import load_rate_review_baseline
+import os
 
 DEFAULT_RATE_JSON = (
     Path(__file__).resolve().parents[2] / "data/py2027/pa_rate_review_2027.json"
