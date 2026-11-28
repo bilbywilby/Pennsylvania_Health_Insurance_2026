@@ -10,7 +10,7 @@ const AlertDialogTrigger = AlertDialogPrimitive.Trigger
 
 const AlertDialogPortal = AlertDialogPrimitive.Portal
 
-const AlertDialogOverlay = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay> & { ref?: React.Ref<React.ElementRef<typeof AlertDialogPrimitive.Overlay>> }) => (
+const AlertDialogOverlay = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay> & { ref?: React.Ref<React.ElementRef<typeof AlertDialogPrimitive.Overlay>> }) => (
   <AlertDialogPrimitive.Overlay
     className={cn(
       "fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
@@ -22,7 +22,7 @@ const AlertDialogOverlay = ({ className, ...props, ref }: React.ComponentPropsWi
 )
 AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName
 
-const AlertDialogContent = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content> & { ref?: React.Ref<React.ElementRef<typeof AlertDialogPrimitive.Content>> }) => (
+const AlertDialogContent = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content> & { ref?: React.Ref<React.ElementRef<typeof AlertDialogPrimitive.Content>> }) => (
   <AlertDialogPortal>
     <AlertDialogOverlay />
     <AlertDialogPrimitive.Content
@@ -65,7 +65,7 @@ const AlertDialogFooter = ({
 )
 AlertDialogFooter.displayName = "AlertDialogFooter"
 
-const AlertDialogTitle = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title> & { ref?: React.Ref<React.ElementRef<typeof AlertDialogPrimitive.Title>> }) => (
+const AlertDialogTitle = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title> & { ref?: React.Ref<React.ElementRef<typeof AlertDialogPrimitive.Title>> }) => (
   <AlertDialogPrimitive.Title
     ref={ref}
     className={cn("text-lg font-semibold", className)}
@@ -74,7 +74,7 @@ const AlertDialogTitle = ({ className, ...props, ref }: React.ComponentPropsWith
 )
 AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName
 
-const AlertDialogDescription = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description> & { ref?: React.Ref<React.ElementRef<typeof AlertDialogPrimitive.Description>> }) => (
+const AlertDialogDescription = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description> & { ref?: React.Ref<React.ElementRef<typeof AlertDialogPrimitive.Description>> }) => (
   <AlertDialogPrimitive.Description
     ref={ref}
     className={cn("text-sm text-muted-foreground", className)}
@@ -84,7 +84,7 @@ const AlertDialogDescription = ({ className, ...props, ref }: React.ComponentPro
 AlertDialogDescription.displayName =
   AlertDialogPrimitive.Description.displayName
 
-const AlertDialogAction = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action> & { ref?: React.Ref<React.ElementRef<typeof AlertDialogPrimitive.Action>> }) => (
+const AlertDialogAction = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action> & { ref?: React.Ref<React.ElementRef<typeof AlertDialogPrimitive.Action>> }) => (
   <AlertDialogPrimitive.Action
     ref={ref}
     className={cn(buttonVariants(), className)}
@@ -93,7 +93,7 @@ const AlertDialogAction = ({ className, ...props, ref }: React.ComponentPropsWit
 )
 AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName
 
-const AlertDialogCancel = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel> & { ref?: React.Ref<React.ElementRef<typeof AlertDialogPrimitive.Cancel>> }) => (
+const AlertDialogCancel = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel> & { ref?: React.Ref<React.ElementRef<typeof AlertDialogPrimitive.Cancel>> }) => (
   <AlertDialogPrimitive.Cancel
     ref={ref}
     className={cn(

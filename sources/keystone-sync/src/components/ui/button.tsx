@@ -41,7 +41,7 @@ export interface ButtonProps
 }
 
 const Button = 
-  ({ className, variant, size, asChild = false, ...props, ref }: ButtonProps & { ref?: React.Ref<HTMLButtonElement> }) => {
+  ({ className, variant, size, asChild = false, ref, ...props }: ButtonProps & { ref?: React.Ref<HTMLButtonElement> }) => {
     const Comp = asChild ? Slot : "button"
     return (
       <Comp

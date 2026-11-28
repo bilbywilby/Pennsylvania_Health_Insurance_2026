@@ -4,12 +4,12 @@ import { ChevronRight, MoreHorizontal } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-const Breadcrumb = ({ ...props, ref }: React.ComponentPropsWithoutRef<"nav"> & {
+const Breadcrumb = ({ ref, ...props }: React.ComponentPropsWithoutRef<"nav"> & {
     separator?: React.ReactNode
   } & { ref?: React.Ref<HTMLElement> }) => <nav ref={ref} aria-label="breadcrumb" {...props} />
 Breadcrumb.displayName = "Breadcrumb"
 
-const BreadcrumbList = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<"ol"> & { ref?: React.Ref<HTMLOListElement> }) => (
+const BreadcrumbList = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<"ol"> & { ref?: React.Ref<HTMLOListElement> }) => (
   <ol
     ref={ref}
     className={cn(
@@ -21,7 +21,7 @@ const BreadcrumbList = ({ className, ...props, ref }: React.ComponentPropsWithou
 )
 BreadcrumbList.displayName = "BreadcrumbList"
 
-const BreadcrumbItem = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<"li"> & { ref?: React.Ref<HTMLLIElement> }) => (
+const BreadcrumbItem = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<"li"> & { ref?: React.Ref<HTMLLIElement> }) => (
   <li
     ref={ref}
     className={cn("inline-flex items-center gap-1.5", className)}
@@ -30,7 +30,7 @@ const BreadcrumbItem = ({ className, ...props, ref }: React.ComponentPropsWithou
 )
 BreadcrumbItem.displayName = "BreadcrumbItem"
 
-const BreadcrumbLink = ({ asChild, className, ...props, ref }: React.ComponentPropsWithoutRef<"a"> & {
+const BreadcrumbLink = ({ asChild, className, ref, ...props }: React.ComponentPropsWithoutRef<"a"> & {
     asChild?: boolean
   } & { ref?: React.Ref<HTMLAnchorElement> }) => {
   const Comp = asChild ? Slot : "a"
@@ -45,7 +45,7 @@ const BreadcrumbLink = ({ asChild, className, ...props, ref }: React.ComponentPr
 }
 BreadcrumbLink.displayName = "BreadcrumbLink"
 
-const BreadcrumbPage = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<"span"> & { ref?: React.Ref<HTMLSpanElement> }) => (
+const BreadcrumbPage = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<"span"> & { ref?: React.Ref<HTMLSpanElement> }) => (
   <span
     ref={ref}
     role="link"

@@ -60,15 +60,15 @@ export function PricingContribution() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           <div className="space-y-2">
             <Label>CPT Code</Label>
-            <Input placeholder="70551" value={formData.cptCode} onChange={e => setFormData({...formData, cptCode: e.target.value})} />
+            <Input placeholder="70551" value={formData.cptCode} onChange={e => setFormData({cptCode, ...formData: e.target.value})} />
           </div>
           <div className="space-y-2">
             <Label>Billed Amount</Label>
-            <Input type="number" placeholder="800" value={formData.amount} onChange={e => setFormData({...formData, amount: e.target.value})} />
+            <Input type="number" placeholder="800" value={formData.amount} onChange={e => setFormData({amount, ...formData: e.target.value})} />
           </div>
           <div className="space-y-2">
             <Label>Patient Zip</Label>
-            <Input placeholder="15213" value={formData.zip} onChange={e => setFormData({...formData, zip: e.target.value})} />
+            <Input placeholder="15213" value={formData.zip} onChange={e => setFormData({zip, ...formData: e.target.value})} />
           </div>
         </div>
         <div className="bg-slate-50 dark:bg-slate-900 rounded-xl p-4 border border-dashed">

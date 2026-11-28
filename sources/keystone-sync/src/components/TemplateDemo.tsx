@@ -64,7 +64,7 @@ export function TemplateDemo() {
     const name = newUserName.trim()
     if (!name) return
     const u = await api<User>('/api/users', { method: 'POST', body: JSON.stringify({ name }) })
-    setUsers((prev) => [...prev, u])
+    setUsers((prev) => [u, ...prev])
     setNewUserName('')
     setSelectedUserId((prev) => prev || u.id)
   }
@@ -73,7 +73,7 @@ export function TemplateDemo() {
     const title = newChatTitle.trim()
     if (!title) return
     const c = await api<Chat>('/api/chats', { method: 'POST', body: JSON.stringify({ title }) })
-    setChats((prev) => [...prev, c])
+    setChats((prev) => [c, ...prev])
     setNewChatTitle('')
     setSelectedChatId((prev) => prev || c.id)
   }
@@ -87,7 +87,7 @@ export function TemplateDemo() {
       body: JSON.stringify({ userId: selectedUserId, text: msg }),
     })
 
-    setMessages((prev) => [...prev, created])
+    setMessages((prev) => [created, ...prev])
     setText('')
   }
 

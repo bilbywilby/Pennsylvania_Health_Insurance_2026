@@ -34,7 +34,7 @@ function useChart() {
   return context
 }
 
-const ChartContainer = ({ id, className, children, config, ...props, ref }: React.ComponentProps<"div"> & {
+const ChartContainer = ({ id, className, children, config, ref, ...props }: React.ComponentProps<"div"> & {
     config: ChartConfig
     children: React.ComponentProps<
       typeof RechartsPrimitive.ResponsiveContainer

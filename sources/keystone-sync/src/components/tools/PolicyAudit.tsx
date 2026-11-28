@@ -60,26 +60,26 @@ export function PolicyAudit() {
           <CardContent className="space-y-4">
             <div className="space-y-2">
               <Label>Plan Name</Label>
-              <Input placeholder="e.g. Keystone Blue Silver" value={policy.planName} onChange={e => setPolicy({...policy, planName: e.target.value})} />
+              <Input placeholder="e.g. Keystone Blue Silver" value={policy.planName} onChange={e => setPolicy({planName, ...policy: e.target.value})} />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label>Deductible ($)</Label>
-                <Input type="number" value={policy.deductible} onChange={e => setPolicy({...policy, deductible: Number(e.target.value)})} />
+                <Input type="number" value={policy.deductible} onChange={e => setPolicy({deductible, ...policy: Number(e.target.value)})} />
               </div>
               <div className="space-y-2">
                 <Label>OOP Max (MOOP) ($)</Label>
-                <Input type="number" value={policy.moop} onChange={e => setPolicy({...policy, moop: Number(e.target.value)})} />
+                <Input type="number" value={policy.moop} onChange={e => setPolicy({moop, ...policy: Number(e.target.value)})} />
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label>Coinsurance (%)</Label>
-                <Input type="number" value={policy.coinsurance} onChange={e => setPolicy({...policy, coinsurance: Number(e.target.value)})} />
+                <Input type="number" value={policy.coinsurance} onChange={e => setPolicy({coinsurance, ...policy: Number(e.target.value)})} />
               </div>
               <div className="space-y-2">
                 <Label>YTD Spent ($)</Label>
-                <Input type="number" value={policy.ytdSpent} onChange={e => setPolicy({...policy, ytdSpent: Number(e.target.value)})} />
+                <Input type="number" value={policy.ytdSpent} onChange={e => setPolicy({ytdSpent, ...policy: Number(e.target.value)})} />
               </div>
             </div>
           </CardContent>

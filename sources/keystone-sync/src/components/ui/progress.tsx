@@ -5,7 +5,7 @@ import * as ProgressPrimitive from "@radix-ui/react-progress"
 
 import { cn } from "@/lib/utils"
 
-const Progress = ({ className, value, ...props, ref }: React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> & { ref?: React.Ref<React.ElementRef<typeof ProgressPrimitive.Root>> }) => (
+const Progress = ({ className, value, ref, ...props }: React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> & { ref?: React.Ref<React.ElementRef<typeof ProgressPrimitive.Root>> }) => (
   <ProgressPrimitive.Root
     ref={ref}
     className={cn(

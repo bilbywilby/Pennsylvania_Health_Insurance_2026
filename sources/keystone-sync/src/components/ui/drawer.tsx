@@ -22,7 +22,7 @@ const DrawerPortal = DrawerPrimitive.Portal
 
 const DrawerClose = DrawerPrimitive.Close
 
-const DrawerOverlay = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay> & { ref?: React.Ref<React.ElementRef<typeof DrawerPrimitive.Overlay>> }) => (
+const DrawerOverlay = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay> & { ref?: React.Ref<React.ElementRef<typeof DrawerPrimitive.Overlay>> }) => (
   <DrawerPrimitive.Overlay
     ref={ref}
     className={cn("fixed inset-0 z-50 bg-black/80", className)}
@@ -31,7 +31,7 @@ const DrawerOverlay = ({ className, ...props, ref }: React.ComponentPropsWithout
 )
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName
 
-const DrawerContent = ({ className, children, ...props, ref }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content> & { ref?: React.Ref<React.ElementRef<typeof DrawerPrimitive.Content>> }) => (
+const DrawerContent = ({ className, children, ref, ...props }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content> & { ref?: React.Ref<React.ElementRef<typeof DrawerPrimitive.Content>> }) => (
   <DrawerPortal>
     <DrawerOverlay />
     <DrawerPrimitive.Content
@@ -71,7 +71,7 @@ const DrawerFooter = ({
 )
 DrawerFooter.displayName = "DrawerFooter"
 
-const DrawerTitle = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title> & { ref?: React.Ref<React.ElementRef<typeof DrawerPrimitive.Title>> }) => (
+const DrawerTitle = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title> & { ref?: React.Ref<React.ElementRef<typeof DrawerPrimitive.Title>> }) => (
   <DrawerPrimitive.Title
     ref={ref}
     className={cn(
@@ -83,7 +83,7 @@ const DrawerTitle = ({ className, ...props, ref }: React.ComponentPropsWithoutRe
 )
 DrawerTitle.displayName = DrawerPrimitive.Title.displayName
 
-const DrawerDescription = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description> & { ref?: React.Ref<React.ElementRef<typeof DrawerPrimitive.Description>> }) => (
+const DrawerDescription = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description> & { ref?: React.Ref<React.ElementRef<typeof DrawerPrimitive.Description>> }) => (
   <DrawerPrimitive.Description
     ref={ref}
     className={cn("text-sm text-muted-foreground", className)}

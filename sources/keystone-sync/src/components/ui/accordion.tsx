@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 
 const Accordion = AccordionPrimitive.Root
 
-const AccordionItem = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> & { ref?: React.Ref<React.ElementRef<typeof AccordionPrimitive.Item>> }) => (
+const AccordionItem = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> & { ref?: React.Ref<React.ElementRef<typeof AccordionPrimitive.Item>> }) => (
   <AccordionPrimitive.Item
     ref={ref}
     className={cn("border-b", className)}
@@ -15,7 +15,7 @@ const AccordionItem = ({ className, ...props, ref }: React.ComponentPropsWithout
 )
 AccordionItem.displayName = "AccordionItem"
 
-const AccordionTrigger = ({ className, children, ...props, ref }: React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> & { ref?: React.Ref<React.ElementRef<typeof AccordionPrimitive.Trigger>> }) => (
+const AccordionTrigger = ({ className, children, ref, ...props }: React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> & { ref?: React.Ref<React.ElementRef<typeof AccordionPrimitive.Trigger>> }) => (
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       ref={ref}
@@ -32,7 +32,7 @@ const AccordionTrigger = ({ className, children, ...props, ref }: React.Componen
 )
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
 
-const AccordionContent = ({ className, children, ...props, ref }: React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content> & { ref?: React.Ref<React.ElementRef<typeof AccordionPrimitive.Content>> }) => (
+const AccordionContent = ({ className, children, ref, ...props }: React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content> & { ref?: React.Ref<React.ElementRef<typeof AccordionPrimitive.Content>> }) => (
   <AccordionPrimitive.Content
     ref={ref}
     className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"

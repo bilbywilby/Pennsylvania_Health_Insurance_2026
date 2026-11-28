@@ -16,7 +16,7 @@ const ContextMenuSub = ContextMenuPrimitive.Sub
 
 const ContextMenuRadioGroup = ContextMenuPrimitive.RadioGroup
 
-const ContextMenuSubTrigger = ({ className, inset, children, ...props, ref }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.SubTrigger> & {
+const ContextMenuSubTrigger = ({ className, inset, children, ref, ...props }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.SubTrigger> & {
     inset?: boolean
   } & { ref?: React.Ref<React.ElementRef<typeof ContextMenuPrimitive.SubTrigger>> }) => (
   <ContextMenuPrimitive.SubTrigger
@@ -34,7 +34,7 @@ const ContextMenuSubTrigger = ({ className, inset, children, ...props, ref }: Re
 )
 ContextMenuSubTrigger.displayName = ContextMenuPrimitive.SubTrigger.displayName
 
-const ContextMenuSubContent = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.SubContent> & { ref?: React.Ref<React.ElementRef<typeof ContextMenuPrimitive.SubContent>> }) => (
+const ContextMenuSubContent = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.SubContent> & { ref?: React.Ref<React.ElementRef<typeof ContextMenuPrimitive.SubContent>> }) => (
   <ContextMenuPrimitive.SubContent
     ref={ref}
     className={cn(
@@ -46,7 +46,7 @@ const ContextMenuSubContent = ({ className, ...props, ref }: React.ComponentProp
 )
 ContextMenuSubContent.displayName = ContextMenuPrimitive.SubContent.displayName
 
-const ContextMenuContent = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Content> & { ref?: React.Ref<React.ElementRef<typeof ContextMenuPrimitive.Content>> }) => (
+const ContextMenuContent = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Content> & { ref?: React.Ref<React.ElementRef<typeof ContextMenuPrimitive.Content>> }) => (
   <ContextMenuPrimitive.Portal>
     <ContextMenuPrimitive.Content
       ref={ref}
@@ -60,7 +60,7 @@ const ContextMenuContent = ({ className, ...props, ref }: React.ComponentPropsWi
 )
 ContextMenuContent.displayName = ContextMenuPrimitive.Content.displayName
 
-const ContextMenuItem = ({ className, inset, ...props, ref }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Item> & {
+const ContextMenuItem = ({ className, inset, ref, ...props }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Item> & {
     inset?: boolean
   } & { ref?: React.Ref<React.ElementRef<typeof ContextMenuPrimitive.Item>> }) => (
   <ContextMenuPrimitive.Item
@@ -75,7 +75,7 @@ const ContextMenuItem = ({ className, inset, ...props, ref }: React.ComponentPro
 )
 ContextMenuItem.displayName = ContextMenuPrimitive.Item.displayName
 
-const ContextMenuCheckboxItem = ({ className, children, checked, ...props, ref }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.CheckboxItem> & { ref?: React.Ref<React.ElementRef<typeof ContextMenuPrimitive.CheckboxItem>> }) => (
+const ContextMenuCheckboxItem = ({ className, children, checked, ref, ...props }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.CheckboxItem> & { ref?: React.Ref<React.ElementRef<typeof ContextMenuPrimitive.CheckboxItem>> }) => (
   <ContextMenuPrimitive.CheckboxItem
     ref={ref}
     className={cn(
@@ -96,7 +96,7 @@ const ContextMenuCheckboxItem = ({ className, children, checked, ...props, ref }
 ContextMenuCheckboxItem.displayName =
   ContextMenuPrimitive.CheckboxItem.displayName
 
-const ContextMenuRadioItem = ({ className, children, ...props, ref }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.RadioItem> & { ref?: React.Ref<React.ElementRef<typeof ContextMenuPrimitive.RadioItem>> }) => (
+const ContextMenuRadioItem = ({ className, children, ref, ...props }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.RadioItem> & { ref?: React.Ref<React.ElementRef<typeof ContextMenuPrimitive.RadioItem>> }) => (
   <ContextMenuPrimitive.RadioItem
     ref={ref}
     className={cn(
@@ -115,7 +115,7 @@ const ContextMenuRadioItem = ({ className, children, ...props, ref }: React.Comp
 )
 ContextMenuRadioItem.displayName = ContextMenuPrimitive.RadioItem.displayName
 
-const ContextMenuLabel = ({ className, inset, ...props, ref }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Label> & {
+const ContextMenuLabel = ({ className, inset, ref, ...props }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Label> & {
     inset?: boolean
   } & { ref?: React.Ref<React.ElementRef<typeof ContextMenuPrimitive.Label>> }) => (
   <ContextMenuPrimitive.Label
@@ -130,7 +130,7 @@ const ContextMenuLabel = ({ className, inset, ...props, ref }: React.ComponentPr
 )
 ContextMenuLabel.displayName = ContextMenuPrimitive.Label.displayName
 
-const ContextMenuSeparator = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Separator> & { ref?: React.Ref<React.ElementRef<typeof ContextMenuPrimitive.Separator>> }) => (
+const ContextMenuSeparator = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Separator> & { ref?: React.Ref<React.ElementRef<typeof ContextMenuPrimitive.Separator>> }) => (
   <ContextMenuPrimitive.Separator
     ref={ref}
     className={cn("-mx-1 my-1 h-px bg-border", className)}

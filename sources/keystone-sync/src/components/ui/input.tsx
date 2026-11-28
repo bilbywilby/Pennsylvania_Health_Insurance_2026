@@ -3,7 +3,7 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 
 const Input = 
-  ({ className, type, ...props, ref }: React.ComponentProps<"input"> & { ref?: React.Ref<HTMLInputElement> }) => {
+  ({ className, type, ref, ...props }: React.ComponentProps<"input"> & { ref?: React.Ref<HTMLInputElement> }) => {
     return (
       <input
         type={type}

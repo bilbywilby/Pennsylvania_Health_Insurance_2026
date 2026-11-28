@@ -2,7 +2,7 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
-const Card = ({ className, ...props, ref }: React.HTMLAttributes<HTMLDivElement> & { ref?: React.Ref<HTMLDivElement> }) => (
+const Card = ({ className, ref, ...props }: React.HTMLAttributes<HTMLDivElement> & { ref?: React.Ref<HTMLDivElement> }) => (
   <div
     ref={ref}
     className={cn(
@@ -14,7 +14,7 @@ const Card = ({ className, ...props, ref }: React.HTMLAttributes<HTMLDivElement>
 )
 Card.displayName = "Card"
 
-const CardHeader = ({ className, ...props, ref }: React.HTMLAttributes<HTMLDivElement> & { ref?: React.Ref<HTMLDivElement> }) => (
+const CardHeader = ({ className, ref, ...props }: React.HTMLAttributes<HTMLDivElement> & { ref?: React.Ref<HTMLDivElement> }) => (
   <div
     ref={ref}
     className={cn("flex flex-col space-y-1.5 p-6", className)}
@@ -23,7 +23,7 @@ const CardHeader = ({ className, ...props, ref }: React.HTMLAttributes<HTMLDivEl
 )
 CardHeader.displayName = "CardHeader"
 
-const CardTitle = ({ className, ...props, ref }: React.HTMLAttributes<HTMLDivElement> & { ref?: React.Ref<HTMLDivElement> }) => (
+const CardTitle = ({ className, ref, ...props }: React.HTMLAttributes<HTMLDivElement> & { ref?: React.Ref<HTMLDivElement> }) => (
   <div
     ref={ref}
     className={cn("font-semibold leading-none tracking-tight", className)}
@@ -32,7 +32,7 @@ const CardTitle = ({ className, ...props, ref }: React.HTMLAttributes<HTMLDivEle
 )
 CardTitle.displayName = "CardTitle"
 
-const CardDescription = ({ className, ...props, ref }: React.HTMLAttributes<HTMLDivElement> & { ref?: React.Ref<HTMLDivElement> }) => (
+const CardDescription = ({ className, ref, ...props }: React.HTMLAttributes<HTMLDivElement> & { ref?: React.Ref<HTMLDivElement> }) => (
   <div
     ref={ref}
     className={cn("text-sm text-muted-foreground", className)}
@@ -41,12 +41,12 @@ const CardDescription = ({ className, ...props, ref }: React.HTMLAttributes<HTML
 )
 CardDescription.displayName = "CardDescription"
 
-const CardContent = ({ className, ...props, ref }: React.HTMLAttributes<HTMLDivElement> & { ref?: React.Ref<HTMLDivElement> }) => (
+const CardContent = ({ className, ref, ...props }: React.HTMLAttributes<HTMLDivElement> & { ref?: React.Ref<HTMLDivElement> }) => (
   <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
 )
 CardContent.displayName = "CardContent"
 
-const CardFooter = ({ className, ...props, ref }: React.HTMLAttributes<HTMLDivElement> & { ref?: React.Ref<HTMLDivElement> }) => (
+const CardFooter = ({ className, ref, ...props }: React.HTMLAttributes<HTMLDivElement> & { ref?: React.Ref<HTMLDivElement> }) => (
   <div
     ref={ref}
     className={cn("flex items-center p-6 pt-0", className)}

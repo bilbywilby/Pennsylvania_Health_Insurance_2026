@@ -4,7 +4,7 @@ import { Minus } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-const InputOTP = ({ className, containerClassName, ...props, ref }: React.ComponentPropsWithoutRef<typeof OTPInput> & { ref?: React.Ref<React.ElementRef<typeof OTPInput>> }) => (
+const InputOTP = ({ className, containerClassName, ref, ...props }: React.ComponentPropsWithoutRef<typeof OTPInput> & { ref?: React.Ref<React.ElementRef<typeof OTPInput>> }) => (
   <OTPInput
     ref={ref}
     containerClassName={cn(
@@ -17,12 +17,12 @@ const InputOTP = ({ className, containerClassName, ...props, ref }: React.Compon
 )
 InputOTP.displayName = "InputOTP"
 
-const InputOTPGroup = ({ className, ...props, ref }: React.ComponentPropsWithoutRef<"div"> & { ref?: React.Ref<React.ElementRef<"div">> }) => (
+const InputOTPGroup = ({ className, ref, ...props }: React.ComponentPropsWithoutRef<"div"> & { ref?: React.Ref<React.ElementRef<"div">> }) => (
   <div ref={ref} className={cn("flex items-center", className)} {...props} />
 )
 InputOTPGroup.displayName = "InputOTPGroup"
 
-const InputOTPSlot = ({ index, className, ...props, ref }: React.ComponentPropsWithoutRef<"div"> & { index: number } & { ref?: React.Ref<React.ElementRef<"div">> }) => {
+const InputOTPSlot = ({ index, className, ref, ...props }: React.ComponentPropsWithoutRef<"div"> & { index: number } & { ref?: React.Ref<React.ElementRef<"div">> }) => {
   const inputOTPContext = React.useContext(OTPInputContext)
   const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index]
 
@@ -47,7 +47,7 @@ const InputOTPSlot = ({ index, className, ...props, ref }: React.ComponentPropsW
 }
 InputOTPSlot.displayName = "InputOTPSlot"
 
-const InputOTPSeparator = ({ ...props, ref }: React.ComponentPropsWithoutRef<"div"> & { ref?: React.Ref<React.ElementRef<"div">> }) => (
+const InputOTPSeparator = ({ ref, ...props }: React.ComponentPropsWithoutRef<"div"> & { ref?: React.Ref<React.ElementRef<"div">> }) => (
   <div ref={ref} role="separator" {...props}>
     <Minus />
   </div>

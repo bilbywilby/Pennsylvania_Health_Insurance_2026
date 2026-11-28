@@ -97,8 +97,7 @@ export function ManifestRefreshPanel() {
     ManifestRefreshResult,
     OptimisticManifestPatch
   >(state, (currentState, patch) => ({
-    ...currentState,
-    statusMessage: patch.statusMessage,
+    statusMessage, ...currentState: patch.statusMessage,
     checkedAt: patch.checkedAt,
   }));
 
