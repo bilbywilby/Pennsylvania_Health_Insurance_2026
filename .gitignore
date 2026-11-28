@@ -15,3 +15,7 @@ MANIFEST.sha256.old*
 
 # generated device snapshots - keep out of the repo
 env_audit_*.txt
+.coverage
+htmlcov/
+t.py
+*.pyc
