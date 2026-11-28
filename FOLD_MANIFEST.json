@@ -11,7 +11,7 @@
     "sources/pa_ra_onepagers",
     "sources/keystone_health"
   ],
-  "file_count": 1350,
+  "file_count": 1351,
   "files": [
     {
       "path": ".gitattributes",
@@ -542,6 +542,11 @@
       "path": "scripts/align_dependencies.sh",
       "sha256": "78a3b46b55e99805a59cb4ccb2c26ba2d46e94532384c994870b3b76f3a50c9b",
       "size": 4630
+    },
+    {
+      "path": "scripts/audit_repo_and_scripts.sh",
+      "sha256": "c6e1c276b41b29fbc50242ef55df27f49676dd8d069d1d60f50d4a752aabf164",
+      "size": 918
     },
     {
       "path": "scripts/bootstrap_notices.sh",
@@ -6764,5 +6769,5 @@
       "size": 1511
     }
   ],
-  "reconciled_at": "2026-11-28T18:28:28Z"
+  "reconciled_at": "2026-11-28T18:53:50Z"
 }
