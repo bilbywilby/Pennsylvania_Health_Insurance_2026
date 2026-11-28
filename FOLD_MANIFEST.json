@@ -135,8 +135,8 @@
     },
     {
       "path": "HANDOVER.json",
-      "sha256": "ba83c4abfe5ef27a6954deb0445c2d39a8334f52d43f83a4edc2497272a92aba",
-      "size": 2131
+      "sha256": "1b531ce90596205f2527142f83cf68d69ee3836a54662cb5f37d7b856d124a3d",
+      "size": 2924
     },
     {
       "path": "HANDOVER.md",
@@ -6729,5 +6729,5 @@
       "size": 1511
     }
   ],
-  "reconciled_at": "2026-11-28T16:46:20Z"
+  "reconciled_at": "2026-11-28T16:49:52Z"
 }

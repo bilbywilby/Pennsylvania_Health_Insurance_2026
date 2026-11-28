@@ -53,5 +53,21 @@
       "status": "open",
       "detail": "tsconfig.* and Pond_Funding.json are JSONC/JSON5, not strict JSON — validator must skip or classify them."
     }
+  ],
+  "updates": [
+    {
+      "timestamp": "2026-11-28T16:49:51Z",
+      "kind": "post-fold-verification",
+      "summary": "Fold complete: legacy github/ workflow removed, stale MANIFEST.sha256 retired, appeal bundle checker repointed to addons/exports/appeal_bundle.json.",
+      "state": {
+        "canonical_files": 1343,
+        "reconciler": "reconcile_fold_manifest.py (dotfile fix + --refresh-sidecar)",
+        "manifest": "FOLD_MANIFEST.json all-zeros; sidecar refreshed post-write",
+        "ci": "both ci.yml and python-ci.yml green on main @ 52c395e",
+        "tests": "55 passed (tests/ + addons/tests/); 25 passed (pytest -q tests)",
+        "dispatcher_env": "requires DISPATCH_WEBHOOK_URL and IDEMPOTENCY_KEY_SECRET"
+      },
+      "manifest_last_sidecar_after": true
+    }
   ]
 }
