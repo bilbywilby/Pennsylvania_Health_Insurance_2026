@@ -11,6 +11,8 @@ import json
 import os
 import sys
 import tempfile
+
+SELF_EXCLUDED = {"FOLD_MANIFEST.json", "FOLD_MANIFEST.sha256"}
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
