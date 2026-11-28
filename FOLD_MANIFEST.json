@@ -11,7 +11,7 @@
     "sources/pa_ra_onepagers",
     "sources/keystone_health"
   ],
-  "file_count": 1346,
+  "file_count": 1345,
   "files": [
     {
       "path": ".gitattributes",
@@ -120,7 +120,7 @@
     },
     {
       "path": "FOLD_MANIFEST.sha256",
-      "sha256": "845f2b4dba3dc6c64c48e19b228ff94392c471fdfc2066f3faa35d2854d34cab",
+      "sha256": "f187b5552bdaeccc1e7b3d527ce4a98c9af1476291e38b19c7f64113009d8699",
       "size": 85
     },
     {
@@ -422,11 +422,6 @@
       "path": "backups/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "size": 0
-    },
-    {
-      "path": "calculation for CPT code 99214 (Office/outpatient visit for an established patient, requiring moderate medical decision-making or 30\u201339 total minutes) in Pennsylvania for 2026.txt",
-      "sha256": "b18375b2963930e37b50a0c170ce4bfab734ee52dc0b02e48f08e34b93a44bac",
-      "size": 2661
     },
     {
       "path": "data/debts.json",
@@ -6744,5 +6739,5 @@
       "size": 1511
     }
   ],
-  "reconciled_at": "2026-11-28T16:02:57Z"
+  "reconciled_at": "2026-11-28T16:07:54Z"
 }
