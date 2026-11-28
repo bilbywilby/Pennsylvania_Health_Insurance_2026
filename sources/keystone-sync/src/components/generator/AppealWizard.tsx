@@ -66,16 +66,15 @@ export function AppealWizard() {
   useEffect(() => {
     const typeParam = searchParams.get('type');
     if (typeParam && Object.keys(AppealIssue).includes(typeParam)) {
-      setFormData(prev => ({ issue, ...prev: AppealIssue[typeParam as keyof typeof AppealIssue] }));
+      setFormData(prev => ({ ...prev, issue: AppealIssue[typeParam as keyof typeof AppealIssue]  }));
       setStep(1);
     }
   }, [searchParams]);
   const autofillFromVault = async () => {
     const lastCalc = await getRecentCalculation();
     if (lastCalc && lastCalc.metadata) {
-      setFormData(prev => ({
-        providerName, ...prev: lastCalc.title.includes('Interest') ? 'Lender/Payer' : lastCalc.title,
-        details: `Auto-populated from forensic audit: ${lastCalc.content.substring(0, 100)}...`
+      setFormData(prev => ({ ...prev, providerName: lastCalc.title.includes('Interest') ? 'Lender/Payer' : lastCalc.title,
+        details: `Auto-populated from forensic audit: ${lastCalc.content.substring(0, 100) }...`
       }));
       toast.success('Fields pre-filled from your Privacy Vault');
     } else {
@@ -83,7 +82,7 @@ export function AppealWizard() {
     }
   };
   const selectPreset = (p: typeof PRESETS[0]) => {
-    setFormData(prev => ({ issue, ...prev: p.issue }));
+    setFormData(prev => ({ ...prev, issue: p.issue  }));
     setStep(1);
   };
   const next = () => setStep(s => Math.min(s + 1, STEPS.length - 1));
@@ -168,16 +167,16 @@ Sincerely,
                   </Button>
                 </div>
                 <div className="grid grid-cols-2 gap-6">
-                  <div className="space-y-2"><Label>Full Patient Name</Label><Input value={formData.patientName} onChange={e => setFormData({ patientName, ...formData: e.target.value })} /></div>
-                  <div className="space-y-2"><Label>Provider/Payer Name</Label><Input value={formData.providerName} onChange={e => setFormData({ providerName, ...formData: e.target.value })} /></div>
+                  <div className="space-y-2"><Label>Full Patient Name</Label><Input value={formData.patientName} onChange={e => setFormData({ ...formData, patientName: e.target.value  })} /></div>
+                  <div className="space-y-2"><Label>Provider/Payer Name</Label><Input value={formData.providerName} onChange={e => setFormData({ ...formData, providerName: e.target.value  })} /></div>
                 </div>
                 <div className="grid grid-cols-2 gap-6">
-                  <div className="space-y-2"><Label>Date of Denial</Label><Input type="date" value={formData.billDate} onChange={e => setFormData({ billDate, ...formData: e.target.value })} /></div>
-                  <div className="space-y-2"><Label>Claim/Account Number</Label><Input value={formData.accountNumber} onChange={e => setFormData({ accountNumber, ...formData: e.target.value })} /></div>
+                  <div className="space-y-2"><Label>Date of Denial</Label><Input type="date" value={formData.billDate} onChange={e => setFormData({ ...formData, billDate: e.target.value  })} /></div>
+                  <div className="space-y-2"><Label>Claim/Account Number</Label><Input value={formData.accountNumber} onChange={e => setFormData({ ...formData, accountNumber: e.target.value  })} /></div>
                 </div>
                 <div className="space-y-2">
                    <Label>Factual Details of Dispute</Label>
-                   <Textarea className="min-h-[100px]" value={formData.details} onChange={e => setFormData({ details, ...formData: e.target.value })} />
+                   <Textarea className="min-h-[100px]" value={formData.details} onChange={e => setFormData({ ...formData, details: e.target.value  })} />
                 </div>
               </CardContent>
             )}

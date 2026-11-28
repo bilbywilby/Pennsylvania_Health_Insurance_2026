@@ -49,9 +49,8 @@ const Carousel =
       children,
       ref, ...props }: React.HTMLAttributes<HTMLDivElement> & CarouselProps & { ref?: React.Ref<HTMLDivElement> }) => {
     const [carouselRef, api] = useEmblaCarousel(
-      {
-        axis, ...opts: orientation === "horizontal" ? "x" : "y",
-      },
+      { ...opts, axis: orientation === "horizontal" ? "x" : "y",
+       },
       plugins
     )
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)

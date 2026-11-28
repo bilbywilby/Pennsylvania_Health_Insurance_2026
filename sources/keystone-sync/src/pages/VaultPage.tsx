@@ -44,7 +44,7 @@ export function VaultPage() {
       'Sent': 'Resolved',
       'Resolved': 'Pending'
     };
-    await upsertTask({ status, ...task: nextStatusMap[task.status] });
+    await upsertTask({ ...task, status: nextStatusMap[task.status]  });
     loadData();
   };
   return (
@@ -76,11 +76,11 @@ export function VaultPage() {
                   <CardContent className="p-4 flex flex-col md:flex-row gap-4 items-end">
                     <div className="flex-1 space-y-2">
                       <label className="text-[10px] font-bold uppercase text-muted-foreground">Dispute Task</label>
-                      <Input value={newTask.title} onChange={e => setNewTask({title, ...newTask: e.target.value})} placeholder="e.g. Mail Certified Letter to UPMC" />
+                      <Input value={newTask.title} onChange={e => setNewTask({ ...newTask, title: e.target.value })} placeholder="e.g. Mail Certified Letter to UPMC" />
                     </div>
                     <div className="w-full md:w-48 space-y-2">
                       <label className="text-[10px] font-bold uppercase text-muted-foreground">Follow-up Date</label>
-                      <Input type="date" value={newTask.dueDate} onChange={e => setNewTask({dueDate, ...newTask: e.target.value})} />
+                      <Input type="date" value={newTask.dueDate} onChange={e => setNewTask({ ...newTask, dueDate: e.target.value })} />
                     </div>
                     <Button onClick={handleAddTask} className="bg-slate-900 text-white w-full md:w-auto">Add Task</Button>
                   </CardContent>

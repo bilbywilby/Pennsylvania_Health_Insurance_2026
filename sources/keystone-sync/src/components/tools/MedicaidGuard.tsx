@@ -31,7 +31,7 @@ export function MedicaidGuard() {
       exemptionReason: newEntry.isExempt ? 'Dependent Care (<13)' : undefined
     };
     await addWorkLog(log);
-    setNewEntry({ hours, ...newEntry: '', activity: '' });
+    setNewEntry({ ...newEntry, hours: '', activity: ''  });
     loadLogs();
     toast.success('Activity logged to ValleyDB');
   };
@@ -52,16 +52,16 @@ export function MedicaidGuard() {
             <div className="grid md:grid-cols-4 gap-4 items-end bg-slate-50 p-4 rounded-xl border border-dashed">
               <div className="space-y-2">
                 <Label className="text-[10px] uppercase font-bold text-slate-500">Date</Label>
-                <Input type="date" value={newEntry.date} onChange={e => setNewEntry({date, ...newEntry: e.target.value})} />
+                <Input type="date" value={newEntry.date} onChange={e => setNewEntry({ ...newEntry, date: e.target.value })} />
               </div>
               <div className="space-y-2">
                 <Label className="text-[10px] uppercase font-bold text-slate-500">Hours</Label>
-                <Input type="number" value={newEntry.hours} onChange={e => setNewEntry({hours, ...newEntry: e.target.value})} disabled={newEntry.isExempt} />
+                <Input type="number" value={newEntry.hours} onChange={e => setNewEntry({ ...newEntry, hours: e.target.value })} disabled={newEntry.isExempt} />
               </div>
               <div className="md:col-span-2 flex gap-2">
                 <div className="flex-1 space-y-2">
                   <Label className="text-[10px] uppercase font-bold text-slate-500">Activity</Label>
-                  <Input placeholder="e.g. Retail Work" value={newEntry.activity} onChange={e => setNewEntry({activity, ...newEntry: e.target.value})} disabled={newEntry.isExempt} />
+                  <Input placeholder="e.g. Retail Work" value={newEntry.activity} onChange={e => setNewEntry({ ...newEntry, activity: e.target.value })} disabled={newEntry.isExempt} />
                 </div>
                 <Button onClick={handleAdd} className="bg-slate-900 text-white mt-auto">Log</Button>
               </div>
@@ -130,7 +130,7 @@ export function MedicaidGuard() {
               <Button
                 variant="outline"
                 className={`w-full text-xs font-bold ${newEntry.isExempt ? 'bg-amber-50 border-amber-500 text-amber-700' : ''}`}
-                onClick={() => setNewEntry({isExempt, ...newEntry: !newEntry.isExempt})}
+                onClick={() => setNewEntry({ ...newEntry, isExempt: !newEntry.isExempt })}
               >
                 {newEntry.isExempt ? 'Exemption Shield Active' : 'Toggle Exemption Shield'}
               </Button>

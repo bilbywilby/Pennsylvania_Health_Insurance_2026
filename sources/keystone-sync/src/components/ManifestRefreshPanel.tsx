@@ -96,10 +96,9 @@ export function ManifestRefreshPanel() {
   const [optimisticState, applyOptimistic] = useOptimistic<
     ManifestRefreshResult,
     OptimisticManifestPatch
-  >(state, (currentState, patch) => ({
-    statusMessage, ...currentState: patch.statusMessage,
+  >(state, (currentState, patch) => ({ ...currentState, statusMessage: patch.statusMessage,
     checkedAt: patch.checkedAt,
-  }));
+   }));
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
