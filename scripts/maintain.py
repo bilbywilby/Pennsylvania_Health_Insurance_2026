@@ -22,7 +22,7 @@ HOME      = Path.home()
 REPO      = HOME / "pa_health_repos" / "PA_Health_Folded_2026"
 WIKI      = HOME / "pa_health_wikis" / "Pennsylvania_Health_Insurance_2026.wiki"
 GHSA_REPO = "bilbywilby/Pennsylvania_Health_Insurance_2026"
-MANIFEST  = "FOLD_MANIFEST.sha256"
+MANIFEST  = "MANIFEST.sha256"
 BANNER_EN = "> ⚠️ **Disclaimer:** Educational information only — not legal, medical, or financial advice. Laws change; verify citations against current statutes before filing anything.\n"
 BANNER_ES = "> ⚠️ **Aviso:** Información educativa únicamente — no es asesoría legal, médica ni financiera. Las leyes cambian; verifique las citas antes de presentar cualquier documento.\n"
 
