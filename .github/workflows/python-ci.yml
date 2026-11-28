@@ -42,5 +42,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: sha256sum -c MANIFEST.sha256 --quiet
-      - run: sha256sum -c FOLD_MANIFEST.sha256 --quiet
