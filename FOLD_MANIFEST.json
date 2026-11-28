@@ -11,7 +11,7 @@
     "sources/pa_ra_onepagers",
     "sources/keystone_health"
   ],
-  "file_count": 1343,
+  "file_count": 1342,
   "files": [
     {
       "path": ".gitattributes",
@@ -30,8 +30,8 @@
     },
     {
       "path": ".github/workflows/python-ci.yml",
-      "sha256": "680ecbcb5292b80a83b091797d467ce045bef30ccca187b8da35c8046377eddf",
-      "size": 1525
+      "sha256": "f3fea9d4c95af15cd74ec905c0096c0d3e0495071dd16ed74657865d884caa99",
+      "size": 1420
     },
     {
       "path": ".gitignore",
@@ -177,11 +177,6 @@
       "path": "Legal_Disclaimer.txt",
       "sha256": "820026b1cb0fcaa159b97894f91a9da3d2a0919347a03b8abbbacc875bda30e0",
       "size": 2352
-    },
-    {
-      "path": "MANIFEST.sha256",
-      "sha256": "a60c3d8356e3e5acff25be58438a0d7912ea3f37461d1091dd29095ad986384f",
-      "size": 884757
     },
     {
       "path": "Operational Dispute Tracking System.md",
@@ -6729,5 +6724,5 @@
       "size": 1511
     }
   ],
-  "reconciled_at": "2026-11-28T16:26:08Z"
+  "reconciled_at": "2026-11-28T16:33:56Z"
 }
