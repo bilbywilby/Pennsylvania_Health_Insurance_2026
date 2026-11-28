@@ -505,8 +505,8 @@
     },
     {
       "path": "docs/post-fold-audit.md",
-      "sha256": "415a02da6a449f82433d20f008b64cae2728d082b2586cf70761c6e6a06a0a19",
-      "size": 3339
+      "sha256": "5eda3373be7710841d3e31c46b0934488247371858b3d67cce2175c674ead393",
+      "size": 3738
     },
     {
       "path": "docs/release-v2026.11.28-postmortem.md",
@@ -6729,5 +6729,5 @@
       "size": 1511
     }
   ],
-  "reconciled_at": "2026-11-28T17:03:14Z"
+  "reconciled_at": "2026-11-28T17:27:58Z"
 }

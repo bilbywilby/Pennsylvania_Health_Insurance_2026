@@ -25,3 +25,7 @@
 
 ## 5. Sidecar Refresh Ordering Rule
 - **Manifest last, sidecar after, verify before commit:** Generate/refresh `FOLD_MANIFEST.sha256` only after the final `FOLD_MANIFEST.json` write completes (ideally via `reconcile_fold_manifest.py --write --refresh-sidecar`), then run `python3 reconcile_fold_manifest.py` (all zeros) and `sha256sum -c FOLD_MANIFEST.sha256 --quiet` before `git add -A && git commit && git push`.
+
+## 6. Pre-Handover Backup and Quarantine Archive
+- The pre-update `HANDOVER.json` is kept outside the repo at `~/HANDOVER.json.pre-fold` (mode 0600, checksum in `~/HANDOVER.json.pre-fold.sha256`).
+- The quarantine directory was archived with zstd and encrypted (gpg symmetric, AES256) to `~/pa_health_quarantine_20261128.tar.zst.gpg`, with checksums alongside; the plaintext directory was removed.
